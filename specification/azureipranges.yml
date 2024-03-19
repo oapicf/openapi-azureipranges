@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Azure IP Ranges and Service Tags - Public Cloud
+  version: 0.9.0-pre.0
+servers:
+  - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
+paths:
+  /ServiceTags_Public_20240318.json:
+    get:
+      summary: Get Azure IP Ranges and Service Tags - Public Cloud
+      description: Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Change'
+components:
+  schemas:
+    Change:
+      type: object
+      properties:
+        changeNumber:
+          type: integer
+          description: The number associated with the change.
+        cloud:
+          type: string
+          description: The cloud environment.
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Value'
+    Value:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the value.
+        id:
+          type: string
+          description: The unique identifier of the value.
+        properties:
+          $ref: '#/components/schemas/ValueProperties'
+    ValueProperties:
+      type: object
+      properties:
+        changeNumber:
+          type: integer
+          description: The number associated with the change.
+        region:
+          type: string
+          description: The region associated with the value.
+        regionId:
+          type: integer
+          description: The ID of the region.
+        platform:
+          type: string
+          description: The platform associated with the value.
+        systemService:
+          type: string
+          description: The system service associated with the value.
+        addressPrefixes:
+          type: array
+          items:
+            type: string
+          description: The address prefixes associated with the value.
+        networkFeatures:
+          type: array
+          items:
+            type: string
+          description: The network features associated with the value.
