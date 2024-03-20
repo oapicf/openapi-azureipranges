@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-19T12:56:59.578654944Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-20T11:57:37.052540847Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 @Validated
 @Tag(name = "ServiceTags_Public_20240318.json", description = "the ServiceTags_Public_20240318.json API")
 public interface ServiceTagsPublic20240318JsonApi {

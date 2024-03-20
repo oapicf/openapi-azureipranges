@@ -13,7 +13,7 @@ import java.util.List;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-19T12:37:08.636257904Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-20T11:52:20.125725893Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class ValueProperties   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;

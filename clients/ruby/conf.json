@@ -1,4 +1,12 @@
 {
+  "gemName": "openapi_azureipranges",
+  "moduleName": "OpenApiAzureIpRangesClient",
+  "gemVersion": "0.9.0-pre.0",
+  "gemAuthor": "OpenAPI Clients Factory",
+  "gemAuthorEmail": "blah+oapicf@cliffano.com",
+  "gemHomepage": "https://github.com/oapicf/openapi-azureipranges",
+  "gemLicense": "MIT",
+  "gemRequiredRubyVersion": ">= 2.0",
   "gitUserId": "oapicf",
   "gitRepoId": "openapi-azureipranges"
 }

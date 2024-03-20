@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.value_properties import ValueProperties
+from openapiazureipranges.models.value_properties import ValueProperties
 
 class TestValueProperties(unittest.TestCase):
     """ValueProperties unit test stubs"""

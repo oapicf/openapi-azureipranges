@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.AzureIpRangesAndServiceTagsPublicCloud);
+    factory(root.expect, root.OpenapiAzureipranges);
   }
-}(this, function(expect, AzureIpRangesAndServiceTagsPublicCloud) {
+}(this, function(expect, OpenapiAzureipranges) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new AzureIpRangesAndServiceTagsPublicCloud.Value();
+    instance = new OpenapiAzureipranges.Value();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Value', function() {
     it('should create an instance of Value', function() {
       // uncomment below and update the code to test Value
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Value();
-      //expect(instance).to.be.a(AzureIpRangesAndServiceTagsPublicCloud.Value);
+      //var instance = new OpenapiAzureipranges.Value();
+      //expect(instance).to.be.a(OpenapiAzureipranges.Value);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Value();
+      //var instance = new OpenapiAzureipranges.Value();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Value();
+      //var instance = new OpenapiAzureipranges.Value();
       //expect(instance).to.be();
     });
 
     it('should have the property properties (base name: "properties")', function() {
       // uncomment below and update the code to test the property properties
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Value();
+      //var instance = new OpenapiAzureipranges.Value();
       //expect(instance).to.be();
     });
 

@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-19T12:56:59.578654944Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-20T11:57:37.052540847Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 @Controller
 @RequestMapping("${openapi.azureIPRangesAndServiceTagsPublicCloud.base-path:/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63}")
 public class ServiceTagsPublic20240318JsonApiController implements ServiceTagsPublic20240318JsonApi {

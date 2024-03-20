@@ -12,7 +12,7 @@ import org.openapitools.model.*;
 
 import org.openapitools.model.Change;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-19T12:37:08.636257904Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-20T11:52:20.125725893Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class ServiceTagsPublic20240318JsonController  {
   /**
    * Uncomment and implement as you see fit.  These operations will map

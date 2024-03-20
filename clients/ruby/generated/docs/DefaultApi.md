@@ -1,4 +1,4 @@
-# OpenapiClient::DefaultApi
+# OpenApiAzureIpRangesClient::DefaultApi
 
 All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
 
@@ -19,15 +19,15 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'openapi_azureipranges'
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = OpenApiAzureIpRangesClient::DefaultApi.new
 
 begin
   # Get Azure IP Ranges and Service Tags - Public Cloud
   result = api_instance.service_tags_public20240318_json_get
   p result
-rescue OpenapiClient::ApiError => e
+rescue OpenApiAzureIpRangesClient::ApiError => e
   puts "Error when calling DefaultApi->service_tags_public20240318_json_get: #{e}"
 end
 ```
@@ -45,7 +45,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Change>
-rescue OpenapiClient::ApiError => e
+rescue OpenApiAzureIpRangesClient::ApiError => e
   puts "Error when calling DefaultApi->service_tags_public20240318_json_get_with_http_info: #{e}"
 end
 ```

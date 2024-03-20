@@ -1,4 +1,4 @@
-# AzureIpRangesAndServiceTagsPublicCloud.Value
+# OpenapiAzureipranges.Value
 
 ## Properties
 

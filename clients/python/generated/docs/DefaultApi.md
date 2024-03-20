@@ -1,4 +1,4 @@
-# openapi_client.DefaultApi
+# openapiazureipranges.DefaultApi
 
 All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
 
@@ -18,22 +18,22 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 
 ```python
-import openapi_client
-from openapi_client.models.change import Change
-from openapi_client.rest import ApiException
+import openapiazureipranges
+from openapiazureipranges.models.change import Change
+from openapiazureipranges.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = openapiazureipranges.Configuration(
     host = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with openapiazureipranges.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = openapiazureipranges.DefaultApi(api_client)
 
     try:
         # Get Azure IP Ranges and Service Tags - Public Cloud

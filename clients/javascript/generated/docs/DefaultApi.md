@@ -1,4 +1,4 @@
-# AzureIpRangesAndServiceTagsPublicCloud.DefaultApi
+# OpenapiAzureipranges.DefaultApi
 
 All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
 
@@ -19,9 +19,9 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 ### Example
 
 ```javascript
-import AzureIpRangesAndServiceTagsPublicCloud from 'azure_ip_ranges_and_service_tags_public_cloud';
+import OpenapiAzureipranges from 'openapi_azureipranges';
 
-let apiInstance = new AzureIpRangesAndServiceTagsPublicCloud.DefaultApi();
+let apiInstance = new OpenapiAzureipranges.DefaultApi();
 apiInstance.serviceTagsPublic20240318JsonGet((error, data, response) => {
   if (error) {
     console.error(error);

@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * Change
  */
 
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-03-19T12:37:50.410727408Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-03-20T11:52:54.565853401Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Change {
 
   private Integer changeNumber;

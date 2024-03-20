@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.AzureIpRangesAndServiceTagsPublicCloud);
+    factory(root.expect, root.OpenapiAzureipranges);
   }
-}(this, function(expect, AzureIpRangesAndServiceTagsPublicCloud) {
+}(this, function(expect, OpenapiAzureipranges) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new AzureIpRangesAndServiceTagsPublicCloud.Change();
+    instance = new OpenapiAzureipranges.Change();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Change', function() {
     it('should create an instance of Change', function() {
       // uncomment below and update the code to test Change
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Change();
-      //expect(instance).to.be.a(AzureIpRangesAndServiceTagsPublicCloud.Change);
+      //var instance = new OpenapiAzureipranges.Change();
+      //expect(instance).to.be.a(OpenapiAzureipranges.Change);
     });
 
     it('should have the property changeNumber (base name: "changeNumber")', function() {
       // uncomment below and update the code to test the property changeNumber
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Change();
+      //var instance = new OpenapiAzureipranges.Change();
       //expect(instance).to.be();
     });
 
     it('should have the property cloud (base name: "cloud")', function() {
       // uncomment below and update the code to test the property cloud
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Change();
+      //var instance = new OpenapiAzureipranges.Change();
       //expect(instance).to.be();
     });
 
     it('should have the property values (base name: "values")', function() {
       // uncomment below and update the code to test the property values
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.Change();
+      //var instance = new OpenapiAzureipranges.Change();
       //expect(instance).to.be();
     });
 

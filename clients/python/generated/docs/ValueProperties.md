@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.value_properties import ValueProperties
+from openapiazureipranges.models.value_properties import ValueProperties
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# AzureIpRangesAndServiceTagsPublicCloud.Change
+# OpenapiAzureipranges.Change
 
 ## Properties
 

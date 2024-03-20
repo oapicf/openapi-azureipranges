@@ -27,7 +27,7 @@ import javax.validation.Valid;
 @Api(description = "the ServiceTags_Public_20240318.json API")
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-03-19T12:38:08.001826871Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-03-20T11:53:06.627588155Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 
 public class ServiceTagsPublic20240318JsonApi  {
 

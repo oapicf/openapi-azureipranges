@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.change import Change
+from openapiazureipranges.models.change import Change
 
 class TestChange(unittest.TestCase):
     """Change unit test stubs"""
@@ -39,10 +39,10 @@ class TestChange(unittest.TestCase):
                 change_number = 56,
                 cloud = '',
                 values = [
-                    openapi_client.models.value.Value(
+                    openapiazureipranges.models.value.Value(
                         name = '', 
                         id = '', 
-                        properties = openapi_client.models.value_properties.ValueProperties(
+                        properties = openapiazureipranges.models.value_properties.ValueProperties(
                             change_number = 56, 
                             region = '', 
                             region_id = 56, 

@@ -21,7 +21,7 @@ import org.openapitools.model.ValueProperties;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2024-03-19T12:37:32.076971879Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2024-03-20T11:52:43.077082882Z[Etc/UTC]", comments = "Generator version: 7.4.0")
 public class Value   {
   
   private String name;

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.value import Value
+from openapiazureipranges.models.value import Value
 
 # TODO update the JSON string below
 json = "{}"

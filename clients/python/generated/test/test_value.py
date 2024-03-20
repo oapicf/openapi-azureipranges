@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.value import Value
+from openapiazureipranges.models.value import Value
 
 class TestValue(unittest.TestCase):
     """Value unit test stubs"""
@@ -38,7 +38,7 @@ class TestValue(unittest.TestCase):
             return Value(
                 name = '',
                 id = '',
-                properties = openapi_client.models.value_properties.ValueProperties(
+                properties = openapiazureipranges.models.value_properties.ValueProperties(
                     change_number = 56, 
                     region = '', 
                     region_id = 56, 

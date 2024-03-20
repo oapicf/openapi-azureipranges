@@ -25,9 +25,9 @@ import DefaultApi from './api/DefaultApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var AzureIpRangesAndServiceTagsPublicCloud = require('index'); // See note below*.
-* var xxxSvc = new AzureIpRangesAndServiceTagsPublicCloud.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new AzureIpRangesAndServiceTagsPublicCloud.Yyy(); // Construct a model instance.
+* var OpenapiAzureipranges = require('index'); // See note below*.
+* var xxxSvc = new OpenapiAzureipranges.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new OpenapiAzureipranges.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -39,8 +39,8 @@ import DefaultApi from './api/DefaultApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new AzureIpRangesAndServiceTagsPublicCloud.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new AzureIpRangesAndServiceTagsPublicCloud.Yyy(); // Construct a model instance.
+* var xxxSvc = new OpenapiAzureipranges.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new OpenapiAzureipranges.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

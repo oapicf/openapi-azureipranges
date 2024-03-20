@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.AzureIpRangesAndServiceTagsPublicCloud);
+    factory(root.expect, root.OpenapiAzureipranges);
   }
-}(this, function(expect, AzureIpRangesAndServiceTagsPublicCloud) {
+}(this, function(expect, OpenapiAzureipranges) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+    instance = new OpenapiAzureipranges.ValueProperties();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('ValueProperties', function() {
     it('should create an instance of ValueProperties', function() {
       // uncomment below and update the code to test ValueProperties
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
-      //expect(instance).to.be.a(AzureIpRangesAndServiceTagsPublicCloud.ValueProperties);
+      //var instance = new OpenapiAzureipranges.ValueProperties();
+      //expect(instance).to.be.a(OpenapiAzureipranges.ValueProperties);
     });
 
     it('should have the property changeNumber (base name: "changeNumber")', function() {
       // uncomment below and update the code to test the property changeNumber
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property region (base name: "region")', function() {
       // uncomment below and update the code to test the property region
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property regionId (base name: "regionId")', function() {
       // uncomment below and update the code to test the property regionId
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property platform (base name: "platform")', function() {
       // uncomment below and update the code to test the property platform
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property systemService (base name: "systemService")', function() {
       // uncomment below and update the code to test the property systemService
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property addressPrefixes (base name: "addressPrefixes")', function() {
       // uncomment below and update the code to test the property addressPrefixes
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property networkFeatures (base name: "networkFeatures")', function() {
       // uncomment below and update the code to test the property networkFeatures
-      //var instance = new AzureIpRangesAndServiceTagsPublicCloud.ValueProperties();
+      //var instance = new OpenapiAzureipranges.ValueProperties();
       //expect(instance).to.be();
     });
 

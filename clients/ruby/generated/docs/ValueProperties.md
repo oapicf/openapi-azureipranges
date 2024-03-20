@@ -1,4 +1,4 @@
-# OpenapiClient::ValueProperties
+# OpenApiAzureIpRangesClient::ValueProperties
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'openapi_azureipranges'
 
-instance = OpenapiClient::ValueProperties.new(
+instance = OpenApiAzureIpRangesClient::ValueProperties.new(
   change_number: null,
   region: null,
   region_id: null,

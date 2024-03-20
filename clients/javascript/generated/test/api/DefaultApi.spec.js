@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.AzureIpRangesAndServiceTagsPublicCloud);
+    factory(root.expect, root.OpenapiAzureipranges);
   }
-}(this, function(expect, AzureIpRangesAndServiceTagsPublicCloud) {
+}(this, function(expect, OpenapiAzureipranges) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new AzureIpRangesAndServiceTagsPublicCloud.DefaultApi();
+    instance = new OpenapiAzureipranges.DefaultApi();
   });
 
   var getProperty = function(object, getter, property) {

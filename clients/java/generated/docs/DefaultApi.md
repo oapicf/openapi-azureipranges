@@ -18,11 +18,11 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.DefaultApi;
+import com.github.openapiazureipranges.ApiClient;
+import com.github.openapiazureipranges.ApiException;
+import com.github.openapiazureipranges.Configuration;
+import com.github.openapiazureipranges.models.*;
+import com.github.openapiazureipranges.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
