@@ -1,0 +1,5 @@
+.openapi-generator-ignore
+API/Client/Change.js
+API/Client/DefaultApi.js
+API/Client/Value.js
+API/Client/ValueProperties.js

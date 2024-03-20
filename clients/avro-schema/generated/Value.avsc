@@ -1,0 +1,27 @@
+{
+  "namespace": "model",
+  "type": "record",
+  "doc": "",
+  "name": "Value",
+  "fields": [
+    {
+      "name": "name",
+      "type": ["null", "string"],
+      "doc": "The name of the value.",
+      "default": null
+    },
+    {
+      "name": "id",
+      "type": ["null", "string"],
+      "doc": "The unique identifier of the value.",
+      "default": null
+    },
+    {
+      "name": "properties",
+      "type": ["null", "model.ValueProperties"],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

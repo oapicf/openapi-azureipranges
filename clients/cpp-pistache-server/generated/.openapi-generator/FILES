@@ -1,0 +1,17 @@
+.openapi-generator-ignore
+CMakeLists.txt
+README.md
+api/ApiBase.h
+api/DefaultApi.cpp
+api/DefaultApi.h
+impl/DefaultApiImpl.cpp
+impl/DefaultApiImpl.h
+main-api-server.cpp
+model/Change.cpp
+model/Change.h
+model/Helpers.cpp
+model/Helpers.h
+model/Value.cpp
+model/Value.h
+model/ValueProperties.cpp
+model/ValueProperties.h

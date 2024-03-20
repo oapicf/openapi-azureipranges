@@ -1,0 +1,10 @@
+.gitignore
+.openapi-generator-ignore
+api.ts
+api/apis.ts
+api/defaultApi.ts
+git_push.sh
+model/change.ts
+model/models.ts
+model/value.ts
+model/valueProperties.ts

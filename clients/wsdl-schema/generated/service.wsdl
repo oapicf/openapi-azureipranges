@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="http://localhost/soap/ServiceV1/model" xmlns:wsdl="http://localhost/soap/ServiceV1/service" targetNamespace="http://localhost/soap/ServiceV1/service" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://localhost/soap/ServiceV1/model" targetNamespace="http://localhost/soap/ServiceV1/model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetServicetags_public_20240318.json_RequestMessage" type="schemas:GetServicetags_public_20240318.json_RequestMessage" />
+      <xs:element name="GetServicetags_public_20240318.json_ResponseMessage" type="schemas:GetServicetags_public_20240318.json_ResponseMessage" />
+      <xs:complexType name="Change">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="changeNumber" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The number associated with the change.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="cloud" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The cloud environment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="values" type="schemas:Value" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Value">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The name of the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique identifier of the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="properties" type="schemas:ValueProperties" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValueProperties">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="changeNumber" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The number associated with the change.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="region" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The region associated with the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="regionId" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The ID of the region.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="platform" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The platform associated with the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="systemService" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The system service associated with the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="addressPrefixes" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The address prefixes associated with the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="networkFeatures" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The network features associated with the value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetServicetags_public_20240318.json_RequestMessage" />
+      <xs:complexType name="GetServicetags_public_20240318.json_ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Change" type="schemas:Change">
+            <xs:annotation>
+              <xs:documentation>Successful response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="GetServicetags_public_20240318.json_RequestMessage">
+    <part name="GetServicetags_public_20240318.json_RequestMessage" element="schemas:GetServicetags_public_20240318.json_RequestMessage" />
+  </message>
+  <message name="GetServicetags_public_20240318.json_ResponseMessage">
+    <part name="GetServicetags_public_20240318.json_ResponseMessage" element="schemas:GetServicetags_public_20240318.json_ResponseMessage" />
+  </message>
+  <portType name="ServiceV1_PortType">
+    <operation name="GetServicetags_public_20240318.json">
+      <documentation>Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</documentation>
+      <input message="wsdl:GetServicetags_public_20240318.json_RequestMessage" />
+      <output message="wsdl:GetServicetags_public_20240318.json_ResponseMessage">
+        <documentation>Successful response</documentation>
+      </output>
+    </operation>
+  </portType>
+  <binding name="ServiceV1_Binding" type="wsdl:ServiceV1_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GetServicetags_public_20240318.json">
+      <soap:operation soapAction="GetServicetags_public_20240318.json" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceV1">
+    <documentation>No description provided</documentation>
+    <port name="default_Port" binding="wsdl:ServiceV1_Binding">
+      <soap:address location="http://localhost/soap/ServiceV1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

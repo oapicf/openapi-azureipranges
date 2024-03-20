@@ -1,0 +1,12 @@
+.gitignore
+.openapi-generator-ignore
+git_push.sh
+openapiclient-1.0.0-1.rockspec
+openapiclient/api/default_api.lua
+openapiclient/model/change.lua
+openapiclient/model/value.lua
+openapiclient/model/value_properties.lua
+spec/change_spec.lua
+spec/default_api_spec.lua
+spec/value_properties_spec.lua
+spec/value_spec.lua

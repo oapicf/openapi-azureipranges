@@ -1,0 +1,67 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "openapi_server ValueProperties"
+package     = openapi_server
+version     = "1.0"
+description = "Defines a ValueProperties"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+}
+resourceTypes {
+
+  ValueProperties {
+    title = ValueProperties
+    description = ValueProperties
+    derivedFrom = Root
+    properties {
+        change_number {
+          type =  integer
+          description = "The number associated with the change."
+          optional = false
+        }
+        region {
+          type =  string
+          description = "The region associated with the value."
+          optional = false
+        }
+        region_id {
+          type =  integer
+          description = "The ID of the region."
+          optional = false
+        }
+        platform {
+          type =  string
+          description = "The platform associated with the value."
+          optional = false
+        }
+        system_service {
+          type =  string
+          description = "The system service associated with the value."
+          optional = false
+        }
+        address_prefixes {
+          type = array
+          items.type =  string
+          description = "The address prefixes associated with the value."
+          optional = false
+        }
+        network_features {
+          type = array
+          items.type =  string
+          description = "The network features associated with the value."
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  ValueProperties {
+    title = ValueProperties
+    description = ValueProperties
+    implements = openapi_server.resourceTypes.ValueProperties
+
+  }
+}

@@ -1,0 +1,12 @@
+.openapi-generator-ignore
+README.md
+docs/Change.md
+docs/DefaultApi.md
+docs/Value.md
+docs/ValueProperties.md
+src/APIClient.jl
+src/apis/api_DefaultApi.jl
+src/modelincludes.jl
+src/models/model_Change.jl
+src/models/model_Value.jl
+src/models/model_ValueProperties.jl

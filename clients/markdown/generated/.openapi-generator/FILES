@@ -1,0 +1,6 @@
+.openapi-generator-ignore
+Apis/DefaultApi.md
+Models/Change.md
+Models/Value.md
+Models/ValueProperties.md
+README.md

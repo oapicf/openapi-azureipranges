@@ -1,0 +1,12 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+api/DefaultApi.cpp
+api/DefaultApi.h
+git_push.sh
+model/Change.cpp
+model/Change.h
+model/Value.cpp
+model/Value.h
+model/ValueProperties.cpp
+model/ValueProperties.h

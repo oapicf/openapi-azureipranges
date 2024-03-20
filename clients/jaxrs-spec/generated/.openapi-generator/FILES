@@ -1,0 +1,10 @@
+.openapi-generator-ignore
+README.md
+pom.xml
+src/gen/java/org/openapitools/api/RestApplication.java
+src/gen/java/org/openapitools/api/RestResourceRoot.java
+src/gen/java/org/openapitools/api/ServiceTagsPublic20240318JsonApi.java
+src/gen/java/org/openapitools/model/Change.java
+src/gen/java/org/openapitools/model/Value.java
+src/gen/java/org/openapitools/model/ValueProperties.java
+src/main/openapi/openapi.yaml

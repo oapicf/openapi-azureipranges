@@ -1,0 +1,151 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: blah+oapicf@cliffano.com
+    name: OpenAPI Clients Factory
+    url: https://github.com/oapicf/openapi-azureipranges
+  title: Azure IP Ranges and Service Tags - Public Cloud
+  version: 0.9.0-pre.0
+servers:
+- url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
+paths:
+  /ServiceTags_Public_20240318.json:
+    get:
+      description: Retrieve details about Azure IP Ranges and Service Tags - Public
+        Cloud.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Change'
+          description: Successful response
+      summary: Get Azure IP Ranges and Service Tags - Public Cloud
+components:
+  schemas:
+    Change:
+      example:
+        cloud: cloud
+        values:
+        - name: name
+          id: id
+          properties:
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
+            systemService: systemService
+            regionId: 1
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            changeNumber: 6
+            region: region
+            platform: platform
+        - name: name
+          id: id
+          properties:
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
+            systemService: systemService
+            regionId: 1
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            changeNumber: 6
+            region: region
+            platform: platform
+        changeNumber: 0
+      properties:
+        changeNumber:
+          description: The number associated with the change.
+          title: changeNumber
+          type: integer
+        cloud:
+          description: The cloud environment.
+          title: cloud
+          type: string
+        values:
+          items:
+            $ref: '#/components/schemas/Value'
+          title: values
+          type: array
+      title: Change
+      type: object
+    Value:
+      example:
+        name: name
+        id: id
+        properties:
+          networkFeatures:
+          - networkFeatures
+          - networkFeatures
+          systemService: systemService
+          regionId: 1
+          addressPrefixes:
+          - addressPrefixes
+          - addressPrefixes
+          changeNumber: 6
+          region: region
+          platform: platform
+      properties:
+        name:
+          description: The name of the value.
+          title: name
+          type: string
+        id:
+          description: The unique identifier of the value.
+          title: id
+          type: string
+        properties:
+          $ref: '#/components/schemas/ValueProperties'
+      title: Value
+      type: object
+    ValueProperties:
+      example:
+        networkFeatures:
+        - networkFeatures
+        - networkFeatures
+        systemService: systemService
+        regionId: 1
+        addressPrefixes:
+        - addressPrefixes
+        - addressPrefixes
+        changeNumber: 6
+        region: region
+        platform: platform
+      properties:
+        changeNumber:
+          description: The number associated with the change.
+          title: changeNumber
+          type: integer
+        region:
+          description: The region associated with the value.
+          title: region
+          type: string
+        regionId:
+          description: The ID of the region.
+          title: regionId
+          type: integer
+        platform:
+          description: The platform associated with the value.
+          title: platform
+          type: string
+        systemService:
+          description: The system service associated with the value.
+          title: systemService
+          type: string
+        addressPrefixes:
+          description: The address prefixes associated with the value.
+          items:
+            type: string
+          title: addressPrefixes
+          type: array
+        networkFeatures:
+          description: The network features associated with the value.
+          items:
+            type: string
+          title: networkFeatures
+          type: array
+      title: ValueProperties
+      type: object

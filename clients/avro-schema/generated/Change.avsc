@@ -1,0 +1,30 @@
+{
+  "namespace": "model",
+  "type": "record",
+  "doc": "",
+  "name": "Change",
+  "fields": [
+    {
+      "name": "changeNumber",
+      "type": ["null", "int"],
+      "doc": "The number associated with the change.",
+      "default": null
+    },
+    {
+      "name": "cloud",
+      "type": ["null", "string"],
+      "doc": "The cloud environment.",
+      "default": null
+    },
+    {
+      "name": "values",
+      "type": ["null", {
+        "type": "array",
+        "items": "model.Value"
+      }],
+      "doc": "",
+      "default": null
+    }
+  ]
+
+}

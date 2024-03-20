@@ -1,0 +1,9 @@
+.gitignore
+.openapi-generator-ignore
+git_push.sh
+project.clj
+src/azure_ip_ranges_and_service_tags_public_cloud/api/default.clj
+src/azure_ip_ranges_and_service_tags_public_cloud/core.clj
+src/azure_ip_ranges_and_service_tags_public_cloud/specs/change.clj
+src/azure_ip_ranges_and_service_tags_public_cloud/specs/value.clj
+src/azure_ip_ranges_and_service_tags_public_cloud/specs/value_properties.clj

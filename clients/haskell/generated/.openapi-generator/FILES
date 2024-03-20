@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+README.md
+Setup.hs
+azure-ip-ranges-and-service-tags---public-cloud.cabal
+lib/AzureIPRangesAndServiceTags-PublicCloud/API.hs
+lib/AzureIPRangesAndServiceTags-PublicCloud/Types.hs
+stack.yaml

@@ -1,0 +1,57 @@
+{
+  "namespace": "model",
+  "type": "record",
+  "doc": "",
+  "name": "ValueProperties",
+  "fields": [
+    {
+      "name": "changeNumber",
+      "type": ["null", "int"],
+      "doc": "The number associated with the change.",
+      "default": null
+    },
+    {
+      "name": "region",
+      "type": ["null", "string"],
+      "doc": "The region associated with the value.",
+      "default": null
+    },
+    {
+      "name": "regionId",
+      "type": ["null", "int"],
+      "doc": "The ID of the region.",
+      "default": null
+    },
+    {
+      "name": "platform",
+      "type": ["null", "string"],
+      "doc": "The platform associated with the value.",
+      "default": null
+    },
+    {
+      "name": "systemService",
+      "type": ["null", "string"],
+      "doc": "The system service associated with the value.",
+      "default": null
+    },
+    {
+      "name": "addressPrefixes",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "The address prefixes associated with the value.",
+      "default": null
+    },
+    {
+      "name": "networkFeatures",
+      "type": ["null", {
+        "type": "array",
+        "items": "string"
+      }],
+      "doc": "The network features associated with the value.",
+      "default": null
+    }
+  ]
+
+}

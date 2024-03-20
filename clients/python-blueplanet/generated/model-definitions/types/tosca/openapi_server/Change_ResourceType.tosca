@@ -1,0 +1,47 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "openapi_server Change"
+package     = openapi_server
+version     = "1.0"
+description = "Defines a Change"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  Value = openapi_server.resourceTypes.Value
+}
+resourceTypes {
+
+  Change {
+    title = Change
+    description = Change
+    derivedFrom = Root
+    properties {
+        change_number {
+          type =  integer
+          description = "The number associated with the change."
+          optional = false
+        }
+        cloud {
+          type =  string
+          description = "The cloud environment."
+          optional = false
+        }
+        values {
+          type = array
+          items.type = Value
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  Change {
+    title = Change
+    description = Change
+    implements = openapi_server.resourceTypes.Change
+
+  }
+}

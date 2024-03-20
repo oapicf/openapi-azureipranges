@@ -1,0 +1,46 @@
+"$schema"   = "http://cyaninc.com/json-schemas/tosca-lite-v1/definition-module#"
+title       = "openapi_server Value"
+package     = openapi_server
+version     = "1.0"
+description = "Defines a Value"
+authors     = ["F. Bar (foo@bar.baz)"]
+
+imports {
+  Root = tosca.resourceTypes.Root
+  ValueProperties = openapi_server.resourceTypes.ValueProperties
+}
+resourceTypes {
+
+  Value {
+    title = Value
+    description = Value
+    derivedFrom = Root
+    properties {
+        name {
+          type =  string
+          description = "The name of the value."
+          optional = false
+        }
+        id {
+          type =  string
+          description = "The unique identifier of the value."
+          optional = false
+        }
+        properties {
+          type = ValueProperties
+          description = ""
+          optional = false
+        }
+    }
+  }
+}
+
+serviceTemplates {
+
+  Value {
+    title = Value
+    description = Value
+    implements = openapi_server.resourceTypes.Value
+
+  }
+}

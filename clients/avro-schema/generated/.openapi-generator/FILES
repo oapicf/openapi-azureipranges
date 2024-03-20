@@ -1,0 +1,4 @@
+.openapi-generator-ignore
+Change.avsc
+Value.avsc
+ValueProperties.avsc

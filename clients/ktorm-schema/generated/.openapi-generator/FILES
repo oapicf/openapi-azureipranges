@@ -1,0 +1,11 @@
+.openapi-generator-ignore
+README.md
+build.gradle
+docs/Change.md
+docs/Value.md
+docs/ValueProperties.md
+ktorm_schema.sql
+settings.gradle
+src/main/kotlin/org/openapitools/database/models/Change.kt
+src/main/kotlin/org/openapitools/database/models/Value.kt
+src/main/kotlin/org/openapitools/database/models/ValueProperties.kt

@@ -1,0 +1,14 @@
+.openapi-generator-ignore
+README.md
+build.gradle
+pom.xml
+settings.gradle
+src/gen/java/org/openapitools/api/ServiceTagsPublic20240318JsonApi.java
+src/gen/java/org/openapitools/model/Change.java
+src/gen/java/org/openapitools/model/Value.java
+src/gen/java/org/openapitools/model/ValueProperties.java
+src/main/java/org/openapitools/api/JacksonConfig.java
+src/main/java/org/openapitools/api/RestApplication.java
+src/main/java/org/openapitools/api/impl/ServiceTagsPublic20240318JsonApiServiceImpl.java
+src/main/webapp/WEB-INF/jboss-web.xml
+src/main/webapp/WEB-INF/web.xml

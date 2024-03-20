@@ -1,0 +1,31 @@
+@startuml
+
+title Azure IP Ranges and Service Tags - Public Cloud Schemas Diagram
+
+entity Change {
+    changeNumber: Integer
+    cloud: String
+    values: List<Value>
+}
+
+entity Value {
+    name: String
+    id: String
+    properties: ValueProperties
+}
+
+entity ValueProperties {
+    changeNumber: Integer
+    region: String
+    regionId: Integer
+    platform: String
+    systemService: String
+    addressPrefixes: List<String>
+    networkFeatures: List<String>
+}
+
+
+Value -- ValueProperties : properties
+Change -- "0..*" Value : values
+
+@enduml

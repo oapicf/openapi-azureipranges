@@ -1,0 +1,16 @@
+# default_api
+
+All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ServiceTagsPublic20240318JsonGet**](default_api.md#ServiceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+
+
+<a name="ServiceTagsPublic20240318JsonGet"></a>
+# **ServiceTagsPublic20240318JsonGet**
+> Change ServiceTagsPublic20240318JsonGet()
+
+Get Azure IP Ranges and Service Tags - Public Cloud
+
+Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.

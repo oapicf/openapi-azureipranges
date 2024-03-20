@@ -1,0 +1,19 @@
+.openapi-generator-ignore
+App.xojo_code
+Build Automation.xojo_code
+Mock.xojo_code
+OpenAPIClient.xojo_code
+OpenAPIClient.xojo_project
+OpenAPIClient.xojo_resources
+OpenAPIClient/APIs.xojo_code
+OpenAPIClient/APIs/DefaultApi.xojo_code
+OpenAPIClient/APIs/DefaultApiCallbackHandler.xojo_code
+OpenAPIClient/Models.xojo_code
+OpenAPIClient/Models/Change.xojo_code
+OpenAPIClient/Models/ChangeOptional.xojo_code
+OpenAPIClient/Models/Value.xojo_code
+OpenAPIClient/Models/ValueOptional.xojo_code
+OpenAPIClient/Models/ValueProperties.xojo_code
+OpenAPIClient/Models/ValuePropertiesOptional.xojo_code
+OpenAPIClient/OpenAPIClientException.xojo_code
+README.md
