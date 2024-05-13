@@ -3,7 +3,7 @@ info:
   title: Azure IP Ranges and Service Tags - Public Cloud
   version: 0.9.0-pre.0
 servers:
-  - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
+  - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240506.json
 paths:
   /ServiceTags_Public_20240318.json:
     get:
