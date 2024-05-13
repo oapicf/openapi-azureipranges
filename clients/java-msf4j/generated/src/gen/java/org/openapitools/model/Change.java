@@ -13,7 +13,7 @@ import org.openapitools.model.Value;
 /**
  * Change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-03-20T11:52:32.046161709Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-05-13T08:48:52.726892722Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Change   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;
@@ -67,7 +67,7 @@ public class Change   {
 
   public Change addValuesItem(Value valuesItem) {
     if (this.values == null) {
-      this.values = ;
+      this.values = new ArrayList<>();
     }
     this.values.add(valuesItem);
     return this;

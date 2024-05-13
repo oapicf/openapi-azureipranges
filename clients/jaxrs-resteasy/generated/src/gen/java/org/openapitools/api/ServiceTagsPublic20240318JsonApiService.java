@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-03-20T11:53:15.349207194Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-05-13T08:49:37.228585867Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public interface ServiceTagsPublic20240318JsonApiService {
       Response serviceTagsPublic20240318JsonGet(SecurityContext securityContext)
       throws NotFoundException;

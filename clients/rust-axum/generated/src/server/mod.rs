@@ -40,7 +40,6 @@ fn service_tags_public20240318_json_get_validation(
 Ok((
 ))
 }
-
 /// ServiceTagsPublic20240318JsonGet - GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json
 #[tracing::instrument(skip_all)]
 async fn service_tags_public20240318_json_get<I, A>(

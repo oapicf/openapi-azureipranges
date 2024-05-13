@@ -87,15 +87,10 @@ class DefaultController extends Controller
 
             $result = $handler->serviceTagsPublic20240318JsonGet($responseCode, $responseHeaders);
 
-            // Find default response message
-            $message = '';
-
-            // Find a more specific message, if available
-            switch ($responseCode) {
-                case 200:
-                    $message = 'Successful response';
-                    break;
-            }
+            $message = match($responseCode) {
+                200 => 'Successful response',
+                default => '',
+            };
 
             return new Response(
                 $result !== null ?$this->serialize($result, $responseFormat):'',

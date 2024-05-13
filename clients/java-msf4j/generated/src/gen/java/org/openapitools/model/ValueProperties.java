@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * ValueProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-03-20T11:52:32.046161709Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-05-13T08:48:52.726892722Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ValueProperties   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;
@@ -132,7 +132,7 @@ public class ValueProperties   {
 
   public ValueProperties addAddressPrefixesItem(String addressPrefixesItem) {
     if (this.addressPrefixes == null) {
-      this.addressPrefixes = ;
+      this.addressPrefixes = new ArrayList<>();
     }
     this.addressPrefixes.add(addressPrefixesItem);
     return this;
@@ -158,7 +158,7 @@ public class ValueProperties   {
 
   public ValueProperties addNetworkFeaturesItem(String networkFeaturesItem) {
     if (this.networkFeatures == null) {
-      this.networkFeatures = ;
+      this.networkFeatures = new ArrayList<>();
     }
     this.networkFeatures.add(networkFeaturesItem);
     return this;

@@ -1238,41 +1238,53 @@ pub fn main() {
 
 
                             <div class="tab-content" id="responses-Default-serviceTagsPublic20240318JsonGet-200-wrapper" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-Default-serviceTagsPublic20240318JsonGet-200-schema">
-                                  <div id="responses-Default-serviceTagsPublic20240318JsonGet-schema-200" class="exampleStyle">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = ;
-                                        var schema = findNode('schema',schemaWrapper).schema;
-                                        if (!schema) {
-                                          schema = schemaWrapper.schema;
-                                        }
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                          Object.keys(schema.properties).forEach( (item) => {
-                                            if (schema.properties[item].$ref != null) {
-                                              schema.properties[item] = defsParser.$refs.get(schema.properties[item].$ref);
-                                            }
-                                          });
-                                        } else if (schema.items != null && schema.items.$ref != null) {
-                                            schema.items = defsParser.$refs.get(schema.items.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
+                              <div class="tab-pane active" id="responses-Default-serviceTagsPublic20240318JsonGet-200-schema">
+                                <div id="responses-Default-serviceTagsPublic20240318JsonGet-schema-200" class="exampleStyle">
+                                  <script>
+                                    $(document).ready(function() {
+                                      var schemaWrapper = {
+  "description" : "Successful response",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Change"
+      }
+    }
+  }
+};
+                                      var schema = findNode('schema',schemaWrapper).schema;
+                                      if (!schema) {
+                                        schema = schemaWrapper.schema;
+                                      }
+                                      if (schema == null) {
+                                        return;
+                                      }
+                                      if (schema.$ref != null) {
+                                        schema = defsParser.$refs.get(schema.$ref);
+                                        Object.keys(schema.properties).forEach( (item) => {
+                                          if (schema.properties[item].$ref != null) {
+                                            schema.properties[item] = defsParser.$refs.get(schema.properties[item].$ref);
+                                          }
+                                        });
+                                      } else if (schema.items != null && schema.items.$ref != null) {
+                                        schema.items = defsParser.$refs.get(schema.items.$ref);
+                                      } else {
+                                        schemaWrapper.definitions = Object.assign({}, defs);
+                                        $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                          console.log(err);
+                                        });
+                                      }
 
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-Default-serviceTagsPublic20240318JsonGet-200-schema-data').val(JSON.stringify(schema));
-                                        var result = $('#responses-Default-serviceTagsPublic20240318JsonGet-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-Default-serviceTagsPublic20240318JsonGet-200-schema-data' type='hidden' value=''></input>
+                                      var view = new JSONSchemaView(schema, 3);
+                                      $('#responses-Default-serviceTagsPublic20240318JsonGet-200-schema-data').val(JSON.stringify(schema));
+                                      var result = $('#responses-Default-serviceTagsPublic20240318JsonGet-schema-200');
+                                      result.empty();
+                                      result.append(view.render());
+                                    });
+                                  </script>
                                 </div>
+                                <input id='responses-Default-serviceTagsPublic20240318JsonGet-200-schema-data' type='hidden' value=''></input>
+                              </div>
                             </div>
                         </article>
                       </div>

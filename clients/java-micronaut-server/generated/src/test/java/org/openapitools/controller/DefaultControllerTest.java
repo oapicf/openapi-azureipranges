@@ -79,7 +79,7 @@ public class DefaultControllerTest {
         // given
         String uri = UriTemplate.of("/ServiceTags_Public_20240318.json").expand(new HashMap<>());
         MutableHttpRequest<?> request = HttpRequest.GET(uri)
-            .accept("application/json");
+            .accept("[Ljava.lang.String;@33a630fa");
 
         // when
         HttpResponse<?> response = client.toBlocking().exchange(request, Change.class);

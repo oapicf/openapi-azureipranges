@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import io.swagger.annotations.*;
 import javax.validation.Valid;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-03-20T11:53:15.349207194Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-05-13T08:49:37.228585867Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ValueProperties   {
   
   private Integer changeNumber;
@@ -22,8 +22,8 @@ public class ValueProperties   {
   private Integer regionId;
   private String platform;
   private String systemService;
-  private List<String> addressPrefixes;
-  private List<String> networkFeatures;
+  private List<String> addressPrefixes = new ArrayList<>();
+  private List<String> networkFeatures = new ArrayList<>();
 
   /**
    * The number associated with the change.

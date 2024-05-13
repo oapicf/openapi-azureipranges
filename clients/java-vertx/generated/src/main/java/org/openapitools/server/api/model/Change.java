@@ -13,7 +13,7 @@ public class Change   {
   
   private Integer changeNumber;
   private String cloud;
-  private List<Value> values;
+  private List<Value> values = new ArrayList<>();
 
   public Change () {
 

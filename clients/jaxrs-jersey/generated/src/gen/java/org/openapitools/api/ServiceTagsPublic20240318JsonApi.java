@@ -29,7 +29,7 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the ServiceTags_Public_20240318.json API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-03-20T11:53:10.687523907Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-05-13T08:49:33.218586014Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ServiceTagsPublic20240318JsonApi  {
    private final ServiceTagsPublic20240318JsonApiService delegate;
 

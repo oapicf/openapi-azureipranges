@@ -51,7 +51,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * ValueProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-20T11:52:05.558089782Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-13T08:48:09.984961568Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ValueProperties {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)
@@ -75,11 +75,11 @@ public class ValueProperties {
 
   public static final String SERIALIZED_NAME_ADDRESS_PREFIXES = "addressPrefixes";
   @SerializedName(SERIALIZED_NAME_ADDRESS_PREFIXES)
-  private List<String> addressPrefixes;
+  private List<String> addressPrefixes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NETWORK_FEATURES = "networkFeatures";
   @SerializedName(SERIALIZED_NAME_NETWORK_FEATURES)
-  private List<String> networkFeatures;
+  private List<String> networkFeatures = new ArrayList<>();
 
   public ValueProperties() {
   }

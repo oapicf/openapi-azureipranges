@@ -16,11 +16,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("Value")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-20T11:53:24.156374857Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-05-13T08:49:46.097832876Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Value   {
-  private @Valid String name;
-  private @Valid String id;
-  private @Valid ValueProperties properties;
+  private String name;
+  private String id;
+  private ValueProperties properties;
 
   /**
    * The name of the value.
@@ -72,7 +72,7 @@ public class Value   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("properties")
-  public ValueProperties getProperties() {
+  @Valid public ValueProperties getProperties() {
     return properties;
   }
 

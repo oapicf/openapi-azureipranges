@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-03-20T11:57:37.052540847Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-05-13T08:54:32.854016883Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ValueProperties {
 
   private Integer changeNumber;
@@ -35,10 +35,10 @@ public class ValueProperties {
   private String systemService;
 
   @Valid
-  private List<String> addressPrefixes;
+  private List<String> addressPrefixes = new ArrayList<>();
 
   @Valid
-  private List<String> networkFeatures;
+  private List<String> networkFeatures = new ArrayList<>();
 
   public ValueProperties changeNumber(Integer changeNumber) {
     this.changeNumber = changeNumber;

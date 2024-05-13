@@ -28,9 +28,9 @@ public class ValueProperties   {
 
   private String systemService;
 
-  private List<String> addressPrefixes;
+  private List<String> addressPrefixes = new ArrayList<>();
 
-  private List<String> networkFeatures;
+  private List<String> networkFeatures = new ArrayList<>();
 
   /**
    * The number associated with the change.

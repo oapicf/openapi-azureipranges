@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-03-20T11:53:06.627588155Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-05-13T08:49:29.273908529Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public interface ServiceTagsPublic20240318JsonApiService {
       public Response serviceTagsPublic20240318JsonGet(SecurityContext securityContext);
 }

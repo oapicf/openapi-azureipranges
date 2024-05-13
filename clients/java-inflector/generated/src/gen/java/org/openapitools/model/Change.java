@@ -14,7 +14,7 @@ import org.openapitools.model.Value;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-03-20T11:52:20.125725893Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-05-13T08:48:30.177877615Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Change   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;

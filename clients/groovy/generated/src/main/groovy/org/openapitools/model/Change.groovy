@@ -14,5 +14,5 @@ class Change {
     /* The cloud environment. */
     String cloud
     
-    List<Value> values
+    List<Value> values = new ArrayList<>()
 }

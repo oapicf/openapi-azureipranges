@@ -47,13 +47,13 @@ public class ValueProperties  {
  /**
    * The address prefixes associated with the value.
   **/
-  private List<String> addressPrefixes;
+  private List<String> addressPrefixes = new ArrayList<>();
 
   @ApiModelProperty(value = "The network features associated with the value.")
  /**
    * The network features associated with the value.
   **/
-  private List<String> networkFeatures;
+  private List<String> networkFeatures = new ArrayList<>();
  /**
    * The number associated with the change.
    * @return changeNumber

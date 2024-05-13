@@ -13,7 +13,7 @@ public class Change   {
 
     private Integer changeNumber;
     private String cloud;
-    private List<@Valid Value> values;
+    private List<@Valid Value> values = new ArrayList<>();
 
     /**
      * Default constructor.

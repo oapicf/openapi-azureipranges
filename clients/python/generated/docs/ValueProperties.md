@@ -28,7 +28,7 @@ print(ValueProperties.to_json())
 # convert the object into a dict
 value_properties_dict = value_properties_instance.to_dict()
 # create an instance of ValueProperties from a dict
-value_properties_form_dict = value_properties.from_dict(value_properties_dict)
+value_properties_from_dict = ValueProperties.from_dict(value_properties_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

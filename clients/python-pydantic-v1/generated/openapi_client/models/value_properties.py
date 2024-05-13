@@ -26,13 +26,13 @@ class ValueProperties(BaseModel):
     """
     ValueProperties
     """
-    change_number: Optional[StrictInt] = Field(None, alias="changeNumber", description="The number associated with the change.")
-    region: Optional[StrictStr] = Field(None, description="The region associated with the value.")
-    region_id: Optional[StrictInt] = Field(None, alias="regionId", description="The ID of the region.")
-    platform: Optional[StrictStr] = Field(None, description="The platform associated with the value.")
-    system_service: Optional[StrictStr] = Field(None, alias="systemService", description="The system service associated with the value.")
-    address_prefixes: Optional[conlist(StrictStr)] = Field(None, alias="addressPrefixes", description="The address prefixes associated with the value.")
-    network_features: Optional[conlist(StrictStr)] = Field(None, alias="networkFeatures", description="The network features associated with the value.")
+    change_number: Optional[StrictInt] = Field(default=None, alias="changeNumber", description="The number associated with the change.")
+    region: Optional[StrictStr] = Field(default=None, description="The region associated with the value.")
+    region_id: Optional[StrictInt] = Field(default=None, alias="regionId", description="The ID of the region.")
+    platform: Optional[StrictStr] = Field(default=None, description="The platform associated with the value.")
+    system_service: Optional[StrictStr] = Field(default=None, alias="systemService", description="The system service associated with the value.")
+    address_prefixes: Optional[conlist(StrictStr)] = Field(default=None, alias="addressPrefixes", description="The address prefixes associated with the value.")
+    network_features: Optional[conlist(StrictStr)] = Field(default=None, alias="networkFeatures", description="The network features associated with the value.")
     __properties = ["changeNumber", "region", "regionId", "platform", "systemService", "addressPrefixes", "networkFeatures"]
 
     class Config:

@@ -19,11 +19,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("Change")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-20T11:53:24.156374857Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-05-13T08:49:46.097832876Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Change   {
-  private @Valid Integer changeNumber;
-  private @Valid String cloud;
-  private @Valid List<@Valid Value> values;
+  private Integer changeNumber;
+  private String cloud;
+  private @Valid List<@Valid Value> values = new ArrayList<>();
 
   /**
    * The number associated with the change.
@@ -75,7 +75,7 @@ public class Change   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("values")
-  public List<Value> getValues() {
+  @Valid public List<@Valid Value> getValues() {
     return values;
   }
 

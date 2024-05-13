@@ -19,7 +19,7 @@ class ValueProperties {
     /* The system service associated with the value. */
     String systemService
     /* The address prefixes associated with the value. */
-    List<String> addressPrefixes
+    List<String> addressPrefixes = new ArrayList<>()
     /* The network features associated with the value. */
-    List<String> networkFeatures
+    List<String> networkFeatures = new ArrayList<>()
 }

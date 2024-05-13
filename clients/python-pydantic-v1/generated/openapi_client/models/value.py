@@ -27,8 +27,8 @@ class Value(BaseModel):
     """
     Value
     """
-    name: Optional[StrictStr] = Field(None, description="The name of the value.")
-    id: Optional[StrictStr] = Field(None, description="The unique identifier of the value.")
+    name: Optional[StrictStr] = Field(default=None, description="The name of the value.")
+    id: Optional[StrictStr] = Field(default=None, description="The unique identifier of the value.")
     properties: Optional[ValueProperties] = None
     __properties = ["name", "id", "properties"]
 

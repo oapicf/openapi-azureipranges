@@ -28,7 +28,7 @@ public class Change  {
 
   @ApiModelProperty(value = "")
   @Valid
-  private List<@Valid Value> values;
+  private List<@Valid Value> values = new ArrayList<>();
  /**
   * The number associated with the change.
   * @return changeNumber

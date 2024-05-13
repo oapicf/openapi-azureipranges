@@ -21,7 +21,8 @@ paths:
                 $ref: '#/components/schemas/Change'
           description: Successful response
       summary: Get Azure IP Ranges and Service Tags - Public Cloud
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
     Change:

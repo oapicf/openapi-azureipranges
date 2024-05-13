@@ -7,7 +7,7 @@ import play.api.libs.json._
   * @param changeNumber The number associated with the change.
   * @param cloud The cloud environment.
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-03-20T11:57:18.872865292Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-05-13T08:54:16.912049372Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 case class Change(
   changeNumber: Option[Int],
   cloud: Option[String],

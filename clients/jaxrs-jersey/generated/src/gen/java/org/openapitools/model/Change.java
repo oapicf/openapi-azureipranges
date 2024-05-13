@@ -34,7 +34,7 @@ import javax.validation.Valid;
   Change.JSON_PROPERTY_CLOUD,
   Change.JSON_PROPERTY_VALUES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-03-20T11:53:10.687523907Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-05-13T08:49:33.218586014Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Change   {
   public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";
   @JsonProperty(JSON_PROPERTY_CHANGE_NUMBER)
@@ -46,7 +46,7 @@ public class Change   {
 
   public static final String JSON_PROPERTY_VALUES = "values";
   @JsonProperty(JSON_PROPERTY_VALUES)
-  private List<@Valid Value> values;
+  private List<@Valid Value> values = new ArrayList<>();
 
   public Change changeNumber(Integer changeNumber) {
     this.changeNumber = changeNumber;

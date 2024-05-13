@@ -27,8 +27,8 @@ class Change(BaseModel):
     """
     Change
     """
-    change_number: Optional[StrictInt] = Field(None, alias="changeNumber", description="The number associated with the change.")
-    cloud: Optional[StrictStr] = Field(None, description="The cloud environment.")
+    change_number: Optional[StrictInt] = Field(default=None, alias="changeNumber", description="The number associated with the change.")
+    cloud: Optional[StrictStr] = Field(default=None, description="The cloud environment.")
     values: Optional[conlist(Value)] = None
     __properties = ["changeNumber", "cloud", "values"]
 

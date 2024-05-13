@@ -25,7 +25,7 @@ public class Change  {
   private String cloud;
 
   @ApiModelProperty(value = "")
-  private List<Value> values;
+  private List<Value> values = new ArrayList<>();
  /**
    * The number associated with the change.
    * @return changeNumber

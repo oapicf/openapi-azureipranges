@@ -24,12 +24,12 @@ import org.openapitools.model.Value;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2024-03-20T11:52:43.077082882Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2024-05-13T08:49:05.764362885Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Change   {
   
   private Integer changeNumber;
   private String cloud;
-  private List<Value> values;
+  private List<Value> values = new ArrayList<>();
 
   /**
    * The number associated with the change.

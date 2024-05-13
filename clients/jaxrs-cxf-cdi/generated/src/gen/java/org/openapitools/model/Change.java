@@ -23,7 +23,7 @@ public class Change   {
 
   private String cloud;
 
-  private List<@Valid Value> values;
+  private List<@Valid Value> values = new ArrayList<>();
 
   /**
    * The number associated with the change.

@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Value.JSON_PROPERTY_PROPERTIES
 })
 @JsonTypeName("Value")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-03-20T11:52:28.116670704Z[Etc/UTC]", comments = "Generator version: 7.4.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-05-13T08:48:46.000018725Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 @Introspected
 public class Value {
     public static final String JSON_PROPERTY_NAME = "name";
