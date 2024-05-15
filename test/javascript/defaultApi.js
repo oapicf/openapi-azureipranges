@@ -3,7 +3,7 @@ const OpenapiAzureipranges = require('openapi_azureipranges');
 const api = new OpenapiAzureipranges.DefaultApi();
 
 describe('default API', function() {
-  describe('serviceTagsPublic20240318JsonGet', function() {
+  describe('getAzureIpRangesServiceTagsPublicCloud', function() {
     it('should return data', function(done) {
       const callback = function(error, data, response) {
         if (error) {
@@ -14,7 +14,7 @@ describe('default API', function() {
           done();
         }
       };
-      api.serviceTagsPublic20240318JsonGet(callback);
+      api.getAzureIpRangesServiceTagsPublicCloud('20240506', callback);
     });
   });
 });
