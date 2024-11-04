@@ -4,7 +4,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceTagsPublic20240318JsonGet**](DefaultApiInterface.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloud**](DefaultApiInterface.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Service Declaration
@@ -18,8 +18,8 @@ services:
     # ...
 ```
 
-## **serviceTagsPublic20240318JsonGet**
-> OpenAPI\Server\Model\Change serviceTagsPublic20240318JsonGet()
+## **getAzureIpRangesServiceTagsPublicCloud**
+> OpenAPI\Server\Model\Change getAzureIpRangesServiceTagsPublicCloud($version)
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -40,9 +40,9 @@ class DefaultApi implements DefaultApiInterface
     // ...
 
     /**
-     * Implementation of DefaultApiInterface#serviceTagsPublic20240318JsonGet
+     * Implementation of DefaultApiInterface#getAzureIpRangesServiceTagsPublicCloud
      */
-    public function serviceTagsPublic20240318JsonGet(int &$responseCode, array &$responseHeaders): array|object|null
+    public function getAzureIpRangesServiceTagsPublicCloud(string $version, int &$responseCode, array &$responseHeaders): array|object|null
     {
         // Implement the operation ...
     }
@@ -52,7 +52,10 @@ class DefaultApi implements DefaultApiInterface
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **string**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 

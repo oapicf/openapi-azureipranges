@@ -24,19 +24,21 @@ namespace OpenAPI
  *
  * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 */
-class OPENAPI_API OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetRequest : public Request
+class OPENAPI_API OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudRequest : public Request
 {
 public:
-    virtual ~ServiceTagsPublic20240318JsonGetRequest() {}
+    virtual ~GetAzureIpRangesServiceTagsPublicCloudRequest() {}
 	void SetupHttpRequest(const FHttpRequestRef& HttpRequest) const final;
 	FString ComputePath() const final;
 
+	/* The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 */
+	FString Version;
 };
 
-class OPENAPI_API OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetResponse : public Response
+class OPENAPI_API OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudResponse : public Response
 {
 public:
-    virtual ~ServiceTagsPublic20240318JsonGetResponse() {}
+    virtual ~GetAzureIpRangesServiceTagsPublicCloudResponse() {}
 	void SetHttpResponseCode(EHttpResponseCodes::Type InHttpResponseCode) final;
 	bool FromJson(const TSharedPtr<FJsonValue>& JsonValue) final;
 

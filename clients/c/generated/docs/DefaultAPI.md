@@ -4,22 +4,23 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DefaultAPI_serviceTagsPublic20240318JsonGet**](DefaultAPI.md#DefaultAPI_serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**DefaultAPI_getAzureIpRangesServiceTagsPublicCloud**](DefaultAPI.md#DefaultAPI_getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-# **DefaultAPI_serviceTagsPublic20240318JsonGet**
+# **DefaultAPI_getAzureIpRangesServiceTagsPublicCloud**
 ```c
 // Get Azure IP Ranges and Service Tags - Public Cloud
 //
 // Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 //
-change_t* DefaultAPI_serviceTagsPublic20240318JsonGet(apiClient_t *apiClient);
+change_t* DefaultAPI_getAzureIpRangesServiceTagsPublicCloud(apiClient_t *apiClient, char *version);
 ```
 
 ### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
+**version** | **char \*** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | 
 
 ### Return type
 

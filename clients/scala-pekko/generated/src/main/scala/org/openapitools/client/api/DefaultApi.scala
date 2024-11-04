@@ -28,9 +28,12 @@ class DefaultApi(baseUrl: String) {
    * 
    * Expected answers:
    *   code 200 : Change (Successful response)
+   * 
+   * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
    */
-  def serviceTagsPublic20240318JsonGet(): ApiRequest[Change] =
-    ApiRequest[Change](ApiMethods.GET, baseUrl, "/ServiceTags_Public_20240318.json", "application/json")
+  def getAzureIpRangesServiceTagsPublicCloud(version: String): ApiRequest[Change] =
+    ApiRequest[Change](ApiMethods.GET, baseUrl, "/ServiceTags_Public_{version}.json", "application/json")
+      .withPathParam("version", version)
       .withSuccessResponse[Change](200)
       
 

@@ -132,11 +132,15 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
          * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+         * @param {string} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        serviceTagsPublic20240318JsonGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/ServiceTags_Public_20240318.json`;
+        getAzureIpRangesServiceTagsPublicCloud: async (version: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'version' is not null or undefined
+            assertParamExists('getAzureIpRangesServiceTagsPublicCloud', 'version', version)
+            const localVarPath = `/ServiceTags_Public_{version}.json`
+                .replace(`{${"version"}}`, encodeURIComponent(String(version)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -172,13 +176,14 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
          * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+         * @param {string} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async serviceTagsPublic20240318JsonGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Change>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.serviceTagsPublic20240318JsonGet(options);
+        async getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Change>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAzureIpRangesServiceTagsPublicCloud(version, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DefaultApi.serviceTagsPublic20240318JsonGet']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['DefaultApi.getAzureIpRangesServiceTagsPublicCloud']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -194,11 +199,12 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
          * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+         * @param {string} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        serviceTagsPublic20240318JsonGet(options?: any): AxiosPromise<Change> {
-            return localVarFp.serviceTagsPublic20240318JsonGet(options).then((request) => request(axios, basePath));
+        getAzureIpRangesServiceTagsPublicCloud(version: string, options?: any): AxiosPromise<Change> {
+            return localVarFp.getAzureIpRangesServiceTagsPublicCloud(version, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -213,12 +219,13 @@ export class DefaultApi extends BaseAPI {
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param {string} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public serviceTagsPublic20240318JsonGet(options?: RawAxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).serviceTagsPublic20240318JsonGet(options).then((request) => request(this.axios, this.basePath));
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RawAxiosRequestConfig) {
+        return DefaultApiFp(this.configuration).getAzureIpRangesServiceTagsPublicCloud(version, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

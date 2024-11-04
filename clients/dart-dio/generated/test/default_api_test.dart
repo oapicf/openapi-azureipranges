@@ -11,8 +11,8 @@ void main() {
     //
     // Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
     //
-    //Future<Change> serviceTagsPublic20240318JsonGet() async
-    test('test serviceTagsPublic20240318JsonGet', () async {
+    //Future<Change> getAzureIpRangesServiceTagsPublicCloud(String version) async
+    test('test getAzureIpRangesServiceTagsPublicCloud', () async {
       // TODO
     });
 

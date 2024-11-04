@@ -30,7 +30,7 @@ public class DefaultApiServiceImpl implements DefaultApi {
      *
      */
     @Override
-    public Change serviceTagsPublic20240318JsonGet() {
+    public Change getAzureIpRangesServiceTagsPublicCloud(String version) {
         // TODO: Implement...
         return null;
     }

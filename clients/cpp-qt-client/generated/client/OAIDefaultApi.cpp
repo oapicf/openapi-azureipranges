@@ -36,8 +36,8 @@ void OAIDefaultApi::initializeServerConfigs() {
     QUrl("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/"),
     "No description provided",
     QMap<QString, OAIServerVariable>()));
-    _serverConfigs.insert("serviceTagsPublic20240318JsonGet", defaultConf);
-    _serverIndices.insert("serviceTagsPublic20240318JsonGet", 0);
+    _serverConfigs.insert("getAzureIpRangesServiceTagsPublicCloud", defaultConf);
+    _serverIndices.insert("getAzureIpRangesServiceTagsPublicCloud", 0);
 }
 
 /**
@@ -213,9 +213,23 @@ QString OAIDefaultApi::getParamStyleDelimiter(const QString &style, const QStrin
     }
 }
 
-void OAIDefaultApi::serviceTagsPublic20240318JsonGet() {
-    QString fullPath = QString(_serverConfigs["serviceTagsPublic20240318JsonGet"][_serverIndices.value("serviceTagsPublic20240318JsonGet")].URL()+"/ServiceTags_Public_20240318.json");
+void OAIDefaultApi::getAzureIpRangesServiceTagsPublicCloud(const QString &version) {
+    QString fullPath = QString(_serverConfigs["getAzureIpRangesServiceTagsPublicCloud"][_serverIndices.value("getAzureIpRangesServiceTagsPublicCloud")].URL()+"/ServiceTags_Public_{version}.json");
     
+    
+    {
+        QString versionPathParam("{");
+        versionPathParam.append("version").append("}");
+        QString pathPrefix, pathSuffix, pathDelimiter;
+        QString pathStyle = "simple";
+        if (pathStyle == "")
+            pathStyle = "simple";
+        pathPrefix = getParamStylePrefix(pathStyle);
+        pathSuffix = getParamStyleSuffix(pathStyle);
+        pathDelimiter = getParamStyleDelimiter(pathStyle, "version", false);
+        QString paramString = (pathStyle == "matrix") ? pathPrefix+"version"+pathSuffix : pathPrefix;
+        fullPath.replace(versionPathParam, paramString+QUrl::toPercentEncoding(::OpenAPI::toStringValue(version)));
+    }
     OAIHttpRequestWorker *worker = new OAIHttpRequestWorker(this, _manager);
     worker->setTimeOut(_timeOut);
     worker->setWorkingDirectory(_workingDirectory);
@@ -232,7 +246,7 @@ void OAIDefaultApi::serviceTagsPublic20240318JsonGet() {
     }
 #endif
 
-    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAIDefaultApi::serviceTagsPublic20240318JsonGetCallback);
+    connect(worker, &OAIHttpRequestWorker::on_execution_finished, this, &OAIDefaultApi::getAzureIpRangesServiceTagsPublicCloudCallback);
     connect(this, &OAIDefaultApi::abortRequestsSignal, worker, &QObject::deleteLater);
     connect(worker, &QObject::destroyed, this, [this]() {
         if (findChildren<OAIHttpRequestWorker*>().count() == 0) {
@@ -243,7 +257,7 @@ void OAIDefaultApi::serviceTagsPublic20240318JsonGet() {
     worker->execute(&input);
 }
 
-void OAIDefaultApi::serviceTagsPublic20240318JsonGetCallback(OAIHttpRequestWorker *worker) {
+void OAIDefaultApi::getAzureIpRangesServiceTagsPublicCloudCallback(OAIHttpRequestWorker *worker) {
     QString error_str = worker->error_str;
     QNetworkReply::NetworkError error_type = worker->error_type;
 
@@ -254,8 +268,8 @@ void OAIDefaultApi::serviceTagsPublic20240318JsonGetCallback(OAIHttpRequestWorke
     worker->deleteLater();
 
     if (worker->error_type == QNetworkReply::NoError) {
-        Q_EMIT serviceTagsPublic20240318JsonGetSignal(output);
-        Q_EMIT serviceTagsPublic20240318JsonGetSignalFull(worker, output);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignal(output);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignalFull(worker, output);
     } else {
 
 #if defined(_MSC_VER)
@@ -272,8 +286,8 @@ void OAIDefaultApi::serviceTagsPublic20240318JsonGetCallback(OAIHttpRequestWorke
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-        Q_EMIT serviceTagsPublic20240318JsonGetSignalE(output, error_type, error_str);
-        Q_EMIT serviceTagsPublic20240318JsonGetSignalEFull(worker, error_type, error_str);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignalE(output, error_type, error_str);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignalEFull(worker, error_type, error_str);
 
 #if defined(_MSC_VER)
 #pragma warning(pop)
@@ -283,8 +297,8 @@ void OAIDefaultApi::serviceTagsPublic20240318JsonGetCallback(OAIHttpRequestWorke
 #pragma GCC diagnostic pop
 #endif
 
-        Q_EMIT serviceTagsPublic20240318JsonGetSignalError(output, error_type, error_str);
-        Q_EMIT serviceTagsPublic20240318JsonGetSignalErrorFull(worker, error_type, error_str);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignalError(output, error_type, error_str);
+        Q_EMIT getAzureIpRangesServiceTagsPublicCloudSignalErrorFull(worker, error_type, error_str);
     }
 }
 

@@ -19,28 +19,28 @@ import org.http4s.circe.CirceEntityEncoder._
 final case class DefaultApiRoutes[
   F[_]: JsonDecoder: Monad
 ](delegate: DefaultApiDelegate[F]) extends Http4sDsl[F] {
-  object serviceTagsPublic20240318JsonGet {
-    import DefaultApiDelegate.serviceTagsPublic20240318JsonGetResponses
+  object getAzureIpRangesServiceTagsPublicCloud {
+    import DefaultApiDelegate.getAzureIpRangesServiceTagsPublicCloudResponses
 
 
     val route = HttpRoutes.of[F] {
-      case req @ GET -> Root / "ServiceTags_Public_20240318.json" =>
-        delegate.serviceTagsPublic20240318JsonGet.handle(req, responses)
+      case req @ GET -> Root / "ServiceTags_Public_{version}.json" =>
+        delegate.getAzureIpRangesServiceTagsPublicCloud.handle(req, version, responses)
 
     }
 
 
-    val responses: serviceTagsPublic20240318JsonGetResponses[F] = new serviceTagsPublic20240318JsonGetResponses[F] {
+    val responses: getAzureIpRangesServiceTagsPublicCloudResponses[F] = new getAzureIpRangesServiceTagsPublicCloudResponses[F] {
       def resp200(value: Change): F[Response[F]] = Ok(value)
     }
   }
 
   val routes =
-    serviceTagsPublic20240318JsonGet.route
+    getAzureIpRangesServiceTagsPublicCloud.route
 }
 
 object DefaultApiDelegate {
-  trait serviceTagsPublic20240318JsonGetResponses[F[_]] {
+  trait getAzureIpRangesServiceTagsPublicCloudResponses[F[_]] {
     def resp200(value: Change): F[Response[F]]
   }
 
@@ -48,15 +48,16 @@ object DefaultApiDelegate {
 
 trait DefaultApiDelegate[F[_]] {
 
-  trait serviceTagsPublic20240318JsonGet {
-    import DefaultApiDelegate.serviceTagsPublic20240318JsonGetResponses
+  trait getAzureIpRangesServiceTagsPublicCloud {
+    import DefaultApiDelegate.getAzureIpRangesServiceTagsPublicCloudResponses
 
     def handle(
       req: Request[F],
-      responses: serviceTagsPublic20240318JsonGetResponses[F]
+      version: ,
+      responses: getAzureIpRangesServiceTagsPublicCloudResponses[F]
     ): F[Response[F]]
 
   }
-  def serviceTagsPublic20240318JsonGet: serviceTagsPublic20240318JsonGet
+  def getAzureIpRangesServiceTagsPublicCloud: getAzureIpRangesServiceTagsPublicCloud
 
 }

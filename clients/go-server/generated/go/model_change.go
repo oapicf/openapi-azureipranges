@@ -37,5 +37,10 @@ func AssertChangeRequired(obj Change) error {
 
 // AssertChangeConstraints checks if the values respects the defined constraints
 func AssertChangeConstraints(obj Change) error {
+	for _, el := range obj.Values {
+		if err := AssertValueConstraints(el); err != nil {
+			return err
+		}
+	}
 	return nil
 }

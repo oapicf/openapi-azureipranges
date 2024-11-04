@@ -4,11 +4,11 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**service_tags_public20240318_json_get**](DefaultApi.md#service_tags_public20240318_json_get) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**get_azure_ip_ranges_service_tags_public_cloud**](DefaultApi.md#get_azure_ip_ranges_service_tags_public_cloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-# **service_tags_public20240318_json_get**
-> Change service_tags_public20240318_json_get()
+# **get_azure_ip_ranges_service_tags_public_cloud**
+> Change get_azure_ip_ranges_service_tags_public_cloud(version)
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -35,20 +35,24 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.DefaultApi(api_client)
+    version = 'version_example' # str | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
     try:
         # Get Azure IP Ranges and Service Tags - Public Cloud
-        api_response = api_instance.service_tags_public20240318_json_get()
-        print("The response of DefaultApi->service_tags_public20240318_json_get:\n")
+        api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud(version)
+        print("The response of DefaultApi->get_azure_ip_ranges_service_tags_public_cloud:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->service_tags_public20240318_json_get: %s\n" % e)
+        print("Exception when calling DefaultApi->get_azure_ip_ranges_service_tags_public_cloud: %s\n" % e)
 ```
 
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **str**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | 
 
 ### Return type
 

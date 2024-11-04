@@ -94,10 +94,10 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
     @javax.annotation.Nonnull
     public HttpHandler getHandler(final String basePath) {
         return Handlers.routing()
-            .add(Methods.GET, basePath + "/ServiceTags_Public_20240318.json", new HttpHandler() {
+            .add(Methods.GET, basePath + "/ServiceTags_Public_{version}.json", new HttpHandler() {
                 @Override
                 public void handleRequest(HttpServerExchange exchange) throws Exception {
-                    serviceTagsPublic20240318JsonGet().handleRequest(exchange);
+                    getAzureIpRangesServiceTagsPublicCloud().handleRequest(exchange);
                 }
             })
             ;
@@ -148,7 +148,7 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
     @javax.annotation.Nonnull
     public HttpHandler getStatefulHandler(final String basePath) {
         return Handlers.routing()
-            .add(Methods.GET, basePath + "/ServiceTags_Public_20240318.json", serviceTagsPublic20240318JsonGet())
+            .add(Methods.GET, basePath + "/ServiceTags_Public_{version}.json", getAzureIpRangesServiceTagsPublicCloud())
             ;
     }
 }

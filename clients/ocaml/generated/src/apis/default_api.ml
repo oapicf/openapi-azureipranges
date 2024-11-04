@@ -5,10 +5,11 @@
  *
  *)
 
-let service_tags_public20240318_json_get () =
+let get_azure_ip_ranges_service_tags_public_cloud ~version =
     let open Lwt.Infix in
-    let uri = Request.build_uri "/ServiceTags_Public_20240318.json" in
+    let uri = Request.build_uri "/ServiceTags_Public_{version}.json" in
     let headers = Request.default_headers in
+    let uri = Request.replace_path_param uri "version" (fun x -> x) version in
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Change.of_yojson) resp body
 

@@ -49,7 +49,7 @@ export interface Value {
 /**
  * Check if a given object implements the Value interface.
  */
-export function instanceOfValue(value: object): boolean {
+export function instanceOfValue(value: object): value is Value {
     return true;
 }
 

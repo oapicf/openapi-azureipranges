@@ -4,11 +4,11 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Feature | HTTP request | Description
 ------------- | ------------- | -------------
-[**service_tags_public20240318_json_get**](DEFAULT_API.md#service_tags_public20240318_json_get) | **Get** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**azure_ip_ranges_service_tags_public_cloud**](DEFAULT_API.md#azure_ip_ranges_service_tags_public_cloud) | **Get** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-# **service_tags_public20240318_json_get**
-> service_tags_public20240318_json_get : detachable CHANGE
+# **azure_ip_ranges_service_tags_public_cloud**
+> azure_ip_ranges_service_tags_public_cloud (version: STRING_32 ): detachable CHANGE
 
 
 Get Azure IP Ranges and Service Tags - Public Cloud
@@ -17,7 +17,10 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **STRING_32**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | [default to null]
 
 ### Return type
 

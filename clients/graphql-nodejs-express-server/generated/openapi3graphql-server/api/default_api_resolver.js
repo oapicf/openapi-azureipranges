@@ -18,9 +18,9 @@ export default {
     Query: {
 
         // @return Change
-        ServiceTagsPublic20240318JsonGet: () => {
+        GetAzureIpRangesServiceTagsPublicCloud: ($version) => {
             return {
-                
+                "version": "version_example"
             };
         },
 

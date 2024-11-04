@@ -22,11 +22,13 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DefaultAPIService ServiceTagsPublic20240318JsonGet", func(t *testing.T) {
+	t.Run("Test DefaultAPIService GetAzureIpRangesServiceTagsPublicCloud", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ServiceTagsPublic20240318JsonGet(context.Background()).Execute()
+		var version string
+
+		resp, httpRes, err := apiClient.DefaultAPI.GetAzureIpRangesServiceTagsPublicCloud(context.Background(), version).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

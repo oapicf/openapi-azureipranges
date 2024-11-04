@@ -58,12 +58,12 @@ cleanup() -> ok.
 initial_state() -> #{}.
 
 %%==============================================================================
-%% service_tags_public20240318_json_get
+%% get_azure_ip_ranges_service_tags_public_cloud
 %%==============================================================================
 
-service_tags_public20240318_json_get() ->
-  openapi_api:service_tags_public20240318_json_get().
+get_azure_ip_ranges_service_tags_public_cloud(Version) ->
+  openapi_api:get_azure_ip_ranges_service_tags_public_cloud(Version).
 
-service_tags_public20240318_json_get_args(_S) ->
-  [].
+get_azure_ip_ranges_service_tags_public_cloud_args(_S) ->
+  [binary()].
 

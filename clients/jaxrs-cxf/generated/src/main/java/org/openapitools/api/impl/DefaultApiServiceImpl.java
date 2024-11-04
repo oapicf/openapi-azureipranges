@@ -29,7 +29,7 @@ public class DefaultApiServiceImpl implements DefaultApi {
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      *
      */
-    public Change serviceTagsPublic20240318JsonGet() {
+    public Change getAzureIpRangesServiceTagsPublicCloud(String version) {
         // TODO: Implement...
 
         return null;

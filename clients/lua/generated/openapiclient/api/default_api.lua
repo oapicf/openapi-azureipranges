@@ -44,13 +44,13 @@ local function new_default_api(authority, basePath, schemes)
 	}, default_api_mt)
 end
 
-function default_api:service_tags_public20240318_json_get()
+function default_api:get_azure_ip_ranges_service_tags_public_cloud(version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/ServiceTags_Public_20240318.json",
-			self.basePath);
+		path = string.format("%s/ServiceTags_Public_{version}.json",
+			self.basePath, version);
 	})
 
 	-- set HTTP verb

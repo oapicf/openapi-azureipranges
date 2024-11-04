@@ -38,15 +38,15 @@ public:
 	void SetHttpRetryManager(FHttpRetrySystem::FManager& RetryManager);
 	FHttpRetrySystem::FManager& GetHttpRetryManager();
 
-	class ServiceTagsPublic20240318JsonGetRequest;
-	class ServiceTagsPublic20240318JsonGetResponse;
+	class GetAzureIpRangesServiceTagsPublicCloudRequest;
+	class GetAzureIpRangesServiceTagsPublicCloudResponse;
 	
-    DECLARE_DELEGATE_OneParam(FServiceTagsPublic20240318JsonGetDelegate, const ServiceTagsPublic20240318JsonGetResponse&);
+    DECLARE_DELEGATE_OneParam(FGetAzureIpRangesServiceTagsPublicCloudDelegate, const GetAzureIpRangesServiceTagsPublicCloudResponse&);
     
-    FHttpRequestPtr ServiceTagsPublic20240318JsonGet(const ServiceTagsPublic20240318JsonGetRequest& Request, const FServiceTagsPublic20240318JsonGetDelegate& Delegate = FServiceTagsPublic20240318JsonGetDelegate()) const;
+    FHttpRequestPtr GetAzureIpRangesServiceTagsPublicCloud(const GetAzureIpRangesServiceTagsPublicCloudRequest& Request, const FGetAzureIpRangesServiceTagsPublicCloudDelegate& Delegate = FGetAzureIpRangesServiceTagsPublicCloudDelegate()) const;
     
 private:
-    void OnServiceTagsPublic20240318JsonGetResponse(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FServiceTagsPublic20240318JsonGetDelegate Delegate) const;
+    void OnGetAzureIpRangesServiceTagsPublicCloudResponse(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetAzureIpRangesServiceTagsPublicCloudDelegate Delegate) const;
     
 	FHttpRequestRef CreateHttpRequest(const Request& Request) const;
 	bool IsValid() const;

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface DefaultApi  {
-    //GET_ServiceTags_Public_20240318.json
-    void serviceTagsPublic20240318JsonGet(Handler<AsyncResult<Change>> handler);
+    //getAzureIpRangesServiceTagsPublicCloud
+    void getAzureIpRangesServiceTagsPublicCloud(String version, Handler<AsyncResult<Change>> handler);
 
 }

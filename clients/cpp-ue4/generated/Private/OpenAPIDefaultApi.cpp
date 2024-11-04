@@ -133,7 +133,7 @@ void OpenAPIDefaultApi::HandleResponse(FHttpResponsePtr HttpResponse, bool bSucc
 	InOutResponse.SetHttpResponseCode(EHttpResponseCodes::RequestTimeout);
 }
 
-FHttpRequestPtr OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGet(const ServiceTagsPublic20240318JsonGetRequest& Request, const FServiceTagsPublic20240318JsonGetDelegate& Delegate /*= FServiceTagsPublic20240318JsonGetDelegate()*/) const
+FHttpRequestPtr OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloud(const GetAzureIpRangesServiceTagsPublicCloudRequest& Request, const FGetAzureIpRangesServiceTagsPublicCloudDelegate& Delegate /*= FGetAzureIpRangesServiceTagsPublicCloudDelegate()*/) const
 {
 	if (!IsValid())
 		return nullptr;
@@ -148,14 +148,14 @@ FHttpRequestPtr OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGet(const Servic
 
 	Request.SetupHttpRequest(HttpRequest);
 
-	HttpRequest->OnProcessRequestComplete().BindRaw(this, &OpenAPIDefaultApi::OnServiceTagsPublic20240318JsonGetResponse, Delegate);
+	HttpRequest->OnProcessRequestComplete().BindRaw(this, &OpenAPIDefaultApi::OnGetAzureIpRangesServiceTagsPublicCloudResponse, Delegate);
 	HttpRequest->ProcessRequest();
 	return HttpRequest;
 }
 
-void OpenAPIDefaultApi::OnServiceTagsPublic20240318JsonGetResponse(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FServiceTagsPublic20240318JsonGetDelegate Delegate) const
+void OpenAPIDefaultApi::OnGetAzureIpRangesServiceTagsPublicCloudResponse(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded, FGetAzureIpRangesServiceTagsPublicCloudDelegate Delegate) const
 {
-	ServiceTagsPublic20240318JsonGetResponse Response;
+	GetAzureIpRangesServiceTagsPublicCloudResponse Response;
 	HandleResponse(HttpResponse, bSucceeded, Response);
 	Delegate.ExecuteIfBound(Response);
 }

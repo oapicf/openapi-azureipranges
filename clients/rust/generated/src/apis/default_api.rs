@@ -10,26 +10,26 @@
 
 
 use reqwest;
-
+use serde::{Deserialize, Serialize};
 use crate::{apis::ResponseContent, models};
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`service_tags_public20240318_json_get`]
+/// struct for typed errors of method [`get_azure_ip_ranges_service_tags_public_cloud`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServiceTagsPublic20240318JsonGetError {
+pub enum GetAzureIpRangesServiceTagsPublicCloudError {
     UnknownValue(serde_json::Value),
 }
 
 
 /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
-pub async fn service_tags_public20240318_json_get(configuration: &configuration::Configuration, ) -> Result<models::Change, Error<ServiceTagsPublic20240318JsonGetError>> {
+pub async fn get_azure_ip_ranges_service_tags_public_cloud(configuration: &configuration::Configuration, version: &str) -> Result<models::Change, Error<GetAzureIpRangesServiceTagsPublicCloudError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/ServiceTags_Public_20240318.json", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/ServiceTags_Public_{version}.json", local_var_configuration.base_path, version=crate::apis::urlencode(version));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -45,7 +45,7 @@ pub async fn service_tags_public20240318_json_get(configuration: &configuration:
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServiceTagsPublic20240318JsonGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<GetAzureIpRangesServiceTagsPublicCloudError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

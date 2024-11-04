@@ -13,16 +13,18 @@ inherit
 feature -- Test routines
 
 
-    test_service_tags_public20240318_json_get
+    test_azure_ip_ranges_service_tags_public_cloud
             -- Get Azure IP Ranges and Service Tags - Public Cloud
             --
             -- Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         local
             l_response: CHANGE
+            l_version: STRING_32
         do
             -- TODO: Initialize required params.
+            -- l_version
 
-            -- l_response := api.service_tags_public20240318_json_get
+            -- l_response := api.azure_ip_ranges_service_tags_public_cloud(l_version)
             assert ("not_implemented", False)
         end
 

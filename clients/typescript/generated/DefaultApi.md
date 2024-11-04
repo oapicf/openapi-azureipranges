@@ -4,11 +4,11 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceTagsPublic20240318JsonGet**](DefaultApi.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-# **serviceTagsPublic20240318JsonGet**
-> Change serviceTagsPublic20240318JsonGet()
+# **getAzureIpRangesServiceTagsPublicCloud**
+> Change getAzureIpRangesServiceTagsPublicCloud()
 
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
@@ -22,16 +22,22 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .DefaultApi(configuration);
 
-let body:any = {};
+let body:.DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest = {
+  // string | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+  version: "version_example",
+};
 
-apiInstance.serviceTagsPublic20240318JsonGet(body).then((data:any) => {
+apiInstance.getAzureIpRangesServiceTagsPublicCloud(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | [**string**] | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | defaults to undefined
 
 
 ### Return type

@@ -15,12 +15,13 @@ open class DefaultAPI {
     /**
      Get Azure IP Ranges and Service Tags - Public Cloud
      
+     - parameter version: (path) The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func serviceTagsPublic20240318JsonGet(apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Change?, _ error: Error?) -> Void)) -> RequestTask {
-        return serviceTagsPublic20240318JsonGetWithRequestBuilder().execute(apiResponseQueue) { result in
+    open class func getAzureIpRangesServiceTagsPublicCloud(version: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Change?, _ error: Error?) -> Void)) -> RequestTask {
+        return getAzureIpRangesServiceTagsPublicCloudWithRequestBuilder(version: version).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -32,12 +33,16 @@ open class DefaultAPI {
 
     /**
      Get Azure IP Ranges and Service Tags - Public Cloud
-     - GET /ServiceTags_Public_20240318.json
+     - GET /ServiceTags_Public_{version}.json
      - Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     - parameter version: (path) The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
      - returns: RequestBuilder<Change> 
      */
-    open class func serviceTagsPublic20240318JsonGetWithRequestBuilder() -> RequestBuilder<Change> {
-        let localVariablePath = "/ServiceTags_Public_20240318.json"
+    open class func getAzureIpRangesServiceTagsPublicCloudWithRequestBuilder(version: String) -> RequestBuilder<Change> {
+        var localVariablePath = "/ServiceTags_Public_{version}.json"
+        let versionPreEscape = "\(APIHelper.mapValueToPathItem(version))"
+        let versionPostEscape = versionPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{version}", with: versionPostEscape, options: .literal, range: nil)
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 

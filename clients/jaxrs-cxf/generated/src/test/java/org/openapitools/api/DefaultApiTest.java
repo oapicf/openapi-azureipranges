@@ -68,8 +68,9 @@ public class DefaultApiTest {
      *          if the Api call fails
      */
     @Test
-    public void serviceTagsPublic20240318JsonGetTest() {
-        //Change response = api.serviceTagsPublic20240318JsonGet();
+    public void getAzureIpRangesServiceTagsPublicCloudTest() {
+        String version = null;
+        //Change response = api.getAzureIpRangesServiceTagsPublicCloud(version);
         //assertNotNull(response);
         // TODO: test validations
 

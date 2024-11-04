@@ -5,7 +5,7 @@
 use futures::{future, Stream, stream};
 #[allow(unused_imports)]
 use openapi_client::{Api, ApiNoContext, Client, ContextWrapperExt, models,
-                      ServiceTagsPublic20240318JsonGetResponse,
+                      GetAzureIpRangesServiceTagsPublicCloudResponse,
                      };
 use clap::{App, Arg};
 
@@ -27,7 +27,7 @@ fn main() {
         .arg(Arg::with_name("operation")
             .help("Sets the operation to run")
             .possible_values(&[
-                "ServiceTagsPublic20240318JsonGet",
+                "GetAzureIpRangesServiceTagsPublicCloud",
             ])
             .required(true)
             .index(1))
@@ -71,8 +71,9 @@ fn main() {
     let mut rt = tokio::runtime::Runtime::new().unwrap();
 
     match matches.value_of("operation") {
-        Some("ServiceTagsPublic20240318JsonGet") => {
-            let result = rt.block_on(client.service_tags_public20240318_json_get(
+        Some("GetAzureIpRangesServiceTagsPublicCloud") => {
+            let result = rt.block_on(client.get_azure_ip_ranges_service_tags_public_cloud(
+                  "version_example".to_string()
             ));
             info!("{:?} (X-Span-ID: {:?})", result, (client.context() as &dyn Has<XSpanIdString>).get().clone());
         },

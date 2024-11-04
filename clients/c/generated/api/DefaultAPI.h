@@ -13,6 +13,6 @@
 // Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 //
 change_t*
-DefaultAPI_serviceTagsPublic20240318JsonGet(apiClient_t *apiClient);
+DefaultAPI_getAzureIpRangesServiceTagsPublicCloud(apiClient_t *apiClient, char *version);
 
 

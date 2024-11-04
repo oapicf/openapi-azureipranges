@@ -43,9 +43,9 @@
             <stringProp name="Argument.value">${__P(port,8080)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="testData.serviceTagsPublic20240318JsonGetFile" elementType="Argument">
-            <stringProp name="Argument.name">testData.serviceTagsPublic20240318JsonGetFile</stringProp>
-            <stringProp name="Argument.value">${__P(testData.serviceTagsPublic20240318JsonGetFile,DefaultApi.csv)}</stringProp>
+          <elementProp name="testData.getAzureIpRangesServiceTagsPublicCloudFile" elementType="Argument">
+            <stringProp name="Argument.name">testData.getAzureIpRangesServiceTagsPublicCloudFile</stringProp>
+            <stringProp name="Argument.value">${__P(testData.getAzureIpRangesServiceTagsPublicCloudFile,DefaultApi.csv)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -65,7 +65,7 @@
         <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-    <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - serviceTagsPublic20240318JsonGet" enabled="true">
+    <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - getAzureIpRangesServiceTagsPublicCloud" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -89,7 +89,7 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="serviceTagsPublic20240318JsonGet - ${testCase}" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getAzureIpRangesServiceTagsPublicCloud - ${testCase}" enabled="true">
           
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
@@ -101,7 +101,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json</stringProp>
+          <stringProp name="HTTPSampler.path">/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_${version}.json</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -113,10 +113,10 @@
           <stringProp name="TestPlan.comments">Get Azure IP Ranges and Service Tags - Public Cloud Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load CSV Test Data - serviceTagsPublic20240318JsonGet" enabled="true">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load CSV Test Data - getAzureIpRangesServiceTagsPublicCloud" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding"></stringProp>
-            <stringProp name="filename">${testData.serviceTagsPublic20240318JsonGetFile}</stringProp>
+            <stringProp name="filename">${testData.getAzureIpRangesServiceTagsPublicCloudFile}</stringProp>
             <boolProp name="quotedData">true</boolProp>
             <boolProp name="recycle">true</boolProp>
             <stringProp name="shareMode">shareMode.group</stringProp>

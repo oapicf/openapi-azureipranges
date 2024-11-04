@@ -29,16 +29,18 @@ open class DefaultAPI {
 
 
     /// Get Azure IP Ranges and Service Tags - Public Cloud
-    /// - GET /ServiceTags_Public_20240318.json
+    /// - GET /ServiceTags_Public_{version}.json
     /// - Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+    /// - parameter version: (path) The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
     /// - returns: AnyPublisher<Change, Error> 
-    open func serviceTagsPublic20240318JsonGet() -> AnyPublisher<Change, Error> {
+    open func getAzureIpRangesServiceTagsPublicCloud(version: String) -> AnyPublisher<Change, Error> {
         Deferred {
             Result<URLRequest, Error> {
                 guard let baseURL = self.transport.baseURL ?? self.baseURL else {
                     throw OpenAPITransportError.badURLError()
                 }
-                let path = "/ServiceTags_Public_20240318.json"
+                var path = "/ServiceTags_Public_{version}.json"
+                path = path.replacingOccurrences(of: "{version}", with: version)
                 let url = baseURL.appendingPathComponent(path)
                 let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
                 guard let requestURL = components?.url else {

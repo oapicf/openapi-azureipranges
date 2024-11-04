@@ -10,56 +10,60 @@ use validator::{Validate, ValidationErrors};
 use crate::{header, types::*};
 
 #[allow(unused_imports)]
-use crate::models;
+use crate::{apis, models};
 
-use crate::{Api,
-     ServiceTagsPublic20240318JsonGetResponse
-};
 
 /// Setup API Server.
 pub fn new<I, A>(api_impl: I) -> Router
 where
     I: AsRef<A> + Clone + Send + Sync + 'static,
-    A: Api + 'static,
+    A: apis::default::Default + 'static,
 {
     // build our application with a route
     Router::new()
-        .route("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json",
-            get(service_tags_public20240318_json_get::<I, A>)
+        .route("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_:version.json",
+            get(get_azure_ip_ranges_service_tags_public_cloud::<I, A>)
         )
         .with_state(api_impl)
 }
 
 
 #[tracing::instrument(skip_all)]
-fn service_tags_public20240318_json_get_validation(
+fn get_azure_ip_ranges_service_tags_public_cloud_validation(
+  path_params: models::GetAzureIpRangesServiceTagsPublicCloudPathParams,
 ) -> std::result::Result<(
+  models::GetAzureIpRangesServiceTagsPublicCloudPathParams,
 ), ValidationErrors>
 {
+  path_params.validate()?;
 
 Ok((
+  path_params,
 ))
 }
-/// ServiceTagsPublic20240318JsonGet - GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json
+/// GetAzureIpRangesServiceTagsPublicCloud - GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json
 #[tracing::instrument(skip_all)]
-async fn service_tags_public20240318_json_get<I, A>(
+async fn get_azure_ip_ranges_service_tags_public_cloud<I, A>(
   method: Method,
   host: Host,
   cookies: CookieJar,
+  Path(path_params): Path<models::GetAzureIpRangesServiceTagsPublicCloudPathParams>,
  State(api_impl): State<I>,
 ) -> Result<Response, StatusCode>
 where 
     I: AsRef<A> + Send + Sync,
-    A: Api,
+    A: apis::default::Default,
 {
 
       #[allow(clippy::redundant_closure)]
       let validation = tokio::task::spawn_blocking(move || 
-    service_tags_public20240318_json_get_validation(
+    get_azure_ip_ranges_service_tags_public_cloud_validation(
+        path_params,
     )
   ).await.unwrap();
 
   let Ok((
+    path_params,
   )) = validation else {
     return Response::builder()
             .status(StatusCode::BAD_REQUEST)
@@ -67,17 +71,18 @@ where
             .map_err(|_| StatusCode::BAD_REQUEST); 
   };
 
-  let result = api_impl.as_ref().service_tags_public20240318_json_get(
+  let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
       method,
       host,
       cookies,
+        path_params,
   ).await;
 
   let mut response = Response::builder();
 
   let resp = match result {
                                             Ok(rsp) => match rsp {
-                                                ServiceTagsPublic20240318JsonGetResponse::Status200_SuccessfulResponse
+                                                apis::default::GetAzureIpRangesServiceTagsPublicCloudResponse::Status200_SuccessfulResponse
                                                     (body)
                                                 => {
 

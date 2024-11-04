@@ -19,10 +19,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @RequestScoped
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-05-13T08:49:29.273908529Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonApiServiceImpl implements ServiceTagsPublic20240318JsonApiService {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-07-10T08:57:40.874129227Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class DefaultApiServiceImpl implements DefaultApiService {
       @Override
-      public Response serviceTagsPublic20240318JsonGet(SecurityContext securityContext) {
+      public Response getAzureIpRangesServiceTagsPublicCloud(String version, SecurityContext securityContext) {
       // do some magic!
       return Response.ok().entity("magic!").build();
   }

@@ -51,7 +51,7 @@ init(Req, {Operations, LogicHandler, ValidatorMod}) ->
 allowed_methods(
     Req,
     State = #state{
-        operation_id = 'ServiceTagsPublic20240318JsonGet'
+        operation_id = 'GetAzureIpRangesServiceTagsPublicCloud'
     }
 ) ->
     {[<<"GET">>], Req, State};
@@ -86,7 +86,7 @@ content_types_accepted(Req, State) ->
 valid_content_headers(
     Req0,
     State = #state{
-        operation_id = 'ServiceTagsPublic20240318JsonGet'
+        operation_id = 'GetAzureIpRangesServiceTagsPublicCloud'
     }
 ) ->
     Headers = [],

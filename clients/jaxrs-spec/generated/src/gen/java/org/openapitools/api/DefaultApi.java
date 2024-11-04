@@ -16,10 +16,10 @@ import javax.validation.Valid;
 /**
 * Represents a collection of functions to interact with the API endpoints.
 */
-@Path("/ServiceTags_Public_20240318.json")
-@Api(description = "the ServiceTags_Public_20240318.json API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-05-13T08:49:46.097832876Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonApi {
+@Path("/ServiceTags_Public_{version}.json")
+@Api(description = "the default API")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-07-10T08:57:54.930788179Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class DefaultApi {
 
     @GET
     @Produces({ "application/json" })
@@ -27,7 +27,7 @@ public class ServiceTagsPublic20240318JsonApi {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = Change.class)
     })
-    public Response serviceTagsPublic20240318JsonGet() {
+    public Response getAzureIpRangesServiceTagsPublicCloud(@PathParam("version") @ApiParam("The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506") String version) {
         return Response.ok().entity("magic!").build();
     }
 }

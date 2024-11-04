@@ -1,10 +1,10 @@
 .openapi-generator-ignore
 pom.xml
-src/gen/java/org/openapitools/api/ServiceTagsPublic20240318JsonApi.java
-src/gen/java/org/openapitools/api/ServiceTagsPublic20240318JsonApiService.java
+src/gen/java/org/openapitools/api/DefaultApi.java
+src/gen/java/org/openapitools/api/DefaultApiService.java
 src/gen/java/org/openapitools/model/Change.java
 src/gen/java/org/openapitools/model/Value.java
 src/gen/java/org/openapitools/model/ValueProperties.java
 src/main/java/org/openapitools/api/RestApplication.java
-src/main/java/org/openapitools/api/impl/ServiceTagsPublic20240318JsonApiServiceImpl.java
+src/main/java/org/openapitools/api/impl/DefaultApiServiceImpl.java
 src/main/webapp/WEB-INF/beans.xml

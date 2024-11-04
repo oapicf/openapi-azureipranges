@@ -17,39 +17,43 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
-type ApiServiceTagsPublic20240318JsonGetRequest struct {
+type ApiGetAzureIpRangesServiceTagsPublicCloudRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
+	version string
 }
 
-func (r ApiServiceTagsPublic20240318JsonGetRequest) Execute() (*Change, *http.Response, error) {
-	return r.ApiService.ServiceTagsPublic20240318JsonGetExecute(r)
+func (r ApiGetAzureIpRangesServiceTagsPublicCloudRequest) Execute() (*Change, *http.Response, error) {
+	return r.ApiService.GetAzureIpRangesServiceTagsPublicCloudExecute(r)
 }
 
 /*
-ServiceTagsPublic20240318JsonGet Get Azure IP Ranges and Service Tags - Public Cloud
+GetAzureIpRangesServiceTagsPublicCloud Get Azure IP Ranges and Service Tags - Public Cloud
 
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceTagsPublic20240318JsonGetRequest
+ @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+ @return ApiGetAzureIpRangesServiceTagsPublicCloudRequest
 */
-func (a *DefaultAPIService) ServiceTagsPublic20240318JsonGet(ctx context.Context) ApiServiceTagsPublic20240318JsonGetRequest {
-	return ApiServiceTagsPublic20240318JsonGetRequest{
+func (a *DefaultAPIService) GetAzureIpRangesServiceTagsPublicCloud(ctx context.Context, version string) ApiGetAzureIpRangesServiceTagsPublicCloudRequest {
+	return ApiGetAzureIpRangesServiceTagsPublicCloudRequest{
 		ApiService: a,
 		ctx: ctx,
+		version: version,
 	}
 }
 
 // Execute executes the request
 //  @return Change
-func (a *DefaultAPIService) ServiceTagsPublic20240318JsonGetExecute(r ApiServiceTagsPublic20240318JsonGetRequest) (*Change, *http.Response, error) {
+func (a *DefaultAPIService) GetAzureIpRangesServiceTagsPublicCloudExecute(r ApiGetAzureIpRangesServiceTagsPublicCloudRequest) (*Change, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,12 +61,13 @@ func (a *DefaultAPIService) ServiceTagsPublic20240318JsonGetExecute(r ApiService
 		localVarReturnValue  *Change
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ServiceTagsPublic20240318JsonGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetAzureIpRangesServiceTagsPublicCloud")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/ServiceTags_Public_20240318.json"
+	localVarPath := localBasePath + "/ServiceTags_Public_{version}.json"
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterValueToString(r.version, "version")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

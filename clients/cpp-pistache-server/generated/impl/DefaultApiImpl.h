@@ -30,6 +30,7 @@
 
 
 #include "Change.h"
+#include <string>
 
 namespace org::openapitools::server::api
 {
@@ -41,7 +42,7 @@ public:
     explicit DefaultApiImpl(const std::shared_ptr<Pistache::Rest::Router>& rtr);
     ~DefaultApiImpl() override = default;
 
-    void service_tags_public20240318_json_get(Pistache::Http::ResponseWriter &response);
+    void get_azure_ip_ranges_service_tags_public_cloud(const std::string &version, Pistache::Http::ResponseWriter &response);
 
 };
 

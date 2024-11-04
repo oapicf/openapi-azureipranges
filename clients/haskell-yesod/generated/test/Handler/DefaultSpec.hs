@@ -8,7 +8,7 @@ import           TestImport
 spec :: Spec
 spec = withApp $ do
 
-    describe "getServiceTagsPublic20240318JsonR" $
+    describe "getServiceTagsPublic{version}JsonR" $
         it "returns 501 Not Implemented" $ do
-            get ServiceTagsPublic20240318JsonR
+            get $ ServiceTagsPublic{version}JsonR "version_example"
             statusIs 501

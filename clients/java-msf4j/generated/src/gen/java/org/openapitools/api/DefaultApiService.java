@@ -16,7 +16,8 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-05-13T08:48:52.726892722Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public abstract class ServiceTagsPublic20240318JsonApiService {
-    public abstract Response serviceTagsPublic20240318JsonGet() throws NotFoundException;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-07-10T08:57:07.999110462Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public abstract class DefaultApiService {
+    public abstract Response getAzureIpRangesServiceTagsPublicCloud(String version
+ ) throws NotFoundException;
 }

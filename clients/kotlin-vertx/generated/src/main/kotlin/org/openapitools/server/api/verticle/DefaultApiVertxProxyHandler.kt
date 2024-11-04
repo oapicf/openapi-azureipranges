@@ -64,7 +64,20 @@ class DefaultApiVertxProxyHandler(private val vertx: Vertx, private val service:
             val context = OperationRequest(contextSerialized)
             when (action) {
         
-                "serviceTagsPublic20240318JsonGet" -> {
+                "getAzureIpRangesServiceTagsPublicCloud" -> {
+                    val params = context.params
+                    val version = ApiHandlerUtils.searchStringInJson(params,"version")
+                    if(version == null){
+                        throw IllegalArgumentException("version is required")
+                    }
+                    GlobalScope.launch(vertx.dispatcher()){
+                        val result = service.getAzureIpRangesServiceTagsPublicCloud(version,context)
+                        val payload = JsonObject(Json.encode(result.payload)).toBuffer()
+                        val res = OperationResponse(result.statusCode,result.statusMessage,payload,result.headers)
+                        msg.reply(res.toJson())
+                    }.invokeOnCompletion{
+                        it?.let{ throw it }
+                    }
                 }
         
             }

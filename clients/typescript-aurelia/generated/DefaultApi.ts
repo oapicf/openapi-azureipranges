@@ -19,9 +19,10 @@ import {
 } from './models';
 
 /**
- * serviceTagsPublic20240318JsonGet - parameters interface
+ * getAzureIpRangesServiceTagsPublicCloud - parameters interface
  */
-export interface IServiceTagsPublic20240318JsonGetParams {
+export interface IGetAzureIpRangesServiceTagsPublicCloudParams {
+  version: string;
 }
 
 /**
@@ -43,12 +44,15 @@ export class DefaultApi extends Api {
   /**
    * Get Azure IP Ranges and Service Tags - Public Cloud
    * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+   * @param params.version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
    */
-  async serviceTagsPublic20240318JsonGet(): Promise<Change> {
+  async getAzureIpRangesServiceTagsPublicCloud(params: IGetAzureIpRangesServiceTagsPublicCloudParams): Promise<Change> {
     // Verify required parameters are set
+    this.ensureParamIsSet('getAzureIpRangesServiceTagsPublicCloud', params, 'version');
 
     // Create URL to call
-    const url = `${this.basePath}/ServiceTags_Public_20240318.json`;
+    const url = `${this.basePath}/ServiceTags_Public_{version}.json`
+      .replace(`{${'version'}}`, encodeURIComponent(`${params['version']}`));
 
     const response = await this.httpClient.createRequest(url)
       // Set HTTP method

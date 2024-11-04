@@ -24,9 +24,11 @@ inherit
 feature -- API Access
 
 
-	service_tags_public20240318_json_get : detachable CHANGE
+	azure_ip_ranges_service_tags_public_cloud (version: STRING_32): detachable CHANGE
 			-- Get Azure IP Ranges and Service Tags - Public Cloud
 			-- Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+			-- 
+			-- argument: version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
 			-- 
 			-- 
 			-- Result CHANGE
@@ -39,7 +41,8 @@ feature -- API Access
 			reset_error
 			create l_request
 			
-			l_path := "/ServiceTags_Public_20240318.json"
+			l_path := "/ServiceTags_Public_{version}.json"
+			l_path.replace_substring_all ("{"+"version"+"}", api_client.url_encode (version.out))
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then

@@ -4,7 +4,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**serviceTagsPublic20240318JsonGet**](DefaultApi.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud |
+| [**getAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud |
 
 
 ## Creating DefaultApi
@@ -35,16 +35,20 @@ Note that the class needs to be annotated with one of Micronaut's [scope annotat
 
 More information can be found inside [Inversion of Control guide section](https://docs.micronaut.io/latest/guide/#ioc).
 
-<a id="serviceTagsPublic20240318JsonGet"></a>
-# **serviceTagsPublic20240318JsonGet**
+<a id="getAzureIpRangesServiceTagsPublicCloud"></a>
+# **getAzureIpRangesServiceTagsPublicCloud**
 ```java
-Mono<Change> DefaultApi.serviceTagsPublic20240318JsonGet()
+Mono<Change> DefaultApi.getAzureIpRangesServiceTagsPublicCloud(version)
 ```
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
+### Parameters
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **version** | `String`| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | |
 
 
 ### Return type

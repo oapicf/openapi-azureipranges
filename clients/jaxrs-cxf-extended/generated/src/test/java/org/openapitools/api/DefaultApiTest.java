@@ -67,10 +67,12 @@ public class DefaultApiTest {
      * @throws ApiException if the API call fails
      */
     @Test
-    public void serviceTagsPublic20240318JsonGetTest() throws Exception {
+    public void getAzureIpRangesServiceTagsPublicCloudTest() throws Exception {
+        // TODO: assign appropriate parameter values
+        String version = null;
 
         // TODO: delete this line and uncomment the next
-        // Change response = api.serviceTagsPublic20240318JsonGet();
+        // Change response = api.getAzureIpRangesServiceTagsPublicCloud(version);
         // TODO: complete test assertions
     }
     

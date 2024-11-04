@@ -8,10 +8,10 @@ src/main/kotlin/org/openapitools/HomeController.kt
 src/main/kotlin/org/openapitools/SpringDocConfiguration.kt
 src/main/kotlin/org/openapitools/api/ApiUtil.kt
 src/main/kotlin/org/openapitools/api/Exceptions.kt
-src/main/kotlin/org/openapitools/api/ServiceTagsPublic20240318JsonApiController.kt
+src/main/kotlin/org/openapitools/api/ServiceTagsPublic{version}JsonApiController.kt
 src/main/kotlin/org/openapitools/model/Change.kt
 src/main/kotlin/org/openapitools/model/Value.kt
 src/main/kotlin/org/openapitools/model/ValueProperties.kt
 src/main/resources/application.yaml
 src/main/resources/openapi.yaml
-src/test/kotlin/org/openapitools/api/ServiceTagsPublic20240318JsonApiTest.kt
+src/test/kotlin/org/openapitools/api/ServiceTagsPublic{version}JsonApiTest.kt

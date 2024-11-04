@@ -18,12 +18,20 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
-    public async serviceTagsPublic20240318JsonGet(_options?: Configuration): Promise<RequestContext> {
+    public async getAzureIpRangesServiceTagsPublicCloud(version: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
+        // verify required parameter 'version' is not null or undefined
+        if (version === null || version === undefined) {
+            throw new RequiredError("DefaultApi", "getAzureIpRangesServiceTagsPublicCloud", "version");
+        }
+
+
         // Path Params
-        const localVarPath = '/ServiceTags_Public_20240318.json';
+        const localVarPath = '/ServiceTags_Public_{version}.json'
+            .replace('{' + 'version' + '}', encodeURIComponent(String(version)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -47,10 +55,10 @@ export class DefaultApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to serviceTagsPublic20240318JsonGet
+     * @params response Response returned by the server for a request to getAzureIpRangesServiceTagsPublicCloud
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async serviceTagsPublic20240318JsonGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Change >> {
+     public async getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Change >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: Change = ObjectSerializer.deserialize(

@@ -22,6 +22,10 @@ import {
     ChangeToJSON,
 } from '../models/index';
 
+export interface GetAzureIpRangesServiceTagsPublicCloudRequest {
+    version: string;
+}
+
 /**
  * 
  */
@@ -31,13 +35,20 @@ export class DefaultApi extends runtime.BaseAPI {
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
      */
-    async serviceTagsPublic20240318JsonGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Change>> {
+    async getAzureIpRangesServiceTagsPublicCloudRaw(requestParameters: GetAzureIpRangesServiceTagsPublicCloudRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Change>> {
+        if (requestParameters['version'] == null) {
+            throw new runtime.RequiredError(
+                'version',
+                'Required parameter "version" was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud().'
+            );
+        }
+
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/ServiceTags_Public_20240318.json`,
+            path: `/ServiceTags_Public_{version}.json`.replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -50,8 +61,8 @@ export class DefaultApi extends runtime.BaseAPI {
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
      */
-    async serviceTagsPublic20240318JsonGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Change> {
-        const response = await this.serviceTagsPublic20240318JsonGetRaw(initOverrides);
+    async getAzureIpRangesServiceTagsPublicCloud(requestParameters: GetAzureIpRangesServiceTagsPublicCloudRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Change> {
+        const response = await this.getAzureIpRangesServiceTagsPublicCloudRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

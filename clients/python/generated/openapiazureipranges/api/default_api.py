@@ -17,6 +17,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from pydantic import Field, StrictStr
+from typing_extensions import Annotated
 from openapiazureipranges.models.change import Change
 
 from openapiazureipranges.api_client import ApiClient, RequestSerialized
@@ -38,8 +40,9 @@ class DefaultApi:
 
 
     @validate_call
-    def service_tags_public20240318_json_get(
+    def get_azure_ip_ranges_service_tags_public_cloud(
         self,
+        version: Annotated[StrictStr, Field(description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,6 +60,8 @@ class DefaultApi:
 
         Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
+        :param version: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -79,7 +84,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._service_tags_public20240318_json_get_serialize(
+        _param = self._get_azure_ip_ranges_service_tags_public_cloud_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,8 +107,9 @@ class DefaultApi:
 
 
     @validate_call
-    def service_tags_public20240318_json_get_with_http_info(
+    def get_azure_ip_ranges_service_tags_public_cloud_with_http_info(
         self,
+        version: Annotated[StrictStr, Field(description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -120,6 +127,8 @@ class DefaultApi:
 
         Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
+        :param version: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -142,7 +151,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._service_tags_public20240318_json_get_serialize(
+        _param = self._get_azure_ip_ranges_service_tags_public_cloud_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -164,8 +174,9 @@ class DefaultApi:
 
 
     @validate_call
-    def service_tags_public20240318_json_get_without_preload_content(
+    def get_azure_ip_ranges_service_tags_public_cloud_without_preload_content(
         self,
+        version: Annotated[StrictStr, Field(description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -183,6 +194,8 @@ class DefaultApi:
 
         Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
+        :param version: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
+        :type version: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -205,7 +218,8 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._service_tags_public20240318_json_get_serialize(
+        _param = self._get_azure_ip_ranges_service_tags_public_cloud_serialize(
+            version=version,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -222,8 +236,9 @@ class DefaultApi:
         return response_data.response
 
 
-    def _service_tags_public20240318_json_get_serialize(
+    def _get_azure_ip_ranges_service_tags_public_cloud_serialize(
         self,
+        version,
         _request_auth,
         _content_type,
         _headers,
@@ -243,6 +258,8 @@ class DefaultApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if version is not None:
+            _path_params['version'] = version
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -263,7 +280,7 @@ class DefaultApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/ServiceTags_Public_20240318.json',
+            resource_path='/ServiceTags_Public_{version}.json',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

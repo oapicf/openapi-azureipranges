@@ -28,17 +28,21 @@ public class OASDefaultApi {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @return OASChange
      * @throws OAS.ApiException if fails to make API call
      */
-    public OASChange serviceTagsPublic20240318JsonGet() {
+    public OASChange getAzureIpRangesServiceTagsPublicCloud(Map<String, Object> params) {
+        client.assertNotNull(params.get('version'), 'version');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         return (OASChange) client.invoke(
-            'GET', '/ServiceTags_Public_20240318.json', '',
+            'GET', '/ServiceTags_Public_{version}.json', '',
             query, form,
-            new Map<String, Object>(),
+            new Map<String, Object>{
+                'version' => (String) params.get('version')
+            },
             new Map<String, Object>(),
             new List<String>{ 'application/json' },
             new List<String>(),

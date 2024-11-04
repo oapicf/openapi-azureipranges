@@ -67,16 +67,16 @@ class DefaultApiTest extends TestCase
     }
 
     /**
-     * Test case for serviceTagsPublic20240318JsonGet
+     * Test case for getAzureIpRangesServiceTagsPublicCloud
      *
      * Get Azure IP Ranges and Service Tags - Public Cloud.
      *
-     * @covers ::serviceTagsPublic20240318JsonGet
+     * @covers ::getAzureIpRangesServiceTagsPublicCloud
      */
-    public function testServiceTagsPublic20240318JsonGet()
+    public function testGetAzureIpRangesServiceTagsPublicCloud()
     {
         self::markTestIncomplete(
-            'Test of "serviceTagsPublic20240318JsonGet" method has not been implemented yet.'
+            'Test of "getAzureIpRangesServiceTagsPublicCloud" method has not been implemented yet.'
         );
     }
 }

@@ -49,15 +49,21 @@ export class DefaultApi {
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
-    public serviceTagsPublic20240318JsonGet(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.Change;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/ServiceTags_Public_20240318.json';
+        let localVarPath = this.basePath + '/ServiceTags_Public_{version}.json'.replace('{' + 'version' + '}', encodeURIComponent(String(version)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
+        // verify required parameter 'version' is not null or undefined
+        if (version === null || version === undefined) {
+            throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+        }
+
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header

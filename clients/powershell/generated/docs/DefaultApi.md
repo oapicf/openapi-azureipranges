@@ -4,12 +4,13 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Invoke-ServiceTagsPublic20240318JsonGet**](DefaultApi.md#Invoke-ServiceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**Get-AzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#Get-AzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-<a id="Invoke-ServiceTagsPublic20240318JsonGet"></a>
-# **Invoke-ServiceTagsPublic20240318JsonGet**
-> Change Invoke-ServiceTagsPublic20240318JsonGet<br>
+<a id="Get-AzureIpRangesServiceTagsPublicCloud"></a>
+# **Get-AzureIpRangesServiceTagsPublicCloud**
+> Change Get-AzureIpRangesServiceTagsPublicCloud<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -17,18 +18,22 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 ### Example
 ```powershell
+$Version = "MyVersion" # String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
 # Get Azure IP Ranges and Service Tags - Public Cloud
 try {
-    $Result = Invoke-ServiceTagsPublic20240318JsonGet
+    $Result = Get-AzureIpRangesServiceTagsPublicCloud -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-ServiceTagsPublic20240318JsonGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-AzureIpRangesServiceTagsPublicCloud: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Version** | **String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | 
 
 ### Return type
 

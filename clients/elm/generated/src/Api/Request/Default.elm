@@ -15,7 +15,7 @@
 
 
 module Api.Request.Default exposing
-    ( serviceTagsPublic20240318JsonGet
+    ( getAzureIpRangesServiceTagsPublicCloud
     )
 
 import Api
@@ -27,12 +27,12 @@ import Json.Encode
 
 {-| Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 -}
-serviceTagsPublic20240318JsonGet : Api.Request Api.Data.Change
-serviceTagsPublic20240318JsonGet =
+getAzureIpRangesServiceTagsPublicCloud : String -> Api.Request Api.Data.Change
+getAzureIpRangesServiceTagsPublicCloud version_path =
     Api.request
         "GET"
-        "/ServiceTags_Public_20240318.json"
-        []
+        "/ServiceTags_Public_{version}.json"
+        [ ( "version", identity version_path ) ]
         []
         []
         Nothing

@@ -12,8 +12,8 @@ import org.openapitools.model.*;
 
 import org.openapitools.model.Change;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-05-13T08:48:30.177877615Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonController  {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-07-10T08:56:57.173823358Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class ServiceTagsPublicVersionJsonController  {
   /**
    * Uncomment and implement as you see fit.  These operations will map
    * Directly to operation calls from the routing logic.  Because the inflector
@@ -21,7 +21,7 @@ public class ServiceTagsPublic20240318JsonController  {
    **/
 
   /*
-    public ResponseContext serviceTagsPublic20240318JsonGET(RequestContext request ) {
+    public ResponseContext getAzureIpRangesServiceTagsPublicCloud(RequestContext request , String version) {
         return new ResponseContext().status(Status.INTERNAL_SERVER_ERROR).entity( "Not implemented" );
     }
   */

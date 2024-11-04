@@ -39,14 +39,19 @@ export class DefaultService {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      
      */
-    public serviceTagsPublic20240318JsonGet(observe?: 'body', headers?: Headers): Observable<Change>;
-    public serviceTagsPublic20240318JsonGet(observe?: 'response', headers?: Headers): Observable<HttpResponse<Change>>;
-    public serviceTagsPublic20240318JsonGet(observe: any = 'body', headers: Headers = {}): Observable<any> {
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'body', headers?: Headers): Observable<Change>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'response', headers?: Headers): Observable<HttpResponse<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe: any = 'body', headers: Headers = {}): Observable<any> {
+        if (version === null || version === undefined){
+            throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+        }
+
         headers['Accept'] = 'application/json';
 
-        const response: Observable<HttpResponse<Change>> = this.httpClient.get(`${this.basePath}/ServiceTags_Public_20240318.json`, headers);
+        const response: Observable<HttpResponse<Change>> = this.httpClient.get(`${this.basePath}/ServiceTags_Public_${encodeURIComponent(String(version))}.json`, headers);
         if (observe === 'body') {
                return response.pipe(
                    map((httpResponse: HttpResponse) => <Change>(httpResponse.response))

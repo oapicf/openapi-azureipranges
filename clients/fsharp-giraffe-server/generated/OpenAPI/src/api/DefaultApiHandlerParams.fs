@@ -6,11 +6,20 @@ open System
 
 module DefaultApiHandlerParams =
 
+    //#region Path parameters
+    [<CLIMutable>]
+    type GetAzureIpRangesServiceTagsPublicCloudPathParams = {
+      version : string ;
+    }
+    //#endregion
 
 
-    type ServiceTagsPublic20240318JsonGetStatusCode200Response = {
+    type GetAzureIpRangesServiceTagsPublicCloudStatusCode200Response = {
       content:Change;
       
     }
-    type ServiceTagsPublic20240318JsonGetResult = ServiceTagsPublic20240318JsonGetStatusCode200 of ServiceTagsPublic20240318JsonGetStatusCode200Response
+    type GetAzureIpRangesServiceTagsPublicCloudResult = GetAzureIpRangesServiceTagsPublicCloudStatusCode200 of GetAzureIpRangesServiceTagsPublicCloudStatusCode200Response
 
+    type GetAzureIpRangesServiceTagsPublicCloudArgs = {
+      pathParams:GetAzureIpRangesServiceTagsPublicCloudPathParams;
+    }

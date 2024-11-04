@@ -10,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Value
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-05-13T08:49:01.422619345Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-07-10T08:57:14.167612833Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Value   {
   @JsonProperty("name")

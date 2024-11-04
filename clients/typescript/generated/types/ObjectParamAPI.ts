@@ -8,7 +8,13 @@ import { ValueProperties } from '../models/ValueProperties';
 import { ObservableDefaultApi } from "./ObservableAPI";
 import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
 
-export interface DefaultApiServiceTagsPublic20240318JsonGetRequest {
+export interface DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest {
+    /**
+     * The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+     * @type string
+     * @memberof DefaultApigetAzureIpRangesServiceTagsPublicCloud
+     */
+    version: string
 }
 
 export class ObjectDefaultApi {
@@ -23,8 +29,8 @@ export class ObjectDefaultApi {
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * @param param the request object
      */
-    public serviceTagsPublic20240318JsonGetWithHttpInfo(param: DefaultApiServiceTagsPublic20240318JsonGetRequest = {}, options?: Configuration): Promise<HttpInfo<Change>> {
-        return this.api.serviceTagsPublic20240318JsonGetWithHttpInfo( options).toPromise();
+    public getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: Configuration): Promise<HttpInfo<Change>> {
+        return this.api.getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(param.version,  options).toPromise();
     }
 
     /**
@@ -32,8 +38,8 @@ export class ObjectDefaultApi {
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * @param param the request object
      */
-    public serviceTagsPublic20240318JsonGet(param: DefaultApiServiceTagsPublic20240318JsonGetRequest = {}, options?: Configuration): Promise<Change> {
-        return this.api.serviceTagsPublic20240318JsonGet( options).toPromise();
+    public getAzureIpRangesServiceTagsPublicCloud(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: Configuration): Promise<Change> {
+        return this.api.getAzureIpRangesServiceTagsPublicCloud(param.version,  options).toPromise();
     }
 
 }

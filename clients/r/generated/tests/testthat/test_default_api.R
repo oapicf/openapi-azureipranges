@@ -5,11 +5,12 @@ context("Test DefaultApi")
 
 api_instance <- DefaultApi$new()
 
-test_that("ServiceTagsPublic20240318JsonGet", {
-  # tests for ServiceTagsPublic20240318JsonGet
+test_that("GetAzureIpRangesServiceTagsPublicCloud", {
+  # tests for GetAzureIpRangesServiceTagsPublicCloud
   # base path: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63
   # Get Azure IP Ranges and Service Tags - Public Cloud
   # Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+  # @param version character The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
   # @return [Change]
 
   # uncomment below to test the operation

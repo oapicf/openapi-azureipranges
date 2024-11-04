@@ -5,12 +5,12 @@ import model.Change
 /**
   * Provides a default implementation for [[DefaultApi]].
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-05-13T08:54:16.912049372Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-07-10T09:00:47.160874989Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 class DefaultApiImpl extends DefaultApi {
   /**
     * @inheritdoc
     */
-  override def serviceTagsPublic20240318JsonGet(): Change = {
+  override def getAzureIpRangesServiceTagsPublicCloud(version: String): Change = {
     // TODO: Implement better logic
 
     Change(None, None, None)

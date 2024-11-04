@@ -35,5 +35,8 @@ func AssertValueRequired(obj Value) error {
 
 // AssertValueConstraints checks if the values respects the defined constraints
 func AssertValueConstraints(obj Value) error {
+	if err := AssertValuePropertiesConstraints(obj.Properties); err != nil {
+		return err
+	}
 	return nil
 }

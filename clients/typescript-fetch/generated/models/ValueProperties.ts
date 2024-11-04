@@ -66,7 +66,7 @@ export interface ValueProperties {
 /**
  * Check if a given object implements the ValueProperties interface.
  */
-export function instanceOfValueProperties(value: object): boolean {
+export function instanceOfValueProperties(value: object): value is ValueProperties {
     return true;
 }
 

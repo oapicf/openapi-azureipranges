@@ -41,10 +41,6 @@ void OAIApiRouter::setOAIDefaultApiHandler(QSharedPointer<OAIDefaultApiHandler> 
 
 void OAIApiRouter::setUpRoutes() {
     
-    Routes.insert(QString("%1 %2").arg("GET").arg("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json").toLower(), [this](QHttpEngine::Socket *socket) {
-            auto reqObj = new OAIDefaultApiRequest(socket, mOAIDefaultApiHandler);
-            reqObj->serviceTagsPublic20240318JsonGetRequest();
-    });
 }
 
 void OAIApiRouter::processRequest(QHttpEngine::Socket *socket){
@@ -72,6 +68,18 @@ bool OAIApiRouter::handleRequest(QHttpEngine::Socket *socket){
 
 bool OAIApiRouter::handleRequestAndExtractPathParam(QHttpEngine::Socket *socket){
     auto reqPath = QString("%1 %2").arg(fromQHttpEngineMethod(socket->method())).arg(socket->path()).toLower();
+    {
+        auto completePath = QString("%1 %2").arg("GET").arg("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json").toLower();
+        if ( reqPath.startsWith(completePath.leftRef( completePath.indexOf(QString("/{")))) ) {
+            QRegularExpressionMatch match = getRequestMatch( completePath, reqPath );
+            if ( match.hasMatch() ){
+                QString version = match.captured(QString("version").toLower());
+                auto reqObj = new OAIDefaultApiRequest(socket, mOAIDefaultApiHandler);
+                reqObj->getAzureIpRangesServiceTagsPublicCloudRequest(version);
+                return true;
+            }
+        }
+    }
     return false;
 }
 

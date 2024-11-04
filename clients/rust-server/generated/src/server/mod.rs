@@ -22,7 +22,7 @@ pub use crate::context;
 type ServiceFuture = BoxFuture<'static, Result<Response<Body>, crate::ServiceError>>;
 
 use crate::{Api,
-     ServiceTagsPublic20240318JsonGetResponse
+     GetAzureIpRangesServiceTagsPublicCloudResponse
 };
 
 mod paths {
@@ -30,11 +30,17 @@ mod paths {
 
     lazy_static! {
         pub static ref GLOBAL_REGEX_SET: regex::RegexSet = regex::RegexSet::new(vec![
-            r"^/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json$"
+            r"^/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_(?P<version>[^/?#]*).json$"
         ])
         .expect("Unable to create global regex set");
     }
-    pub(crate) static ID_SERVICETAGS_PUBLIC_20240318_JSON: usize = 0;
+    pub(crate) static ID_SERVICETAGS_PUBLIC_VERSION_JSON: usize = 0;
+    lazy_static! {
+        pub static ref REGEX_SERVICETAGS_PUBLIC_VERSION_JSON: regex::Regex =
+            #[allow(clippy::invalid_regex)]
+            regex::Regex::new(r"^/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_(?P<version>[^/?#]*).json$")
+                .expect("Unable to create regex for SERVICETAGS_PUBLIC_VERSION_JSON");
+    }
 }
 
 pub struct MakeService<T, C> where
@@ -70,7 +76,7 @@ impl<T, C, Target> hyper::service::Service<Target> for MakeService<T, C> where
     }
 
     fn call(&mut self, target: Target) -> Self::Future {
-        futures::future::ok(Service::new(
+        future::ok(Service::new(
             self.api_impl.clone(),
         ))
     }
@@ -139,9 +145,33 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
 
         match method {
 
-            // ServiceTagsPublic20240318JsonGet - GET /ServiceTags_Public_20240318.json
-            hyper::Method::GET if path.matched(paths::ID_SERVICETAGS_PUBLIC_20240318_JSON) => {
-                                let result = api_impl.service_tags_public20240318_json_get(
+            // GetAzureIpRangesServiceTagsPublicCloud - GET /ServiceTags_Public_{version}.json
+            hyper::Method::GET if path.matched(paths::ID_SERVICETAGS_PUBLIC_VERSION_JSON) => {
+                // Path parameters
+                let path: &str = uri.path();
+                let path_params =
+                    paths::REGEX_SERVICETAGS_PUBLIC_VERSION_JSON
+                    .captures(path)
+                    .unwrap_or_else(||
+                        panic!("Path {} matched RE SERVICETAGS_PUBLIC_VERSION_JSON in set but failed match against \"{}\"", path, paths::REGEX_SERVICETAGS_PUBLIC_VERSION_JSON.as_str())
+                    );
+
+                let param_version = match percent_encoding::percent_decode(path_params["version"].as_bytes()).decode_utf8() {
+                    Ok(param_version) => match param_version.parse::<String>() {
+                        Ok(param_version) => param_version,
+                        Err(e) => return Ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Couldn't parse path parameter version: {}", e)))
+                                        .expect("Unable to create Bad Request response for invalid path parameter")),
+                    },
+                    Err(_) => return Ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Couldn't percent-decode path parameter as UTF-8: {}", &path_params["version"])))
+                                        .expect("Unable to create Bad Request response for invalid percent decode"))
+                };
+
+                                let result = api_impl.get_azure_ip_ranges_service_tags_public_cloud(
+                                            param_version,
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
@@ -152,14 +182,14 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
 
                                         match result {
                                             Ok(rsp) => match rsp {
-                                                ServiceTagsPublic20240318JsonGetResponse::SuccessfulResponse
+                                                GetAzureIpRangesServiceTagsPublicCloudResponse::SuccessfulResponse
                                                     (body)
                                                 => {
                                                     *response.status_mut() = StatusCode::from_u16(200).expect("Unable to turn 200 into a StatusCode");
                                                     response.headers_mut().insert(
                                                         CONTENT_TYPE,
                                                         HeaderValue::from_str("application/json")
-                                                            .expect("Unable to create Content-Type header for SERVICE_TAGS_PUBLIC20240318_JSON_GET_SUCCESSFUL_RESPONSE"));
+                                                            .expect("Unable to create Content-Type header for GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD_SUCCESSFUL_RESPONSE"));
                                                     let body_content = serde_json::to_string(&body).expect("impossible to fail to serialize");
                                                     *response.body_mut() = Body::from(body_content);
                                                 },
@@ -175,7 +205,7 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                         Ok(response)
             },
 
-            _ if path.matched(paths::ID_SERVICETAGS_PUBLIC_20240318_JSON) => method_not_allowed(),
+            _ if path.matched(paths::ID_SERVICETAGS_PUBLIC_VERSION_JSON) => method_not_allowed(),
             _ => Ok(Response::builder().status(StatusCode::NOT_FOUND)
                     .body(Body::empty())
                     .expect("Unable to create Not Found response"))
@@ -189,8 +219,8 @@ impl<T> RequestParser<T> for ApiRequestParser {
     fn parse_operation_id(request: &Request<T>) -> Option<&'static str> {
         let path = paths::GLOBAL_REGEX_SET.matches(request.uri().path());
         match *request.method() {
-            // ServiceTagsPublic20240318JsonGet - GET /ServiceTags_Public_20240318.json
-            hyper::Method::GET if path.matched(paths::ID_SERVICETAGS_PUBLIC_20240318_JSON) => Some("ServiceTagsPublic20240318JsonGet"),
+            // GetAzureIpRangesServiceTagsPublicCloud - GET /ServiceTags_Public_{version}.json
+            hyper::Method::GET if path.matched(paths::ID_SERVICETAGS_PUBLIC_VERSION_JSON) => Some("GetAzureIpRangesServiceTagsPublicCloud"),
             _ => None,
         }
     }

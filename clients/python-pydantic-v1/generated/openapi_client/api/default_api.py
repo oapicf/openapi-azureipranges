@@ -19,6 +19,9 @@ import warnings
 
 from pydantic import validate_arguments, ValidationError
 
+from typing_extensions import Annotated
+from pydantic import Field, StrictStr
+
 from openapi_client.models.change import Change
 
 from openapi_client.api_client import ApiClient
@@ -42,16 +45,18 @@ class DefaultApi:
         self.api_client = api_client
 
     @validate_arguments
-    def service_tags_public20240318_json_get(self, **kwargs) -> Change:  # noqa: E501
+    def get_azure_ip_ranges_service_tags_public_cloud(self, version : Annotated[StrictStr, Field(..., description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")], **kwargs) -> Change:  # noqa: E501
         """Get Azure IP Ranges and Service Tags - Public Cloud  # noqa: E501
 
         Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.service_tags_public20240318_json_get(async_req=True)
+        >>> thread = api.get_azure_ip_ranges_service_tags_public_cloud(version, async_req=True)
         >>> result = thread.get()
 
+        :param version: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
+        :type version: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
@@ -65,21 +70,23 @@ class DefaultApi:
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
-            message = "Error! Please call the service_tags_public20240318_json_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            message = "Error! Please call the get_azure_ip_ranges_service_tags_public_cloud_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return self.service_tags_public20240318_json_get_with_http_info(**kwargs)  # noqa: E501
+        return self.get_azure_ip_ranges_service_tags_public_cloud_with_http_info(version, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def service_tags_public20240318_json_get_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_azure_ip_ranges_service_tags_public_cloud_with_http_info(self, version : Annotated[StrictStr, Field(..., description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")], **kwargs) -> ApiResponse:  # noqa: E501
         """Get Azure IP Ranges and Service Tags - Public Cloud  # noqa: E501
 
         Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.service_tags_public20240318_json_get_with_http_info(async_req=True)
+        >>> thread = api.get_azure_ip_ranges_service_tags_public_cloud_with_http_info(version, async_req=True)
         >>> result = thread.get()
 
+        :param version: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
+        :type version: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -108,6 +115,7 @@ class DefaultApi:
         _params = locals()
 
         _all_params = [
+            'version'
         ]
         _all_params.extend(
             [
@@ -126,7 +134,7 @@ class DefaultApi:
             if _key not in _all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method service_tags_public20240318_json_get" % _key
+                    " to method get_azure_ip_ranges_service_tags_public_cloud" % _key
                 )
             _params[_key] = _val
         del _params['kwargs']
@@ -135,6 +143,9 @@ class DefaultApi:
 
         # process the path parameters
         _path_params = {}
+        if _params['version'] is not None:
+            _path_params['version'] = _params['version']
+
 
         # process the query parameters
         _query_params = []
@@ -157,7 +168,7 @@ class DefaultApi:
         }
 
         return self.api_client.call_api(
-            '/ServiceTags_Public_20240318.json', 'GET',
+            '/ServiceTags_Public_{version}.json', 'GET',
             _path_params,
             _query_params,
             _header_params,

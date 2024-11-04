@@ -14,9 +14,10 @@
 import { Inject, Injectable, Optional } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
-import { Observable } from 'rxjs';
+import { Observable, from, of, switchMap } from 'rxjs';
 import { Change } from '../model/change';
 import { Configuration } from '../configuration';
+import { COLLECTION_FORMATS } from '../variables';
 
 
 @Injectable()
@@ -43,13 +44,20 @@ export class DefaultService {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public serviceTagsPublic20240318JsonGet(): Observable<AxiosResponse<Change>>;
-    public serviceTagsPublic20240318JsonGet(): Observable<any> {
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, ): Observable<AxiosResponse<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, ): Observable<any> {
+
+        if (version === null || version === undefined) {
+            throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+        }
 
         let headers = {...this.defaultHeaders};
+
+        let accessTokenObservable: Observable<any> = of(null);
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -63,11 +71,19 @@ export class DefaultService {
         // to determine the Content-Type header
         const consumes: string[] = [
         ];
-        return this.httpClient.get<Change>(`${this.basePath}/ServiceTags_Public_20240318.json`,
-            {
-                withCredentials: this.configuration.withCredentials,
-                headers: headers
-            }
+        return accessTokenObservable.pipe(
+            switchMap((accessToken) => {
+                if (accessToken) {
+                    headers['Authorization'] = `Bearer ${accessToken}`;
+                }
+
+                return this.httpClient.get<Change>(`${this.basePath}/ServiceTags_Public_${encodeURIComponent(String(version))}.json`,
+                    {
+                        withCredentials: this.configuration.withCredentials,
+                        headers: headers
+                    }
+                );
+            })
         );
     }
 }

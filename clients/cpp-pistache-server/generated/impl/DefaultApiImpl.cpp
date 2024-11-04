@@ -24,7 +24,7 @@ DefaultApiImpl::DefaultApiImpl(const std::shared_ptr<Pistache::Rest::Router>& rt
 {
 }
 
-void DefaultApiImpl::service_tags_public20240318_json_get(Pistache::Http::ResponseWriter &response) {
+void DefaultApiImpl::get_azure_ip_ranges_service_tags_public_cloud(const std::string &version, Pistache::Http::ResponseWriter &response) {
     response.send(Pistache::Http::Code::Ok, "Do some magic\n");
 }
 

@@ -52,7 +52,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * Change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-13T08:48:09.984961568Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-10T08:56:30.654999166Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class Change {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)

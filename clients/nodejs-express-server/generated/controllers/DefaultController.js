@@ -8,11 +8,11 @@
 
 const Controller = require('./Controller');
 const service = require('../services/DefaultService');
-const serviceTags_Public_20240318_jsonGET = async (request, response) => {
-  await Controller.handleRequest(request, response, service.serviceTags_Public_20240318_jsonGET);
+const getAzureIpRangesServiceTagsPublicCloud = async (request, response) => {
+  await Controller.handleRequest(request, response, service.getAzureIpRangesServiceTagsPublicCloud);
 };
 
 
 module.exports = {
-  serviceTags_Public_20240318_jsonGET,
+  getAzureIpRangesServiceTagsPublicCloud,
 };

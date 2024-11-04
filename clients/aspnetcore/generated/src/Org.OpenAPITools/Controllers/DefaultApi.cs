@@ -32,13 +32,14 @@ namespace Org.OpenAPITools.Controllers
         /// Get Azure IP Ranges and Service Tags - Public Cloud
         /// </summary>
         /// <remarks>Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</remarks>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <response code="200">Successful response</response>
         [HttpGet]
-        [Route("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json")]
+        [Route("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json")]
         [ValidateModelState]
-        [SwaggerOperation("ServiceTagsPublic20240318JsonGet")]
+        [SwaggerOperation("GetAzureIpRangesServiceTagsPublicCloud")]
         [SwaggerResponse(statusCode: 200, type: typeof(Change), description: "Successful response")]
-        public virtual IActionResult ServiceTagsPublic20240318JsonGet()
+        public virtual IActionResult GetAzureIpRangesServiceTagsPublicCloud([FromRoute (Name = "version")][Required]string version)
         {
 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...

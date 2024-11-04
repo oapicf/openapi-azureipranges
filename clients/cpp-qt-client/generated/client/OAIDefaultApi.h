@@ -57,8 +57,10 @@ public:
     QString getParamStyleSuffix(const QString &style);
     QString getParamStyleDelimiter(const QString &style, const QString &name, bool isExplode);
 
-
-    void serviceTagsPublic20240318JsonGet();
+    /**
+    * @param[in]  version QString [required]
+    */
+    void getAzureIpRangesServiceTagsPublicCloud(const QString &version);
 
 
 private:
@@ -83,21 +85,21 @@ private:
     OauthPassword _passwordFlow;
     int _OauthMethod = 0;
 
-    void serviceTagsPublic20240318JsonGetCallback(OAIHttpRequestWorker *worker);
+    void getAzureIpRangesServiceTagsPublicCloudCallback(OAIHttpRequestWorker *worker);
 
 Q_SIGNALS:
 
-    void serviceTagsPublic20240318JsonGetSignal(OAIChange summary);
+    void getAzureIpRangesServiceTagsPublicCloudSignal(OAIChange summary);
 
-    void serviceTagsPublic20240318JsonGetSignalFull(OAIHttpRequestWorker *worker, OAIChange summary);
+    void getAzureIpRangesServiceTagsPublicCloudSignalFull(OAIHttpRequestWorker *worker, OAIChange summary);
 
-    Q_DECL_DEPRECATED_X("Use serviceTagsPublic20240318JsonGetSignalError() instead")
-    void serviceTagsPublic20240318JsonGetSignalE(OAIChange summary, QNetworkReply::NetworkError error_type, QString error_str);
-    void serviceTagsPublic20240318JsonGetSignalError(OAIChange summary, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use getAzureIpRangesServiceTagsPublicCloudSignalError() instead")
+    void getAzureIpRangesServiceTagsPublicCloudSignalE(OAIChange summary, QNetworkReply::NetworkError error_type, QString error_str);
+    void getAzureIpRangesServiceTagsPublicCloudSignalError(OAIChange summary, QNetworkReply::NetworkError error_type, const QString &error_str);
 
-    Q_DECL_DEPRECATED_X("Use serviceTagsPublic20240318JsonGetSignalErrorFull() instead")
-    void serviceTagsPublic20240318JsonGetSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
-    void serviceTagsPublic20240318JsonGetSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
+    Q_DECL_DEPRECATED_X("Use getAzureIpRangesServiceTagsPublicCloudSignalErrorFull() instead")
+    void getAzureIpRangesServiceTagsPublicCloudSignalEFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, QString error_str);
+    void getAzureIpRangesServiceTagsPublicCloudSignalErrorFull(OAIHttpRequestWorker *worker, QNetworkReply::NetworkError error_type, const QString &error_str);
 
     void abortRequestsSignal();
     void allPendingRequestsCompleted();

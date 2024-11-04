@@ -30,14 +30,15 @@ public class DefaultApiTest {
      */
     @Test
     @Disabled("Not Implemented")
-    public void serviceTagsPublic20240318JsonGetTest() {
+    public void getAzureIpRangesServiceTagsPublicCloudTest() {
         // given
+        String version = "example";
 
         // when
-        Change body = api.serviceTagsPublic20240318JsonGet().block();
+        Change body = api.getAzureIpRangesServiceTagsPublicCloud(version).block();
 
         // then
-        // TODO implement the serviceTagsPublic20240318JsonGetTest()
+        // TODO implement the getAzureIpRangesServiceTagsPublicCloudTest()
     }
 
     

@@ -70,10 +70,10 @@ type ApiHandleFunctions struct {
 func getRoutes(handleFunctions ApiHandleFunctions) []Route {
 	return []Route{ 
 		{
-			"ServiceTagsPublic20240318JsonGet",
+			"GetAzureIpRangesServiceTagsPublicCloud",
 			http.MethodGet,
-			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json",
-			handleFunctions.DefaultAPI.ServiceTagsPublic20240318JsonGet,
+			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_:version.json",
+			handleFunctions.DefaultAPI.GetAzureIpRangesServiceTagsPublicCloud,
 		},
 	}
 }

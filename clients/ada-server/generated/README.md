@@ -92,7 +92,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Service_Tags_Public_20240318Json_Get**](DefaultApi.md#Service_Tags_Public_20240318Json_Get) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags _ Public Cloud
+[**Get_Azure_Ip_Ranges_Service_Tags_Public_Cloud**](DefaultApi.md#Get_Azure_Ip_Ranges_Service_Tags_Public_Cloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags _ Public Cloud
 
 
 ### Models

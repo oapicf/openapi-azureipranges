@@ -5,12 +5,14 @@ const Service = require('./Service');
 * Get Azure IP Ranges and Service Tags - Public Cloud
 * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 *
+* version String The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 * returns Change
 * */
-const serviceTags_Public_20240318_jsonGET = () => new Promise(
+const getAzureIpRangesServiceTagsPublicCloud = ({ version }) => new Promise(
   async (resolve, reject) => {
     try {
       resolve(Service.successResponse({
+        version,
       }));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -22,5 +24,5 @@ const serviceTags_Public_20240318_jsonGET = () => new Promise(
 );
 
 module.exports = {
-  serviceTags_Public_20240318_jsonGET,
+  getAzureIpRangesServiceTagsPublicCloud,
 };

@@ -56,25 +56,27 @@ class DefaultApiSimulation extends Simulation {
     }
 
     // Setup all the operations per second for the test to ultimately be generated from configs
-    val serviceTagsPublic20240318JsonGetPerSecond = config.getDouble("performance.operationsPerSecond.serviceTagsPublic20240318JsonGet") * rateMultiplier * instanceMultiplier
+    val getAzureIpRangesServiceTagsPublicCloudPerSecond = config.getDouble("performance.operationsPerSecond.getAzureIpRangesServiceTagsPublicCloud") * rateMultiplier * instanceMultiplier
 
     val scenarioBuilders: mutable.MutableList[PopulationBuilder] = new mutable.MutableList[PopulationBuilder]()
 
     // Set up CSV feeders
+    val getAzureIpRangesServiceTagsPublicCloudPATHFeeder = csv(userDataDirectory + File.separator + "getAzureIpRangesServiceTagsPublicCloud-pathParams.csv").random
 
     // Setup all scenarios
 
     
-    val scnserviceTagsPublic20240318JsonGet = scenario("serviceTagsPublic20240318JsonGetSimulation")
-        .exec(http("serviceTagsPublic20240318JsonGet")
-        .httpRequest("GET","/ServiceTags_Public_20240318.json")
+    val scngetAzureIpRangesServiceTagsPublicCloud = scenario("getAzureIpRangesServiceTagsPublicCloudSimulation")
+        .feed(getAzureIpRangesServiceTagsPublicCloudPATHFeeder)
+        .exec(http("getAzureIpRangesServiceTagsPublicCloud")
+        .httpRequest("GET","/ServiceTags_Public_${version}.json")
 )
 
-    // Run scnserviceTagsPublic20240318JsonGet with warm up and reach a constant rate for entire duration
-    scenarioBuilders += scnserviceTagsPublic20240318JsonGet.inject(
-        rampUsersPerSec(1) to(serviceTagsPublic20240318JsonGetPerSecond) during(rampUpSeconds),
-        constantUsersPerSec(serviceTagsPublic20240318JsonGetPerSecond) during(durationSeconds),
-        rampUsersPerSec(serviceTagsPublic20240318JsonGetPerSecond) to(1) during(rampDownSeconds)
+    // Run scngetAzureIpRangesServiceTagsPublicCloud with warm up and reach a constant rate for entire duration
+    scenarioBuilders += scngetAzureIpRangesServiceTagsPublicCloud.inject(
+        rampUsersPerSec(1) to(getAzureIpRangesServiceTagsPublicCloudPerSecond) during(rampUpSeconds),
+        constantUsersPerSec(getAzureIpRangesServiceTagsPublicCloudPerSecond) during(durationSeconds),
+        rampUsersPerSec(getAzureIpRangesServiceTagsPublicCloudPerSecond) to(1) during(rampDownSeconds)
     )
 
     setUp(

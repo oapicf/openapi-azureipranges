@@ -11,8 +11,9 @@ class BaseDefaultApi:
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         BaseDefaultApi.subclasses = BaseDefaultApi.subclasses + (cls,)
-    def service_tags_public20240318_json_get(
+    def get_azure_ip_ranges_service_tags_public_cloud(
         self,
+        version: str,
     ) -> Change:
         """Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."""
         ...

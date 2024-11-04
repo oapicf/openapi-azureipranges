@@ -50,19 +50,21 @@ QHttpEngine::Socket* OAIDefaultApiRequest::getRawSocket(){
 }
 
 
-void OAIDefaultApiRequest::serviceTagsPublic20240318JsonGetRequest(){
-    qDebug() << "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json";
-    connect(this, &OAIDefaultApiRequest::serviceTagsPublic20240318JsonGet, handler.data(), &OAIDefaultApiHandler::serviceTagsPublic20240318JsonGet);
+void OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloudRequest(const QString& versionstr){
+    qDebug() << "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json";
+    connect(this, &OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloud, handler.data(), &OAIDefaultApiHandler::getAzureIpRangesServiceTagsPublicCloud);
 
     
+    QString version;
+    fromStringValue(versionstr, version);
+    
 
-
-    Q_EMIT serviceTagsPublic20240318JsonGet();
+    Q_EMIT getAzureIpRangesServiceTagsPublicCloud(version);
 }
 
 
 
-void OAIDefaultApiRequest::serviceTagsPublic20240318JsonGetResponse(const OAIChange& res){
+void OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloudResponse(const OAIChange& res){
     setSocketResponseHeaders();
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toObject());
     socket->writeJson(resDoc);
@@ -72,7 +74,7 @@ void OAIDefaultApiRequest::serviceTagsPublic20240318JsonGetResponse(const OAICha
 }
 
 
-void OAIDefaultApiRequest::serviceTagsPublic20240318JsonGetError(const OAIChange& res, QNetworkReply::NetworkError error_type, QString& error_str){
+void OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloudError(const OAIChange& res, QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
     setSocketResponseHeaders();
     Q_UNUSED(error_str);  // response will be used instead of error string

@@ -9,10 +9,21 @@ info:
 servers:
 - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
 paths:
-  /ServiceTags_Public_20240318.json:
+  /ServiceTags_Public_{version}.json:
     get:
       description: Retrieve details about Azure IP Ranges and Service Tags - Public
         Cloud.
+      operationId: getAzureIpRangesServiceTagsPublicCloud
+      parameters:
+      - description: "The version of the JSON file to be retrieved in the format YYYYMMDD,\
+          \ e.g. 20240506"
+        explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:

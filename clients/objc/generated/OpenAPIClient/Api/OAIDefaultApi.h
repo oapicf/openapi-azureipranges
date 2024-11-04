@@ -26,12 +26,13 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// Get Azure IP Ranges and Service Tags - Public Cloud
 /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 ///
+/// @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 /// 
 ///  code:200 message:"Successful response"
 ///
 /// @return OAIChange*
--(NSURLSessionTask*) serviceTagsPublic20240318JsonGetWithCompletionHandler: 
-    (void (^)(OAIChange* output, NSError* error)) handler;
+-(NSURLSessionTask*) getAzureIpRangesServiceTagsPublicCloudWithVersion: (NSString*) version
+    completionHandler: (void (^)(OAIChange* output, NSError* error)) handler;
 
 
 

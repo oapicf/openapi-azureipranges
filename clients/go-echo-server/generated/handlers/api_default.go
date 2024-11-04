@@ -5,8 +5,8 @@ import (
 	"net/http"
 )
 
-// ServiceTagsPublic20240318JsonGet - Get Azure IP Ranges and Service Tags - Public Cloud
-func (c *Container) ServiceTagsPublic20240318JsonGet(ctx echo.Context) error {
+// GetAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud
+func (c *Container) GetAzureIpRangesServiceTagsPublicCloud(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, models.HelloWorld {
 		Message: "Hello World",
 	})

@@ -22,7 +22,7 @@ import (
 // The DefaultAPIRouter implementation should parse necessary information from the http request,
 // pass the data to a DefaultAPIServicer to perform the required actions, then write the service results to the http response.
 type DefaultAPIRouter interface { 
-	ServiceTagsPublic20240318JsonGet(http.ResponseWriter, *http.Request)
+	GetAzureIpRangesServiceTagsPublicCloud(http.ResponseWriter, *http.Request)
 }
 
 
@@ -31,5 +31,5 @@ type DefaultAPIRouter interface {
 // while the service implementation can be ignored with the .openapi-generator-ignore file
 // and updated with the logic required for the API.
 type DefaultAPIServicer interface { 
-	ServiceTagsPublic20240318JsonGet(context.Context) (ImplResponse, error)
+	GetAzureIpRangesServiceTagsPublicCloud(context.Context, string) (ImplResponse, error)
 }

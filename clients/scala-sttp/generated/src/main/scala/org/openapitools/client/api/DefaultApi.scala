@@ -17,8 +17,7 @@ import sttp.client3._
 import sttp.model.Method
 
 object DefaultApi {
-
-def apply(baseUrl: String = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63") = new DefaultApi(baseUrl)
+  def apply(baseUrl: String = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63") = new DefaultApi(baseUrl)
 }
 
 class DefaultApi(baseUrl: String) {
@@ -28,11 +27,13 @@ class DefaultApi(baseUrl: String) {
    * 
    * Expected answers:
    *   code 200 : Change (Successful response)
+   * 
+   * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
    */
-  def serviceTagsPublic20240318JsonGet(
+  def getAzureIpRangesServiceTagsPublicCloud(version: String
 ): Request[Either[ResponseException[String, Exception], Change], Any] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/ServiceTags_Public_20240318.json")
+      .method(Method.GET, uri"$baseUrl/ServiceTags_Public_${version}.json")
       .contentType("application/json")
       .response(asJson[Change])
 

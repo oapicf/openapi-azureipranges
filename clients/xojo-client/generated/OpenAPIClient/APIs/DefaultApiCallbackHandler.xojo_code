@@ -1,7 +1,7 @@
 #tag Interface
 Protected Interface DefaultApiCallbackHandler
 	#tag Method, Flags = &h0
-		Sub ServiceTagsPublic20240318JsonGetCallback(status As OpenAPIClient.OpenAPIClientException, Optional data As OpenAPIClient.Models.Change)
+		Sub GetAzureIpRangesServiceTagsPublicCloudCallback(status As OpenAPIClient.OpenAPIClientException, Optional data As OpenAPIClient.Models.Change)
 		  
 		End Sub
 	#tag EndMethod

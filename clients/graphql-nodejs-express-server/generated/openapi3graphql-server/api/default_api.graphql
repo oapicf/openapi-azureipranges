@@ -20,7 +20,8 @@ type Mutation {
 type Query {
   # Get Azure IP Ranges and Service Tags - Public Cloud
   # Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+  # @param String! version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
   # @return [Change]
-  ServiceTagsPublic20240318JsonGet: Change
+  GetAzureIpRangesServiceTagsPublicCloud(version: String!): Change
 }
 

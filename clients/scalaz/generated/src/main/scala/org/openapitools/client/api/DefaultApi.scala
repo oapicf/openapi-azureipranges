@@ -29,10 +29,10 @@ object DefaultApi {
 
   def escape(value: String): String = URLEncoder.encode(value, "utf-8").replaceAll("\\+", "%20")
 
-  def serviceTagsPublic20240318JsonGet(host: String): Task[Change] = {
+  def getAzureIpRangesServiceTagsPublicCloud(host: String, version: String): Task[Change] = {
     implicit val returnTypeDecoder: EntityDecoder[Change] = jsonOf[Change]
 
-    val path = "/ServiceTags_Public_20240318.json"
+    val path = "/ServiceTags_Public_{version}.json".replaceAll("\\{" + "version" + "\\}",escape(version.toString))
 
     val httpMethod = Method.GET
     val contentType = `Content-Type`(MediaType.`application/json`)
@@ -57,10 +57,10 @@ class HttpServiceDefaultApi(service: HttpService) {
 
   def escape(value: String): String = URLEncoder.encode(value, "utf-8").replaceAll("\\+", "%20")
 
-  def serviceTagsPublic20240318JsonGet(): Task[Change] = {
+  def getAzureIpRangesServiceTagsPublicCloud(version: String): Task[Change] = {
     implicit val returnTypeDecoder: EntityDecoder[Change] = jsonOf[Change]
 
-    val path = "/ServiceTags_Public_20240318.json"
+    val path = "/ServiceTags_Public_{version}.json".replaceAll("\\{" + "version" + "\\}",escape(version.toString))
 
     val httpMethod = Method.GET
     val contentType = `Content-Type`(MediaType.`application/json`)

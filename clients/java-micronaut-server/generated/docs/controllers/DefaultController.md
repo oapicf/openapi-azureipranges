@@ -6,18 +6,22 @@ The controller class is defined in **[DefaultController.java](../../src/main/jav
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceTagsPublic20240318JsonGet**](#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloud**](#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
-<a id="serviceTagsPublic20240318JsonGet"></a>
-# **serviceTagsPublic20240318JsonGet**
+<a id="getAzureIpRangesServiceTagsPublicCloud"></a>
+# **getAzureIpRangesServiceTagsPublicCloud**
 ```java
-Mono<Change> DefaultController.serviceTagsPublic20240318JsonGet()
+Mono<Change> DefaultController.getAzureIpRangesServiceTagsPublicCloud(version)
 ```
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**version** | `String` | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 [**Change**](../../docs/models/Change.md)

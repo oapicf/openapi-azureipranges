@@ -11,7 +11,7 @@ java -jar target/openapi-java-server.jar
 ## Exercise the application
 
 ```
-curl -X GET https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json
+curl -X GET https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json
 
 ```
 

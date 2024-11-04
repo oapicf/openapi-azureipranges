@@ -35,8 +35,8 @@ export default class DefaultApi {
 
 
     /**
-     * Callback function to receive the result of the serviceTagsPublic20240318JsonGet operation.
-     * @callback module:api/DefaultApi~serviceTagsPublic20240318JsonGetCallback
+     * Callback function to receive the result of the getAzureIpRangesServiceTagsPublicCloud operation.
+     * @callback module:api/DefaultApi~getAzureIpRangesServiceTagsPublicCloudCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Change} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -45,13 +45,19 @@ export default class DefaultApi {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
-     * @param {module:api/DefaultApi~serviceTagsPublic20240318JsonGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+     * @param {module:api/DefaultApi~getAzureIpRangesServiceTagsPublicCloudCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Change}
      */
-    serviceTagsPublic20240318JsonGet(callback) {
+    getAzureIpRangesServiceTagsPublicCloud(version, callback) {
       let postBody = null;
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud");
+      }
 
       let pathParams = {
+        'version': version
       };
       let queryParams = {
       };
@@ -65,7 +71,7 @@ export default class DefaultApi {
       let accepts = ['application/json'];
       let returnType = Change;
       return this.apiClient.callApi(
-        '/ServiceTags_Public_20240318.json', 'GET',
+        '/ServiceTags_Public_{version}.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

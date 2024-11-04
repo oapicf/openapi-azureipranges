@@ -34,13 +34,13 @@ public:
     OAIDefaultApiRequest(QHttpEngine::Socket *s, QSharedPointer<OAIDefaultApiHandler> handler);
     virtual ~OAIDefaultApiRequest();
 
-    void serviceTagsPublic20240318JsonGetRequest();
+    void getAzureIpRangesServiceTagsPublicCloudRequest(const QString& version);
     
 
-    void serviceTagsPublic20240318JsonGetResponse(const OAIChange& res);
+    void getAzureIpRangesServiceTagsPublicCloudResponse(const OAIChange& res);
     
 
-    void serviceTagsPublic20240318JsonGetError(const OAIChange& res, QNetworkReply::NetworkError error_type, QString& error_str);
+    void getAzureIpRangesServiceTagsPublicCloudError(const OAIChange& res, QNetworkReply::NetworkError error_type, QString& error_str);
     
 
     void sendCustomResponse(QByteArray & res, QNetworkReply::NetworkError error_type);
@@ -54,7 +54,7 @@ public:
     void setResponseHeaders(const QMultiMap<QString,QString>& headers);
 
 Q_SIGNALS:
-    void serviceTagsPublic20240318JsonGet();
+    void getAzureIpRangesServiceTagsPublicCloud(QString version);
     
 
 private:

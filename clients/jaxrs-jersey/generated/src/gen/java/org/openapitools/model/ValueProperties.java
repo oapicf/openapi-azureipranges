@@ -37,7 +37,7 @@ import javax.validation.Valid;
   ValueProperties.JSON_PROPERTY_ADDRESS_PREFIXES,
   ValueProperties.JSON_PROPERTY_NETWORK_FEATURES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-05-13T08:49:33.218586014Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-07-10T08:57:45.138804949Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class ValueProperties   {
   public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";
   @JsonProperty(JSON_PROPERTY_CHANGE_NUMBER)

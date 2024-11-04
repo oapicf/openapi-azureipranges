@@ -56,8 +56,8 @@ public class DefaultApiTest {
      *          if the Api call fails
      */
     @Test
-    public void serviceTagsPublic20240318JsonGetTest() throws Exception {
-        //Change response = client.serviceTagsPublic20240318JsonGet();
+    public void getAzureIpRangesServiceTagsPublicCloudTest() throws Exception {
+        //Change response = client.getAzureIpRangesServiceTagsPublicCloud(version);
         //assertNotNull(response);
     }
     

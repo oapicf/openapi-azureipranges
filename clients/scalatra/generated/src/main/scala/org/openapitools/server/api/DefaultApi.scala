@@ -39,12 +39,14 @@ class DefaultApi(implicit val swagger: Swagger) extends ScalatraServlet
   }
   
 
-  val serviceTagsPublic20240318JsonGetOperation = (apiOperation[Change]("serviceTagsPublic20240318JsonGet")
+  val getAzureIpRangesServiceTagsPublicCloudOperation = (apiOperation[Change]("getAzureIpRangesServiceTagsPublicCloud")
     summary "Get Azure IP Ranges and Service Tags - Public Cloud"
-    parameters()
+    parameters(pathParam[String]("version").description(""))
   )
 
-  get("/ServiceTags_Public_20240318.json", operation(serviceTagsPublic20240318JsonGetOperation)) {
+  get("/ServiceTags_Public_{version}.json", operation(getAzureIpRangesServiceTagsPublicCloudOperation)) {
+    val version = params.getOrElse("version", halt(400))
+    //println("version: " + version)
   }
 
 }

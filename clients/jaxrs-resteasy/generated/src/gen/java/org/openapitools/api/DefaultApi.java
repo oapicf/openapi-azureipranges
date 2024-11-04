@@ -1,7 +1,7 @@
 package org.openapitools.api;
 
 import org.openapitools.model.*;
-import org.openapitools.api.ServiceTagsPublic20240318JsonApiService;
+import org.openapitools.api.DefaultApiService;
 
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
@@ -23,14 +23,14 @@ import javax.inject.Inject;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@Path("/ServiceTags_Public_20240318.json")
+@Path("/ServiceTags_Public_{version}.json")
 
 
-@io.swagger.annotations.Api(description = "the ServiceTags_Public_20240318.json API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-05-13T08:49:37.228585867Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonApi  {
+@io.swagger.annotations.Api(description = "the default API")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen", date = "2024-07-10T08:57:49.361012017Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class DefaultApi  {
 
-    @Inject ServiceTagsPublic20240318JsonApiService service;
+    @Inject DefaultApiService service;
 
     @GET
     
@@ -39,8 +39,8 @@ public class ServiceTagsPublic20240318JsonApi  {
     @io.swagger.annotations.ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful response", response = Change.class) })
-    public Response serviceTagsPublic20240318JsonGet(@Context SecurityContext securityContext)
+    public Response getAzureIpRangesServiceTagsPublicCloud( @PathParam("version") String version,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return service.serviceTagsPublic20240318JsonGet(securityContext);
+        return service.getAzureIpRangesServiceTagsPublicCloud(version,securityContext);
     }
 }

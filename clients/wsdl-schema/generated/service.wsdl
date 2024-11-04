@@ -2,8 +2,8 @@
 <definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="http://localhost/soap/ServiceV1/model" xmlns:wsdl="http://localhost/soap/ServiceV1/service" targetNamespace="http://localhost/soap/ServiceV1/service" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xs:schema xmlns:tns="http://localhost/soap/ServiceV1/model" targetNamespace="http://localhost/soap/ServiceV1/model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="GetServicetags_public_20240318.json_RequestMessage" type="schemas:GetServicetags_public_20240318.json_RequestMessage" />
-      <xs:element name="GetServicetags_public_20240318.json_ResponseMessage" type="schemas:GetServicetags_public_20240318.json_ResponseMessage" />
+      <xs:element name="GetByErvicetags_public_{version}.jso_RequestMessage" type="schemas:GetByErvicetags_public_{version}.jso_RequestMessage" />
+      <xs:element name="GetByErvicetags_public_{version}.jso_ResponseMessage" type="schemas:GetByErvicetags_public_{version}.jso_ResponseMessage" />
       <xs:complexType name="Change">
         <xs:sequence>
           <xs:element minOccurs="0" name="changeNumber" type="xs:integer">
@@ -73,8 +73,16 @@
           </xs:element>
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="GetServicetags_public_20240318.json_RequestMessage" />
-      <xs:complexType name="GetServicetags_public_20240318.json_ResponseMessage">
+      <xs:complexType name="GetByErvicetags_public_{version}.jso_RequestMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="version" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetByErvicetags_public_{version}.jso_ResponseMessage">
         <xs:sequence>
           <xs:element minOccurs="1" name="Change" type="schemas:Change">
             <xs:annotation>
@@ -85,25 +93,25 @@
       </xs:complexType>
     </xs:schema>
   </types>
-  <message name="GetServicetags_public_20240318.json_RequestMessage">
-    <part name="GetServicetags_public_20240318.json_RequestMessage" element="schemas:GetServicetags_public_20240318.json_RequestMessage" />
+  <message name="GetByErvicetags_public_{version}.jso_RequestMessage">
+    <part name="GetByErvicetags_public_{version}.jso_RequestMessage" element="schemas:GetByErvicetags_public_{version}.jso_RequestMessage" />
   </message>
-  <message name="GetServicetags_public_20240318.json_ResponseMessage">
-    <part name="GetServicetags_public_20240318.json_ResponseMessage" element="schemas:GetServicetags_public_20240318.json_ResponseMessage" />
+  <message name="GetByErvicetags_public_{version}.jso_ResponseMessage">
+    <part name="GetByErvicetags_public_{version}.jso_ResponseMessage" element="schemas:GetByErvicetags_public_{version}.jso_ResponseMessage" />
   </message>
   <portType name="ServiceV1_PortType">
-    <operation name="GetServicetags_public_20240318.json">
+    <operation name="GetByErvicetags_public_{version}.jso">
       <documentation>Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</documentation>
-      <input message="wsdl:GetServicetags_public_20240318.json_RequestMessage" />
-      <output message="wsdl:GetServicetags_public_20240318.json_ResponseMessage">
+      <input message="wsdl:GetByErvicetags_public_{version}.jso_RequestMessage" />
+      <output message="wsdl:GetByErvicetags_public_{version}.jso_ResponseMessage">
         <documentation>Successful response</documentation>
       </output>
     </operation>
   </portType>
   <binding name="ServiceV1_Binding" type="wsdl:ServiceV1_PortType">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
-    <operation name="GetServicetags_public_20240318.json">
-      <soap:operation soapAction="GetServicetags_public_20240318.json" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GetByErvicetags_public_{version}.jso">
+      <soap:operation soapAction="GetByErvicetags_public_{version}.jso" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
       <input>
         <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
       </input>

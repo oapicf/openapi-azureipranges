@@ -56,13 +56,14 @@ namespace Org.OpenAPITools.Test.Api
         }
 
         /// <summary>
-        /// Test ServiceTagsPublic20240318JsonGet
+        /// Test GetAzureIpRangesServiceTagsPublicCloud
         /// </summary>
         [Fact]
-        public void ServiceTagsPublic20240318JsonGetTest()
+        public void GetAzureIpRangesServiceTagsPublicCloudTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.ServiceTagsPublic20240318JsonGet();
+            //string version = null;
+            //var response = instance.GetAzureIpRangesServiceTagsPublicCloud(version);
             //Assert.IsType<Change>(response);
         }
     }

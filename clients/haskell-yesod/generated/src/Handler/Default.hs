@@ -8,6 +8,7 @@ import           Import
 -- | Get Azure IP Ranges and Service Tags - Public Cloud
 --
 -- Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
--- operationId: serviceTagsPublic20240318JsonGet
-getServiceTagsPublic20240318JsonR :: Handler Value
-getServiceTagsPublic20240318JsonR = notImplemented
+-- operationId: getAzureIpRangesServiceTagsPublicCloud
+getServiceTagsPublic{version}JsonR :: Text -- ^ The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+                                   -> Handler Value
+getServiceTagsPublic{version}JsonR version = notImplemented

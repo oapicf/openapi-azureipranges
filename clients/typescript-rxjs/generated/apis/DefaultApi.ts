@@ -13,11 +13,15 @@
 
 import type { Observable } from 'rxjs';
 import type { AjaxResponse } from 'rxjs/ajax';
-import { BaseAPI } from '../runtime';
+import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts } from '../runtime';
 import type {
     Change,
 } from '../models';
+
+export interface GetAzureIpRangesServiceTagsPublicCloudRequest {
+    version: string;
+}
 
 /**
  * no description
@@ -28,11 +32,13 @@ export class DefaultApi extends BaseAPI {
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
      */
-    serviceTagsPublic20240318JsonGet(): Observable<Change>
-    serviceTagsPublic20240318JsonGet(opts?: OperationOpts): Observable<AjaxResponse<Change>>
-    serviceTagsPublic20240318JsonGet(opts?: OperationOpts): Observable<Change | AjaxResponse<Change>> {
+    getAzureIpRangesServiceTagsPublicCloud({ version }: GetAzureIpRangesServiceTagsPublicCloudRequest): Observable<Change>
+    getAzureIpRangesServiceTagsPublicCloud({ version }: GetAzureIpRangesServiceTagsPublicCloudRequest, opts?: OperationOpts): Observable<AjaxResponse<Change>>
+    getAzureIpRangesServiceTagsPublicCloud({ version }: GetAzureIpRangesServiceTagsPublicCloudRequest, opts?: OperationOpts): Observable<Change | AjaxResponse<Change>> {
+        throwIfNullOrUndefined(version, 'version', 'getAzureIpRangesServiceTagsPublicCloud');
+
         return this.request<Change>({
-            url: '/ServiceTags_Public_20240318.json',
+            url: '/ServiceTags_Public_{version}.json'.replace('{version}', encodeURI(version)),
             method: 'GET',
         }, opts?.responseOpts);
     };

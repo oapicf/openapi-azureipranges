@@ -11,12 +11,13 @@ This can be used to construct the `OpenAPI.Clients.Client` instance.
 """
 basepath(::Type{ DefaultApi }) = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
 
-const _returntypes_service_tags_public20240318_json_get_DefaultApi = Dict{Regex,Type}(
+const _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi = Dict{Regex,Type}(
     Regex("^" * replace("200", "x"=>".") * "\$") => Change,
 )
 
-function _oacinternal_service_tags_public20240318_json_get(_api::DefaultApi; _mediaType=nothing)
-    _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_service_tags_public20240318_json_get_DefaultApi, "/ServiceTags_Public_20240318.json", [])
+function _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing)
+    _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi, "/ServiceTags_Public_{version}.json", [])
+    OpenAPI.Clients.set_param(_ctx.path, "version", version)  # type String
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -27,17 +28,18 @@ end
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 Params:
+- version::String (required)
 
 Return: Change, OpenAPI.Clients.ApiResponse
 """
-function service_tags_public20240318_json_get(_api::DefaultApi; _mediaType=nothing)
-    _ctx = _oacinternal_service_tags_public20240318_json_get(_api; _mediaType=_mediaType)
+function get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing)
+    _ctx = _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api, version; _mediaType=_mediaType)
     return OpenAPI.Clients.exec(_ctx)
 end
 
-function service_tags_public20240318_json_get(_api::DefaultApi, response_stream::Channel; _mediaType=nothing)
-    _ctx = _oacinternal_service_tags_public20240318_json_get(_api; _mediaType=_mediaType)
+function get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, response_stream::Channel, version::String; _mediaType=nothing)
+    _ctx = _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api, version; _mediaType=_mediaType)
     return OpenAPI.Clients.exec(_ctx, response_stream)
 end
 
-export service_tags_public20240318_json_get
+export get_azure_ip_ranges_service_tags_public_cloud

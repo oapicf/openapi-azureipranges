@@ -2,7 +2,7 @@ const DefaultApi = require('../apis/DefaultApi');
 const { searchMiddleware, hasSearchRequisites, isSearchAction } = require('../utils/utils');
 
 const actions = {
-    [DefaultApi.serviceTagsPublic20240318JsonGet.key]: DefaultApi.serviceTagsPublic20240318JsonGet,
+    [DefaultApi.getAzureIpRangesServiceTagsPublicCloud.key]: DefaultApi.getAzureIpRangesServiceTagsPublicCloud,
 }
 
 module.exports = {

@@ -7,9 +7,9 @@
 #
 
 Describe -tag 'PSOpenAPITools' -name 'DefaultApi' {
-    Context 'Invoke-ServiceTagsPublic20240318JsonGet' {
-        It 'Test Invoke-ServiceTagsPublic20240318JsonGet' {
-            #$TestResult = Invoke-ServiceTagsPublic20240318JsonGet
+    Context 'Get-AzureIpRangesServiceTagsPublicCloud' {
+        It 'Test Get-AzureIpRangesServiceTagsPublicCloud' {
+            #$TestResult = Get-AzureIpRangesServiceTagsPublicCloud -Version "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

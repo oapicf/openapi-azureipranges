@@ -15,36 +15,40 @@ use Psr\Http\Message\ResponseInterface;
  */
 class ApiClient extends OAGAC\AbstractApiClient
 {
-    //region serviceTagsPublic20240318JsonGet
+    //region getAzureIpRangesServiceTagsPublicCloud
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters
      * @param string $responseMediaType
      * @return ResponseInterface
      * @throws ClientExceptionInterface
      * @throws DT\Exception\InvalidData
      */
-    public function serviceTagsPublic20240318JsonGetRaw(
+    public function getAzureIpRangesServiceTagsPublicCloudRaw(
+        \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
         string $responseMediaType = 'application/json'
     ): ResponseInterface
     {
-        $request = $this->createRequest('GET', '/ServiceTags_Public_20240318.json', [], []);
+        $request = $this->createRequest('GET', '/ServiceTags_Public_{version}.json', $this->getPathParameters($parameters), []);
         $request = $this->addAcceptHeader($request, $responseMediaType);
         return $this->httpClient->sendRequest($request);
     }
 
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters
      * @param string $responseMediaType
      * @return array
      * @throws ClientExceptionInterface
      * @throws DT\Exception\InvalidData
      * @throws OAGAC\Exception\InvalidResponseBodySchema
      */
-    public function serviceTagsPublic20240318JsonGet(
+    public function getAzureIpRangesServiceTagsPublicCloud(
+        \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
         string $responseMediaType = 'application/json'
     ): array
     {
-        $response = $this->serviceTagsPublic20240318JsonGetRaw($responseMediaType);
+        $response = $this->getAzureIpRangesServiceTagsPublicCloudRaw($parameters, $responseMediaType);
         $responseContent = null;
         $contentStrategy = null;
         $contentValidator = null;
@@ -61,6 +65,7 @@ class ApiClient extends OAGAC\AbstractApiClient
 
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters
      * @param string $responseMediaType
      * @return \App\DTO\Change
      * @throws ClientExceptionInterface
@@ -68,11 +73,12 @@ class ApiClient extends OAGAC\AbstractApiClient
      * @throws OAGAC\Exception\InvalidResponseBodySchema
      * @throws OAGAC\Exception\UnsuccessfulResponse
      */
-    public function serviceTagsPublic20240318JsonGetResult(
+    public function getAzureIpRangesServiceTagsPublicCloudResult(
+        \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
         string $responseMediaType = 'application/json'
     ): \App\DTO\Change
     {
-        return $this->getSuccessfulContent(...$this->serviceTagsPublic20240318JsonGet($responseMediaType));
+        return $this->getSuccessfulContent(...$this->getAzureIpRangesServiceTagsPublicCloud($parameters, $responseMediaType));
     }
     //endregion
 }

@@ -48,6 +48,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @return Change
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -57,8 +58,8 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun serviceTagsPublic20240318JsonGet() : Change {
-        val localVarResponse = serviceTagsPublic20240318JsonGetWithHttpInfo()
+    fun getAzureIpRangesServiceTagsPublicCloud(version: kotlin.String) : Change {
+        val localVarResponse = getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version = version)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as Change
@@ -78,14 +79,15 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @return ApiResponse<Change?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun serviceTagsPublic20240318JsonGetWithHttpInfo() : ApiResponse<Change?> {
-        val localVariableConfig = serviceTagsPublic20240318JsonGetRequestConfig()
+    fun getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version: kotlin.String) : ApiResponse<Change?> {
+        val localVariableConfig = getAzureIpRangesServiceTagsPublicCloudRequestConfig(version = version)
 
         return request<Unit, Change>(
             localVariableConfig
@@ -93,11 +95,12 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * To obtain the request config of the operation serviceTagsPublic20240318JsonGet
+     * To obtain the request config of the operation getAzureIpRangesServiceTagsPublicCloud
      *
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @return RequestConfig
      */
-    fun serviceTagsPublic20240318JsonGetRequestConfig() : RequestConfig<Unit> {
+    fun getAzureIpRangesServiceTagsPublicCloudRequestConfig(version: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -105,7 +108,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/ServiceTags_Public_20240318.json",
+            path = "/ServiceTags_Public_{version}.json".replace("{"+"version"+"}", encodeURIComponent(version.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

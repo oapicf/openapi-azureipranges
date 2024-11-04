@@ -16,15 +16,15 @@ public interface DefaultService extends Service {
      */
     @Override
     default void update(Routing.Rules rules) {
-        rules.get("/ServiceTags_Public_20240318.json", this::serviceTagsPublic20240318JsonGet);
+        rules.get("/ServiceTags_Public_{version}.json", this::getAzureIpRangesServiceTagsPublicCloud);
     }
 
 
     /**
-     * GET /ServiceTags_Public_20240318.json : Get Azure IP Ranges and Service Tags - Public Cloud.
+     * GET /ServiceTags_Public_{version}.json : Get Azure IP Ranges and Service Tags - Public Cloud.
      * @param request the server request
      * @param response the server response
      */
-    void serviceTagsPublic20240318JsonGet(ServerRequest request, ServerResponse response);
+    void getAzureIpRangesServiceTagsPublicCloud(ServerRequest request, ServerResponse response);
 
 }

@@ -49,7 +49,7 @@ export interface Change {
 /**
  * Check if a given object implements the Change interface.
  */
-export function instanceOfChange(value: object): boolean {
+export function instanceOfChange(value: object): value is Change {
     return true;
 }
 

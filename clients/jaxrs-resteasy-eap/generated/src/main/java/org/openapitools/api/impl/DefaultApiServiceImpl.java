@@ -15,9 +15,9 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-05-13T08:49:41.292703487Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonApiServiceImpl implements ServiceTagsPublic20240318JsonApi {
-      public Response serviceTagsPublic20240318JsonGet(SecurityContext securityContext) {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-07-10T08:57:52.222873339Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class DefaultApiServiceImpl implements DefaultApi {
+      public Response getAzureIpRangesServiceTagsPublicCloud(String version,SecurityContext securityContext) {
       // do some magic!
       return Response.ok().build();
   }

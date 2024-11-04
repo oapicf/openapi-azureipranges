@@ -24,7 +24,7 @@ object DefaultApi {
     * @return Bundled compilation of all service endpoints.
     */
     def endpoints(da: DataAccessor) =
-        serviceTagsPublic20240318JsonGet(da)
+        getAzureIpRangesServiceTagsPublicCloud(da)
 
 
     private def checkError(e: CommonError) = e match {
@@ -51,9 +51,9 @@ object DefaultApi {
         * 
         * @return An endpoint representing a Change
         */
-        private def serviceTagsPublic20240318JsonGet(da: DataAccessor): Endpoint[Change] =
-        get("ServiceTags_Public_20240318.json") { () =>
-          da.Default_serviceTagsPublic20240318JsonGet() match {
+        private def getAzureIpRangesServiceTagsPublicCloud(da: DataAccessor): Endpoint[Change] =
+        get("ServiceTags_Public_{version}.json") { (version: String) =>
+          da.Default_getAzureIpRangesServiceTagsPublicCloud(version) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

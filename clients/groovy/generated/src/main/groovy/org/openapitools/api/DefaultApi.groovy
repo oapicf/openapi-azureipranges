@@ -8,8 +8,8 @@ class DefaultApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def serviceTagsPublic20240318JsonGet ( Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/ServiceTags_Public_20240318.json"
+    def getAzureIpRangesServiceTagsPublicCloud ( String version, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/ServiceTags_Public_${version}.json"
 
         // params
         def queryParams = [:]
@@ -17,6 +17,10 @@ class DefaultApi {
         def bodyParams
         def contentType
 
+        // verify required params are set
+        if (version == null) {
+            throw new RuntimeException("missing required params version")
+        }
 
 
 

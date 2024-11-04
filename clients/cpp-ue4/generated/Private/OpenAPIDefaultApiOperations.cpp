@@ -23,13 +23,17 @@
 namespace OpenAPI
 {
 
-FString OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetRequest::ComputePath() const
+FString OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudRequest::ComputePath() const
 {
-	FString Path(TEXT("/ServiceTags_Public_20240318.json"));
+	TMap<FString, FStringFormatArg> PathParams = { 
+	{ TEXT("version"), FStringFormatArg(ToUrlString(Version)) } };
+
+	FString Path = FString::Format(TEXT("/ServiceTags_Public_{version}.json"), PathParams);
+
 	return Path;
 }
 
-void OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetRequest::SetupHttpRequest(const FHttpRequestRef& HttpRequest) const
+void OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudRequest::SetupHttpRequest(const FHttpRequestRef& HttpRequest) const
 {
 	static const TArray<FString> Consumes = {  };
 	//static const TArray<FString> Produces = { TEXT("application/json") };
@@ -38,7 +42,7 @@ void OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetRequest::SetupHttpReques
 
 }
 
-void OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetResponse::SetHttpResponseCode(EHttpResponseCodes::Type InHttpResponseCode)
+void OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudResponse::SetHttpResponseCode(EHttpResponseCodes::Type InHttpResponseCode)
 {
 	Response::SetHttpResponseCode(InHttpResponseCode);
 	switch ((int)InHttpResponseCode)
@@ -49,7 +53,7 @@ void OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetResponse::SetHttpRespons
 	}
 }
 
-bool OpenAPIDefaultApi::ServiceTagsPublic20240318JsonGetResponse::FromJson(const TSharedPtr<FJsonValue>& JsonValue)
+bool OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudResponse::FromJson(const TSharedPtr<FJsonValue>& JsonValue)
 {
 	return TryGetJsonValue(JsonValue, Content);
 }

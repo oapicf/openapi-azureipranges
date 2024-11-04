@@ -26,7 +26,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**serviceTagsPublic20240318JsonGet**](docs/DefaultApi.md#servicetagspublic20240318jsonget) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+*DefaultApi* | [**getAzureIpRangesServiceTagsPublicCloud**](docs/DefaultApi.md#getazureiprangesservicetagspubliccloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 <a id="documentation-for-models"></a>

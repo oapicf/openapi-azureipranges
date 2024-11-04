@@ -50,14 +50,14 @@ class DefaultController extends Controller
 {
 
     /**
-     * Operation serviceTagsPublic20240318JsonGet
+     * Operation getAzureIpRangesServiceTagsPublicCloud
      *
      * Get Azure IP Ranges and Service Tags - Public Cloud
      *
      * @param Request $request The Symfony request to handle.
      * @return Response The Symfony response.
      */
-    public function serviceTagsPublic20240318JsonGetAction(Request $request)
+    public function getAzureIpRangesServiceTagsPublicCloudAction(Request $request, $version)
     {
         // Figure out what data format to return to the client
         $produces = ['application/json'];
@@ -74,7 +74,21 @@ class DefaultController extends Controller
 
         // Use the default value if no value was provided
 
+        // Deserialize the input values that needs it
+        try {
+            $version = $this->deserialize($version, 'string', 'string');
+        } catch (SerializerRuntimeException $exception) {
+            return $this->createBadRequestResponse($exception->getMessage());
+        }
+
         // Validate the input values
+        $asserts = [];
+        $asserts[] = new Assert\NotNull();
+        $asserts[] = new Assert\Type("string");
+        $response = $this->validate($version, $asserts);
+        if ($response instanceof Response) {
+            return $response;
+        }
 
 
         try {
@@ -85,7 +99,7 @@ class DefaultController extends Controller
             $responseCode = 200;
             $responseHeaders = [];
 
-            $result = $handler->serviceTagsPublic20240318JsonGet($responseCode, $responseHeaders);
+            $result = $handler->getAzureIpRangesServiceTagsPublicCloud($version, $responseCode, $responseHeaders);
 
             $message = match($responseCode) {
                 200 => 'Successful response',

@@ -29,6 +29,7 @@
 #include <utility>
 
 #include "Change.h"
+#include <string>
 
 namespace org::openapitools::server::api
 {
@@ -44,7 +45,7 @@ public:
 private:
     void setupRoutes();
 
-    void service_tags_public20240318_json_get_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response);
+    void get_azure_ip_ranges_service_tags_public_cloud_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response);
     void default_api_default_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response);
 
     /// <summary>
@@ -67,7 +68,8 @@ private:
     /// <remarks>
     /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
     /// </remarks>
-    virtual void service_tags_public20240318_json_get(Pistache::Http::ResponseWriter &response) = 0;
+    /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
+    virtual void get_azure_ip_ranges_service_tags_public_cloud(const std::string &version, Pistache::Http::ResponseWriter &response) = 0;
 
 };
 

@@ -12,7 +12,6 @@
 package openapi
 
 import (
-	"encoding/json"
 	"net/http"
 	"strings"
 
@@ -36,7 +35,7 @@ func WithDefaultAPIErrorHandler(h ErrorHandler) DefaultAPIOption {
 }
 
 // NewDefaultAPIController creates a default api controller
-func NewDefaultAPIController(s DefaultAPIServicer, opts ...DefaultAPIOption) Router {
+func NewDefaultAPIController(s DefaultAPIServicer, opts ...DefaultAPIOption) *DefaultAPIController {
 	controller := &DefaultAPIController{
 		service:      s,
 		errorHandler: DefaultErrorHandler,
@@ -52,22 +51,28 @@ func NewDefaultAPIController(s DefaultAPIServicer, opts ...DefaultAPIOption) Rou
 // Routes returns all the api routes for the DefaultAPIController
 func (c *DefaultAPIController) Routes() Routes {
 	return Routes{
-		"ServiceTagsPublic20240318JsonGet": Route{
+		"GetAzureIpRangesServiceTagsPublicCloud": Route{
 			strings.ToUpper("Get"),
-			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json",
-			c.ServiceTagsPublic20240318JsonGet,
+			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
+			c.GetAzureIpRangesServiceTagsPublicCloud,
 		},
 	}
 }
 
-// ServiceTagsPublic20240318JsonGet - Get Azure IP Ranges and Service Tags - Public Cloud
-func (c *DefaultAPIController) ServiceTagsPublic20240318JsonGet(w http.ResponseWriter, r *http.Request) {
-	result, err := c.service.ServiceTagsPublic20240318JsonGet(r.Context())
+// GetAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud
+func (c *DefaultAPIController) GetAzureIpRangesServiceTagsPublicCloud(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	versionParam := params["version"]
+	if versionParam == "" {
+		c.errorHandler(w, r, &RequiredError{"version"}, nil)
+		return
+	}
+	result, err := c.service.GetAzureIpRangesServiceTagsPublicCloud(r.Context(), versionParam)
 	// If an error occurred, encode the error with the status code
 	if err != nil {
 		c.errorHandler(w, r, err, &result)
 		return
 	}
 	// If no error, encode the body and the result code
-	EncodeJSONResponse(result.Body, &result.Code, w)
+	_ = EncodeJSONResponse(result.Body, &result.Code, w)
 }

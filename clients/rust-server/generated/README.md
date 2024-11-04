@@ -14,8 +14,8 @@ To see how to make this your own, look here:
 [README]((https://openapi-generator.tech))
 
 - API version: 0.9.0-pre.0
-- Build date: 2024-05-13T08:53:37.721501020Z[Etc/UTC]
-- Generator version: 7.5.0
+- Build date: 2024-07-10T09:00:16.473990928Z[Etc/UTC]
+- Generator version: 7.6.0
 
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 
@@ -62,7 +62,7 @@ cargo run --example server
 To run a client, follow one of the following simple steps:
 
 ```
-cargo run --example client ServiceTagsPublic20240318JsonGet
+cargo run --example client GetAzureIpRangesServiceTagsPublicCloud
 ```
 
 ### HTTPS
@@ -96,7 +96,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[****](docs/default_api.md#) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloud**](docs/default_api.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Documentation For Models

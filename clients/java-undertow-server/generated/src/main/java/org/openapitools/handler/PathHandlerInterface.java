@@ -23,7 +23,20 @@ public interface PathHandlerInterface {
      *
      * <p>Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</p>
      *
-     * <p><b>Endpoint</b>: {@link Methods#GET GET} "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json" (<i>privileged: false</i>)</p>
+     * <p><b>Endpoint</b>: {@link Methods#GET GET} "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json" (<i>privileged: false</i>)</p>
+     *
+     * <p><b>Request parameters</b>:</p>
+     * <ul>
+     * <li>
+     * <p>"<b>version</b>"
+     * <p>The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</p>
+     * <p>
+     * - Parameter type: <b>{@link String}</b><br/>
+     * - Appears in: <b>{@link HttpServerExchange#getPathParameters Path}</b><br/>
+     * - Required: <b>true</b>
+     * </p>
+     * </li>
+     * </ul>
      *
      * <p><b>Produces</b>: [{isJson=true, mediaType=application/json}]</p>
      * <p><b>Returns</b>: {@link Change}</p>
@@ -34,5 +47,5 @@ public interface PathHandlerInterface {
      * </ul>
      */
     @javax.annotation.Nonnull
-    HttpHandler serviceTagsPublic20240318JsonGet();
+    HttpHandler getAzureIpRangesServiceTagsPublicCloud();
 }

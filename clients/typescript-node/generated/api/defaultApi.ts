@@ -89,9 +89,11 @@ export class DefaultApi {
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * @summary Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
-    public async serviceTagsPublic20240318JsonGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Change;  }> {
-        const localVarPath = this.basePath + '/ServiceTags_Public_20240318.json';
+    public async getAzureIpRangesServiceTagsPublicCloud (version: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Change;  }> {
+        const localVarPath = this.basePath + '/ServiceTags_Public_{version}.json'
+            .replace('{' + 'version' + '}', encodeURIComponent(String(version)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -102,6 +104,11 @@ export class DefaultApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
+
+        // verify required parameter 'version' is not null or undefined
+        if (version === null || version === undefined) {
+            throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+        }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
 

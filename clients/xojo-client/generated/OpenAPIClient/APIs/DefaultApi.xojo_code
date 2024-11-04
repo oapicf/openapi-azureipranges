@@ -1,14 +1,15 @@
 #tag Class
 Protected Class DefaultApi
 	#tag Method, Flags = &h0
-		Sub ServiceTagsPublic20240318JsonGet()
-		  // Operation 
+		Sub GetAzureIpRangesServiceTagsPublicCloud(, version As String)
+		  // Operation getAzureIpRangesServiceTagsPublicCloud
 		  // Get Azure IP Ranges and Service Tags - Public Cloud
 		  // - 
+		  // - parameter version: (path) The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
 		  //
-		  // Invokes DefaultApiCallbackHandler.ServiceTagsPublic20240318JsonGetCallback(Change) on completion. 
+		  // Invokes DefaultApiCallbackHandler.GetAzureIpRangesServiceTagsPublicCloudCallback(Change) on completion. 
 		  //
-		  // - GET /ServiceTags_Public_20240318.json
+		  // - GET /ServiceTags_Public_{version}.json
 		  // - Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 		  // - defaultResponse: Nil
 		  //
@@ -21,12 +22,15 @@ Protected Class DefaultApi
 		  
 
 
-		  Dim localVarPath As String = "/ServiceTags_Public_20240318.json"
+		  Dim localVarPath As String = "/ServiceTags_Public_{version}.json"
+		  
+		  Dim localVarPathStringversion As String = version
+		  
+		  localVarPath = localVarPath.ReplaceAllB("{version}", localVarPathStringversion)
 		  
 		  
-		  
-		  AddHandler localVarHTTPSocket.PageReceived, addressof me.ServiceTagsPublic20240318JsonGet_handler
-		  AddHandler localVarHTTPSocket.Error, addressof Me.ServiceTagsPublic20240318JsonGet_error
+		  AddHandler localVarHTTPSocket.PageReceived, addressof me.GetAzureIpRangesServiceTagsPublicCloud_handler
+		  AddHandler localVarHTTPSocket.Error, addressof Me.GetAzureIpRangesServiceTagsPublicCloud_error
 		  
 		  
 		  localVarHTTPSocket.SendRequest("GET", Me.BasePath + localVarPath)
@@ -39,7 +43,7 @@ Protected Class DefaultApi
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Function ServiceTagsPublic20240318JsonGetPrivateFuncDeserializeResponse(HTTPStatus As Integer, Headers As InternetHeaders, error As OpenAPIClient.OpenAPIClientException, Content As String, ByRef outData As OpenAPIClient.Models.Change) As Boolean
+		Private Function GetAzureIpRangesServiceTagsPublicCloudPrivateFuncDeserializeResponse(HTTPStatus As Integer, Headers As InternetHeaders, error As OpenAPIClient.OpenAPIClientException, Content As String, ByRef outData As OpenAPIClient.Models.Change) As Boolean
 		  Dim contentType As String = Headers.Value("Content-Type")
 		  Dim contentEncoding As TextEncoding = OpenAPIClient.EncodingFromContentType(contentType)
 		  Content = DefineEncoding(Content, contentEncoding)
@@ -96,17 +100,17 @@ Protected Class DefaultApi
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Sub ServiceTagsPublic20240318JsonGet_error(sender As HTTPSecureSocket, Code As Integer)
+		Private Sub GetAzureIpRangesServiceTagsPublicCloud_error(sender As HTTPSecureSocket, Code As Integer)
 		  If sender <> nil Then sender.Close()
 
 		  Dim error As New OpenAPIClient.OpenAPIClientException(Code)
 		  Dim data As OpenAPIClient.Models.Change
-		  CallbackHandler.ServiceTagsPublic20240318JsonGetCallback(error, data)
+		  CallbackHandler.GetAzureIpRangesServiceTagsPublicCloudCallback(error, data)
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Sub ServiceTagsPublic20240318JsonGet_handler(sender As HTTPSecureSocket, URL As String, HTTPStatus As Integer, Headers As InternetHeaders, Content As String)
+		Private Sub GetAzureIpRangesServiceTagsPublicCloud_handler(sender As HTTPSecureSocket, URL As String, HTTPStatus As Integer, Headers As InternetHeaders, Content As String)
 		  #Pragma Unused URL
 		  
 
@@ -115,9 +119,9 @@ Protected Class DefaultApi
 		  Dim error As New OpenAPIClient.OpenAPIClientException(HTTPStatus, "", Content)
 		  
 		  Dim data As OpenAPIClient.Models.Change
-		  Call ServiceTagsPublic20240318JsonGetPrivateFuncDeserializeResponse(HTTPStatus, Headers, error, Content, data)
+		  Call GetAzureIpRangesServiceTagsPublicCloudPrivateFuncDeserializeResponse(HTTPStatus, Headers, error, Content, data)
 		  
-		  CallbackHandler.ServiceTagsPublic20240318JsonGetCallback(error, data)
+		  CallbackHandler.GetAzureIpRangesServiceTagsPublicCloudCallback(error, data)
 		End Sub
 	#tag EndMethod
 

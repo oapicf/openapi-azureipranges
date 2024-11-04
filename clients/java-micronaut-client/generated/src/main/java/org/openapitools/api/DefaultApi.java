@@ -26,17 +26,20 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-05-13T08:48:36.184553297Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-07-10T08:57:01.086391411Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @Client("${openapi-micronaut-client-base-path}")
 public interface DefaultApi {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      *
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @return Change
      */
-    @Get(uri="/ServiceTags_Public_20240318.json")
+    @Get(uri="/ServiceTags_Public_{version}.json")
     @Consumes({"application/json"})
-    Mono<Change> serviceTagsPublic20240318JsonGet();
+    Mono<Change> getAzureIpRangesServiceTagsPublicCloud(
+        @PathVariable(name="version") @NotNull String version
+    );
 
 }

@@ -34,9 +34,10 @@ namespace Org.OpenAPITools.Api
         /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Change</returns>
-        Change ServiceTagsPublic20240318JsonGet(int operationIndex = 0);
+        Change GetAzureIpRangesServiceTagsPublicCloud(string version, int operationIndex = 0);
 
         /// <summary>
         /// Get Azure IP Ranges and Service Tags - Public Cloud
@@ -45,9 +46,10 @@ namespace Org.OpenAPITools.Api
         /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Change</returns>
-        ApiResponse<Change> ServiceTagsPublic20240318JsonGetWithHttpInfo(int operationIndex = 0);
+        ApiResponse<Change> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo(string version, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -64,10 +66,11 @@ namespace Org.OpenAPITools.Api
         /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Change</returns>
-        System.Threading.Tasks.Task<Change> ServiceTagsPublic20240318JsonGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Azure IP Ranges and Service Tags - Public Cloud
@@ -76,10 +79,11 @@ namespace Org.OpenAPITools.Api
         /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Change)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Change>> ServiceTagsPublic20240318JsonGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -204,11 +208,12 @@ namespace Org.OpenAPITools.Api
         /// Get Azure IP Ranges and Service Tags - Public Cloud Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Change</returns>
-        public Change ServiceTagsPublic20240318JsonGet(int operationIndex = 0)
+        public Change GetAzureIpRangesServiceTagsPublicCloud(string version, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<Change> localVarResponse = ServiceTagsPublic20240318JsonGetWithHttpInfo();
+            Org.OpenAPITools.Client.ApiResponse<Change> localVarResponse = GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version);
             return localVarResponse.Data;
         }
 
@@ -216,10 +221,17 @@ namespace Org.OpenAPITools.Api
         /// Get Azure IP Ranges and Service Tags - Public Cloud Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Change</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Change> ServiceTagsPublic20240318JsonGetWithHttpInfo(int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Change> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo(string version, int operationIndex = 0)
         {
+            // verify the required parameter 'version' is set
+            if (version == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'version' when calling DefaultApi->GetAzureIpRangesServiceTagsPublicCloud");
+            }
+
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -242,16 +254,17 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.PathParameters.Add("version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(version)); // path parameter
 
-            localVarRequestOptions.Operation = "DefaultApi.ServiceTagsPublic20240318JsonGet";
+            localVarRequestOptions.Operation = "DefaultApi.GetAzureIpRangesServiceTagsPublicCloud";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Change>("/ServiceTags_Public_20240318.json", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Change>("/ServiceTags_Public_{version}.json", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ServiceTagsPublic20240318JsonGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAzureIpRangesServiceTagsPublicCloud", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -265,12 +278,13 @@ namespace Org.OpenAPITools.Api
         /// Get Azure IP Ranges and Service Tags - Public Cloud Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Change</returns>
-        public async System.Threading.Tasks.Task<Change> ServiceTagsPublic20240318JsonGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Change> localVarResponse = await ServiceTagsPublic20240318JsonGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<Change> localVarResponse = await GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(version, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -278,11 +292,18 @@ namespace Org.OpenAPITools.Api
         /// Get Azure IP Ranges and Service Tags - Public Cloud Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Change)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Change>> ServiceTagsPublic20240318JsonGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'version' is set
+            if (version == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'version' when calling DefaultApi->GetAzureIpRangesServiceTagsPublicCloud");
+            }
+
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -306,17 +327,18 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            localVarRequestOptions.PathParameters.Add("version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(version)); // path parameter
 
-            localVarRequestOptions.Operation = "DefaultApi.ServiceTagsPublic20240318JsonGet";
+            localVarRequestOptions.Operation = "DefaultApi.GetAzureIpRangesServiceTagsPublicCloud";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Change>("/ServiceTags_Public_20240318.json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Change>("/ServiceTags_Public_{version}.json", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ServiceTagsPublic20240318JsonGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetAzureIpRangesServiceTagsPublicCloud", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

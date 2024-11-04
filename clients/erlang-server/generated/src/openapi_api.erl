@@ -15,8 +15,9 @@
 -spec request_params(OperationID :: operation_id()) -> [Param :: request_param()].
 
 
-request_params('ServiceTagsPublic20240318JsonGet') ->
+request_params('GetAzureIpRangesServiceTagsPublicCloud') ->
     [
+        'version'
     ];
 
 request_params(_) ->
@@ -48,6 +49,15 @@ request_params(_) ->
 }.
 
 
+
+request_param_info('GetAzureIpRangesServiceTagsPublicCloud', 'version') ->
+    #{
+        source =>  binding ,
+        rules => [
+            {type, 'binary'},
+            required
+        ]
+    };
 
 request_param_info(OperationID, Name) ->
     error({unknown_param, OperationID, Name}).
@@ -96,7 +106,7 @@ populate_request_param(OperationID, Name, Req0, ValidatorState) ->
 ) -> ok | no_return().
 
 
-validate_response('ServiceTagsPublic20240318JsonGet', 200, Body, ValidatorState) ->
+validate_response('GetAzureIpRangesServiceTagsPublicCloud', 200, Body, ValidatorState) ->
     validate_response_body('Change', 'Change', Body, ValidatorState);
 
 

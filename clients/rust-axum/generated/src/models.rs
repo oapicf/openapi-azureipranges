@@ -8,6 +8,14 @@ use crate::header;
 use crate::{models, types::*};
 
       
+    #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
+    #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))] 
+    pub struct GetAzureIpRangesServiceTagsPublicCloudPathParams {
+            /// The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+                pub version: String,
+    }
+
+
 
 
 

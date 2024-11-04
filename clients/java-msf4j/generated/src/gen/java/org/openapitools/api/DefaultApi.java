@@ -1,8 +1,8 @@
 package org.openapitools.api;
 
 import org.openapitools.model.*;
-import org.openapitools.api.ServiceTagsPublic20240318JsonApiService;
-import org.openapitools.api.factories.ServiceTagsPublic20240318JsonApiServiceFactory;
+import org.openapitools.api.DefaultApiService;
+import org.openapitools.api.factories.DefaultApiServiceFactory;
 
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
@@ -22,13 +22,13 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
 
-@Path("/ServiceTags_Public_20240318.json")
+@Path("/ServiceTags_Public_{version}.json")
 
 
-@io.swagger.annotations.Api(description = "the ServiceTags_Public_20240318.json API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-05-13T08:48:52.726892722Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public class ServiceTagsPublic20240318JsonApi  {
-   private final ServiceTagsPublic20240318JsonApiService delegate = ServiceTagsPublic20240318JsonApiServiceFactory.getServiceTagsPublic20240318JsonApi();
+@io.swagger.annotations.Api(description = "the default API")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-07-10T08:57:07.999110462Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public class DefaultApi  {
+   private final DefaultApiService delegate = DefaultApiServiceFactory.getDefaultApi();
 
     @GET
     
@@ -37,8 +37,9 @@ public class ServiceTagsPublic20240318JsonApi  {
     @io.swagger.annotations.ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful response", response = Change.class) })
-    public Response serviceTagsPublic20240318JsonGet()
+    public Response getAzureIpRangesServiceTagsPublicCloud(@ApiParam(value = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506",required=true) @PathParam("version") String version
+)
     throws NotFoundException {
-        return delegate.serviceTagsPublic20240318JsonGet();
+        return delegate.getAzureIpRangesServiceTagsPublicCloud(version);
     }
 }

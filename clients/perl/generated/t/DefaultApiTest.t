@@ -30,10 +30,11 @@ my $api = WWW::OpenAPIClient::DefaultApi->new();
 isa_ok($api, 'WWW::OpenAPIClient::DefaultApi');
 
 #
-# service_tags_public20240318_json_get test
+# get_azure_ip_ranges_service_tags_public_cloud test
 #
 # uncomment below and update the test
-#my $service_tags_public20240318_json_get_result = $api->service_tags_public20240318_json_get();
+#my $get_azure_ip_ranges_service_tags_public_cloud_version = undef; # replace NULL with a proper value
+#my $get_azure_ip_ranges_service_tags_public_cloud_result = $api->get_azure_ip_ranges_service_tags_public_cloud(version => $get_azure_ip_ranges_service_tags_public_cloud_version);
 
 
 done_testing();

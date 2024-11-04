@@ -14,7 +14,7 @@ There may be multiple requests for a single endpoint, one for each example descr
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**serviceTagsPublic20240318JsonGet**](Apis/DefaultApi.http#servicetagspublic20240318jsonget) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+*DefaultApi* | [**getAzureIpRangesServiceTagsPublicCloud**](Apis/DefaultApi.http#getazureiprangesservicetagspubliccloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Usage

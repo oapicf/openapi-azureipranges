@@ -29,12 +29,13 @@ OAIDefaultApiHandler::~OAIDefaultApiHandler(){
 
 }
 
-void OAIDefaultApiHandler::serviceTagsPublic20240318JsonGet() {
+void OAIDefaultApiHandler::getAzureIpRangesServiceTagsPublicCloud(QString version) {
+    Q_UNUSED(version);
     auto reqObj = qobject_cast<OAIDefaultApiRequest*>(sender());
     if( reqObj != nullptr )
     {
         OAIChange res;
-        reqObj->serviceTagsPublic20240318JsonGetResponse(res);
+        reqObj->getAzureIpRangesServiceTagsPublicCloudResponse(res);
     }
 }
 

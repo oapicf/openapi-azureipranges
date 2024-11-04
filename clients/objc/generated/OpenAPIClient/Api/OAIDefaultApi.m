@@ -52,13 +52,29 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
 ///
 /// Get Azure IP Ranges and Service Tags - Public Cloud
 /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+///  @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
+///
 ///  @returns OAIChange*
 ///
--(NSURLSessionTask*) serviceTagsPublic20240318JsonGetWithCompletionHandler: 
-    (void (^)(OAIChange* output, NSError* error)) handler {
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/ServiceTags_Public_20240318.json"];
+-(NSURLSessionTask*) getAzureIpRangesServiceTagsPublicCloudWithVersion: (NSString*) version
+    completionHandler: (void (^)(OAIChange* output, NSError* error)) handler {
+    // verify the required parameter 'version' is set
+    if (version == nil) {
+        NSParameterAssert(version);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"version"] };
+            NSError* error = [NSError errorWithDomain:kOAIDefaultApiErrorDomain code:kOAIDefaultApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/ServiceTags_Public_{version}.json"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (version != nil) {
+        pathParams[@"version"] = version;
+    }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];

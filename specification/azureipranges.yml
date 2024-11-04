@@ -3,18 +3,29 @@ info:
   title: Azure IP Ranges and Service Tags - Public Cloud
   version: 0.9.0-pre.0
 servers:
-  - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240506.json
+  - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
 paths:
-  /ServiceTags_Public_20240318.json:
+  /ServiceTags_Public_{version}.json:
     get:
+      operationId: getAzureIpRangesServiceTagsPublicCloud
       summary: Get Azure IP Ranges and Service Tags - Public Cloud
       description: Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
       responses:
         '200':
           description: Successful response
+          # x-is-file: true
           content:
             application/json:
               schema:
+                # type: string
+                # format: binary
                 $ref: '#/components/schemas/Change'
 components:
   schemas:

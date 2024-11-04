@@ -26,10 +26,11 @@ class DefaultApiTest : ShouldSpec() {
         // uncomment below to create an instance of DefaultApi
         //val apiInstance = DefaultApi()
 
-        // to test serviceTagsPublic20240318JsonGet
-        should("test serviceTagsPublic20240318JsonGet") {
-            // uncomment below to test serviceTagsPublic20240318JsonGet
-            //val result : Change = apiInstance.serviceTagsPublic20240318JsonGet()
+        // to test getAzureIpRangesServiceTagsPublicCloud
+        should("test getAzureIpRangesServiceTagsPublicCloud") {
+            // uncomment below to test getAzureIpRangesServiceTagsPublicCloud
+            //val version : kotlin.String = version_example // kotlin.String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+            //val result : Change = apiInstance.getAzureIpRangesServiceTagsPublicCloud(version)
             //result shouldBe ("TODO")
         }
 

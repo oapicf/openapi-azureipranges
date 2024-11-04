@@ -13,7 +13,7 @@
 	            "name": "default",
 	            "item": [
 	                        {
-    "name": "/ServiceTags_Public_20240318.json",
+    "name": "/ServiceTags_Public_:version.json",
                 "description": "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.",
                  "item": [
                             {
@@ -38,14 +38,19 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/ServiceTags_Public_20240318.json",
+                                        "raw": "{{baseUrl}}/ServiceTags_Public_:version.json",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
-                                            "ServiceTags_Public_20240318.json"
+                                            "ServiceTags_Public_:version.json"
                                         ],
                                         "variable": [
+                                            {
+                                                "key": "version",
+                                                "value": "",
+                                                "description": "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"
+                                            }
                                         ],
                                         "query": [
                                         ]

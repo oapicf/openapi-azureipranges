@@ -15,17 +15,18 @@ module DefaultApiHandler =
     /// 
     /// </summary>
 
-    //#region ServiceTagsPublic20240318JsonGet
+    //#region GetAzureIpRangesServiceTagsPublicCloud
     /// <summary>
     /// Get Azure IP Ranges and Service Tags - Public Cloud
     /// </summary>
 
-    let ServiceTagsPublic20240318JsonGet  : HttpHandler =
+    let GetAzureIpRangesServiceTagsPublicCloud (pathParams:GetAzureIpRangesServiceTagsPublicCloudPathParams) : HttpHandler =
       fun (next : HttpFunc) (ctx : HttpContext) ->
         task {
-          let result = DefaultApiService.ServiceTagsPublic20240318JsonGet ctx 
+          let serviceArgs = {    pathParams=pathParams;  } : GetAzureIpRangesServiceTagsPublicCloudArgs
+          let result = DefaultApiService.GetAzureIpRangesServiceTagsPublicCloud ctx serviceArgs
           return! (match result with
-                      | ServiceTagsPublic20240318JsonGetStatusCode200 resolved ->
+                      | GetAzureIpRangesServiceTagsPublicCloudStatusCode200 resolved ->
                             setStatusCode 200 >=> json resolved.content
           ) next ctx
         }

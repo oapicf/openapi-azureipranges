@@ -6,8 +6,8 @@ from fastapi.testclient import TestClient
 from openapi_server.models.change import Change  # noqa: F401
 
 
-def test_service_tags_public20240318_json_get(client: TestClient):
-    """Test case for service_tags_public20240318_json_get
+def test_get_azure_ip_ranges_service_tags_public_cloud(client: TestClient):
+    """Test case for get_azure_ip_ranges_service_tags_public_cloud
 
     Get Azure IP Ranges and Service Tags - Public Cloud
     """
@@ -17,7 +17,7 @@ def test_service_tags_public20240318_json_get(client: TestClient):
     # uncomment below to make a request
     #response = client.request(
     #    "GET",
-    #    "/ServiceTags_Public_20240318.json",
+    #    "/ServiceTags_Public_{version}.json".format(version='version_example'),
     #    headers=headers,
     #)
 

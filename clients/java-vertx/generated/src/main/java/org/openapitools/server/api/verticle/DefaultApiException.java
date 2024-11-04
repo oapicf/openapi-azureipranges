@@ -8,7 +8,7 @@ public final class DefaultApiException extends MainApiException {
         super(statusCode, statusMessage);
     }
 
-    public static final DefaultApiException Default_serviceTagsPublic20240318JsonGet_200_Exception = new DefaultApiException(200, "Successful response");
+    public static final DefaultApiException Default_getAzureIpRangesServiceTagsPublicCloud_200_Exception = new DefaultApiException(200, "Successful response");
     
 
 }

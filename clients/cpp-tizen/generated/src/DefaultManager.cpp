@@ -48,7 +48,7 @@ static gpointer __DefaultManagerthreadFunc(gpointer data)
 }
 
 
-static bool serviceTagsPublic20240318JsonGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool getAzureIpRangesServiceTagsPublicCloudProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(Change, Error, void* )
@@ -103,8 +103,8 @@ static bool serviceTagsPublic20240318JsonGetProcessor(MemoryStruct_s p_chunk, lo
 			}
 }
 
-static bool serviceTagsPublic20240318JsonGetHelper(char * accessToken,
-	
+static bool getAzureIpRangesServiceTagsPublicCloudHelper(char * accessToken,
+	std::string version, 
 	void(* handler)(Change, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -125,9 +125,15 @@ static bool serviceTagsPublic20240318JsonGetHelper(char * accessToken,
 	JsonNode* node;
 	JsonArray* json_array;
 
-	string url("/ServiceTags_Public_20240318.json");
+	string url("/ServiceTags_Public_{version}.json");
 	int pos;
 
+	string s_version("{");
+	s_version.append("version");
+	s_version.append("}");
+	pos = url.find(s_version);
+	url.erase(pos, s_version.length());
+	url.insert(pos, stringify(&version, "std::string"));
 
 	//TODO: free memory of errormsg, memorystruct
 	MemoryStruct_s* p_chunk = new MemoryStruct_s();
@@ -144,7 +150,7 @@ static bool serviceTagsPublic20240318JsonGetHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(DefaultManager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = serviceTagsPublic20240318JsonGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = getAzureIpRangesServiceTagsPublicCloudProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -162,7 +168,7 @@ static bool serviceTagsPublic20240318JsonGetHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (DefaultManager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), serviceTagsPublic20240318JsonGetProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), getAzureIpRangesServiceTagsPublicCloudProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -174,23 +180,23 @@ static bool serviceTagsPublic20240318JsonGetHelper(char * accessToken,
 
 
 
-bool DefaultManager::serviceTagsPublic20240318JsonGetAsync(char * accessToken,
-	
+bool DefaultManager::getAzureIpRangesServiceTagsPublicCloudAsync(char * accessToken,
+	std::string version, 
 	void(* handler)(Change, Error, void* )
 	, void* userData)
 {
-	return serviceTagsPublic20240318JsonGetHelper(accessToken,
-	
+	return getAzureIpRangesServiceTagsPublicCloudHelper(accessToken,
+	version, 
 	handler, userData, true);
 }
 
-bool DefaultManager::serviceTagsPublic20240318JsonGetSync(char * accessToken,
-	
+bool DefaultManager::getAzureIpRangesServiceTagsPublicCloudSync(char * accessToken,
+	std::string version, 
 	void(* handler)(Change, Error, void* )
 	, void* userData)
 {
-	return serviceTagsPublic20240318JsonGetHelper(accessToken,
-	
+	return getAzureIpRangesServiceTagsPublicCloudHelper(accessToken,
+	version, 
 	handler, userData, false);
 }
 

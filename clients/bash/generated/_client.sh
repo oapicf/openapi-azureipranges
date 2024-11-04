@@ -10,7 +10,7 @@
 # !
 # ! Based on: https://github.com/Valodim/zsh-curl-completion/blob/master/_curl
 # !
-# ! Generator version: 7.5.0
+# ! Generator version: 7.6.0
 # !
 # !
 # ! Installation:
@@ -297,7 +297,7 @@ case $state in
   ops)
     # Operations
     _values "Operations" \
-            "serviceTagsPublic20240318JsonGet[Get Azure IP Ranges and Service Tags - Public Cloud]" \
+            "getAzureIpRangesServiceTagsPublicCloud[Get Azure IP Ranges and Service Tags - Public Cloud]" \
 
     _arguments "(--help)--help[Print information about operation]"
 
@@ -305,10 +305,11 @@ case $state in
     ;;
   args)
     case $line[1] in
-      serviceTagsPublic20240318JsonGet)
+      getAzureIpRangesServiceTagsPublicCloud)
         local -a _op_arguments
         _op_arguments=(
-                              )
+          "version=:[PATH] The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"
+                    )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
     esac

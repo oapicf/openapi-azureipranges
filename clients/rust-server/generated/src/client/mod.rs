@@ -36,7 +36,7 @@ const FRAGMENT_ENCODE_SET: &AsciiSet = &percent_encoding::CONTROLS
 const ID_ENCODE_SET: &AsciiSet = &FRAGMENT_ENCODE_SET.add(b'|');
 
 use crate::{Api,
-     ServiceTagsPublic20240318JsonGetResponse
+     GetAzureIpRangesServiceTagsPublicCloudResponse
      };
 
 /// Convert input into a base path, e.g. "http://example:123". Also checks the scheme as it goes.
@@ -380,14 +380,16 @@ impl<S, C> Api<C> for Client<S, C> where
         }
     }
 
-    async fn service_tags_public20240318_json_get(
+    async fn get_azure_ip_ranges_service_tags_public_cloud(
         &self,
-        context: &C) -> Result<ServiceTagsPublic20240318JsonGetResponse, ApiError>
+        param_version: String,
+        context: &C) -> Result<GetAzureIpRangesServiceTagsPublicCloudResponse, ApiError>
     {
         let mut client_service = self.client_service.clone();
         let mut uri = format!(
-            "{}/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json",
+            "{}/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
             self.base_path
+            ,version=utf8_percent_encode(&param_version.to_string(), ID_ENCODE_SET)
         );
 
         // Query parameters
@@ -433,7 +435,7 @@ impl<S, C> Api<C> for Client<S, C> where
                 let body = serde_json::from_str::<models::Change>(body).map_err(|e| {
                     ApiError(format!("Response body did not match the schema: {}", e))
                 })?;
-                Ok(ServiceTagsPublic20240318JsonGetResponse::SuccessfulResponse
+                Ok(GetAzureIpRangesServiceTagsPublicCloudResponse::SuccessfulResponse
                     (body)
                 )
             }

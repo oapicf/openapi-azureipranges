@@ -4,13 +4,13 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ServiceTagsPublic20240318JsonGet**](DefaultAPI.md#ServiceTagsPublic20240318JsonGet) | **Get** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**GetAzureIpRangesServiceTagsPublicCloud**](DefaultAPI.md#GetAzureIpRangesServiceTagsPublicCloud) | **Get** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 
-## ServiceTagsPublic20240318JsonGet
+## GetAzureIpRangesServiceTagsPublicCloud
 
-> Change ServiceTagsPublic20240318JsonGet(ctx).Execute()
+> Change GetAzureIpRangesServiceTagsPublicCloud(ctx, version).Execute()
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -29,26 +29,35 @@ import (
 )
 
 func main() {
+	version := "version_example" // string | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.ServiceTagsPublic20240318JsonGet(context.Background()).Execute()
+	resp, r, err := apiClient.DefaultAPI.GetAzureIpRangesServiceTagsPublicCloud(context.Background(), version).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.ServiceTagsPublic20240318JsonGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetAzureIpRangesServiceTagsPublicCloud``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ServiceTagsPublic20240318JsonGet`: Change
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.ServiceTagsPublic20240318JsonGet`: %v\n", resp)
+	// response from `GetAzureIpRangesServiceTagsPublicCloud`: Change
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetAzureIpRangesServiceTagsPublicCloud`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**version** | **string** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiServiceTagsPublic20240318JsonGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAzureIpRangesServiceTagsPublicCloudRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
 
 ### Return type

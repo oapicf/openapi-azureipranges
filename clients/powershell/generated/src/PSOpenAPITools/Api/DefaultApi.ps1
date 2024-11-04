@@ -15,6 +15,9 @@ Get Azure IP Ranges and Service Tags - Public Cloud
 
 No description available.
 
+.PARAMETER Version
+The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+
 .PARAMETER WithHttpInfo
 
 A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
@@ -23,15 +26,18 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 Change
 #>
-function Invoke-ServiceTagsPublic20240318JsonGet {
+function Get-AzureIpRangesServiceTagsPublicCloud {
     [CmdletBinding()]
     Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${Version},
         [Switch]
         $WithHttpInfo
     )
 
     Process {
-        'Calling method: Invoke-ServiceTagsPublic20240318JsonGet' | Write-Debug
+        'Calling method: Get-AzureIpRangesServiceTagsPublicCloud' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -47,7 +53,11 @@ function Invoke-ServiceTagsPublic20240318JsonGet {
         # HTTP header 'Accept' (if needed)
         $LocalVarAccepts = @('application/json')
 
-        $LocalVarUri = '/ServiceTags_Public_20240318.json'
+        $LocalVarUri = '/ServiceTags_Public_{version}.json'
+        if (!$Version) {
+            throw "Error! The required parameter `Version` missing when calling getAzureIpRangesServiceTagsPublicCloud."
+        }
+        $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
                                 -Uri $LocalVarUri `

@@ -34,7 +34,7 @@ import org.openapitools.client.model.Change;
  */
 @RegisterRestClient
 @RegisterProvider(ApiExceptionMapper.class)
-@Path("/ServiceTags_Public_20240318.json")
+@Path("/ServiceTags_Public_{version}.json")
 public interface DefaultApi  {
 
     /**
@@ -44,5 +44,5 @@ public interface DefaultApi  {
     @GET
     
     @Produces({ "application/json" })
-    Change serviceTagsPublic20240318JsonGet() throws ApiException, ProcessingException;
+    Change getAzureIpRangesServiceTagsPublicCloud(@PathParam("version") String version) throws ApiException, ProcessingException;
 }

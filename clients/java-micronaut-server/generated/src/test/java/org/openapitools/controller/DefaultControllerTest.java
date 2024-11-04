@@ -47,7 +47,7 @@ public class DefaultControllerTest {
     DefaultController controller;
 
     /**
-     * This test is used to validate the implementation of serviceTagsPublic20240318JsonGet() method
+     * This test is used to validate the implementation of getAzureIpRangesServiceTagsPublicCloud() method
      *
      * The method should: Get Azure IP Ranges and Service Tags - Public Cloud
      *
@@ -57,11 +57,12 @@ public class DefaultControllerTest {
      */
     @Test
     @Disabled("Not Implemented")
-    void serviceTagsPublic20240318JsonGetMethodTest() {
+    void getAzureIpRangesServiceTagsPublicCloudMethodTest() {
         // given
+        String version = "example";
 
         // when
-        Change result = controller.serviceTagsPublic20240318JsonGet().block();
+        Change result = controller.getAzureIpRangesServiceTagsPublicCloud(version).block();
 
         // then
         Assertions.assertTrue(true);
@@ -69,17 +70,20 @@ public class DefaultControllerTest {
 
     /**
      * This test is used to check that the api available to client through
-     * '/ServiceTags_Public_20240318.json' to the features of serviceTagsPublic20240318JsonGet() works as desired.
+     * '/ServiceTags_Public_{version}.json' to the features of getAzureIpRangesServiceTagsPublicCloud() works as desired.
      *
      * TODO fill in the request parameters and test response.
      */
     @Test
     @Disabled("Not Implemented")
-    void serviceTagsPublic20240318JsonGetClientApiTest() throws IOException {
+    void getAzureIpRangesServiceTagsPublicCloudClientApiTest() throws IOException {
         // given
-        String uri = UriTemplate.of("/ServiceTags_Public_20240318.json").expand(new HashMap<>());
+        String uri = UriTemplate.of("/ServiceTags_Public_{version}.json").expand(new HashMap<String, Object>(){{
+            // Fill in the path variables
+            put("version", "example");
+        }});
         MutableHttpRequest<?> request = HttpRequest.GET(uri)
-            .accept("[Ljava.lang.String;@33a630fa");
+            .accept("[Ljava.lang.String;@13e698c7");
 
         // when
         HttpResponse<?> response = client.toBlocking().exchange(request, Change.class);

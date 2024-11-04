@@ -30,7 +30,7 @@ All URIs are relative to https://download.microsoft.comhttps://download.microsof
 ### DefaultApi
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|*serviceTagsPublic20240318JsonGet* | *GET* /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud.|
+|*getAzureIpRangesServiceTagsPublicCloud* | *GET* /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud.|
 
 
 ## What are the Model files for the data structures/objects?

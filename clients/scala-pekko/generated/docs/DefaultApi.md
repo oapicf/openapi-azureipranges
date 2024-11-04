@@ -4,14 +4,14 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceTagsPublic20240318JsonGet**](DefaultApi.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
-[**serviceTagsPublic20240318JsonGetWithHttpInfo**](DefaultApi.md#serviceTagsPublic20240318JsonGetWithHttpInfo) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**getAzureIpRangesServiceTagsPublicCloudWithHttpInfo**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloudWithHttpInfo) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 
-## serviceTagsPublic20240318JsonGet
+## getAzureIpRangesServiceTagsPublicCloud
 
-> serviceTagsPublic20240318JsonGet(): ApiRequest[Change]
+> getAzureIpRangesServiceTagsPublicCloud(getAzureIpRangesServiceTagsPublicCloudRequest): ApiRequest[Change]
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -36,8 +36,10 @@ object Example extends App {
     import system.dispatcher
 
     val apiInvoker = ApiInvoker()
-    val apiInstance = DefaultApi("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")    
-    val request = apiInstance.serviceTagsPublic20240318JsonGet()
+    val apiInstance = DefaultApi("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+    val version: String = version_example // String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+    
+    val request = apiInstance.getAzureIpRangesServiceTagsPublicCloud(version)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -47,14 +49,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling DefaultApi#serviceTagsPublic20240318JsonGet")
+            System.err.println("Exception when calling DefaultApi#getAzureIpRangesServiceTagsPublicCloud")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling DefaultApi#serviceTagsPublic20240318JsonGet")
+            System.err.println("Exception when calling DefaultApi#getAzureIpRangesServiceTagsPublicCloud")
             exception.printStackTrace();
     }
 }
@@ -62,7 +64,10 @@ object Example extends App {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 

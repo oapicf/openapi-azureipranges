@@ -19,7 +19,8 @@ object Paths {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
      */
-    @Serializable @Resource("/ServiceTags_Public_20240318.json") class serviceTagsPublic20240318JsonGet
+    @Serializable @Resource("/ServiceTags_Public_{version}.json") class getAzureIpRangesServiceTagsPublicCloud(val version: kotlin.String)
 
 }

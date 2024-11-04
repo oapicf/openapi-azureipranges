@@ -20,12 +20,20 @@ import {
     ChangeToJSON,
 } from '../models';
 
+export interface GetAzureIpRangesServiceTagsPublicCloudRequest {
+    version: string;
+}
+
 
 /**
  * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
  * Get Azure IP Ranges and Service Tags - Public Cloud
  */
-function serviceTagsPublic20240318JsonGetRaw<T>( requestConfig: runtime.TypedQueryConfig<T, Change> = {}): QueryConfig<T> {
+function getAzureIpRangesServiceTagsPublicCloudRaw<T>(requestParameters: GetAzureIpRangesServiceTagsPublicCloudRequest, requestConfig: runtime.TypedQueryConfig<T, Change> = {}): QueryConfig<T> {
+    if (requestParameters.version === null || requestParameters.version === undefined) {
+        throw new runtime.RequiredError('version','Required parameter requestParameters.version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+    }
+
     let queryParameters = null;
 
 
@@ -35,7 +43,7 @@ function serviceTagsPublic20240318JsonGetRaw<T>( requestConfig: runtime.TypedQue
     const { meta = {} } = requestConfig;
 
     const config: QueryConfig<T> = {
-        url: `${runtime.Configuration.basePath}/ServiceTags_Public_20240318.json`,
+        url: `${runtime.Configuration.basePath}/ServiceTags_Public_{version}.json`.replace(`{${"version"}}`, encodeURIComponent(String(requestParameters.version))),
         meta,
         update: requestConfig.update,
         queryKey: requestConfig.queryKey,
@@ -61,7 +69,7 @@ function serviceTagsPublic20240318JsonGetRaw<T>( requestConfig: runtime.TypedQue
 * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 * Get Azure IP Ranges and Service Tags - Public Cloud
 */
-export function serviceTagsPublic20240318JsonGet<T>( requestConfig?: runtime.TypedQueryConfig<T, Change>): QueryConfig<T> {
-    return serviceTagsPublic20240318JsonGetRaw( requestConfig);
+export function getAzureIpRangesServiceTagsPublicCloud<T>(requestParameters: GetAzureIpRangesServiceTagsPublicCloudRequest, requestConfig?: runtime.TypedQueryConfig<T, Change>): QueryConfig<T> {
+    return getAzureIpRangesServiceTagsPublicCloudRaw(requestParameters, requestConfig);
 }
 

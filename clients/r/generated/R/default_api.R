@@ -14,10 +14,11 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ ServiceTagsPublic20240318JsonGet } \emph{ Get Azure IP Ranges and Service Tags - Public Cloud }
+#' \strong{ GetAzureIpRangesServiceTagsPublicCloud } \emph{ Get Azure IP Ranges and Service Tags - Public Cloud }
 #' Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 #'
 #' \itemize{
+#' \item \emph{ @param } version character
 #' \item \emph{ @returnType } \link{Change} \cr
 #'
 #'
@@ -35,16 +36,17 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  ServiceTagsPublic20240318JsonGet  ####################
+#' ####################  GetAzureIpRangesServiceTagsPublicCloud  ####################
 #'
 #' library(openapi)
+#' var_version <- "version_example" # character | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 #'
 #' #Get Azure IP Ranges and Service Tags - Public Cloud
 #' api_instance <- DefaultApi$new()
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$ServiceTagsPublic20240318JsonGet(data_file = "result.txt")
-#' result <- api_instance$ServiceTagsPublic20240318JsonGet()
+#' # result <- api_instance$GetAzureIpRangesServiceTagsPublicCloud(var_versiondata_file = "result.txt")
+#' result <- api_instance$GetAzureIpRangesServiceTagsPublicCloud(var_version)
 #' dput(result)
 #'
 #'
@@ -75,12 +77,13 @@ DefaultApi <- R6::R6Class(
     #' @description
     #' Get Azure IP Ranges and Service Tags - Public Cloud
     #'
+    #' @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @return Change
     #' @export
-    ServiceTagsPublic20240318JsonGet = function(data_file = NULL, ...) {
-      local_var_response <- self$ServiceTagsPublic20240318JsonGetWithHttpInfo(data_file = data_file, ...)
+    GetAzureIpRangesServiceTagsPublicCloud = function(version, data_file = NULL, ...) {
+      local_var_response <- self$GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         local_var_response$content
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -96,11 +99,12 @@ DefaultApi <- R6::R6Class(
     #' @description
     #' Get Azure IP Ranges and Service Tags - Public Cloud
     #'
+    #' @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @return API response (Change) with additional information such as HTTP status code, headers
     #' @export
-    ServiceTagsPublic20240318JsonGetWithHttpInfo = function(data_file = NULL, ...) {
+    GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo = function(version, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -110,7 +114,16 @@ DefaultApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      local_var_url_path <- "/ServiceTags_Public_20240318.json"
+      if (missing(`version`)) {
+        stop("Missing required parameter `version`.")
+      }
+
+
+      local_var_url_path <- "/ServiceTags_Public_{version}.json"
+      if (!missing(`version`)) {
+        local_var_url_path <- gsub("\\{version\\}", URLencode(as.character(`version`), reserved = TRUE), local_var_url_path)
+      }
+
 
       # The Accept request HTTP header
       local_var_accepts <- list("application/json")

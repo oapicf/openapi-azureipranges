@@ -1,6 +1,6 @@
 #![allow(missing_docs, trivial_casts, unused_variables, unused_mut, unused_imports, unused_extern_crates, non_camel_case_types)]
 #![allow(unused_imports, unused_attributes)]
-#![allow(clippy::derive_partial_eq_without_eq, clippy::disallowed_names)]
+#![allow(clippy::derive_partial_eq_without_eq, clippy::disallowed_names, clippy::too_many_arguments)]
 
 use async_trait::async_trait;
 use futures::Stream;
@@ -15,7 +15,7 @@ pub const BASE_PATH: &str = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B6
 pub const API_VERSION: &str = "0.9.0-pre.0";
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
-pub enum ServiceTagsPublic20240318JsonGetResponse {
+pub enum GetAzureIpRangesServiceTagsPublicCloudResponse {
     /// Successful response
     SuccessfulResponse
     (models::Change)
@@ -30,9 +30,10 @@ pub trait Api<C: Send + Sync> {
     }
 
     /// Get Azure IP Ranges and Service Tags - Public Cloud
-    async fn service_tags_public20240318_json_get(
+    async fn get_azure_ip_ranges_service_tags_public_cloud(
         &self,
-        context: &C) -> Result<ServiceTagsPublic20240318JsonGetResponse, ApiError>;
+        version: String,
+        context: &C) -> Result<GetAzureIpRangesServiceTagsPublicCloudResponse, ApiError>;
 
 }
 
@@ -46,9 +47,10 @@ pub trait ApiNoContext<C: Send + Sync> {
     fn context(&self) -> &C;
 
     /// Get Azure IP Ranges and Service Tags - Public Cloud
-    async fn service_tags_public20240318_json_get(
+    async fn get_azure_ip_ranges_service_tags_public_cloud(
         &self,
-        ) -> Result<ServiceTagsPublic20240318JsonGetResponse, ApiError>;
+        version: String,
+        ) -> Result<GetAzureIpRangesServiceTagsPublicCloudResponse, ApiError>;
 
 }
 
@@ -76,12 +78,13 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
     }
 
     /// Get Azure IP Ranges and Service Tags - Public Cloud
-    async fn service_tags_public20240318_json_get(
+    async fn get_azure_ip_ranges_service_tags_public_cloud(
         &self,
-        ) -> Result<ServiceTagsPublic20240318JsonGetResponse, ApiError>
+        version: String,
+        ) -> Result<GetAzureIpRangesServiceTagsPublicCloudResponse, ApiError>
     {
         let context = self.context().clone();
-        self.api().service_tags_public20240318_json_get(&context).await
+        self.api().get_azure_ip_ranges_service_tags_public_cloud(version, &context).await
     }
 
 }

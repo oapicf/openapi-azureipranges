@@ -181,8 +181,13 @@ export const DefaultApiFetchParamCreator = function (configuration?: Configurati
          * @summary Get Azure IP Ranges and Service Tags - Public Cloud
          * @throws {RequiredError}
          */
-        serviceTagsPublic20240318JsonGet(options: RequestOptions): FetchArgs {
-            const localVarPath = `/ServiceTags_Public_20240318.json`;
+        getAzureIpRangesServiceTagsPublicCloud(version: string, options: RequestOptions): FetchArgs {
+            // verify required parameter 'version' is not null or undefined
+            if (version === null || version === undefined) {
+                throw new RequiredError('version','Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+            }
+            const localVarPath = `/ServiceTags_Public_{version}.json`
+                .replace(`{${"version"}}`, encodeURIComponent(String(version)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -202,7 +207,7 @@ export const DefaultApiFetchParamCreator = function (configuration?: Configurati
 };
 
 export type DefaultApiType = { 
-    serviceTagsPublic20240318JsonGet(options?: RequestOptions): Promise<Change>,
+    getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RequestOptions): Promise<Change>,
 }
 
 /**
@@ -217,8 +222,8 @@ export const DefaultApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Get Azure IP Ranges and Service Tags - Public Cloud
          * @throws {RequiredError}
          */
-        serviceTagsPublic20240318JsonGet(options?: RequestOptions = {}): Promise<Change> {
-            const localVarFetchArgs = DefaultApiFetchParamCreator(configuration).serviceTagsPublic20240318JsonGet(options);
+        getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RequestOptions = {}): Promise<Change> {
+            const localVarFetchArgs = DefaultApiFetchParamCreator(configuration).getAzureIpRangesServiceTagsPublicCloud(version, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

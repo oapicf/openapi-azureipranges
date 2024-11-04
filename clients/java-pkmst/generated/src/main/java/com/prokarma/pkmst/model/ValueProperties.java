@@ -17,7 +17,7 @@ import java.util.List;
  * ValueProperties
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-05-13T08:48:57.166860498Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:57:11.084089870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class ValueProperties   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;

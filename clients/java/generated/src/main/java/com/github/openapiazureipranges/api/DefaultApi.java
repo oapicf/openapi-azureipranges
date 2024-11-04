@@ -73,7 +73,8 @@ public class DefaultApi {
     }
 
     /**
-     * Build call for serviceTagsPublic20240318JsonGet
+     * Build call for getAzureIpRangesServiceTagsPublicCloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -83,7 +84,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call serviceTagsPublic20240318JsonGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudCall(String version, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -100,7 +101,8 @@ public class DefaultApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/ServiceTags_Public_20240318.json";
+        String localVarPath = "/ServiceTags_Public_{version}.json"
+            .replace("{" + "version" + "}", localVarApiClient.escapeString(version.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -128,14 +130,20 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call serviceTagsPublic20240318JsonGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return serviceTagsPublic20240318JsonGetCall(_callback);
+    private okhttp3.Call getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(String version, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'version' is set
+        if (version == null) {
+            throw new ApiException("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud(Async)");
+        }
+
+        return getAzureIpRangesServiceTagsPublicCloudCall(version, _callback);
 
     }
 
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @return Change
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -144,14 +152,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Change serviceTagsPublic20240318JsonGet() throws ApiException {
-        ApiResponse<Change> localVarResp = serviceTagsPublic20240318JsonGetWithHttpInfo();
+    public Change getAzureIpRangesServiceTagsPublicCloud(String version) throws ApiException {
+        ApiResponse<Change> localVarResp = getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version);
         return localVarResp.getData();
     }
 
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @return ApiResponse&lt;Change&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -160,8 +169,8 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Change> serviceTagsPublic20240318JsonGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = serviceTagsPublic20240318JsonGetValidateBeforeCall(null);
+    public ApiResponse<Change> getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(String version) throws ApiException {
+        okhttp3.Call localVarCall = getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(version, null);
         Type localVarReturnType = new TypeToken<Change>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -169,6 +178,7 @@ public class DefaultApi {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud (asynchronously)
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -178,9 +188,9 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call serviceTagsPublic20240318JsonGetAsync(final ApiCallback<Change> _callback) throws ApiException {
+    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudAsync(String version, final ApiCallback<Change> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = serviceTagsPublic20240318JsonGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(version, _callback);
         Type localVarReturnType = new TypeToken<Change>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -17,12 +17,12 @@ namespace Org.OpenAPITools.Functions
 { 
     public partial class DefaultApi
     { 
-        [FunctionName("DefaultApi_ServiceTagsPublic20240318JsonGet")]
-        public async Task<ActionResult<Change>> _ServiceTagsPublic20240318JsonGet([HttpTrigger(AuthorizationLevel.Anonymous, "Get", Route = "download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63ServiceTags_Public_20240318.json")]HttpRequest req, ExecutionContext context)
+        [FunctionName("DefaultApi_GetAzureIpRangesServiceTagsPublicCloud")]
+        public async Task<ActionResult<Change>> _GetAzureIpRangesServiceTagsPublicCloud([HttpTrigger(AuthorizationLevel.Anonymous, "Get", Route = "download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63ServiceTags_Public_{version}.json")]HttpRequest req, ExecutionContext context, string version)
         {
-            var method = this.GetType().GetMethod("ServiceTagsPublic20240318JsonGet");
+            var method = this.GetType().GetMethod("GetAzureIpRangesServiceTagsPublicCloud");
             return method != null
-                ? (await ((Task<Change>)method.Invoke(this, new object[] { req, context })).ConfigureAwait(false))
+                ? (await ((Task<Change>)method.Invoke(this, new object[] { req, context, version })).ConfigureAwait(false))
                 : new StatusCodeResult((int)HttpStatusCode.NotImplemented);
         }
     }

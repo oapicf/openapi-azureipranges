@@ -32,7 +32,7 @@ fun Route.DefaultApi() {
     val gson = Gson()
     val empty = mutableMapOf<String, Any?>()
 
-    get<Paths.serviceTagsPublic20240318JsonGet> {
+    get<Paths.getAzureIpRangesServiceTagsPublicCloud> {
         val exampleContentType = "application/json"
         val exampleContentString = """{
           "cloud" : "cloud",

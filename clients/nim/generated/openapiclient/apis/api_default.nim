@@ -38,9 +38,9 @@ template constructResult[T](response: Response): untyped =
     (none(T.typedesc), response)
 
 
-proc serviceTagsPublic20240318JsonGet*(httpClient: HttpClient): (Option[Change], Response) =
+proc getAzureIpRangesServiceTagsPublicCloud*(httpClient: HttpClient, version: string): (Option[Change], Response) =
   ## Get Azure IP Ranges and Service Tags - Public Cloud
 
-  let response = httpClient.get(basepath & "/ServiceTags_Public_20240318.json")
+  let response = httpClient.get(basepath & fmt"/ServiceTags_Public_{version}.json")
   constructResult[Change](response)
 

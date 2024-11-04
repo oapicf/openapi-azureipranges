@@ -4,12 +4,12 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**service_tags_public20240318_json_get**](DefaultApi.md#service_tags_public20240318_json_get) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud |
+| [**get_azure_ip_ranges_service_tags_public_cloud**](DefaultApi.md#get_azure_ip_ranges_service_tags_public_cloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud |
 
 
-## service_tags_public20240318_json_get
+## get_azure_ip_ranges_service_tags_public_cloud
 
-> <Change> service_tags_public20240318_json_get
+> <Change> get_azure_ip_ranges_service_tags_public_cloud(version)
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -22,37 +22,40 @@ require 'time'
 require 'openapi_azureipranges'
 
 api_instance = OpenApiAzureIpRangesClient::DefaultApi.new
+version = 'version_example' # String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
 begin
   # Get Azure IP Ranges and Service Tags - Public Cloud
-  result = api_instance.service_tags_public20240318_json_get
+  result = api_instance.get_azure_ip_ranges_service_tags_public_cloud(version)
   p result
 rescue OpenApiAzureIpRangesClient::ApiError => e
-  puts "Error when calling DefaultApi->service_tags_public20240318_json_get: #{e}"
+  puts "Error when calling DefaultApi->get_azure_ip_ranges_service_tags_public_cloud: #{e}"
 end
 ```
 
-#### Using the service_tags_public20240318_json_get_with_http_info variant
+#### Using the get_azure_ip_ranges_service_tags_public_cloud_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Change>, Integer, Hash)> service_tags_public20240318_json_get_with_http_info
+> <Array(<Change>, Integer, Hash)> get_azure_ip_ranges_service_tags_public_cloud_with_http_info(version)
 
 ```ruby
 begin
   # Get Azure IP Ranges and Service Tags - Public Cloud
-  data, status_code, headers = api_instance.service_tags_public20240318_json_get_with_http_info
+  data, status_code, headers = api_instance.get_azure_ip_ranges_service_tags_public_cloud_with_http_info(version)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Change>
 rescue OpenApiAzureIpRangesClient::ApiError => e
-  puts "Error when calling DefaultApi->service_tags_public20240318_json_get_with_http_info: #{e}"
+  puts "Error when calling DefaultApi->get_azure_ip_ranges_service_tags_public_cloud_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **version** | **String** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |  |
 
 ### Return type
 

@@ -94,7 +94,7 @@ impl<C> Server<C> {
 
 use openapi_client::{
     Api,
-    ServiceTagsPublic20240318JsonGetResponse,
+    GetAzureIpRangesServiceTagsPublicCloudResponse,
 };
 use openapi_client::server::MakeService;
 use std::error::Error;
@@ -104,11 +104,12 @@ use swagger::ApiError;
 impl<C> Api<C> for Server<C> where C: Has<XSpanIdString> + Send + Sync
 {
     /// Get Azure IP Ranges and Service Tags - Public Cloud
-    async fn service_tags_public20240318_json_get(
+    async fn get_azure_ip_ranges_service_tags_public_cloud(
         &self,
-        context: &C) -> Result<ServiceTagsPublic20240318JsonGetResponse, ApiError>
+        version: String,
+        context: &C) -> Result<GetAzureIpRangesServiceTagsPublicCloudResponse, ApiError>
     {
-        info!("service_tags_public20240318_json_get() - X-Span-ID: {:?}", context.get().0.clone());
+        info!("get_azure_ip_ranges_service_tags_public_cloud(\"{}\") - X-Span-ID: {:?}", version, context.get().0.clone());
         Err(ApiError("Generic failure".into()))
     }
 

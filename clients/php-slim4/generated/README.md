@@ -162,7 +162,7 @@ For instance, when abstract class located at `./lib/Api/AbstractPetApi.php` you 
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AbstractDefaultApi* | **serviceTagsPublic20240318JsonGet** | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+*AbstractDefaultApi* | **getAzureIpRangesServiceTagsPublicCloud** | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Models

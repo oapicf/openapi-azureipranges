@@ -17,9 +17,9 @@ import java.util.Map
 
 interface DefaultApi  {
     fun init(vertx:Vertx,config:JsonObject)
-    /* serviceTagsPublic20240318JsonGet
+    /* getAzureIpRangesServiceTagsPublicCloud
      * Get Azure IP Ranges and Service Tags - Public Cloud */
-    suspend fun serviceTagsPublic20240318JsonGet(context:OperationRequest):Response<Change>
+    suspend fun getAzureIpRangesServiceTagsPublicCloud(version:kotlin.String?,context:OperationRequest):Response<Change>
     companion object {
         const val address = "DefaultApi-service"
         suspend fun createRouterFactory(vertx: Vertx,path:String): io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory {

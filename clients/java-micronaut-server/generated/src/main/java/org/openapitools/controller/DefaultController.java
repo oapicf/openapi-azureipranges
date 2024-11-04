@@ -37,7 +37,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-05-13T08:48:46.000018725Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-07-10T08:57:04.688280870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @Controller
 @Tag(name = "Default", description = "The Default API")
 public class DefaultController {
@@ -45,22 +45,28 @@ public class DefaultController {
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      *
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @return Change
      */
     @Operation(
-        operationId = "serviceTagsPublic20240318JsonGet",
+        operationId = "getAzureIpRangesServiceTagsPublicCloud",
         summary = "Get Azure IP Ranges and Service Tags - Public Cloud",
         responses = {
             @ApiResponse(responseCode = "200", description = "Successful response", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = Change.class))
             })
+        },
+        parameters = {
+            @Parameter(name = "version", description = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506", required = true)
         }
     )
-    @Get(uri="/ServiceTags_Public_20240318.json")
+    @Get(uri="/ServiceTags_Public_{version}.json")
     @Produces(value = {"application/json"})
     @Secured({SecurityRule.IS_ANONYMOUS})
-    public Mono<Change> serviceTagsPublic20240318JsonGet() {
-        // TODO implement serviceTagsPublic20240318JsonGet();
+    public Mono<Change> getAzureIpRangesServiceTagsPublicCloud(
+        @PathVariable(value="version") @NotNull String version
+    ) {
+        // TODO implement getAzureIpRangesServiceTagsPublicCloud();
         return Mono.error(new HttpStatusException(HttpStatus.NOT_IMPLEMENTED, null));
     }
 

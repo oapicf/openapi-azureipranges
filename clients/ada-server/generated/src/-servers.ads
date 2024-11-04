@@ -22,9 +22,9 @@ package .Servers is
    --  Get Azure IP Ranges and Service Tags _ Public Cloud
    --  Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
    overriding
-   procedure Service_Tags_Public_20240318Json_Get
-      (Server : in out Server_Type
-       ;
+   procedure Get_Azure_Ip_Ranges_Service_Tags_Public_Cloud
+      (Server : in out Server_Type;
+       Version : in Swagger.UString;
        Result  : out .Models.Change_Type;
        Context : in out Swagger.Servers.Context_Type);
 

@@ -12,9 +12,9 @@ module DefaultApiServiceImplementation =
     type DefaultApiServiceImpl() =
       interface IDefaultApiService with
 
-        member this.ServiceTagsPublic20240318JsonGet ctx  =
+        member this.GetAzureIpRangesServiceTagsPublicCloud ctx args =
             let content = "Successful response" :> obj :?> Change // this cast is obviously wrong, and is only intended to allow generated project to compile   
-            ServiceTagsPublic20240318JsonGetStatusCode200 { content = content }
+            GetAzureIpRangesServiceTagsPublicCloudStatusCode200 { content = content }
 
       //#endregion
 

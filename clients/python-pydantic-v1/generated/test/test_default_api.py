@@ -27,8 +27,8 @@ class TestDefaultApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_service_tags_public20240318_json_get(self) -> None:
-        """Test case for service_tags_public20240318_json_get
+    def test_get_azure_ip_ranges_service_tags_public_cloud(self) -> None:
+        """Test case for get_azure_ip_ranges_service_tags_public_cloud
 
         Get Azure IP Ranges and Service Tags - Public Cloud  # noqa: E501
         """

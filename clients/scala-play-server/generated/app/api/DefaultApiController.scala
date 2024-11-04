@@ -6,15 +6,16 @@ import play.api.libs.json._
 import play.api.mvc._
 import model.Change
 
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-05-13T08:54:16.912049372Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2024-07-10T09:00:47.160874989Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @Singleton
 class DefaultApiController @Inject()(cc: ControllerComponents, api: DefaultApi) extends AbstractController(cc) {
   /**
-    * GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json
+    * GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_:version.json
+    * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
     */
-  def serviceTagsPublic20240318JsonGet(): Action[AnyContent] = Action { request =>
+  def getAzureIpRangesServiceTagsPublicCloud(version: String): Action[AnyContent] = Action { request =>
     def executeApi(): Change = {
-      api.serviceTagsPublic20240318JsonGet()
+      api.getAzureIpRangesServiceTagsPublicCloud(version)
     }
 
     val result = executeApi()

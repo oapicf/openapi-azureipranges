@@ -6,8 +6,8 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: 0.9.0-pre.0
 - Package version: 0.9.0-pre.0
-- Build date: 2024-05-13T08:47:28.846679849Z[Etc/UTC]
-- Generator version: 7.5.0
+- Build date: 2024-07-10T08:55:58.677832655Z[Etc/UTC]
+- Generator version: 7.6.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 
@@ -35,8 +35,9 @@ Then, run:
 
 ```groovy
 def apiInstance = new DefaultApi()
+def version = "version_example" // String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
-apiInstance.serviceTagsPublic20240318JsonGet()
+apiInstance.getAzureIpRangesServiceTagsPublicCloud(version)
     {
     // on success
     def result = (Change)it

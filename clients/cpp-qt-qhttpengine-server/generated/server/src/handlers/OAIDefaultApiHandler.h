@@ -30,7 +30,7 @@ public:
 
 
 public Q_SLOTS:
-    virtual void serviceTagsPublic20240318JsonGet();
+    virtual void getAzureIpRangesServiceTagsPublicCloud(QString version);
     
 
 };

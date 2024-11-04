@@ -58,13 +58,19 @@ public class DefaultApi {
   /**
   * Get Azure IP Ranges and Service Tags - Public Cloud
   * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+   * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
    * @return Change
   */
-  public Change serviceTagsPublic20240318JsonGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Change getAzureIpRangesServiceTagsPublicCloud (String version) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
+    // verify the required parameter 'version' is set
+    if (version == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud",
+        new ApiException(400, "Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud"));
+    }
 
     // create path and map variables
-    String path = "/ServiceTags_Public_20240318.json";
+    String path = "/ServiceTags_Public_{version}.json".replaceAll("\\{" + "version" + "\\}", apiInvoker.escapeString(version.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -114,14 +120,19 @@ public class DefaultApi {
       /**
    * Get Azure IP Ranges and Service Tags - Public Cloud
    * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
-
+   * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
   */
-  public void serviceTagsPublic20240318JsonGet (final Response.Listener<Change> responseListener, final Response.ErrorListener errorListener) {
+  public void getAzureIpRangesServiceTagsPublicCloud (String version, final Response.Listener<Change> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
+    // verify the required parameter 'version' is set
+    if (version == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud",
+        new ApiException(400, "Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud"));
+    }
 
     // create path and map variables
-    String path = "/ServiceTags_Public_20240318.json".replaceAll("\\{format\\}","json");
+    String path = "/ServiceTags_Public_{version}.json".replaceAll("\\{format\\}","json").replaceAll("\\{" + "version" + "\\}", apiInvoker.escapeString(version.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();

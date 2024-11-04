@@ -31,21 +31,21 @@ import kotlin.collections.Map
 @RestController
 @Validated
 @RequestMapping("\${api.base-path:/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63}")
-class ServiceTagsPublic20240318JsonApiController() {
+class ServiceTagsPublic{version}JsonApiController() {
 
     @Operation(
         summary = "Get Azure IP Ranges and Service Tags - Public Cloud",
-        operationId = "serviceTagsPublic20240318JsonGet",
+        operationId = "getAzureIpRangesServiceTagsPublicCloud",
         description = """Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.""",
         responses = [
             ApiResponse(responseCode = "200", description = "Successful response", content = [Content(schema = Schema(implementation = Change::class))]) ]
     )
     @RequestMapping(
         method = [RequestMethod.GET],
-        value = ["/ServiceTags_Public_20240318.json"],
+        value = ["/ServiceTags_Public_{version}.json"],
         produces = ["application/json"]
     )
-    fun serviceTagsPublic20240318JsonGet(): ResponseEntity<Change> {
+    fun getAzureIpRangesServiceTagsPublicCloud(@Parameter(description = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506", required = true) @PathVariable("version") version: kotlin.String): ResponseEntity<Change> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 }

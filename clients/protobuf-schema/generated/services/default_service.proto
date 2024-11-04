@@ -18,7 +18,13 @@ import "google/protobuf/empty.proto";
 import public "models/change.proto";
 
 service DefaultService {
-  rpc ServiceTagsPublic20240318JsonGet (google.protobuf.Empty) returns (Change);
+  rpc GetAzureIpRangesServiceTagsPublicCloud (GetAzureIpRangesServiceTagsPublicCloudRequest) returns (Change);
+
+}
+
+message GetAzureIpRangesServiceTagsPublicCloudRequest {
+  // The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+  string version = 1;
 
 }
 

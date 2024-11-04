@@ -48,10 +48,10 @@
   }
 
   describe('DefaultApi', function() {
-    describe('serviceTagsPublic20240318JsonGet', function() {
-      it('should call serviceTagsPublic20240318JsonGet successfully', function(done) {
-        //uncomment below and update the code to test serviceTagsPublic20240318JsonGet
-        //instance.serviceTagsPublic20240318JsonGet(function(error) {
+    describe('getAzureIpRangesServiceTagsPublicCloud', function() {
+      it('should call getAzureIpRangesServiceTagsPublicCloud successfully', function(done) {
+        //uncomment below and update the code to test getAzureIpRangesServiceTagsPublicCloud
+        //instance.getAzureIpRangesServiceTagsPublicCloud(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -9,11 +9,11 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**service_tags_public20240318_json_get**](DefaultApi.md#service_tags_public20240318_json_get) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+[**get_azure_ip_ranges_service_tags_public_cloud**](DefaultApi.md#get_azure_ip_ranges_service_tags_public_cloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
-# **service_tags_public20240318_json_get**
-> Change service_tags_public20240318_json_get()
+# **get_azure_ip_ranges_service_tags_public_cloud**
+> Change get_azure_ip_ranges_service_tags_public_cloud(version => $version)
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -26,18 +26,22 @@ use WWW::OpenAPIClient::DefaultApi;
 my $api_instance = WWW::OpenAPIClient::DefaultApi->new(
 );
 
+my $version = "version_example"; # string | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
 eval {
-    my $result = $api_instance->service_tags_public20240318_json_get();
+    my $result = $api_instance->get_azure_ip_ranges_service_tags_public_cloud(version => $version);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->service_tags_public20240318_json_get: $@\n";
+    warn "Exception when calling DefaultApi->get_azure_ip_ranges_service_tags_public_cloud: $@\n";
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version** | **string**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | 
 
 ### Return type
 

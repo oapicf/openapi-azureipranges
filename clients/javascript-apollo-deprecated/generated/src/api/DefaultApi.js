@@ -36,13 +36,19 @@ export default class DefaultApi extends ApiClient {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param {String} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param requestInit Dynamic configuration. @see {@link https://github.com/apollographql/apollo-server/pull/1277}
      * @return {Promise<module:model/Change>}
      */
-    async serviceTagsPublic20240318JsonGet(requestInit) {
+    async getAzureIpRangesServiceTagsPublicCloud(version, requestInit) {
       let postBody = null;
+      // verify the required parameter 'version' is set
+      if (version === undefined || version === null) {
+        throw new Error("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud");
+      }
 
       let pathParams = {
+        'version': version
       };
       let queryParams = {
       };
@@ -58,7 +64,7 @@ export default class DefaultApi extends ApiClient {
       let returnType = Change;
 
       return this.callApi(
-        '/ServiceTags_Public_20240318.json', 'GET',
+        '/ServiceTags_Public_{version}.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, requestInit
       );

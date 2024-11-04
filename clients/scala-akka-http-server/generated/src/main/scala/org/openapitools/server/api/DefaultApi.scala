@@ -19,9 +19,9 @@ class DefaultApi(
   import defaultMarshaller._
 
   lazy val route: Route =
-    path("ServiceTags_Public_20240318.json") { 
+    path("ServiceTags_Public_{version}.json") { (version) => 
       get {  
-            defaultService.serviceTagsPublic20240318JsonGet()
+            defaultService.getAzureIpRangesServiceTagsPublicCloud(version = version)
       }
     }
 }
@@ -29,12 +29,12 @@ class DefaultApi(
 
 trait DefaultApiService {
 
-  def serviceTagsPublic20240318JsonGet200(responseChange: Change)(implicit toEntityMarshallerChange: ToEntityMarshaller[Change]): Route =
+  def getAzureIpRangesServiceTagsPublicCloud200(responseChange: Change)(implicit toEntityMarshallerChange: ToEntityMarshaller[Change]): Route =
     complete((200, responseChange))
   /**
    * Code: 200, Message: Successful response, DataType: Change
    */
-  def serviceTagsPublic20240318JsonGet()
+  def getAzureIpRangesServiceTagsPublicCloud(version: String)
       (implicit toEntityMarshallerChange: ToEntityMarshaller[Change]): Route
 
 }

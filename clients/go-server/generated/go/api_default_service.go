@@ -24,17 +24,17 @@ type DefaultAPIService struct {
 }
 
 // NewDefaultAPIService creates a default api service
-func NewDefaultAPIService() DefaultAPIServicer {
+func NewDefaultAPIService() *DefaultAPIService {
 	return &DefaultAPIService{}
 }
 
-// ServiceTagsPublic20240318JsonGet - Get Azure IP Ranges and Service Tags - Public Cloud
-func (s *DefaultAPIService) ServiceTagsPublic20240318JsonGet(ctx context.Context) (ImplResponse, error) {
-	// TODO - update ServiceTagsPublic20240318JsonGet with the required logic for this service method.
+// GetAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud
+func (s *DefaultAPIService) GetAzureIpRangesServiceTagsPublicCloud(ctx context.Context, version string) (ImplResponse, error) {
+	// TODO - update GetAzureIpRangesServiceTagsPublicCloud with the required logic for this service method.
 	// Add api_default_service.go to the .openapi-generator-ignore to avoid overwriting this service implementation when updating open api generation.
 
 	// TODO: Uncomment the next line to return response Response(200, Change{}) or use other options such as http.Ok ...
 	// return Response(200, Change{}), nil
 
-	return Response(http.StatusNotImplemented, nil), errors.New("ServiceTagsPublic20240318JsonGet method not implemented")
+	return Response(http.StatusNotImplemented, nil), errors.New("GetAzureIpRangesServiceTagsPublicCloud method not implemented")
 }

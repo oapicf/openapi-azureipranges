@@ -6,11 +6,15 @@ private class OASDefaultApiTest {
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      */
     @isTest
-    private static void serviceTagsPublic20240318JsonGetTest() {
+    private static void getAzureIpRangesServiceTagsPublicCloudTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
         Test.setMock(HttpCalloutMock.class, new OASResponseMock(res));
+
+        Map<String, Object> params = new Map<String, Object>{
+            'version' => 'null'
+        };
 
         OASClient client;
         OASDefaultApi api;
@@ -24,7 +28,7 @@ private class OASDefaultApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = OASChange.getExample();
-        response = (OASChange) api.serviceTagsPublic20240318JsonGet();
+        response = (OASChange) api.getAzureIpRangesServiceTagsPublicCloud(params);
         System.assertEquals(expectedResponse, response);
     }
 }

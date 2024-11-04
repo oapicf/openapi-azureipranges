@@ -17,7 +17,7 @@
 // Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 //
 change_t*
-DefaultAPI_serviceTagsPublic20240318JsonGet(apiClient_t *apiClient)
+DefaultAPI_getAzureIpRangesServiceTagsPublicCloud(apiClient_t *apiClient, char *version)
 {
     list_t    *localVarQueryParameters = NULL;
     list_t    *localVarHeaderParameters = NULL;
@@ -27,10 +27,20 @@ DefaultAPI_serviceTagsPublic20240318JsonGet(apiClient_t *apiClient)
     char      *localVarBodyParameters = NULL;
 
     // create the path
-    long sizeOfPath = strlen("/ServiceTags_Public_20240318.json")+1;
+    long sizeOfPath = strlen("/ServiceTags_Public_{version}.json")+1;
     char *localVarPath = malloc(sizeOfPath);
-    snprintf(localVarPath, sizeOfPath, "/ServiceTags_Public_20240318.json");
+    snprintf(localVarPath, sizeOfPath, "/ServiceTags_Public_{version}.json");
 
+
+    // Path Params
+    long sizeOfPathParams_version = strlen(version)+3 + strlen("{ version }");
+    if(version == NULL) {
+        goto end;
+    }
+    char* localVarToReplace_version = malloc(sizeOfPathParams_version);
+    sprintf(localVarToReplace_version, "{%s}", "version");
+
+    localVarPath = strReplace(localVarPath, localVarToReplace_version, version);
 
 
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -68,6 +78,7 @@ DefaultAPI_serviceTagsPublic20240318JsonGet(apiClient_t *apiClient)
     list_freeList(localVarHeaderType);
     
     free(localVarPath);
+    free(localVarToReplace_version);
     return elementToReturn;
 end:
     free(localVarPath);

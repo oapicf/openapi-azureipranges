@@ -33,7 +33,7 @@ void DefaultApi::init() {
 void DefaultApi::setupRoutes() {
     using namespace Pistache::Rest;
 
-    Routes::Get(*router, base + "/ServiceTags_Public_20240318.json", Routes::bind(&DefaultApi::service_tags_public20240318_json_get_handler, this));
+    Routes::Get(*router, base + "/ServiceTags_Public_:version.json", Routes::bind(&DefaultApi::get_azure_ip_ranges_service_tags_public_cloud_handler, this));
 
     // Default handler, called when a route is not found
     router->addCustomHandler(Routes::bind(&DefaultApi::default_api_default_handler, this));
@@ -57,12 +57,14 @@ std::pair<Pistache::Http::Code, std::string> DefaultApi::handleOperationExceptio
     return std::make_pair(Pistache::Http::Code::Internal_Server_Error, ex.what());
 }
 
-void DefaultApi::service_tags_public20240318_json_get_handler(const Pistache::Rest::Request &, Pistache::Http::ResponseWriter response) {
+void DefaultApi::get_azure_ip_ranges_service_tags_public_cloud_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response) {
     try {
 
-
+    // Getting the path params
+    auto version = request.param(":version").as<std::string>();
+    
     try {
-        this->service_tags_public20240318_json_get(response);
+        this->get_azure_ip_ranges_service_tags_public_cloud(version, response);
     } catch (Pistache::Http::HttpError &e) {
         response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
         return;

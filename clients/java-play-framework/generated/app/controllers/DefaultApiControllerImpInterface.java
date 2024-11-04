@@ -27,8 +27,8 @@ public abstract class DefaultApiControllerImpInterface {
     @Inject private SecurityAPIUtils securityAPIUtils;
     private ObjectMapper mapper = new ObjectMapper();
 
-    public Result serviceTagsPublic20240318JsonGetHttp(Http.Request request) throws Exception {
-        Change obj = serviceTagsPublic20240318JsonGet(request);
+    public Result getAzureIpRangesServiceTagsPublicCloudHttp(Http.Request request, String version) throws Exception {
+        Change obj = getAzureIpRangesServiceTagsPublicCloud(request, version);
 
         if (configuration.getBoolean("useOutputBeanValidation")) {
             OpenAPIUtils.validate(obj);
@@ -40,6 +40,6 @@ public abstract class DefaultApiControllerImpInterface {
 
     }
 
-    public abstract Change serviceTagsPublic20240318JsonGet(Http.Request request) throws Exception;
+    public abstract Change getAzureIpRangesServiceTagsPublicCloud(Http.Request request, String version) throws Exception;
 
 }

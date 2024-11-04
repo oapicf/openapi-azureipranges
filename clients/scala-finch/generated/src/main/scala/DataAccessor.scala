@@ -18,6 +18,6 @@ trait DataAccessor {
         * 
         * @return A Change
         */
-        def Default_serviceTagsPublic20240318JsonGet(): Either[CommonError,Change] = Left(TODO)
+        def Default_getAzureIpRangesServiceTagsPublicCloud(version: String): Either[CommonError,Change] = Left(TODO)
 
 }

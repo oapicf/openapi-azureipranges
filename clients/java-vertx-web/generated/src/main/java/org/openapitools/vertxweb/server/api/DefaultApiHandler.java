@@ -32,18 +32,20 @@ public class DefaultApiHandler {
     }
 
     public void mount(RouterBuilder builder) {
-        builder.operation("serviceTagsPublic20240318JsonGet").handler(this::serviceTagsPublic20240318JsonGet);
+        builder.operation("getAzureIpRangesServiceTagsPublicCloud").handler(this::getAzureIpRangesServiceTagsPublicCloud);
     }
 
-    private void serviceTagsPublic20240318JsonGet(RoutingContext routingContext) {
-        logger.info("serviceTagsPublic20240318JsonGet()");
+    private void getAzureIpRangesServiceTagsPublicCloud(RoutingContext routingContext) {
+        logger.info("getAzureIpRangesServiceTagsPublicCloud()");
 
         // Param extraction
         RequestParameters requestParameters = routingContext.get(ValidationHandler.REQUEST_CONTEXT_KEY);
 
+        String version = requestParameters.pathParameter("version") != null ? requestParameters.pathParameter("version").getString() : null;
 
+        logger.debug("Parameter version is {}", version);
 
-        api.serviceTagsPublic20240318JsonGet()
+        api.getAzureIpRangesServiceTagsPublicCloud(version)
             .onSuccess(apiResponse -> {
                 routingContext.response().setStatusCode(apiResponse.getStatusCode());
                 if (apiResponse.hasData()) {

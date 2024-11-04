@@ -42,8 +42,9 @@ export class DefaultService {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            if (Array.isArray(basePath) && basePath.length > 0) {
-                basePath = basePath[0];
+            const firstBasePath = Array.isArray(basePath) ? basePath[0] : undefined;
+            if (firstBasePath != undefined) {
+                basePath = firstBasePath;
             }
 
             if (typeof basePath !== 'string') {
@@ -94,13 +95,17 @@ export class DefaultService {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public serviceTagsPublic20240318JsonGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Change>;
-    public serviceTagsPublic20240318JsonGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Change>>;
-    public serviceTagsPublic20240318JsonGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Change>>;
-    public serviceTagsPublic20240318JsonGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Change>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+        if (version === null || version === undefined) {
+            throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -138,7 +143,7 @@ export class DefaultService {
             }
         }
 
-        let localVarPath = `/ServiceTags_Public_20240318.json`;
+        let localVarPath = `/ServiceTags_Public_${this.configuration.encodeParam({name: "version", value: version, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}.json`;
         return this.httpClient.request<Change>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,

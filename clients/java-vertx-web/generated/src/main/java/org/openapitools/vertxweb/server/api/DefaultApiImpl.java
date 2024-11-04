@@ -14,7 +14,7 @@ import java.util.Map;
 // Implement this class
 
 public class DefaultApiImpl implements DefaultApi {
-    public Future<ApiResponse<Change>> serviceTagsPublic20240318JsonGet() {
+    public Future<ApiResponse<Change>> getAzureIpRangesServiceTagsPublicCloud(String version) {
         return Future.failedFuture(new HttpException(501));
     }
 

@@ -7,9 +7,9 @@ Encapsulates generated server code for APIServer
 
 The following server methods must be implemented:
 
-- **service_tags_public20240318_json_get**
-    - *invocation:* GET /ServiceTags_Public_20240318.json
-    - *signature:* service_tags_public20240318_json_get(req::HTTP.Request;) -> Change
+- **get_azure_ip_ranges_service_tags_public_cloud**
+    - *invocation:* GET /ServiceTags_Public_{version}.json
+    - *signature:* get_azure_ip_ranges_service_tags_public_cloud(req::HTTP.Request, version::String;) -> Change
 """
 module APIServer
 

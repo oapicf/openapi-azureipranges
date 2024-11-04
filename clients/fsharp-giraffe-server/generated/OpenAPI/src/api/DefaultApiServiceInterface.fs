@@ -9,5 +9,5 @@ module DefaultApiServiceInterface =
 
     //#region Service interface
     type IDefaultApiService =
-      abstract member ServiceTagsPublic20240318JsonGet:HttpContext ->ServiceTagsPublic20240318JsonGetResult
+      abstract member GetAzureIpRangesServiceTagsPublicCloud:HttpContext -> GetAzureIpRangesServiceTagsPublicCloudArgs->GetAzureIpRangesServiceTagsPublicCloudResult
     //#endregion

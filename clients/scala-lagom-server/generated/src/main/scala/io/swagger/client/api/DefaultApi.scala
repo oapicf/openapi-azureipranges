@@ -26,7 +26,7 @@ trait DefaultApi extends Service {
   final override def descriptor = {
     import Service._
     named("DefaultApi").withCalls(
-      restCall(Method.GET, "/ServiceTags_Public_20240318.json", serviceTagsPublic20240318JsonGet _)
+      restCall(Method.GET, "/ServiceTags_Public_:version.json", getAzureIpRangesServiceTagsPublicCloud _)
     ).withAutoAcl(true)
   }
 
@@ -34,10 +34,11 @@ trait DefaultApi extends Service {
   /**
     * Get Azure IP Ranges and Service Tags - Public Cloud
     * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
-    * 
+    *  
+    * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 
     * @return Change
     */
-  def serviceTagsPublic20240318JsonGet(): ServiceCall[NotUsed ,Change]
+  def getAzureIpRangesServiceTagsPublicCloud(version: String): ServiceCall[NotUsed ,Change]
   
 
   }

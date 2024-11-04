@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.5.0
+# ! Generator version: 7.6.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -96,6 +96,7 @@ declare -a result_color_table=( "$WHITE" "$WHITE" "$GREEN" "$YELLOW" "$WHITE" "$
 # 0 - optional
 # 1 - required
 declare -A operation_parameters_minimum_occurrences
+operation_parameters_minimum_occurrences["getAzureIpRangesServiceTagsPublicCloud:::version"]=1
 
 ##
 # This array stores the maximum number of allowed occurrences for parameter
@@ -104,11 +105,13 @@ declare -A operation_parameters_minimum_occurrences
 # N - N values
 # 0 - unlimited
 declare -A operation_parameters_maximum_occurrences
+operation_parameters_maximum_occurrences["getAzureIpRangesServiceTagsPublicCloud:::version"]=0
 
 ##
 # The type of collection for specifying multiple values for parameter:
 # - multi, csv, ssv, tsv
 declare -A operation_parameters_collection_type
+operation_parameters_collection_type["getAzureIpRangesServiceTagsPublicCloud:::version"]=""
 
 
 ##
@@ -497,7 +500,7 @@ EOF
     echo ""
     echo -e "${BOLD}${WHITE}[default]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}serviceTagsPublic20240318JsonGet${OFF};Get Azure IP Ranges and Service Tags - Public Cloud
+  ${CYAN}getAzureIpRangesServiceTagsPublicCloud${OFF};Get Azure IP Ranges and Service Tags - Public Cloud
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -553,15 +556,17 @@ print_version() {
 
 ##############################################################################
 #
-# Print help for serviceTagsPublic20240318JsonGet operation
+# Print help for getAzureIpRangesServiceTagsPublicCloud operation
 #
 ##############################################################################
-print_serviceTagsPublic20240318JsonGet_help() {
+print_getAzureIpRangesServiceTagsPublicCloud_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}serviceTagsPublic20240318JsonGet - Get Azure IP Ranges and Service Tags - Public Cloud${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}getAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud." | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}version${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 ${YELLOW}Specify as: version=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -571,19 +576,19 @@ print_serviceTagsPublic20240318JsonGet_help() {
 
 ##############################################################################
 #
-# Call serviceTagsPublic20240318JsonGet operation
+# Call getAzureIpRangesServiceTagsPublicCloud operation
 #
 ##############################################################################
-call_serviceTagsPublic20240318JsonGet() {
+call_getAzureIpRangesServiceTagsPublicCloud() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local path_parameter_names=()
+    local path_parameter_names=(version)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local query_parameter_names=()
     local path
 
-    if ! path=$(build_request_path "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240318.json" path_parameter_names query_parameter_names); then
+    if ! path=$(build_request_path "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -702,8 +707,8 @@ case $key in
         OFF=""
         result_color_table=( "" "" "" "" "" "" "" )
     ;;
-    serviceTagsPublic20240318JsonGet)
-    operation="serviceTagsPublic20240318JsonGet"
+    getAzureIpRangesServiceTagsPublicCloud)
+    operation="getAzureIpRangesServiceTagsPublicCloud"
     ;;
     *==*)
     # Parse body arguments and convert them into top level
@@ -792,8 +797,8 @@ fi
 
 # Run cURL command based on the operation ID
 case $operation in
-    serviceTagsPublic20240318JsonGet)
-    call_serviceTagsPublic20240318JsonGet
+    getAzureIpRangesServiceTagsPublicCloud)
+    call_getAzureIpRangesServiceTagsPublicCloud
     ;;
     *)
     ERROR_MSG="ERROR: Unknown operation: $operation"

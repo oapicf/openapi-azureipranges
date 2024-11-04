@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-05-13T08:54:32.854016883Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-10T09:00:59.376134406Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class ValueProperties {
 
   private Integer changeNumber;

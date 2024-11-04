@@ -14,7 +14,7 @@ public class DefaultServiceImpl implements DefaultService {
     private static final ObjectMapper MAPPER = JsonProvider.objectMapper();
 
 
-    public void serviceTagsPublic20240318JsonGet(ServerRequest request, ServerResponse response) {
+    public void getAzureIpRangesServiceTagsPublicCloud(ServerRequest request, ServerResponse response) {
         response.status(HTTP_CODE_NOT_IMPLEMENTED).send();
     }
 

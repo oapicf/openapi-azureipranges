@@ -10,7 +10,7 @@ dependencies:
 Articus\PathHandler\RouteInjectionFactory:
   paths:
     '/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63':
-    - App\Handler\ServiceTagsPublic20240318Json
+    - App\Handler\ServiceTagsPublicVersionJson
 
 Articus\PathHandler\Handler\PluginManager:
   abstract_factories:
@@ -29,4 +29,4 @@ Articus\PathHandler\Handler\PluginManager:
 #  invokables:
 
 Laminas\ServiceManager\AbstractFactory\ConfigAbstractFactory:
-  App\Handler\ServiceTagsPublic20240318Json: []
+  App\Handler\ServiceTagsPublicVersionJson: []

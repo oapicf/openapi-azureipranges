@@ -10,12 +10,13 @@
   (:import (java.io File)))
 
 
-(defn-spec service-tags-public20240318-json-get-with-http-info any?
+(defn-spec get-azure-ip-ranges-service-tags-public-cloud-with-http-info any?
   "Get Azure IP Ranges and Service Tags - Public Cloud
   Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."
-  []
-  (call-api "/ServiceTags_Public_20240318.json" :get
-            {:path-params   {}
+  [version string?]
+  (check-required-params version)
+  (call-api "/ServiceTags_Public_{version}.json" :get
+            {:path-params   {"version" version }
              :header-params {}
              :query-params  {}
              :form-params   {}
@@ -23,11 +24,11 @@
              :accepts       ["application/json"]
              :auth-names    []}))
 
-(defn-spec service-tags-public20240318-json-get change-spec
+(defn-spec get-azure-ip-ranges-service-tags-public-cloud change-spec
   "Get Azure IP Ranges and Service Tags - Public Cloud
   Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."
-  []
-  (let [res (:data (service-tags-public20240318-json-get-with-http-info))]
+  [version string?]
+  (let [res (:data (get-azure-ip-ranges-service-tags-public-cloud-with-http-info version))]
     (if (:decode-models *api-context*)
        (st/decode change-spec res st/string-transformer)
        res)))

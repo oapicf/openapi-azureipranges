@@ -44,16 +44,18 @@ interface DefaultApiInterface
 {
 
     /**
-     * Operation serviceTagsPublic20240318JsonGet
+     * Operation getAzureIpRangesServiceTagsPublicCloud
      *
      * Get Azure IP Ranges and Service Tags - Public Cloud
      *
+     * @param  string $version  The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 (required)
      * @param  int     &$responseCode    The HTTP Response Code
      * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return array|object|null
      */
-    public function serviceTagsPublic20240318JsonGet(
+    public function getAzureIpRangesServiceTagsPublicCloud(
+        string $version,
         int &$responseCode,
         array &$responseHeaders
     ): array|object|null;

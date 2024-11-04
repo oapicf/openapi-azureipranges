@@ -24,7 +24,7 @@ import com.typesafe.config.Config;
 
 import openapitools.OpenAPIUtils.ApiAction;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-05-13T08:49:01.422619345Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-07-10T08:57:14.167612833Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 public class DefaultApiController extends Controller {
     private final DefaultApiControllerImpInterface imp;
     private final ObjectMapper mapper;
@@ -38,8 +38,8 @@ public class DefaultApiController extends Controller {
     }
 
     @ApiAction
-    public Result serviceTagsPublic20240318JsonGet(Http.Request request) throws Exception {
-        return imp.serviceTagsPublic20240318JsonGetHttp(request);
+    public Result getAzureIpRangesServiceTagsPublicCloud(Http.Request request, String version) throws Exception {
+        return imp.getAzureIpRangesServiceTagsPublicCloudHttp(request, version);
     }
 
 }

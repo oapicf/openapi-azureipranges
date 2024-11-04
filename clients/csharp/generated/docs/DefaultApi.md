@@ -4,11 +4,11 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ServiceTagsPublic20240318JsonGet**](DefaultApi.md#servicetagspublic20240318jsonget) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud |
+| [**GetAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getazureiprangesservicetagspubliccloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud |
 
-<a id="servicetagspublic20240318jsonget"></a>
-# **ServiceTagsPublic20240318JsonGet**
-> Change ServiceTagsPublic20240318JsonGet ()
+<a id="getazureiprangesservicetagspubliccloud"></a>
+# **GetAzureIpRangesServiceTagsPublicCloud**
+> Change GetAzureIpRangesServiceTagsPublicCloud (string version)
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -24,23 +24,24 @@ using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class ServiceTagsPublic20240318JsonGetExample
+    public class GetAzureIpRangesServiceTagsPublicCloudExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
             var apiInstance = new DefaultApi(config);
+            var version = "version_example";  // string | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
             try
             {
                 // Get Azure IP Ranges and Service Tags - Public Cloud
-                Change result = apiInstance.ServiceTagsPublic20240318JsonGet();
+                Change result = apiInstance.GetAzureIpRangesServiceTagsPublicCloud(version);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DefaultApi.ServiceTagsPublic20240318JsonGet: " + e.Message);
+                Debug.Print("Exception when calling DefaultApi.GetAzureIpRangesServiceTagsPublicCloud: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -49,28 +50,32 @@ namespace Example
 }
 ```
 
-#### Using the ServiceTagsPublic20240318JsonGetWithHttpInfo variant
+#### Using the GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get Azure IP Ranges and Service Tags - Public Cloud
-    ApiResponse<Change> response = apiInstance.ServiceTagsPublic20240318JsonGetWithHttpInfo();
+    ApiResponse<Change> response = apiInstance.GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling DefaultApi.ServiceTagsPublic20240318JsonGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling DefaultApi.GetAzureIpRangesServiceTagsPublicCloudWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **version** | **string** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |  |
+
 ### Return type
 
 [**Change**](Change.md)

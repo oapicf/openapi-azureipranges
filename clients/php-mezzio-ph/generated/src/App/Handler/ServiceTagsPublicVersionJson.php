@@ -11,9 +11,9 @@ use Articus\PathHandler\Exception as PHException;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * @PHA\Route(pattern="/ServiceTags_Public_20240318.json")
+ * @PHA\Route(pattern="/ServiceTags_Public_{version}.json")
  */
-class ServiceTagsPublic20240318Json
+class ServiceTagsPublicVersionJson
 {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
@@ -26,7 +26,7 @@ class ServiceTagsPublic20240318Json
      *
      * @return \App\DTO\Change
      */
-    public function serviceTagsPublic20240318JsonGet(ServerRequestInterface $request): \App\DTO\Change
+    public function getAzureIpRangesServiceTagsPublicCloud(ServerRequestInterface $request): \App\DTO\Change
     {
         //TODO implement method
         throw new PHException\HttpCode(501, "Not implemented");

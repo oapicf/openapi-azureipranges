@@ -11,5 +11,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface DefaultApi  {
-    Future<ApiResponse<Change>> serviceTagsPublic20240318JsonGet();
+    Future<ApiResponse<Change>> getAzureIpRangesServiceTagsPublicCloud(String version);
 }

@@ -35,7 +35,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Change.JSON_PROPERTY_VALUES
 })
 @JsonTypeName("Change")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-05-13T08:48:46.000018725Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-07-10T08:57:04.688280870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @Introspected
 public class Change {
     public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";

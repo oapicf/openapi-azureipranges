@@ -21,18 +21,20 @@ export class PromiseDefaultApi {
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
-    public serviceTagsPublic20240318JsonGetWithHttpInfo(_options?: Configuration): Promise<HttpInfo<Change>> {
-        const result = this.api.serviceTagsPublic20240318JsonGetWithHttpInfo(_options);
+    public getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version: string, _options?: Configuration): Promise<HttpInfo<Change>> {
+        const result = this.api.getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version, _options);
         return result.toPromise();
     }
 
     /**
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * Get Azure IP Ranges and Service Tags - Public Cloud
+     * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
-    public serviceTagsPublic20240318JsonGet(_options?: Configuration): Promise<Change> {
-        const result = this.api.serviceTagsPublic20240318JsonGet(_options);
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, _options?: Configuration): Promise<Change> {
+        const result = this.api.getAzureIpRangesServiceTagsPublicCloud(version, _options);
         return result.toPromise();
     }
 

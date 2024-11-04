@@ -3,9 +3,11 @@
 # Do not edit the class manually.
 
 # default
-open_api_server_default_servicetagspublic20240318jsonget:
-    path:     /ServiceTags_Public_20240318.json
+open_api_server_default_getazureiprangesservicetagspubliccloud:
+    path:     /ServiceTags_Public_{version}.json
     methods:  [GET]
     defaults:
-        _controller: open_api_server.controller.default::serviceTagsPublic20240318JsonGetAction
+        _controller: open_api_server.controller.default::getAzureIpRangesServiceTagsPublicCloudAction
+    requirements:
+        version: '[a-z0-9]+'
 

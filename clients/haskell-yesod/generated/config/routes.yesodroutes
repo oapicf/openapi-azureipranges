@@ -3,4 +3,4 @@
 
 -- /static StaticR Static appStatic
 
-/ServiceTags_Public_20240318.json ServiceTagsPublic20240318JsonR GET
+/ServiceTags_Public_{version}.json ServiceTagsPublic{version}JsonR GET

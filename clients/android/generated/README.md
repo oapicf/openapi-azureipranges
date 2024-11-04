@@ -64,11 +64,12 @@ public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
+        String version = null; // String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
         try {
-            Change result = apiInstance.serviceTagsPublic20240318JsonGet();
+            Change result = apiInstance.getAzureIpRangesServiceTagsPublicCloud(version);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#serviceTagsPublic20240318JsonGet");
+            System.err.println("Exception when calling DefaultApi#getAzureIpRangesServiceTagsPublicCloud");
             e.printStackTrace();
         }
     }
@@ -82,7 +83,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**serviceTagsPublic20240318JsonGet**](docs/DefaultApi.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+*DefaultApi* | [**getAzureIpRangesServiceTagsPublicCloud**](docs/DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Documentation for Models

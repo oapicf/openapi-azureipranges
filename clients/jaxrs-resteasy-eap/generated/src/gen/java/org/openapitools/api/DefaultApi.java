@@ -19,12 +19,12 @@ import javax.ws.rs.*;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
-@Path("/ServiceTags_Public_20240318.json")
+@Path("/ServiceTags_Public_{version}.json")
 
 
-@io.swagger.annotations.Api(description = "the ServiceTags_Public_20240318.json API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-05-13T08:49:41.292703487Z[Etc/UTC]", comments = "Generator version: 7.5.0")
-public interface ServiceTagsPublic20240318JsonApi  {
+@io.swagger.annotations.Api(description = "the default API")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen", date = "2024-07-10T08:57:52.222873339Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+public interface DefaultApi  {
 
     @GET
     
@@ -33,5 +33,5 @@ public interface ServiceTagsPublic20240318JsonApi  {
     @io.swagger.annotations.ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful response", response = Change.class) })
-    public Response serviceTagsPublic20240318JsonGet(@Context SecurityContext securityContext);
+    public Response getAzureIpRangesServiceTagsPublicCloud( @PathParam("version") String version,@Context SecurityContext securityContext);
 }

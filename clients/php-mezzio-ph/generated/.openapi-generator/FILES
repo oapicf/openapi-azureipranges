@@ -15,5 +15,5 @@ src/App/DTO/Collection2.php
 src/App/DTO/Value.php
 src/App/DTO/ValueProperties.php
 src/App/Factory.php
-src/App/Handler/ServiceTagsPublic20240318Json.php
+src/App/Handler/ServiceTagsPublicVersionJson.php
 src/App/Middleware/InternalServerError.php

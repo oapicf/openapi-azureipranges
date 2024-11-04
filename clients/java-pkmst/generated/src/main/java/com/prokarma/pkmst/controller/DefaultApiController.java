@@ -23,7 +23,7 @@ import java.io.IOException;
  * @author pkmst
  *
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-05-13T08:48:57.166860498Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:57:11.084089870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
 @Controller
 public class DefaultApiController implements DefaultApi {
     private final ObjectMapper objectMapper;
@@ -32,7 +32,8 @@ public class DefaultApiController implements DefaultApi {
         this.objectMapper = objectMapper;
     }
 
-    public ResponseEntity<Change> serviceTagsPublic20240318JsonGet(@RequestHeader(value = "Accept", required = false) String accept) throws Exception {
+    public ResponseEntity<Change> getAzureIpRangesServiceTagsPublicCloud(@ApiParam(value = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506",required=true ) @PathVariable("version") String version,
+        @RequestHeader(value = "Accept", required = false) String accept) throws Exception {
         // do some magic!
 
         if (accept != null && accept.contains("application/json")) {

@@ -5,4 +5,4 @@
  *
  *)
 
-val service_tags_public20240318_json_get : unit -> Change.t Lwt.t
+val get_azure_ip_ranges_service_tags_public_cloud : version:string -> Change.t Lwt.t

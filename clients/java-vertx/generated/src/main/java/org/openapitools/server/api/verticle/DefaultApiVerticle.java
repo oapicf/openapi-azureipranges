@@ -17,7 +17,7 @@ import java.util.Map;
 public class DefaultApiVerticle extends AbstractVerticle {
     static final Logger LOGGER = LoggerFactory.getLogger(DefaultApiVerticle.class);
 
-    static final String GET_SERVICETAGS_PUBLIC_20240318.JSON_SERVICE_ID = "GET_ServiceTags_Public_20240318.json";
+    static final String GETAZUREIPRANGESSERVICETAGSPUBLICCLOUD_SERVICE_ID = "getAzureIpRangesServiceTagsPublicCloud";
     
     final DefaultApi service;
 
@@ -34,21 +34,27 @@ public class DefaultApiVerticle extends AbstractVerticle {
     @Override
     public void start() throws Exception {
         
-        //Consumer for GET_ServiceTags_Public_20240318.json
-        vertx.eventBus().<JsonObject> consumer(GET_SERVICETAGS_PUBLIC_20240318.JSON_SERVICE_ID).handler(message -> {
+        //Consumer for getAzureIpRangesServiceTagsPublicCloud
+        vertx.eventBus().<JsonObject> consumer(GETAZUREIPRANGESSERVICETAGSPUBLICCLOUD_SERVICE_ID).handler(message -> {
             try {
                 // Workaround for #allParams section clearing the vendorExtensions map
-                String serviceId = "GET_ServiceTags_Public_20240318.json";
-                service.serviceTagsPublic20240318JsonGet(result -> {
+                String serviceId = "getAzureIpRangesServiceTagsPublicCloud";
+                String versionParam = message.body().getString("version");
+                if(versionParam == null) {
+                    manageError(message, new MainApiException(400, "version is required"), serviceId);
+                    return;
+                }
+                String version = versionParam;
+                service.getAzureIpRangesServiceTagsPublicCloud(version, result -> {
                     if (result.succeeded())
                         message.reply(new JsonObject(Json.encode(result.result())).encodePrettily());
                     else {
                         Throwable cause = result.cause();
-                        manageError(message, cause, "GET_ServiceTags_Public_20240318.json");
+                        manageError(message, cause, "getAzureIpRangesServiceTagsPublicCloud");
                     }
                 });
             } catch (Exception e) {
-                logUnexpectedError("GET_ServiceTags_Public_20240318.json", e);
+                logUnexpectedError("getAzureIpRangesServiceTagsPublicCloud", e);
                 message.fail(MainApiException.INTERNAL_SERVER_ERROR.getStatusCode(), MainApiException.INTERNAL_SERVER_ERROR.getStatusMessage());
             }
         });

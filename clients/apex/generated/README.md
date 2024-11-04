@@ -44,9 +44,13 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```java
 OASDefaultApi api = new OASDefaultApi();
 
+Map<String, Object> params = new Map<String, Object>{
+    'version' => 'null'
+};
+
 try {
     // cross your fingers
-    OASChange result = api.serviceTagsPublic20240318JsonGet();
+    OASChange result = api.getAzureIpRangesServiceTagsPublicCloud(params);
     System.debug(result);
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
@@ -59,7 +63,7 @@ All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OASDefaultApi* | [**serviceTagsPublic20240318JsonGet**](OASDefaultApi.md#serviceTagsPublic20240318JsonGet) | **GET** /ServiceTags_Public_20240318.json | Get Azure IP Ranges and Service Tags - Public Cloud
+*OASDefaultApi* | [**getAzureIpRangesServiceTagsPublicCloud**](OASDefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
 
 
 ## Documentation for Models

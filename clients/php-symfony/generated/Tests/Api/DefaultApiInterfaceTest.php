@@ -77,19 +77,22 @@ class DefaultApiInterfaceTest extends WebTestCase
     }
 
     /**
-     * Test case for serviceTagsPublic20240318JsonGet
+     * Test case for getAzureIpRangesServiceTagsPublicCloud
      *
      * Get Azure IP Ranges and Service Tags - Public Cloud.
      *
      */
-    public function testServiceTagsPublic20240318JsonGet(): void
+    public function testGetAzureIpRangesServiceTagsPublicCloud(): void
     {
         $client = self::$client;
 
-        $path = '/ServiceTags_Public_20240318.json';
+        $path = '/ServiceTags_Public_{version}.json';
+        $pattern = '{version}';
+        $data = $this->genTestData('[a-z0-9]+');
+        $path = str_replace($pattern, $data, $path);
 
         $crawler = $client->request('GET', $path);
-        $this->markTestSkipped('Test for serviceTagsPublic20240318JsonGet not implemented');
+        $this->markTestSkipped('Test for getAzureIpRangesServiceTagsPublicCloud not implemented');
     }
 
     /**
