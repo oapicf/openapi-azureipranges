@@ -62,5 +62,8 @@ data class ValueProperties (
     @Json(name = "networkFeatures")
     val networkFeatures: kotlin.collections.List<kotlin.String>? = null
 
-)
+) {
+
+
+}
 

@@ -83,7 +83,7 @@ public class DefaultControllerTest {
             put("version", "example");
         }});
         MutableHttpRequest<?> request = HttpRequest.GET(uri)
-            .accept("[Ljava.lang.String;@13e698c7");
+            .accept("[Ljava.lang.String;@27f1bbe0");
 
         // when
         HttpResponse<?> response = client.toBlocking().exchange(request, Change.class);

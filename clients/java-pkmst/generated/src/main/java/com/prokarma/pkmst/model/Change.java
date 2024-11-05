@@ -18,7 +18,7 @@ import java.util.List;
  * Change
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:57:11.084089870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-05T00:04:24.419909408Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Change   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;
@@ -35,10 +35,10 @@ public class Change   {
     return this;
   }
 
-   /**
+  /**
    * The number associated with the change.
    * @return changeNumber
-  **/
+   */
   @ApiModelProperty(value = "The number associated with the change.")
   public Integer getChangeNumber() {
     return changeNumber;
@@ -53,10 +53,10 @@ public class Change   {
     return this;
   }
 
-   /**
+  /**
    * The cloud environment.
    * @return cloud
-  **/
+   */
   @ApiModelProperty(value = "The cloud environment.")
   public String getCloud() {
     return cloud;
@@ -79,10 +79,10 @@ public class Change   {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @ApiModelProperty(value = "")
   public List<Value> getValues() {
     return values;

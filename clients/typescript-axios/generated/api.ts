@@ -203,7 +203,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAzureIpRangesServiceTagsPublicCloud(version: string, options?: any): AxiosPromise<Change> {
+        getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RawAxiosRequestConfig): AxiosPromise<Change> {
             return localVarFp.getAzureIpRangesServiceTagsPublicCloud(version, options).then((request) => request(axios, basePath));
         },
     };

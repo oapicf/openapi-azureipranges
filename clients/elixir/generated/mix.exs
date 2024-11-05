@@ -4,7 +4,7 @@ defmodule AzureIPRangesAndServiceTags-PublicCloud.Mixfile do
   def project do
     [
       app: :azure_ip_ranges_and_service_tags_public_cloud,
-      version: "0.9.0-pre.0",
+      version: "1.0.0",
       elixir: "~> 1.10",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,

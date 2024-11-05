@@ -39,10 +39,10 @@ open class DefaultAPI {
                 guard let baseURL = self.transport.baseURL ?? self.baseURL else {
                     throw OpenAPITransportError.badURLError()
                 }
-                var path = "/ServiceTags_Public_{version}.json"
-                path = path.replacingOccurrences(of: "{version}", with: version)
-                let url = baseURL.appendingPathComponent(path)
-                let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+                var localVarPath = "/ServiceTags_Public_{version}.json"
+                localVarPath = localVarPath.replacingOccurrences(of: "{version}", with: version)
+                let localVarURL = baseURL.appendingPathComponent(localVarPath)
+                let components = URLComponents(url: localVarURL, resolvingAgainstBaseURL: false)
                 guard let requestURL = components?.url else {
                     throw OpenAPITransportError.badURLError()
                 }

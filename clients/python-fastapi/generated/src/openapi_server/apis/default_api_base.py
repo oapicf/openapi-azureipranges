@@ -11,7 +11,7 @@ class BaseDefaultApi:
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         BaseDefaultApi.subclasses = BaseDefaultApi.subclasses + (cls,)
-    def get_azure_ip_ranges_service_tags_public_cloud(
+    async def get_azure_ip_ranges_service_tags_public_cloud(
         self,
         version: str,
     ) -> Change:

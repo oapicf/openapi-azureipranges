@@ -18,6 +18,7 @@ import {
     ValueFromJSON,
     ValueFromJSONTyped,
     ValueToJSON,
+    ValueToJSONTyped,
 } from './Value';
 
 /**
@@ -69,10 +70,15 @@ export function ChangeFromJSONTyped(json: any, ignoreDiscriminator: boolean): Ch
     };
 }
 
-export function ChangeToJSON(value?: Change | null): any {
+  export function ChangeToJSON(json: any): Change {
+      return ChangeToJSONTyped(json, false);
+  }
+
+  export function ChangeToJSONTyped(value?: Change | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
+
     return {
         
         'changeNumber': value['changeNumber'],

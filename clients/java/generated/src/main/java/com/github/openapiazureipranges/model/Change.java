@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +51,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * Change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-10T08:56:30.654999166Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-05T00:02:30.842860643Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Change {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)
@@ -74,10 +73,10 @@ public class Change {
     return this;
   }
 
-   /**
+  /**
    * The number associated with the change.
    * @return changeNumber
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getChangeNumber() {
     return changeNumber;
@@ -93,10 +92,10 @@ public class Change {
     return this;
   }
 
-   /**
+  /**
    * The cloud environment.
    * @return cloud
-  **/
+   */
   @javax.annotation.Nullable
   public String getCloud() {
     return cloud;
@@ -120,10 +119,10 @@ public class Change {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @javax.annotation.Nullable
   public List<Value> getValues() {
     return values;
@@ -191,12 +190,12 @@ public class Change {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Change
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Change
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Change.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -260,22 +259,22 @@ public class Change {
     }
   }
 
- /**
-  * Create an instance of Change given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Change
-  * @throws IOException if the JSON string is invalid with respect to Change
-  */
+  /**
+   * Create an instance of Change given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Change
+   * @throws IOException if the JSON string is invalid with respect to Change
+   */
   public static Change fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Change.class);
   }
 
- /**
-  * Convert an instance of Change to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Change to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

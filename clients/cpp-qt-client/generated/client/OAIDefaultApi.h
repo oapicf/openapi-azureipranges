@@ -60,7 +60,7 @@ public:
     /**
     * @param[in]  version QString [required]
     */
-    void getAzureIpRangesServiceTagsPublicCloud(const QString &version);
+    virtual void getAzureIpRangesServiceTagsPublicCloud(const QString &version);
 
 
 private:
@@ -90,6 +90,7 @@ private:
 Q_SIGNALS:
 
     void getAzureIpRangesServiceTagsPublicCloudSignal(OAIChange summary);
+
 
     void getAzureIpRangesServiceTagsPublicCloudSignalFull(OAIHttpRequestWorker *worker, OAIChange summary);
 

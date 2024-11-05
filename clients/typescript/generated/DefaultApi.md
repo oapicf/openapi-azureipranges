@@ -16,20 +16,19 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 
 ```typescript
-import {  } from '';
-import * as fs from 'fs';
+import { createConfiguration, DefaultApi } from '';
+import type { DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest } from '';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DefaultApi(configuration);
+const configuration = createConfiguration();
+const apiInstance = new DefaultApi(configuration);
 
-let body:.DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest = {
-  // string | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+const request: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest = {
+    // The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
   version: "version_example",
 };
 
-apiInstance.getAzureIpRangesServiceTagsPublicCloud(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
+const data = await apiInstance.getAzureIpRangesServiceTagsPublicCloud(request);
+console.log('API called successfully. Returned data:', data);
 ```
 
 

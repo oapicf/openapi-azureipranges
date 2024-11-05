@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Value.JSON_PROPERTY_PROPERTIES
 })
 @JsonTypeName("Value")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-07-10T08:57:04.688280870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-11-05T00:04:00.076824012Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class Value {
     public static final String JSON_PROPERTY_NAME = "name";
@@ -55,7 +55,7 @@ public class Value {
     /**
      * The name of the value.
      * @return name
-     **/
+     */
     @Nullable
     @Schema(name = "name", description = "The name of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_NAME)
@@ -78,7 +78,7 @@ public class Value {
     /**
      * The unique identifier of the value.
      * @return id
-     **/
+     */
     @Nullable
     @Schema(name = "id", description = "The unique identifier of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_ID)
@@ -101,7 +101,7 @@ public class Value {
     /**
      * Get properties
      * @return properties
-     **/
+     */
     @Valid
     @Nullable
     @Schema(name = "properties", requiredMode = Schema.RequiredMode.NOT_REQUIRED)

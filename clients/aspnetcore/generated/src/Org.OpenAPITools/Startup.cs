@@ -75,7 +75,7 @@ namespace Org.OpenAPITools
                     c.SwaggerDoc("0.9.0-pre.0", new OpenApiInfo
                     {
                         Title = "Azure IP Ranges and Service Tags - Public Cloud",
-                        Description = "Azure IP Ranges and Service Tags - Public Cloud (ASP.NET Core 3.1)",
+                        Description = "Azure IP Ranges and Service Tags - Public Cloud (ASP.NET Core 8.0)",
                         TermsOfService = new Uri("https://github.com/openapitools/openapi-generator"),
                         Contact = new OpenApiContact
                         {
@@ -91,7 +91,7 @@ namespace Org.OpenAPITools
                         Version = "0.9.0-pre.0",
                     });
                     c.CustomSchemaIds(type => type.FriendlyId(true));
-                    c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{Assembly.GetEntryAssembly().GetName().Name}.xml");
+                    c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{Assembly.GetExecutingAssembly().GetName().Name}.xml");
                     // Sets the basePath property in the OpenAPI document generated
                     c.DocumentFilter<BasePathFilter>("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
 

@@ -38,7 +38,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   ValueProperties.JSON_PROPERTY_NETWORK_FEATURES
 })
 @JsonTypeName("ValueProperties")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-07-10T08:57:04.688280870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2024-11-05T00:04:00.076824012Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class ValueProperties {
     public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";
@@ -73,7 +73,7 @@ public class ValueProperties {
     /**
      * The number associated with the change.
      * @return changeNumber
-     **/
+     */
     @Nullable
     @Schema(name = "changeNumber", description = "The number associated with the change.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_CHANGE_NUMBER)
@@ -96,7 +96,7 @@ public class ValueProperties {
     /**
      * The region associated with the value.
      * @return region
-     **/
+     */
     @Nullable
     @Schema(name = "region", description = "The region associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_REGION)
@@ -119,7 +119,7 @@ public class ValueProperties {
     /**
      * The ID of the region.
      * @return regionId
-     **/
+     */
     @Nullable
     @Schema(name = "regionId", description = "The ID of the region.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_REGION_ID)
@@ -142,7 +142,7 @@ public class ValueProperties {
     /**
      * The platform associated with the value.
      * @return platform
-     **/
+     */
     @Nullable
     @Schema(name = "platform", description = "The platform associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_PLATFORM)
@@ -165,7 +165,7 @@ public class ValueProperties {
     /**
      * The system service associated with the value.
      * @return systemService
-     **/
+     */
     @Nullable
     @Schema(name = "systemService", description = "The system service associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_SYSTEM_SERVICE)
@@ -196,7 +196,7 @@ public class ValueProperties {
     /**
      * The address prefixes associated with the value.
      * @return addressPrefixes
-     **/
+     */
     @Nullable
     @Schema(name = "addressPrefixes", description = "The address prefixes associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_ADDRESS_PREFIXES)
@@ -227,7 +227,7 @@ public class ValueProperties {
     /**
      * The network features associated with the value.
      * @return networkFeatures
-     **/
+     */
     @Nullable
     @Schema(name = "networkFeatures", description = "The network features associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_NETWORK_FEATURES)

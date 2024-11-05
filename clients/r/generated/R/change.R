@@ -19,8 +19,7 @@ Change <- R6::R6Class(
     `changeNumber` = NULL,
     `cloud` = NULL,
     `values` = NULL,
-    #' Initialize a new Change class.
-    #'
+
     #' @description
     #' Initialize a new Change class.
     #'
@@ -28,7 +27,6 @@ Change <- R6::R6Class(
     #' @param cloud The cloud environment.
     #' @param values values
     #' @param ... Other optional arguments.
-    #' @export
     initialize = function(`changeNumber` = NULL, `cloud` = NULL, `values` = NULL, ...) {
       if (!is.null(`changeNumber`)) {
         if (!(is.numeric(`changeNumber`) && length(`changeNumber`) == 1)) {
@@ -48,13 +46,11 @@ Change <- R6::R6Class(
         self$`values` <- `values`
       }
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Change in JSON format
-    #' @export
     toJSON = function() {
       ChangeObject <- list()
       if (!is.null(self$`changeNumber`)) {
@@ -71,14 +67,12 @@ Change <- R6::R6Class(
       }
       ChangeObject
     },
-    #' Deserialize JSON string into an instance of Change
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Change
     #'
     #' @param input_json the JSON input
     #' @return the instance of Change
-    #' @export
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`changeNumber`)) {
@@ -92,13 +86,11 @@ Change <- R6::R6Class(
       }
       self
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Change in JSON format
-    #' @export
     toJSONString = function() {
       jsoncontent <- c(
         if (!is.null(self$`changeNumber`)) {
@@ -129,14 +121,12 @@ Change <- R6::R6Class(
       jsoncontent <- paste(jsoncontent, collapse = ",")
       json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
     },
-    #' Deserialize JSON string into an instance of Change
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Change
     #'
     #' @param input_json the JSON input
     #' @return the instance of Change
-    #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`changeNumber` <- this_object$`changeNumber`
@@ -144,53 +134,42 @@ Change <- R6::R6Class(
       self$`values` <- ApiClient$new()$deserializeObj(this_object$`values`, "array[Value]", loadNamespace("openapi"))
       self
     },
-    #' Validate JSON input with respect to Change
-    #'
+
     #' @description
     #' Validate JSON input with respect to Change and throw an exception if invalid
     #'
     #' @param input the JSON input
-    #' @export
     validateJSON = function(input) {
       input_json <- jsonlite::fromJSON(input)
     },
-    #' To string (JSON format)
-    #'
+
     #' @description
     #' To string (JSON format)
     #'
     #' @return String representation of Change
-    #' @export
     toString = function() {
       self$toJSONString()
     },
-    #' Return true if the values in all fields are valid.
-    #'
+
     #' @description
     #' Return true if the values in all fields are valid.
     #'
     #' @return true if the values in all fields are valid.
-    #' @export
     isValid = function() {
       TRUE
     },
-    #' Return a list of invalid fields (if any).
-    #'
+
     #' @description
     #' Return a list of invalid fields (if any).
     #'
     #' @return A list of invalid fields (if any).
-    #' @export
     getInvalidFields = function() {
       invalid_fields <- list()
       invalid_fields
     },
-    #' Print the object
-    #'
+
     #' @description
     #' Print the object
-    #'
-    #' @export
     print = function() {
       print(jsonlite::prettify(self$toJSONString()))
       invisible(self)

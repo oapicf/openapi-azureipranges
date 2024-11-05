@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @RequestScoped
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-07-10T08:57:40.874129227Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2024-11-05T00:06:22.653450638Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class DefaultApiServiceImpl implements DefaultApiService {
       @Override
       public Response getAzureIpRangesServiceTagsPublicCloud(String version, SecurityContext securityContext) {

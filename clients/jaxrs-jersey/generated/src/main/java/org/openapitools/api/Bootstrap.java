@@ -20,7 +20,7 @@ public class Bootstrap extends HttpServlet {
       .contact(new Contact()
         .email("blah+oapicf@cliffano.com"))
       .license(new License()
-        .name("")
+        .name("MIT")
         .url("http://unlicense.org"));
 
     ServletContext context = config.getServletContext();

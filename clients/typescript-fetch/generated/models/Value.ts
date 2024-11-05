@@ -18,6 +18,7 @@ import {
     ValuePropertiesFromJSON,
     ValuePropertiesFromJSONTyped,
     ValuePropertiesToJSON,
+    ValuePropertiesToJSONTyped,
 } from './ValueProperties';
 
 /**
@@ -69,10 +70,15 @@ export function ValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): Val
     };
 }
 
-export function ValueToJSON(value?: Value | null): any {
+  export function ValueToJSON(json: any): Value {
+      return ValueToJSONTyped(json, false);
+  }
+
+  export function ValueToJSONTyped(value?: Value | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
+
     return {
         
         'name': value['name'],

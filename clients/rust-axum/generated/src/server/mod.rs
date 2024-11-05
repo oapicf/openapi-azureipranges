@@ -50,13 +50,13 @@ async fn get_azure_ip_ranges_service_tags_public_cloud<I, A>(
   Path(path_params): Path<models::GetAzureIpRangesServiceTagsPublicCloudPathParams>,
  State(api_impl): State<I>,
 ) -> Result<Response, StatusCode>
-where 
+where
     I: AsRef<A> + Send + Sync,
     A: apis::default::Default,
 {
 
       #[allow(clippy::redundant_closure)]
-      let validation = tokio::task::spawn_blocking(move || 
+      let validation = tokio::task::spawn_blocking(move ||
     get_azure_ip_ranges_service_tags_public_cloud_validation(
         path_params,
     )
@@ -68,7 +68,7 @@ where
     return Response::builder()
             .status(StatusCode::BAD_REQUEST)
             .body(Body::from(validation.unwrap_err().to_string()))
-            .map_err(|_| StatusCode::BAD_REQUEST); 
+            .map_err(|_| StatusCode::BAD_REQUEST);
   };
 
   let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
@@ -85,7 +85,6 @@ where
                                                 apis::default::GetAzureIpRangesServiceTagsPublicCloudResponse::Status200_SuccessfulResponse
                                                     (body)
                                                 => {
-
                                                   let mut response = response.status(200);
                                                   {
                                                     let mut response_headers = response.headers_mut().unwrap();

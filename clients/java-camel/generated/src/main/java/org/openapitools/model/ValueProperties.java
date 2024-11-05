@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-07-10T08:57:30.086368841Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-11-05T00:05:38.728865923Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ValueProperties {
 
   private Integer changeNumber;
@@ -48,7 +48,7 @@ public class ValueProperties {
   /**
    * The number associated with the change.
    * @return changeNumber
-  */
+   */
   
   @Schema(name = "changeNumber", description = "The number associated with the change.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("changeNumber")
@@ -68,7 +68,7 @@ public class ValueProperties {
   /**
    * The region associated with the value.
    * @return region
-  */
+   */
   
   @Schema(name = "region", description = "The region associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("region")
@@ -88,7 +88,7 @@ public class ValueProperties {
   /**
    * The ID of the region.
    * @return regionId
-  */
+   */
   
   @Schema(name = "regionId", description = "The ID of the region.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("regionId")
@@ -108,7 +108,7 @@ public class ValueProperties {
   /**
    * The platform associated with the value.
    * @return platform
-  */
+   */
   
   @Schema(name = "platform", description = "The platform associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("platform")
@@ -128,7 +128,7 @@ public class ValueProperties {
   /**
    * The system service associated with the value.
    * @return systemService
-  */
+   */
   
   @Schema(name = "systemService", description = "The system service associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("systemService")
@@ -156,7 +156,7 @@ public class ValueProperties {
   /**
    * The address prefixes associated with the value.
    * @return addressPrefixes
-  */
+   */
   
   @Schema(name = "addressPrefixes", description = "The address prefixes associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("addressPrefixes")
@@ -184,7 +184,7 @@ public class ValueProperties {
   /**
    * The network features associated with the value.
    * @return networkFeatures
-  */
+   */
   
   @Schema(name = "networkFeatures", description = "The network features associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("networkFeatures")

@@ -34,7 +34,7 @@ import javax.annotation.Generated;
   Change.JSON_PROPERTY_VALUES
 })
 @JsonTypeName("Change")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-07-10T08:57:01.086391411Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-11-05T00:03:45.642037666Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class Change {
     public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";
@@ -57,7 +57,7 @@ public class Change {
     /**
      * The number associated with the change.
      * @return changeNumber
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_CHANGE_NUMBER)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -79,7 +79,7 @@ public class Change {
     /**
      * The cloud environment.
      * @return cloud
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_CLOUD)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -109,7 +109,7 @@ public class Change {
     /**
      * Get values
      * @return values
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_VALUES)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -11,6 +11,7 @@ import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/De
 export interface DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest {
     /**
      * The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
+     * Defaults to: undefined
      * @type string
      * @memberof DefaultApigetAzureIpRangesServiceTagsPublicCloud
      */

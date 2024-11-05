@@ -42,5 +42,8 @@ data class Change (
     @Json(name = "values")
     val propertyValues: kotlin.collections.List<Value>? = null
 
-)
+) {
+
+
+}
 

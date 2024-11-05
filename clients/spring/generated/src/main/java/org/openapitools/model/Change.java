@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * Change
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-10T09:00:59.376134406Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-05T00:19:23.683784010Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Change {
 
   private Integer changeNumber;
@@ -40,7 +40,7 @@ public class Change {
   /**
    * The number associated with the change.
    * @return changeNumber
-  */
+   */
   
   @Schema(name = "changeNumber", description = "The number associated with the change.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("changeNumber")
@@ -60,7 +60,7 @@ public class Change {
   /**
    * The cloud environment.
    * @return cloud
-  */
+   */
   
   @Schema(name = "cloud", description = "The cloud environment.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("cloud")
@@ -88,7 +88,7 @@ public class Change {
   /**
    * Get values
    * @return values
-  */
+   */
   @Valid 
   @Schema(name = "values", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("values")

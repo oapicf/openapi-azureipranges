@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.6.0
+# ! Generator version: 7.9.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -532,7 +532,7 @@ print_about() {
     echo ""
     echo -e "${BOLD}${WHITE}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.9.0-pre.0)${OFF}"
     echo ""
-    echo -e "License: "
+    echo -e "License: MIT"
     echo -e "Contact: blah+oapicf@cliffano.com"
     echo ""
 read -r -d '' appdescription <<EOF

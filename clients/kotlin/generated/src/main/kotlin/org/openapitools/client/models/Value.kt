@@ -42,5 +42,8 @@ data class Value (
     @Json(name = "properties")
     val properties: ValueProperties? = null
 
-)
+) {
+
+
+}
 

@@ -45,7 +45,7 @@ data class ValueProperties(
 
     @Schema(example = "null", description = "The network features associated with the value.")
     @get:JsonProperty("networkFeatures") val networkFeatures: kotlin.collections.List<kotlin.String>? = null
-) {
+    ) {
 
 }
 

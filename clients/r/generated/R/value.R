@@ -19,8 +19,7 @@ Value <- R6::R6Class(
     `name` = NULL,
     `id` = NULL,
     `properties` = NULL,
-    #' Initialize a new Value class.
-    #'
+
     #' @description
     #' Initialize a new Value class.
     #'
@@ -28,7 +27,6 @@ Value <- R6::R6Class(
     #' @param id The unique identifier of the value.
     #' @param properties properties
     #' @param ... Other optional arguments.
-    #' @export
     initialize = function(`name` = NULL, `id` = NULL, `properties` = NULL, ...) {
       if (!is.null(`name`)) {
         if (!(is.character(`name`) && length(`name`) == 1)) {
@@ -47,13 +45,11 @@ Value <- R6::R6Class(
         self$`properties` <- `properties`
       }
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Value in JSON format
-    #' @export
     toJSON = function() {
       ValueObject <- list()
       if (!is.null(self$`name`)) {
@@ -70,14 +66,12 @@ Value <- R6::R6Class(
       }
       ValueObject
     },
-    #' Deserialize JSON string into an instance of Value
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Value
     #'
     #' @param input_json the JSON input
     #' @return the instance of Value
-    #' @export
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`name`)) {
@@ -93,13 +87,11 @@ Value <- R6::R6Class(
       }
       self
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return Value in JSON format
-    #' @export
     toJSONString = function() {
       jsoncontent <- c(
         if (!is.null(self$`name`)) {
@@ -130,14 +122,12 @@ Value <- R6::R6Class(
       jsoncontent <- paste(jsoncontent, collapse = ",")
       json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
     },
-    #' Deserialize JSON string into an instance of Value
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of Value
     #'
     #' @param input_json the JSON input
     #' @return the instance of Value
-    #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`name` <- this_object$`name`
@@ -145,53 +135,42 @@ Value <- R6::R6Class(
       self$`properties` <- ValueProperties$new()$fromJSON(jsonlite::toJSON(this_object$`properties`, auto_unbox = TRUE, digits = NA))
       self
     },
-    #' Validate JSON input with respect to Value
-    #'
+
     #' @description
     #' Validate JSON input with respect to Value and throw an exception if invalid
     #'
     #' @param input the JSON input
-    #' @export
     validateJSON = function(input) {
       input_json <- jsonlite::fromJSON(input)
     },
-    #' To string (JSON format)
-    #'
+
     #' @description
     #' To string (JSON format)
     #'
     #' @return String representation of Value
-    #' @export
     toString = function() {
       self$toJSONString()
     },
-    #' Return true if the values in all fields are valid.
-    #'
+
     #' @description
     #' Return true if the values in all fields are valid.
     #'
     #' @return true if the values in all fields are valid.
-    #' @export
     isValid = function() {
       TRUE
     },
-    #' Return a list of invalid fields (if any).
-    #'
+
     #' @description
     #' Return a list of invalid fields (if any).
     #'
     #' @return A list of invalid fields (if any).
-    #' @export
     getInvalidFields = function() {
       invalid_fields <- list()
       invalid_fields
     },
-    #' Print the object
-    #'
+
     #' @description
     #' Print the object
-    #'
-    #' @export
     print = function() {
       print(jsonlite::prettify(self$toJSONString()))
       invisible(self)

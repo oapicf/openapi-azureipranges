@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAzureIpRangesServiceTagsPublicCloud**](DefaultApi.md#getAzureIpRangesServiceTagsPublicCloud) | **GET** /ServiceTags_Public_{version}.json | Get Azure IP Ranges and Service Tags - Public Cloud |
 
 
 <a id="getAzureIpRangesServiceTagsPublicCloud"></a>
@@ -36,10 +36,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version** | **kotlin.String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **version** | **kotlin.String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | |
 
 ### Return type
 

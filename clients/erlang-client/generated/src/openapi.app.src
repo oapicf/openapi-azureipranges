@@ -13,6 +13,6 @@
   {modules, []},
 
   {maintainers, []},
-  {licenses, []},
+  {licenses, ["MIT"]},
   {links, ["https://github.com/oapicf/openapi-azureipranges"]}
 ]}.

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,7 +49,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * Value
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-10T08:56:30.654999166Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-05T00:02:30.842860643Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Value {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -72,10 +71,10 @@ public class Value {
     return this;
   }
 
-   /**
+  /**
    * The name of the value.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -91,10 +90,10 @@ public class Value {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the value.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
@@ -110,10 +109,10 @@ public class Value {
     return this;
   }
 
-   /**
+  /**
    * Get properties
    * @return properties
-  **/
+   */
   @javax.annotation.Nullable
   public ValueProperties getProperties() {
     return properties;
@@ -181,12 +180,12 @@ public class Value {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Value
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Value
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Value.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -243,22 +242,22 @@ public class Value {
     }
   }
 
- /**
-  * Create an instance of Value given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Value
-  * @throws IOException if the JSON string is invalid with respect to Value
-  */
+  /**
+   * Create an instance of Value given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Value
+   * @throws IOException if the JSON string is invalid with respect to Value
+   */
   public static Value fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Value.class);
   }
 
- /**
-  * Convert an instance of Value to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Value to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

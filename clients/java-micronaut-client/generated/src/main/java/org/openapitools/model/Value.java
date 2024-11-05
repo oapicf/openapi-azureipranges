@@ -31,7 +31,7 @@ import javax.annotation.Generated;
   Value.JSON_PROPERTY_PROPERTIES
 })
 @JsonTypeName("Value")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-07-10T08:57:01.086391411Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-11-05T00:03:45.642037666Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class Value {
     public static final String JSON_PROPERTY_NAME = "name";
@@ -54,7 +54,7 @@ public class Value {
     /**
      * The name of the value.
      * @return name
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_NAME)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -76,7 +76,7 @@ public class Value {
     /**
      * The unique identifier of the value.
      * @return id
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_ID)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class Value {
     /**
      * Get properties
      * @return properties
-     **/
+     */
     @Valid
     @Nullable
     @JsonProperty(JSON_PROPERTY_PROPERTIES)

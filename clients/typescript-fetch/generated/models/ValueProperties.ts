@@ -90,10 +90,15 @@ export function ValuePropertiesFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-export function ValuePropertiesToJSON(value?: ValueProperties | null): any {
+  export function ValuePropertiesToJSON(json: any): ValueProperties {
+      return ValuePropertiesToJSONTyped(json, false);
+  }
+
+  export function ValuePropertiesToJSONTyped(value?: ValueProperties | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
+
     return {
         
         'changeNumber': value['changeNumber'],

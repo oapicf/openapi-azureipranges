@@ -37,7 +37,7 @@ import javax.annotation.Generated;
   ValueProperties.JSON_PROPERTY_NETWORK_FEATURES
 })
 @JsonTypeName("ValueProperties")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-07-10T08:57:01.086391411Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-11-05T00:03:45.642037666Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class ValueProperties {
     public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";
@@ -72,7 +72,7 @@ public class ValueProperties {
     /**
      * The number associated with the change.
      * @return changeNumber
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_CHANGE_NUMBER)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class ValueProperties {
     /**
      * The region associated with the value.
      * @return region
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_REGION)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -116,7 +116,7 @@ public class ValueProperties {
     /**
      * The ID of the region.
      * @return regionId
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_REGION_ID)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -138,7 +138,7 @@ public class ValueProperties {
     /**
      * The platform associated with the value.
      * @return platform
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_PLATFORM)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -160,7 +160,7 @@ public class ValueProperties {
     /**
      * The system service associated with the value.
      * @return systemService
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_SYSTEM_SERVICE)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -190,7 +190,7 @@ public class ValueProperties {
     /**
      * The address prefixes associated with the value.
      * @return addressPrefixes
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_ADDRESS_PREFIXES)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -220,7 +220,7 @@ public class ValueProperties {
     /**
      * The network features associated with the value.
      * @return networkFeatures
-     **/
+     */
     @Nullable
     @JsonProperty(JSON_PROPERTY_NETWORK_FEATURES)
     @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

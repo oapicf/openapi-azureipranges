@@ -14,6 +14,7 @@ from fastapi import (  # noqa: F401
     Depends,
     Form,
     Header,
+    HTTPException,
     Path,
     Query,
     Response,
@@ -45,4 +46,6 @@ async def get_azure_ip_ranges_service_tags_public_cloud(
     version: str = Path(..., description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"),
 ) -> Change:
     """Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."""
-    return BaseDefaultApi.subclasses[0]().get_azure_ip_ranges_service_tags_public_cloud(version)
+    if not BaseDefaultApi.subclasses:
+        raise HTTPException(status_code=500, detail="Not implemented")
+    return await BaseDefaultApi.subclasses[0]().get_azure_ip_ranges_service_tags_public_cloud(version)

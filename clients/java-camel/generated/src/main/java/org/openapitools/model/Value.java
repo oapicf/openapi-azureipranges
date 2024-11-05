@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * Value
  */
 
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-07-10T08:57:30.086368841Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2024-11-05T00:05:38.728865923Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Value {
 
   private String name;
@@ -36,7 +36,7 @@ public class Value {
   /**
    * The name of the value.
    * @return name
-  */
+   */
   
   @Schema(name = "name", description = "The name of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("name")
@@ -56,7 +56,7 @@ public class Value {
   /**
    * The unique identifier of the value.
    * @return id
-  */
+   */
   
   @Schema(name = "id", description = "The unique identifier of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("id")
@@ -76,7 +76,7 @@ public class Value {
   /**
    * Get properties
    * @return properties
-  */
+   */
   @Valid 
   @Schema(name = "properties", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("properties")

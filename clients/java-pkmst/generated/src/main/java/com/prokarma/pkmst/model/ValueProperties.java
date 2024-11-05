@@ -17,7 +17,7 @@ import java.util.List;
  * ValueProperties
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:57:11.084089870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-05T00:04:24.419909408Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ValueProperties   {
   @JsonProperty("changeNumber")
   private Integer changeNumber;
@@ -47,10 +47,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The number associated with the change.
    * @return changeNumber
-  **/
+   */
   @ApiModelProperty(value = "The number associated with the change.")
   public Integer getChangeNumber() {
     return changeNumber;
@@ -65,10 +65,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The region associated with the value.
    * @return region
-  **/
+   */
   @ApiModelProperty(value = "The region associated with the value.")
   public String getRegion() {
     return region;
@@ -83,10 +83,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The ID of the region.
    * @return regionId
-  **/
+   */
   @ApiModelProperty(value = "The ID of the region.")
   public Integer getRegionId() {
     return regionId;
@@ -101,10 +101,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The platform associated with the value.
    * @return platform
-  **/
+   */
   @ApiModelProperty(value = "The platform associated with the value.")
   public String getPlatform() {
     return platform;
@@ -119,10 +119,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The system service associated with the value.
    * @return systemService
-  **/
+   */
   @ApiModelProperty(value = "The system service associated with the value.")
   public String getSystemService() {
     return systemService;
@@ -145,10 +145,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The address prefixes associated with the value.
    * @return addressPrefixes
-  **/
+   */
   @ApiModelProperty(value = "The address prefixes associated with the value.")
   public List<String> getAddressPrefixes() {
     return addressPrefixes;
@@ -171,10 +171,10 @@ public class ValueProperties   {
     return this;
   }
 
-   /**
+  /**
    * The network features associated with the value.
    * @return networkFeatures
-  **/
+   */
   @ApiModelProperty(value = "The network features associated with the value.")
   public List<String> getNetworkFeatures() {
     return networkFeatures;

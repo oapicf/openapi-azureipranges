@@ -22,7 +22,7 @@ class TestDefaultApi(unittest.TestCase):
     """DefaultApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DefaultApi()  # noqa: E501
+        self.api = DefaultApi()
 
     def tearDown(self) -> None:
         pass

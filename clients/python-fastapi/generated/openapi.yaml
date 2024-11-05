@@ -1,9 +1,11 @@
-openapi: 3.0.0
+openapi: 3.1.0
 info:
   contact:
     email: blah+oapicf@cliffano.com
     name: OpenAPI Clients Factory
     url: https://github.com/oapicf/openapi-azureipranges
+  license:
+    name: MIT
   title: Azure IP Ranges and Service Tags - Public Cloud
   version: 0.9.0-pre.0
 servers:
@@ -82,7 +84,6 @@ components:
           title: values
           type: array
       title: Change
-      type: object
     Value:
       example:
         name: name
@@ -111,7 +112,6 @@ components:
         properties:
           $ref: '#/components/schemas/ValueProperties'
       title: Value
-      type: object
     ValueProperties:
       example:
         networkFeatures:
@@ -159,4 +159,3 @@ components:
           title: networkFeatures
           type: array
       title: ValueProperties
-      type: object

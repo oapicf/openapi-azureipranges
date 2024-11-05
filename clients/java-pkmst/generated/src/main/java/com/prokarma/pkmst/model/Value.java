@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Value
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-07-10T08:57:11.084089870Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-05T00:04:24.419909408Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Value   {
   @JsonProperty("name")
   private String name;
@@ -31,10 +31,10 @@ public class Value   {
     return this;
   }
 
-   /**
+  /**
    * The name of the value.
    * @return name
-  **/
+   */
   @ApiModelProperty(value = "The name of the value.")
   public String getName() {
     return name;
@@ -49,10 +49,10 @@ public class Value   {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the value.
    * @return id
-  **/
+   */
   @ApiModelProperty(value = "The unique identifier of the value.")
   public String getId() {
     return id;
@@ -67,10 +67,10 @@ public class Value   {
     return this;
   }
 
-   /**
+  /**
    * Get properties
    * @return properties
-  **/
+   */
   @ApiModelProperty(value = "")
   public ValueProperties getProperties() {
     return properties;

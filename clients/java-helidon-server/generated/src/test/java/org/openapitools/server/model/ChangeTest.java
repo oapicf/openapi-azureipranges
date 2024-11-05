@@ -12,10 +12,10 @@
 
 package org.openapitools.server.model;
 
+import io.helidon.common.mapper.Value;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.server.model.Value;
 import org.junit.jupiter.api.Test;
 
 /**

@@ -14,8 +14,7 @@ use swagger::auth::Scopes;
 use url::form_urlencoded;
 
 #[allow(unused_imports)]
-use crate::models;
-use crate::header;
+use crate::{models, header, AuthenticationApi};
 
 pub use crate::context;
 
@@ -24,6 +23,8 @@ type ServiceFuture = BoxFuture<'static, Result<Response<Body>, crate::ServiceErr
 use crate::{Api,
      GetAzureIpRangesServiceTagsPublicCloudResponse
 };
+
+mod server_auth;
 
 mod paths {
     use lazy_static::lazy_static;
@@ -42,6 +43,7 @@ mod paths {
                 .expect("Unable to create regex for SERVICETAGS_PUBLIC_VERSION_JSON");
     }
 }
+
 
 pub struct MakeService<T, C> where
     T: Api<C> + Clone + Send + 'static,
@@ -76,9 +78,9 @@ impl<T, C, Target> hyper::service::Service<Target> for MakeService<T, C> where
     }
 
     fn call(&mut self, target: Target) -> Self::Future {
-        future::ok(Service::new(
-            self.api_impl.clone(),
-        ))
+        let service = Service::new(self.api_impl.clone());
+
+        future::ok(service)
     }
 }
 
@@ -134,16 +136,20 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
         self.api_impl.poll_ready(cx)
     }
 
-    fn call(&mut self, req: (Request<Body>, C)) -> Self::Future { async fn run<T, C>(mut api_impl: T, req: (Request<Body>, C)) -> Result<Response<Body>, crate::ServiceError> where
-        T: Api<C> + Clone + Send + 'static,
-        C: Has<XSpanIdString>  + Send + Sync + 'static
-    {
-        let (request, context) = req;
-        let (parts, body) = request.into_parts();
-        let (method, uri, headers) = (parts.method, parts.uri, parts.headers);
-        let path = paths::GLOBAL_REGEX_SET.matches(uri.path());
+    fn call(&mut self, req: (Request<Body>, C)) -> Self::Future {
+        async fn run<T, C>(
+            mut api_impl: T,
+            req: (Request<Body>, C),
+        ) -> Result<Response<Body>, crate::ServiceError> where
+            T: Api<C> + Clone + Send + 'static,
+            C: Has<XSpanIdString>  + Send + Sync + 'static
+        {
+            let (request, context) = req;
+            let (parts, body) = request.into_parts();
+            let (method, uri, headers) = (parts.method, parts.uri, parts.headers);
+            let path = paths::GLOBAL_REGEX_SET.matches(uri.path());
 
-        match method {
+            match method {
 
             // GetAzureIpRangesServiceTagsPublicCloud - GET /ServiceTags_Public_{version}.json
             hyper::Method::GET if path.matched(paths::ID_SERVICETAGS_PUBLIC_VERSION_JSON) => {
@@ -189,9 +195,11 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                     response.headers_mut().insert(
                                                         CONTENT_TYPE,
                                                         HeaderValue::from_str("application/json")
-                                                            .expect("Unable to create Content-Type header for GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD_SUCCESSFUL_RESPONSE"));
-                                                    let body_content = serde_json::to_string(&body).expect("impossible to fail to serialize");
-                                                    *response.body_mut() = Body::from(body_content);
+                                                            .expect("Unable to create Content-Type header for application/json"));
+                                                    // JSON Body
+                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
+                                                    *response.body_mut() = Body::from(body);
+
                                                 },
                                             },
                                             Err(_) => {
@@ -206,11 +214,16 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
             },
 
             _ if path.matched(paths::ID_SERVICETAGS_PUBLIC_VERSION_JSON) => method_not_allowed(),
-            _ => Ok(Response::builder().status(StatusCode::NOT_FOUND)
-                    .body(Body::empty())
-                    .expect("Unable to create Not Found response"))
+                _ => Ok(Response::builder().status(StatusCode::NOT_FOUND)
+                        .body(Body::empty())
+                        .expect("Unable to create Not Found response"))
+            }
         }
-    } Box::pin(run(self.api_impl.clone(), req)) }
+        Box::pin(run(
+            self.api_impl.clone(),
+            req,
+        ))
+    }
 }
 
 /// Request parser for `Api`.

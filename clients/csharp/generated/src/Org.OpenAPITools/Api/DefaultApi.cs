@@ -70,7 +70,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Change</returns>
-        System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Azure IP Ranges and Service Tags - Public Cloud
@@ -83,7 +83,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Change)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -282,7 +282,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Change</returns>
-        public async System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Change> GetAzureIpRangesServiceTagsPublicCloudAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<Change> localVarResponse = await GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(version, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -296,7 +296,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Change)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Change>> GetAzureIpRangesServiceTagsPublicCloudWithHttpInfoAsync(string version, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'version' is set
             if (version == null)

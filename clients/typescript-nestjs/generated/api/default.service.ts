@@ -11,7 +11,7 @@
  */
 /* tslint:disable:no-unused-variable member-ordering */
 
-import { Inject, Injectable, Optional } from '@nestjs/common';
+import { Injectable, Optional } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { Observable, from, of, switchMap } from 'rxjs';
@@ -50,7 +50,6 @@ export class DefaultService {
      */
     public getAzureIpRangesServiceTagsPublicCloud(version: string, ): Observable<AxiosResponse<Change>>;
     public getAzureIpRangesServiceTagsPublicCloud(version: string, ): Observable<any> {
-
         if (version === null || version === undefined) {
             throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
         }

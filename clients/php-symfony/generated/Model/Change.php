@@ -48,9 +48,9 @@ class Change
      *
      * @var int|null
      * @SerializedName("changeNumber")
-     * @Assert\Type("int")
      * @Type("int")
-     */
+    */
+    #[Assert\Type("int")]
     protected ?int $changeNumber = null;
 
     /**
@@ -58,19 +58,19 @@ class Change
      *
      * @var string|null
      * @SerializedName("cloud")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $cloud = null;
 
     /**
      * @var Value[]|null
      * @SerializedName("values")
-     * @Assert\All({
-     *   @Assert\Type("OpenAPI\Server\Model\Value")
-     * })
      * @Type("array<OpenAPI\Server\Model\Value>")
-     */
+    */
+    #[Assert\All([
+        new Assert\Type("OpenAPI\Server\Model\Value"),
+    ])]
     protected ?array $values = null;
 
     /**
@@ -96,21 +96,22 @@ class Change
         return $this->changeNumber;
     }
 
-
-
     /**
-     * Sets changeNumber.
-     *
-     * @param int|null $changeNumber  The number associated with the change.
-     *
-     * @return $this
-     */
+    * Sets changeNumber.
+    *
+    * @param int|null $changeNumber  The number associated with the change.
+    *
+    * @return $this
+    */
     public function setChangeNumber(?int $changeNumber = null): self
     {
         $this->changeNumber = $changeNumber;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets cloud.
@@ -122,21 +123,22 @@ class Change
         return $this->cloud;
     }
 
-
-
     /**
-     * Sets cloud.
-     *
-     * @param string|null $cloud  The cloud environment.
-     *
-     * @return $this
-     */
+    * Sets cloud.
+    *
+    * @param string|null $cloud  The cloud environment.
+    *
+    * @return $this
+    */
     public function setCloud(?string $cloud = null): self
     {
         $this->cloud = $cloud;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets values.
@@ -148,21 +150,22 @@ class Change
         return $this->values;
     }
 
-
-
     /**
-     * Sets values.
-     *
-     * @param Value[]|null $values
-     *
-     * @return $this
-     */
+    * Sets values.
+    *
+    * @param Value[]|null $values
+    *
+    * @return $this
+    */
     public function setValues(?array $values = null): self
     {
         $this->values = $values;
 
         return $this;
     }
+
+
+
 }
 
 

@@ -26,6 +26,11 @@ public class SpringDocConfiguration {
                                                 .url("https://github.com/oapicf/openapi-azureipranges")
                                                 .email("blah+oapicf@cliffano.com")
                                 )
+                                .license(
+                                        new License()
+                                                .name("MIT")
+                                                .url("http://unlicense.org")
+                                )
                                 .version("0.9.0-pre.0")
                 )
         ;

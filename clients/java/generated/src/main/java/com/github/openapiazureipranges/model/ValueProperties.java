@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * ValueProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-10T08:56:30.654999166Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-05T00:02:30.842860643Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ValueProperties {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)
@@ -89,10 +88,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The number associated with the change.
    * @return changeNumber
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getChangeNumber() {
     return changeNumber;
@@ -108,10 +107,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The region associated with the value.
    * @return region
-  **/
+   */
   @javax.annotation.Nullable
   public String getRegion() {
     return region;
@@ -127,10 +126,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The ID of the region.
    * @return regionId
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getRegionId() {
     return regionId;
@@ -146,10 +145,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The platform associated with the value.
    * @return platform
-  **/
+   */
   @javax.annotation.Nullable
   public String getPlatform() {
     return platform;
@@ -165,10 +164,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The system service associated with the value.
    * @return systemService
-  **/
+   */
   @javax.annotation.Nullable
   public String getSystemService() {
     return systemService;
@@ -192,10 +191,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The address prefixes associated with the value.
    * @return addressPrefixes
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAddressPrefixes() {
     return addressPrefixes;
@@ -219,10 +218,10 @@ public class ValueProperties {
     return this;
   }
 
-   /**
+  /**
    * The network features associated with the value.
    * @return networkFeatures
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNetworkFeatures() {
     return networkFeatures;
@@ -302,12 +301,12 @@ public class ValueProperties {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ValueProperties
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ValueProperties
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ValueProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -371,22 +370,22 @@ public class ValueProperties {
     }
   }
 
- /**
-  * Create an instance of ValueProperties given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ValueProperties
-  * @throws IOException if the JSON string is invalid with respect to ValueProperties
-  */
+  /**
+   * Create an instance of ValueProperties given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ValueProperties
+   * @throws IOException if the JSON string is invalid with respect to ValueProperties
+   */
   public static ValueProperties fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ValueProperties.class);
   }
 
- /**
-  * Convert an instance of ValueProperties to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ValueProperties to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

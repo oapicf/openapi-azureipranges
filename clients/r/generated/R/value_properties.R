@@ -27,8 +27,7 @@ ValueProperties <- R6::R6Class(
     `systemService` = NULL,
     `addressPrefixes` = NULL,
     `networkFeatures` = NULL,
-    #' Initialize a new ValueProperties class.
-    #'
+
     #' @description
     #' Initialize a new ValueProperties class.
     #'
@@ -40,7 +39,6 @@ ValueProperties <- R6::R6Class(
     #' @param addressPrefixes The address prefixes associated with the value.
     #' @param networkFeatures The network features associated with the value.
     #' @param ... Other optional arguments.
-    #' @export
     initialize = function(`changeNumber` = NULL, `region` = NULL, `regionId` = NULL, `platform` = NULL, `systemService` = NULL, `addressPrefixes` = NULL, `networkFeatures` = NULL, ...) {
       if (!is.null(`changeNumber`)) {
         if (!(is.numeric(`changeNumber`) && length(`changeNumber`) == 1)) {
@@ -83,13 +81,11 @@ ValueProperties <- R6::R6Class(
         self$`networkFeatures` <- `networkFeatures`
       }
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return ValueProperties in JSON format
-    #' @export
     toJSON = function() {
       ValuePropertiesObject <- list()
       if (!is.null(self$`changeNumber`)) {
@@ -122,14 +118,12 @@ ValueProperties <- R6::R6Class(
       }
       ValuePropertiesObject
     },
-    #' Deserialize JSON string into an instance of ValueProperties
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of ValueProperties
     #'
     #' @param input_json the JSON input
     #' @return the instance of ValueProperties
-    #' @export
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`changeNumber`)) {
@@ -155,13 +149,11 @@ ValueProperties <- R6::R6Class(
       }
       self
     },
-    #' To JSON string
-    #'
+
     #' @description
     #' To JSON String
     #'
     #' @return ValueProperties in JSON format
-    #' @export
     toJSONString = function() {
       jsoncontent <- c(
         if (!is.null(self$`changeNumber`)) {
@@ -224,14 +216,12 @@ ValueProperties <- R6::R6Class(
       jsoncontent <- paste(jsoncontent, collapse = ",")
       json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
     },
-    #' Deserialize JSON string into an instance of ValueProperties
-    #'
+
     #' @description
     #' Deserialize JSON string into an instance of ValueProperties
     #'
     #' @param input_json the JSON input
     #' @return the instance of ValueProperties
-    #' @export
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`changeNumber` <- this_object$`changeNumber`
@@ -243,53 +233,42 @@ ValueProperties <- R6::R6Class(
       self$`networkFeatures` <- ApiClient$new()$deserializeObj(this_object$`networkFeatures`, "array[character]", loadNamespace("openapi"))
       self
     },
-    #' Validate JSON input with respect to ValueProperties
-    #'
+
     #' @description
     #' Validate JSON input with respect to ValueProperties and throw an exception if invalid
     #'
     #' @param input the JSON input
-    #' @export
     validateJSON = function(input) {
       input_json <- jsonlite::fromJSON(input)
     },
-    #' To string (JSON format)
-    #'
+
     #' @description
     #' To string (JSON format)
     #'
     #' @return String representation of ValueProperties
-    #' @export
     toString = function() {
       self$toJSONString()
     },
-    #' Return true if the values in all fields are valid.
-    #'
+
     #' @description
     #' Return true if the values in all fields are valid.
     #'
     #' @return true if the values in all fields are valid.
-    #' @export
     isValid = function() {
       TRUE
     },
-    #' Return a list of invalid fields (if any).
-    #'
+
     #' @description
     #' Return a list of invalid fields (if any).
     #'
     #' @return A list of invalid fields (if any).
-    #' @export
     getInvalidFields = function() {
       invalid_fields <- list()
       invalid_fields
     },
-    #' Print the object
-    #'
+
     #' @description
     #' Print the object
-    #'
-    #' @export
     print = function() {
       print(jsonlite::prettify(self$toJSONString()))
       invisible(self)

@@ -48,9 +48,9 @@ class ValueProperties
      *
      * @var int|null
      * @SerializedName("changeNumber")
-     * @Assert\Type("int")
      * @Type("int")
-     */
+    */
+    #[Assert\Type("int")]
     protected ?int $changeNumber = null;
 
     /**
@@ -58,9 +58,9 @@ class ValueProperties
      *
      * @var string|null
      * @SerializedName("region")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $region = null;
 
     /**
@@ -68,9 +68,9 @@ class ValueProperties
      *
      * @var int|null
      * @SerializedName("regionId")
-     * @Assert\Type("int")
      * @Type("int")
-     */
+    */
+    #[Assert\Type("int")]
     protected ?int $regionId = null;
 
     /**
@@ -78,9 +78,9 @@ class ValueProperties
      *
      * @var string|null
      * @SerializedName("platform")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $platform = null;
 
     /**
@@ -88,9 +88,9 @@ class ValueProperties
      *
      * @var string|null
      * @SerializedName("systemService")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $systemService = null;
 
     /**
@@ -98,11 +98,11 @@ class ValueProperties
      *
      * @var string[]|null
      * @SerializedName("addressPrefixes")
-     * @Assert\All({
-     *   @Assert\Type("string")
-     * })
      * @Type("array<string>")
-     */
+    */
+    #[Assert\All([
+        new Assert\Type("string"),
+    ])]
     protected ?array $addressPrefixes = null;
 
     /**
@@ -110,11 +110,11 @@ class ValueProperties
      *
      * @var string[]|null
      * @SerializedName("networkFeatures")
-     * @Assert\All({
-     *   @Assert\Type("string")
-     * })
      * @Type("array<string>")
-     */
+    */
+    #[Assert\All([
+        new Assert\Type("string"),
+    ])]
     protected ?array $networkFeatures = null;
 
     /**
@@ -144,21 +144,22 @@ class ValueProperties
         return $this->changeNumber;
     }
 
-
-
     /**
-     * Sets changeNumber.
-     *
-     * @param int|null $changeNumber  The number associated with the change.
-     *
-     * @return $this
-     */
+    * Sets changeNumber.
+    *
+    * @param int|null $changeNumber  The number associated with the change.
+    *
+    * @return $this
+    */
     public function setChangeNumber(?int $changeNumber = null): self
     {
         $this->changeNumber = $changeNumber;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets region.
@@ -170,21 +171,22 @@ class ValueProperties
         return $this->region;
     }
 
-
-
     /**
-     * Sets region.
-     *
-     * @param string|null $region  The region associated with the value.
-     *
-     * @return $this
-     */
+    * Sets region.
+    *
+    * @param string|null $region  The region associated with the value.
+    *
+    * @return $this
+    */
     public function setRegion(?string $region = null): self
     {
         $this->region = $region;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets regionId.
@@ -196,21 +198,22 @@ class ValueProperties
         return $this->regionId;
     }
 
-
-
     /**
-     * Sets regionId.
-     *
-     * @param int|null $regionId  The ID of the region.
-     *
-     * @return $this
-     */
+    * Sets regionId.
+    *
+    * @param int|null $regionId  The ID of the region.
+    *
+    * @return $this
+    */
     public function setRegionId(?int $regionId = null): self
     {
         $this->regionId = $regionId;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets platform.
@@ -222,21 +225,22 @@ class ValueProperties
         return $this->platform;
     }
 
-
-
     /**
-     * Sets platform.
-     *
-     * @param string|null $platform  The platform associated with the value.
-     *
-     * @return $this
-     */
+    * Sets platform.
+    *
+    * @param string|null $platform  The platform associated with the value.
+    *
+    * @return $this
+    */
     public function setPlatform(?string $platform = null): self
     {
         $this->platform = $platform;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets systemService.
@@ -248,21 +252,22 @@ class ValueProperties
         return $this->systemService;
     }
 
-
-
     /**
-     * Sets systemService.
-     *
-     * @param string|null $systemService  The system service associated with the value.
-     *
-     * @return $this
-     */
+    * Sets systemService.
+    *
+    * @param string|null $systemService  The system service associated with the value.
+    *
+    * @return $this
+    */
     public function setSystemService(?string $systemService = null): self
     {
         $this->systemService = $systemService;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets addressPrefixes.
@@ -274,21 +279,22 @@ class ValueProperties
         return $this->addressPrefixes;
     }
 
-
-
     /**
-     * Sets addressPrefixes.
-     *
-     * @param string[]|null $addressPrefixes  The address prefixes associated with the value.
-     *
-     * @return $this
-     */
+    * Sets addressPrefixes.
+    *
+    * @param string[]|null $addressPrefixes  The address prefixes associated with the value.
+    *
+    * @return $this
+    */
     public function setAddressPrefixes(?array $addressPrefixes = null): self
     {
         $this->addressPrefixes = $addressPrefixes;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets networkFeatures.
@@ -300,21 +306,22 @@ class ValueProperties
         return $this->networkFeatures;
     }
 
-
-
     /**
-     * Sets networkFeatures.
-     *
-     * @param string[]|null $networkFeatures  The network features associated with the value.
-     *
-     * @return $this
-     */
+    * Sets networkFeatures.
+    *
+    * @param string[]|null $networkFeatures  The network features associated with the value.
+    *
+    * @return $this
+    */
     public function setNetworkFeatures(?array $networkFeatures = null): self
     {
         $this->networkFeatures = $networkFeatures;
 
         return $this;
     }
+
+
+
 }
 
 

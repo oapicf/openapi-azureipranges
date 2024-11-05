@@ -48,9 +48,9 @@ class Value
      *
      * @var string|null
      * @SerializedName("name")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $name = null;
 
     /**
@@ -58,17 +58,17 @@ class Value
      *
      * @var string|null
      * @SerializedName("id")
-     * @Assert\Type("string")
      * @Type("string")
-     */
+    */
+    #[Assert\Type("string")]
     protected ?string $id = null;
 
     /**
      * @var ValueProperties|null
      * @SerializedName("properties")
-     * @Assert\Type("OpenAPI\Server\Model\ValueProperties")
      * @Type("OpenAPI\Server\Model\ValueProperties")
-     */
+    */
+    #[Assert\Type("OpenAPI\Server\Model\ValueProperties")]
     protected ?ValueProperties $properties = null;
 
     /**
@@ -94,21 +94,22 @@ class Value
         return $this->name;
     }
 
-
-
     /**
-     * Sets name.
-     *
-     * @param string|null $name  The name of the value.
-     *
-     * @return $this
-     */
+    * Sets name.
+    *
+    * @param string|null $name  The name of the value.
+    *
+    * @return $this
+    */
     public function setName(?string $name = null): self
     {
         $this->name = $name;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets id.
@@ -120,21 +121,22 @@ class Value
         return $this->id;
     }
 
-
-
     /**
-     * Sets id.
-     *
-     * @param string|null $id  The unique identifier of the value.
-     *
-     * @return $this
-     */
+    * Sets id.
+    *
+    * @param string|null $id  The unique identifier of the value.
+    *
+    * @return $this
+    */
     public function setId(?string $id = null): self
     {
         $this->id = $id;
 
         return $this;
     }
+
+
+
 
     /**
      * Gets properties.
@@ -146,21 +148,22 @@ class Value
         return $this->properties;
     }
 
-
-
     /**
-     * Sets properties.
-     *
-     * @param ValueProperties|null $properties
-     *
-     * @return $this
-     */
+    * Sets properties.
+    *
+    * @param ValueProperties|null $properties
+    *
+    * @return $this
+    */
     public function setProperties(?ValueProperties $properties = null): self
     {
         $this->properties = $properties;
 
         return $this;
     }
+
+
+
 }
 
 

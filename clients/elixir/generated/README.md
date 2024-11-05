@@ -18,7 +18,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:azure_ip_ranges_and_service_tags_public_cloud, "~> 0.9.0-pre.0"}]
+  [{:azure_ip_ranges_and_service_tags_public_cloud, "~> 1.0.0"}]
 end
 ```
 

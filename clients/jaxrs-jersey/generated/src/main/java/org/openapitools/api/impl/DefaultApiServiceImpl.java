@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-07-10T08:57:45.138804949Z[Etc/UTC]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2024-11-05T00:06:35.274091618Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class DefaultApiServiceImpl extends DefaultApiService {
     @Override
     public Response getAzureIpRangesServiceTagsPublicCloud(String version, SecurityContext securityContext) throws NotFoundException {
