@@ -1,0 +1,146 @@
+openapi: 3.1.0
+info:
+  contact:
+    email: blah+oapicf@cliffano.com
+    name: OpenAPI Clients Factory
+    url: https://github.com/oapicf/openapi-azureipranges
+  license:
+    name: MIT
+  title: Azure IP Ranges and Service Tags - Public Cloud
+  version: 0.9.0-pre.0
+servers:
+- url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
+paths:
+  /ServiceTags_Public_{version}.json:
+    get:
+      description: Retrieve details about Azure IP Ranges and Service Tags - Public
+        Cloud.
+      operationId: getAzureIpRangesServiceTagsPublicCloud
+      parameters:
+      - description: "The version of the JSON file to be retrieved in the format YYYYMMDD,\
+          \ e.g. 20240506"
+        explode: false
+        in: path
+        name: version
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Change'
+          description: Successful response
+      summary: Get Azure IP Ranges and Service Tags - Public Cloud
+components:
+  schemas:
+    Change:
+      example:
+        cloud: cloud
+        values:
+        - name: name
+          id: id
+          properties:
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
+            systemService: systemService
+            regionId: 1
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            changeNumber: 6
+            region: region
+            platform: platform
+        - name: name
+          id: id
+          properties:
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
+            systemService: systemService
+            regionId: 1
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            changeNumber: 6
+            region: region
+            platform: platform
+        changeNumber: 0
+      properties:
+        changeNumber:
+          description: The number associated with the change.
+          type: integer
+        cloud:
+          description: The cloud environment.
+          type: string
+        values:
+          items:
+            $ref: '#/components/schemas/Value'
+          type: array
+    Value:
+      example:
+        name: name
+        id: id
+        properties:
+          networkFeatures:
+          - networkFeatures
+          - networkFeatures
+          systemService: systemService
+          regionId: 1
+          addressPrefixes:
+          - addressPrefixes
+          - addressPrefixes
+          changeNumber: 6
+          region: region
+          platform: platform
+      properties:
+        name:
+          description: The name of the value.
+          type: string
+        id:
+          description: The unique identifier of the value.
+          type: string
+        properties:
+          $ref: '#/components/schemas/ValueProperties'
+    ValueProperties:
+      example:
+        networkFeatures:
+        - networkFeatures
+        - networkFeatures
+        systemService: systemService
+        regionId: 1
+        addressPrefixes:
+        - addressPrefixes
+        - addressPrefixes
+        changeNumber: 6
+        region: region
+        platform: platform
+      properties:
+        changeNumber:
+          description: The number associated with the change.
+          type: integer
+        region:
+          description: The region associated with the value.
+          type: string
+        regionId:
+          description: The ID of the region.
+          type: integer
+        platform:
+          description: The platform associated with the value.
+          type: string
+        systemService:
+          description: The system service associated with the value.
+          type: string
+        addressPrefixes:
+          description: The address prefixes associated with the value.
+          items:
+            type: string
+          type: array
+        networkFeatures:
+          description: The network features associated with the value.
+          items:
+            type: string
+          type: array

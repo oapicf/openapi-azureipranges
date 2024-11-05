@@ -1,0 +1,5 @@
+.openapi-generator-ignore
+openapi2graphql/api/default_api.graphql
+openapi2graphql/model/change.graphql
+openapi2graphql/model/value.graphql
+openapi2graphql/model/value_properties.graphql

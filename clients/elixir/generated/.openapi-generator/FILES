@@ -1,0 +1,15 @@
+.formatter.exs
+.gitignore
+.openapi-generator-ignore
+README.md
+config/config.exs
+config/runtime.exs
+lib/azure_ip_ranges_and_service_tags_public_cloud/api/default.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/connection.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/deserializer.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/model/change.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/model/value.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/model/value_properties.ex
+lib/azure_ip_ranges_and_service_tags_public_cloud/request_builder.ex
+mix.exs
+test/test_helper.exs

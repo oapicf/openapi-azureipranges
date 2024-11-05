@@ -1,0 +1,12 @@
+.gitignore
+.openapi-generator-ignore
+apis/DefaultApi.ts
+apis/index.ts
+index.ts
+models/Change.ts
+models/Value.ts
+models/ValueProperties.ts
+models/index.ts
+runtime.ts
+servers.ts
+tsconfig.json

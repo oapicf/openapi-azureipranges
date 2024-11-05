@@ -1,0 +1,14 @@
+.gitignore
+.openapi-generator-ignore
+OpenAPI/OpenAPI.fsproj
+OpenAPI/build.bat
+OpenAPI/build.sh
+OpenAPI/src/api/DefaultApiHandler.fs
+OpenAPI/src/api/DefaultApiHandlerParams.fs
+OpenAPI/src/api/DefaultApiServiceInterface.fs
+OpenAPI/src/impl/DefaultApiService.fs
+OpenAPI/src/model/Change.fs
+OpenAPI/src/model/Value.fs
+OpenAPI/src/model/ValueProperties.fs
+host.json
+local.settings.json
