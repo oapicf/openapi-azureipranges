@@ -7,7 +7,7 @@ info:
     identifier: MIT
   contact:
     name: OpenAPI Clients Factory
-    url: https://github.com/oapicf/minecraft-versions
+    url: https://github.com/oapicf/openapi-azureipranges
     email: blah+oapicf@cliffano.com
 servers:
   - url: https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/
