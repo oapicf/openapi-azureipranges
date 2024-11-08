@@ -7,7 +7,7 @@
     <name>openapiazureipranges</name>
     <version>0.9.0-pre.0</version>
     <url>https://github.com/oapicf/openapi-azureipranges</url>
-    <description>OpenAPI v3 specification and a set of generated API clients for iplocation.net</description>
+    <description>OpenAPI specification and a set of generated API clients for Azure IP Ranges and Service Tags</description>
     <scm>
         <connection>scm:git:git@github.com:oapicf/openapi-azureipranges.git</connection>
         <developerConnection>scm:git:git@github.com:oapicf/openapi-azureipranges.git</developerConnection>

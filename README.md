@@ -3,10 +3,10 @@
 [![Build Status](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml)
 <br/>
 
-OpenAPI iplocation
-------------------
+OpenAPI Azure IP Ranges
+-----------------------
 
-OpenAPI iplocation is an OpenAPI v3 specification and a set of generated API clients for [iplocation.net](https://iplocation.net/)
+OpenAPI Azure IP Ranges is an OpenAPI specification and a set of generated API clients for [Azure IP Ranges and Service Tags](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
 
 The API clients are generated using [OpenAPI Generator](https://openapi-generator.tech/).
 
@@ -15,16 +15,16 @@ Published packages
 
 | Language | Package | Status | Documentation |
 |----------|---------|--------|---------------|
-| JavaScript | [openapi_iplocation]((http://www.npmjs.com/package/openapi_iplocation)) | [![Published Version](https://img.shields.io/npm/v/openapi_iplocation.svg)](http://www.npmjs.com/package/openapi_iplocation) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/javascript/generated/README.md) |
-| Python | [openapiiplocation]((https://pypi.python.org/pypi/openapiiplocation)) | [![Published Version](https://img.shields.io/pypi/v/openapiiplocation.svg)](https://pypi.python.org/pypi/openapiiplocation) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/python/generated/README.md) |
-| Ruby | [openapi_iplocation]((https://rubygems.org/gems/openapi_iplocation)) | [![Published Version](https://img.shields.io/gem/v/openapi_iplocation.svg)](https://rubygems.org/gems/openapi_iplocation) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/ruby/generated/README.md) |
+| JavaScript | [openapi_azureipranges]((http://www.npmjs.com/package/openapi_azureipranges)) | [![Published Version](https://img.shields.io/npm/v/openapi_azureipranges.svg)](http://www.npmjs.com/package/openapi_azureipranges) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/javascript/generated/README.md) |
+| Python | [openapiazureipranges]((https://pypi.python.org/pypi/openapiazureipranges)) | [![Published Version](https://img.shields.io/pypi/v/openapiazureipranges.svg)](https://pypi.python.org/pypi/openapiazureipranges) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/python/generated/README.md) |
+| Ruby | [openapi_azureipranges]((https://rubygems.org/gems/openapi_azureipranges)) | [![Published Version](https://img.shields.io/gem/v/openapi_azureipranges.svg)](https://rubygems.org/gems/openapi_azureipranges) | [README](https://github.com/oapicf/openapi-azureipranges/blob/main/clients/ruby/generated/README.md) |
 
 Version matrix
 --------------
 
-| OpenAPI iplocation Version | OpenAPI Version | OpenAPI Generator Version |
+| OpenAPI Azure IP Ranges Version | OpenAPI Version | OpenAPI Generator Version |
 |----------------------------|-----------------|---------------------------|
-| 1.0.0 | 3.1.0 | 7.5.0 |
+| 0.9.0 | 3.1.0 | 7.9.0 |
 
 Installation
 ------------
@@ -35,15 +35,15 @@ Or you can use the published packages like below:
 
 Install JavaScript client:
 
-    npm install openapi-azureipranges
+    npm install openapi_azureipranges
 
 Install Python client:
 
-    pip install openapiiplocation
+    pip install openapiazureipranges
 
 Install Ruby client:
 
-    gem install openapi_iplocation
+    gem install openapi_azureipranges
 
 Colophon
 --------

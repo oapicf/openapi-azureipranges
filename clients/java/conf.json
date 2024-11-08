@@ -2,7 +2,7 @@
   "artifactId": "openapiazureipranges",
   "artifactVersion": "0.9.0-pre.0",
   "artifactUrl": "https://github.com/oapicf/openapi-azureipranges",
-  "artifactDescription": "OpenAPI v3 specification and a set of generated API clients for iplocation.net",
+  "artifactDescription": "OpenAPI specification and a set of generated API clients for Azure IP Ranges and Service Tags",
   "groupId": "com.github",
   "invokerPackage": "com.github.openapiazureipranges",
   "apiPackage": "com.github.openapiazureipranges.api",
