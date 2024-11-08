@@ -20,7 +20,7 @@ class TestDefaultApi(unittest.TestCase):
             api_instance = openapiazureipranges.DefaultApi(api_client)
 
             try:
-                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20241021')
+                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20241104')
                 print("The response of DefaultApi->get_azure_ip_ranges_service_tags_public_cloud:\n")
                 # pprint(api_response)
                 print(type(api_response))
