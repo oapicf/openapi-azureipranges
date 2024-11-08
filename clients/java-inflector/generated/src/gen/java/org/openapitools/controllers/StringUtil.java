@@ -1,6 +1,6 @@
 package org.openapitools.controllers;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-11-05T00:03:34.125016210Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen", date = "2024-11-08T22:29:58.492024355Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

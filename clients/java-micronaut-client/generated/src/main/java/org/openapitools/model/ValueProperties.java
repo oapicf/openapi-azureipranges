@@ -37,7 +37,7 @@ import javax.annotation.Generated;
   ValueProperties.JSON_PROPERTY_NETWORK_FEATURES
 })
 @JsonTypeName("ValueProperties")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-11-05T00:03:45.642037666Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2024-11-08T22:30:00.845171600Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 @Introspected
 public class ValueProperties {
     public static final String JSON_PROPERTY_CHANGE_NUMBER = "changeNumber";

@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Value
  */
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-05T00:04:24.419909408Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2024-11-08T22:30:09.461997655Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Value   {
   @JsonProperty("name")
   private String name;

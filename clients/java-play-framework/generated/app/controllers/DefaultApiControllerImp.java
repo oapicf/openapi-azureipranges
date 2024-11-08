@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import play.libs.Files.TemporaryFile;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-11-05T00:04:36.617854661Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen", date = "2024-11-08T22:30:12.377444769Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class DefaultApiControllerImp extends DefaultApiControllerImpInterface {
     @Override
     public Change getAzureIpRangesServiceTagsPublicCloud(Http.Request request, String version) throws Exception {
