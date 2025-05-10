@@ -46,6 +46,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     }
 
     /**
+     * GET /ServiceTags_Public_{version}.json
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
@@ -77,6 +78,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     }
 
     /**
+     * GET /ServiceTags_Public_{version}.json
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
      * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506

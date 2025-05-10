@@ -20,7 +20,7 @@ using TimeZones
 using OpenAPI
 using OpenAPI.Servers
 
-const API_VERSION = "0.9.0-pre.0"
+const API_VERSION = "0.10.1-pre.0"
 
 include("modelincludes.jl")
 

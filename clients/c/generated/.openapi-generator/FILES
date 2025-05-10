@@ -1,5 +1,5 @@
-.openapi-generator-ignore
 CMakeLists.txt
+Config.cmake.in
 Packing.cmake
 README.md
 api/DefaultAPI.c
@@ -16,6 +16,7 @@ include/binary.h
 include/keyValuePair.h
 include/list.h
 libcurl.licence
+model/any_type.h
 model/change.c
 model/change.h
 model/object.c
@@ -29,6 +30,3 @@ src/apiKey.c
 src/binary.c
 src/list.c
 uncrustify-rules.cfg
-unit-test/test_change.c
-unit-test/test_value.c
-unit-test/test_value_properties.c

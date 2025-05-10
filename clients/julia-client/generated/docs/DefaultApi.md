@@ -20,7 +20,7 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **DefaultApi** | API context | 
-**version** | **String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 | [default to nothing]
+**version** | **String** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 

@@ -16,7 +16,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2024-11-08T22:30:06.750071370Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen", date = "2025-05-10T03:05:52.862841417Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public abstract class DefaultApiService {
     public abstract Response getAzureIpRangesServiceTagsPublicCloud(String version
  ) throws NotFoundException;

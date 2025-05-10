@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("ValueProperties")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-11-08T22:30:43.605216948Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2025-05-10T03:06:06.768099011Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ValueProperties   {
   private Integer changeNumber;
   private String region;
@@ -27,6 +27,9 @@ public class ValueProperties   {
   private String systemService;
   private @Valid List<String> addressPrefixes = new ArrayList<>();
   private @Valid List<String> networkFeatures = new ArrayList<>();
+
+  public ValueProperties() {
+  }
 
   /**
    * The number associated with the change.

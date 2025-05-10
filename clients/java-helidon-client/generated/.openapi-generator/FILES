@@ -1,10 +1,7 @@
-.openapi-generator-ignore
-README.md
 docs/Change.md
 docs/DefaultApi.md
 docs/Value.md
 docs/ValueProperties.md
-pom.xml
 src/main/java/org/openapitools/client/JavaTimeFormatter.java
 src/main/java/org/openapitools/client/RFC3339DateFormat.java
 src/main/java/org/openapitools/client/api/ApiException.java
@@ -13,7 +10,3 @@ src/main/java/org/openapitools/client/api/DefaultApi.java
 src/main/java/org/openapitools/client/model/Change.java
 src/main/java/org/openapitools/client/model/Value.java
 src/main/java/org/openapitools/client/model/ValueProperties.java
-src/test/java/org/openapitools/client/api/DefaultApiTest.java
-src/test/java/org/openapitools/client/model/ChangeTest.java
-src/test/java/org/openapitools/client/model/ValuePropertiesTest.java
-src/test/java/org/openapitools/client/model/ValueTest.java

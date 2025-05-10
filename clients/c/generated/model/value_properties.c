@@ -5,7 +5,7 @@
 
 
 
-value_properties_t *value_properties_create(
+static value_properties_t *value_properties_create_internal(
     int change_number,
     char *region,
     int region_id,
@@ -26,12 +26,36 @@ value_properties_t *value_properties_create(
     value_properties_local_var->address_prefixes = address_prefixes;
     value_properties_local_var->network_features = network_features;
 
+    value_properties_local_var->_library_owned = 1;
     return value_properties_local_var;
 }
 
+__attribute__((deprecated)) value_properties_t *value_properties_create(
+    int change_number,
+    char *region,
+    int region_id,
+    char *platform,
+    char *system_service,
+    list_t *address_prefixes,
+    list_t *network_features
+    ) {
+    return value_properties_create_internal (
+        change_number,
+        region,
+        region_id,
+        platform,
+        system_service,
+        address_prefixes,
+        network_features
+        );
+}
 
 void value_properties_free(value_properties_t *value_properties) {
     if(NULL == value_properties){
+        return ;
+    }
+    if(value_properties->_library_owned != 1){
+        fprintf(stderr, "WARNING: %s() does NOT free objects allocated by the user\n", "value_properties_free");
         return ;
     }
     listEntry_t *listEntry;
@@ -116,7 +140,7 @@ cJSON *value_properties_convertToJSON(value_properties_t *value_properties) {
 
     listEntry_t *address_prefixesListEntry;
     list_ForEach(address_prefixesListEntry, value_properties->address_prefixes) {
-    if(cJSON_AddStringToObject(address_prefixes, "", (char*)address_prefixesListEntry->data) == NULL)
+    if(cJSON_AddStringToObject(address_prefixes, "", address_prefixesListEntry->data) == NULL)
     {
         goto fail;
     }
@@ -133,7 +157,7 @@ cJSON *value_properties_convertToJSON(value_properties_t *value_properties) {
 
     listEntry_t *network_featuresListEntry;
     list_ForEach(network_featuresListEntry, value_properties->network_features) {
-    if(cJSON_AddStringToObject(network_features, "", (char*)network_featuresListEntry->data) == NULL)
+    if(cJSON_AddStringToObject(network_features, "", network_featuresListEntry->data) == NULL)
     {
         goto fail;
     }
@@ -160,6 +184,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->change_number
     cJSON *change_number = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "changeNumber");
+    if (cJSON_IsNull(change_number)) {
+        change_number = NULL;
+    }
     if (change_number) { 
     if(!cJSON_IsNumber(change_number))
     {
@@ -169,6 +196,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->region
     cJSON *region = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "region");
+    if (cJSON_IsNull(region)) {
+        region = NULL;
+    }
     if (region) { 
     if(!cJSON_IsString(region) && !cJSON_IsNull(region))
     {
@@ -178,6 +208,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->region_id
     cJSON *region_id = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "regionId");
+    if (cJSON_IsNull(region_id)) {
+        region_id = NULL;
+    }
     if (region_id) { 
     if(!cJSON_IsNumber(region_id))
     {
@@ -187,6 +220,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->platform
     cJSON *platform = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "platform");
+    if (cJSON_IsNull(platform)) {
+        platform = NULL;
+    }
     if (platform) { 
     if(!cJSON_IsString(platform) && !cJSON_IsNull(platform))
     {
@@ -196,6 +232,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->system_service
     cJSON *system_service = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "systemService");
+    if (cJSON_IsNull(system_service)) {
+        system_service = NULL;
+    }
     if (system_service) { 
     if(!cJSON_IsString(system_service) && !cJSON_IsNull(system_service))
     {
@@ -205,6 +244,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->address_prefixes
     cJSON *address_prefixes = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "addressPrefixes");
+    if (cJSON_IsNull(address_prefixes)) {
+        address_prefixes = NULL;
+    }
     if (address_prefixes) { 
     cJSON *address_prefixes_local = NULL;
     if(!cJSON_IsArray(address_prefixes)) {
@@ -224,6 +266,9 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     // value_properties->network_features
     cJSON *network_features = cJSON_GetObjectItemCaseSensitive(value_propertiesJSON, "networkFeatures");
+    if (cJSON_IsNull(network_features)) {
+        network_features = NULL;
+    }
     if (network_features) { 
     cJSON *network_features_local = NULL;
     if(!cJSON_IsArray(network_features)) {
@@ -242,7 +287,7 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
     }
 
 
-    value_properties_local_var = value_properties_create (
+    value_properties_local_var = value_properties_create_internal (
         change_number ? change_number->valuedouble : 0,
         region && !cJSON_IsNull(region) ? strdup(region->valuestring) : NULL,
         region_id ? region_id->valuedouble : 0,

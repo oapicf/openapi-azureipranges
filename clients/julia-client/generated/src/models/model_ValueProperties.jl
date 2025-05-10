@@ -51,4 +51,11 @@ function check_required(o::ValueProperties)
 end
 
 function OpenAPI.validate_property(::Type{ ValueProperties }, name::Symbol, val)
+
+
+
+
+
+
+
 end

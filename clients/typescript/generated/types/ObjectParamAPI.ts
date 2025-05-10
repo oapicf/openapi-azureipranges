@@ -1,5 +1,6 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, ConfigurationOptions } from '../configuration'
+import type { Middleware } from '../middleware';
 
 import { Change } from '../models/Change';
 import { Value } from '../models/Value';
@@ -30,7 +31,7 @@ export class ObjectDefaultApi {
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * @param param the request object
      */
-    public getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: Configuration): Promise<HttpInfo<Change>> {
+    public getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: ConfigurationOptions): Promise<HttpInfo<Change>> {
         return this.api.getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(param.version,  options).toPromise();
     }
 
@@ -39,7 +40,7 @@ export class ObjectDefaultApi {
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * @param param the request object
      */
-    public getAzureIpRangesServiceTagsPublicCloud(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: Configuration): Promise<Change> {
+    public getAzureIpRangesServiceTagsPublicCloud(param: DefaultApiGetAzureIpRangesServiceTagsPublicCloudRequest, options?: ConfigurationOptions): Promise<Change> {
         return this.api.getAzureIpRangesServiceTagsPublicCloud(param.version,  options).toPromise();
     }
 

@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.9.0
+# ! Generator version: 7.12.0
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -469,7 +469,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-${BOLD}${WHITE}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.9.0-pre.0)${OFF}
+${BOLD}${WHITE}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.10.1-pre.0)${OFF}
 
 ${BOLD}${WHITE}Usage${OFF}
 
@@ -530,7 +530,7 @@ echo -e "              \\t\\t\\t\\t(e.g. 'https://download.microsoft.com')"
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "${BOLD}${WHITE}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.9.0-pre.0)${OFF}"
+    echo -e "${BOLD}${WHITE}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.10.1-pre.0)${OFF}"
     echo ""
     echo -e "License: MIT"
     echo -e "Contact: blah+oapicf@cliffano.com"
@@ -550,7 +550,7 @@ echo "$appdescription" | paste -sd' ' | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "${BOLD}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.9.0-pre.0)${OFF}"
+    echo -e "${BOLD}Azure IP Ranges and Service Tags - Public Cloud command line client (API version 0.10.1-pre.0)${OFF}"
     echo ""
 }
 

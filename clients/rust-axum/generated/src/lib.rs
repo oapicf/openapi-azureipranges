@@ -15,7 +15,7 @@
 )]
 
 pub const BASE_PATH: &str = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
-pub const API_VERSION: &str = "0.9.0-pre.0";
+pub const API_VERSION: &str = "0.10.1-pre.0";
 
 #[cfg(feature = "server")]
 pub mod server;

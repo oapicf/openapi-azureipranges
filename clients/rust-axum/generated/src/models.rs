@@ -18,18 +18,15 @@ use crate::{models, types::*};
 
 
 
-
-
-
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Change {
-/// The number associated with the change.
+    /// The number associated with the change.
     #[serde(rename = "changeNumber")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub change_number: Option<i32>,
 
-/// The cloud environment.
+    /// The cloud environment.
     #[serde(rename = "cloud")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub cloud: Option<String>,
@@ -39,6 +36,9 @@ pub struct Change {
     pub values: Option<Vec<models::Value>>,
 
 }
+
+
+
 
 
 impl Change {
@@ -176,18 +176,15 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Change> {
 
 
 
-
-
-
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct Value {
-/// The name of the value.
+    /// The name of the value.
     #[serde(rename = "name")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub name: Option<String>,
 
-/// The unique identifier of the value.
+    /// The unique identifier of the value.
     #[serde(rename = "id")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub id: Option<String>,
@@ -197,6 +194,9 @@ pub struct Value {
     pub properties: Option<models::ValueProperties>,
 
 }
+
+
+
 
 
 impl Value {
@@ -335,48 +335,48 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Value> {
 
 
 
-
-
-
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct ValueProperties {
-/// The number associated with the change.
+    /// The number associated with the change.
     #[serde(rename = "changeNumber")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub change_number: Option<i32>,
 
-/// The region associated with the value.
+    /// The region associated with the value.
     #[serde(rename = "region")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub region: Option<String>,
 
-/// The ID of the region.
+    /// The ID of the region.
     #[serde(rename = "regionId")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub region_id: Option<i32>,
 
-/// The platform associated with the value.
+    /// The platform associated with the value.
     #[serde(rename = "platform")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub platform: Option<String>,
 
-/// The system service associated with the value.
+    /// The system service associated with the value.
     #[serde(rename = "systemService")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub system_service: Option<String>,
 
-/// The address prefixes associated with the value.
+    /// The address prefixes associated with the value.
     #[serde(rename = "addressPrefixes")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub address_prefixes: Option<Vec<String>>,
 
-/// The network features associated with the value.
+    /// The network features associated with the value.
     #[serde(rename = "networkFeatures")]
     #[serde(skip_serializing_if="Option::is_none")]
     pub network_features: Option<Vec<String>>,
 
 }
+
+
+
 
 
 impl ValueProperties {

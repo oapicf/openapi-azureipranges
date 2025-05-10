@@ -5,7 +5,7 @@
 
 
 
-change_t *change_create(
+static change_t *change_create_internal(
     int change_number,
     char *cloud,
     list_t *values
@@ -18,12 +18,28 @@ change_t *change_create(
     change_local_var->cloud = cloud;
     change_local_var->values = values;
 
+    change_local_var->_library_owned = 1;
     return change_local_var;
 }
 
+__attribute__((deprecated)) change_t *change_create(
+    int change_number,
+    char *cloud,
+    list_t *values
+    ) {
+    return change_create_internal (
+        change_number,
+        cloud,
+        values
+        );
+}
 
 void change_free(change_t *change) {
     if(NULL == change){
+        return ;
+    }
+    if(change->_library_owned != 1){
+        fprintf(stderr, "WARNING: %s() does NOT free objects allocated by the user\n", "change_free");
         return ;
     }
     listEntry_t *listEntry;
@@ -96,6 +112,9 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
 
     // change->change_number
     cJSON *change_number = cJSON_GetObjectItemCaseSensitive(changeJSON, "changeNumber");
+    if (cJSON_IsNull(change_number)) {
+        change_number = NULL;
+    }
     if (change_number) { 
     if(!cJSON_IsNumber(change_number))
     {
@@ -105,6 +124,9 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
 
     // change->cloud
     cJSON *cloud = cJSON_GetObjectItemCaseSensitive(changeJSON, "cloud");
+    if (cJSON_IsNull(cloud)) {
+        cloud = NULL;
+    }
     if (cloud) { 
     if(!cJSON_IsString(cloud) && !cJSON_IsNull(cloud))
     {
@@ -114,6 +136,9 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
 
     // change->values
     cJSON *values = cJSON_GetObjectItemCaseSensitive(changeJSON, "values");
+    if (cJSON_IsNull(values)) {
+        values = NULL;
+    }
     if (values) { 
     cJSON *values_local_nonprimitive = NULL;
     if(!cJSON_IsArray(values)){
@@ -134,7 +159,7 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
     }
 
 
-    change_local_var = change_create (
+    change_local_var = change_create_internal (
         change_number ? change_number->valuedouble : 0,
         cloud && !cJSON_IsNull(cloud) ? strdup(cloud->valuestring) : NULL,
         values ? valuesList : NULL

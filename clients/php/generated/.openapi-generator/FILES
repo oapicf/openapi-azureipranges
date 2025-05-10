@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .travis.yml
 README.md
@@ -19,7 +18,3 @@ lib/Model/Value.php
 lib/Model/ValueProperties.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/DefaultApiTest.php
-test/Model/ChangeTest.php
-test/Model/ValuePropertiesTest.php
-test/Model/ValueTest.php

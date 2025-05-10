@@ -30,7 +30,7 @@ class SpringDocConfiguration {
                         License()
                             .name("MIT")
                                                 )
-                    .version("0.9.0-pre.0")
+                    .version("0.10.1-pre.0")
             )
     }
 }

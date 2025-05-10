@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 analysis_options.yaml
@@ -22,7 +21,3 @@ lib/model/change.dart
 lib/model/value.dart
 lib/model/value_properties.dart
 pubspec.yaml
-test/change_test.dart
-test/default_api_test.dart
-test/value_properties_test.dart
-test/value_test.dart

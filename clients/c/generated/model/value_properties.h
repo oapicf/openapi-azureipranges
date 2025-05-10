@@ -27,9 +27,10 @@ typedef struct value_properties_t {
     list_t *address_prefixes; //primitive container
     list_t *network_features; //primitive container
 
+    int _library_owned; // Is the library responsible for freeing this object?
 } value_properties_t;
 
-value_properties_t *value_properties_create(
+__attribute__((deprecated)) value_properties_t *value_properties_create(
     int change_number,
     char *region,
     int region_id,

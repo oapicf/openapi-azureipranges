@@ -5,7 +5,7 @@
 
 
 
-value_t *value_create(
+static value_t *value_create_internal(
     char *name,
     char *id,
     value_properties_t *properties
@@ -18,12 +18,28 @@ value_t *value_create(
     value_local_var->id = id;
     value_local_var->properties = properties;
 
+    value_local_var->_library_owned = 1;
     return value_local_var;
 }
 
+__attribute__((deprecated)) value_t *value_create(
+    char *name,
+    char *id,
+    value_properties_t *properties
+    ) {
+    return value_create_internal (
+        name,
+        id,
+        properties
+        );
+}
 
 void value_free(value_t *value) {
     if(NULL == value){
+        return ;
+    }
+    if(value->_library_owned != 1){
+        fprintf(stderr, "WARNING: %s() does NOT free objects allocated by the user\n", "value_free");
         return ;
     }
     listEntry_t *listEntry;
@@ -90,6 +106,9 @@ value_t *value_parseFromJSON(cJSON *valueJSON){
 
     // value->name
     cJSON *name = cJSON_GetObjectItemCaseSensitive(valueJSON, "name");
+    if (cJSON_IsNull(name)) {
+        name = NULL;
+    }
     if (name) { 
     if(!cJSON_IsString(name) && !cJSON_IsNull(name))
     {
@@ -99,6 +118,9 @@ value_t *value_parseFromJSON(cJSON *valueJSON){
 
     // value->id
     cJSON *id = cJSON_GetObjectItemCaseSensitive(valueJSON, "id");
+    if (cJSON_IsNull(id)) {
+        id = NULL;
+    }
     if (id) { 
     if(!cJSON_IsString(id) && !cJSON_IsNull(id))
     {
@@ -108,12 +130,15 @@ value_t *value_parseFromJSON(cJSON *valueJSON){
 
     // value->properties
     cJSON *properties = cJSON_GetObjectItemCaseSensitive(valueJSON, "properties");
+    if (cJSON_IsNull(properties)) {
+        properties = NULL;
+    }
     if (properties) { 
     properties_local_nonprim = value_properties_parseFromJSON(properties); //nonprimitive
     }
 
 
-    value_local_var = value_create (
+    value_local_var = value_create_internal (
         name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL,
         id && !cJSON_IsNull(id) ? strdup(id->valuestring) : NULL,
         properties ? properties_local_nonprim : NULL

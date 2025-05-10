@@ -23,6 +23,8 @@ from fastapi import (  # noqa: F401
 )
 
 from openapi_server.models.extra_models import TokenModel  # noqa: F401
+from pydantic import Field, StrictStr
+from typing_extensions import Annotated
 from openapi_server.models.change import Change
 
 
@@ -43,7 +45,7 @@ for _, name, _ in pkgutil.iter_modules(ns_pkg.__path__, ns_pkg.__name__ + "."):
     response_model_by_alias=True,
 )
 async def get_azure_ip_ranges_service_tags_public_cloud(
-    version: str = Path(..., description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"),
+    version: Annotated[StrictStr, Field(description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506")] = Path(..., description="The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"),
 ) -> Change:
     """Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."""
     if not BaseDefaultApi.subclasses:

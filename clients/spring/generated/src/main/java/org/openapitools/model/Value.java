@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import org.openapitools.model.ValueProperties;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -19,14 +20,14 @@ import javax.annotation.Generated;
  * Value
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-08T22:33:45.304684127Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T03:07:07.444578948Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class Value {
 
-  private String name;
+  private @Nullable String name;
 
-  private String id;
+  private @Nullable String id;
 
-  private ValueProperties properties;
+  private @Nullable ValueProperties properties;
 
   public Value name(String name) {
     this.name = name;

@@ -11,9 +11,9 @@ server, you can easily generate a server stub.
 
 To see how to make this your own, look here: [README]((https://openapi-generator.tech))
 
-- API version: 0.9.0-pre.0
-- Build date: 2024-11-08T22:34:34.472743179Z[Etc/UTC]
-- Generator version: 7.9.0
+- API version: 0.10.1-pre.0
+- Build date: 2025-05-10T03:07:28.594380710Z[Etc/UTC]
+- Generator version: 7.12.0
 
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 
@@ -44,9 +44,11 @@ struct ServerImpl {
 
 #[allow(unused_variables)]
 #[async_trait]
-impl openapi::Api for ServerImpl {
+impl openapi::apis::default::Api for ServerImpl {
   // API implementation goes here
 }
+
+impl openapi::apis::ErrorHandler for ServerImpl {}
 
 pub async fn start_server(addr: &str) {
     // initialize tracing

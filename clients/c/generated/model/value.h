@@ -24,9 +24,10 @@ typedef struct value_t {
     char *id; // string
     struct value_properties_t *properties; //model
 
+    int _library_owned; // Is the library responsible for freeing this object?
 } value_t;
 
-value_t *value_create(
+__attribute__((deprecated)) value_t *value_create(
     char *name,
     char *id,
     value_properties_t *properties

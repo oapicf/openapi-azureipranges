@@ -24,9 +24,10 @@ typedef struct change_t {
     char *cloud; // string
     list_t *values; //nonprimitive container
 
+    int _library_owned; // Is the library responsible for freeing this object?
 } change_t;
 
-change_t *change_create(
+__attribute__((deprecated)) change_t *change_create(
     int change_number,
     char *cloud,
     list_t *values

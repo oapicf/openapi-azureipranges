@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,18 +22,18 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-11-08T22:33:45.304684127Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T03:07:07.444578948Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ValueProperties {
 
-  private Integer changeNumber;
+  private @Nullable Integer changeNumber;
 
-  private String region;
+  private @Nullable String region;
 
-  private Integer regionId;
+  private @Nullable Integer regionId;
 
-  private String platform;
+  private @Nullable String platform;
 
-  private String systemService;
+  private @Nullable String systemService;
 
   @Valid
   private List<String> addressPrefixes = new ArrayList<>();
