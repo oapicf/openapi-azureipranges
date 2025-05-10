@@ -9,4 +9,6 @@ scm:
   git_repo: openapi-azureipranges
 base_dir:
   github_actions: /home/runner/work/openapi-azureipranges/openapi-azureipranges
-  local: /Users/cliffano/dev/workspace-studio/openapi-azureipranges
+  local: /Users/cliffano/dev/workspace-oapicf/openapi-azureipranges
+  custom: >-
+    /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-azureipranges/
