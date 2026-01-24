@@ -24,6 +24,7 @@ Version matrix
 
 | OpenAPI Azure IP Ranges Version | OpenAPI Version | OpenAPI Generator Version |
 |----------------------------|-----------------|---------------------------|
+| 1.0.0 | 3.1.0 | 7.18.0 |
 | 0.9.0 | 3.1.0 | 7.9.0 |
 
 Installation
