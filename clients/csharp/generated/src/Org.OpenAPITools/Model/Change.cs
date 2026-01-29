@@ -157,15 +157,13 @@ namespace Org.OpenAPITools.Model
                     switch (localVarJsonPropertyName)
                     {
                         case "changeNumber":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                changeNumber = new Option<int?>(utf8JsonReader.GetInt32());
+                            changeNumber = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "cloud":
                             cloud = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "values":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                values = new Option<List<Value>?>(JsonSerializer.Deserialize<List<Value>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            values = new Option<List<Value>?>(JsonSerializer.Deserialize<List<Value>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         default:
                             break;

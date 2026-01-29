@@ -20,18 +20,23 @@ Base.@kwdef mutable struct Change <: OpenAPI.APIModel
     values::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{Value} }
 
     function Change(changeNumber, cloud, values, )
-        OpenAPI.validate_property(Change, Symbol("changeNumber"), changeNumber)
-        OpenAPI.validate_property(Change, Symbol("cloud"), cloud)
-        OpenAPI.validate_property(Change, Symbol("values"), values)
-        return new(changeNumber, cloud, values, )
+        o = new(changeNumber, cloud, values, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Change
 
 const _property_types_Change = Dict{Symbol,String}(Symbol("changeNumber")=>"Int64", Symbol("cloud")=>"String", Symbol("values")=>"Vector{Value}", )
 OpenAPI.property_type(::Type{ Change }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Change[name]))}
 
-function check_required(o::Change)
+function OpenAPI.check_required(o::Change)
     true
+end
+
+function OpenAPI.validate_properties(o::Change)
+    OpenAPI.validate_property(Change, Symbol("changeNumber"), o.changeNumber)
+    OpenAPI.validate_property(Change, Symbol("cloud"), o.cloud)
+    OpenAPI.validate_property(Change, Symbol("values"), o.values)
 end
 
 function OpenAPI.validate_property(::Type{ Change }, name::Symbol, val)

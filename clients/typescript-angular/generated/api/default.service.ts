@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { Change } from '../model/change';
@@ -38,9 +38,11 @@ export class DefaultService extends BaseService {
     /**
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
+     * @endpoint get /ServiceTags_Public_{version}.json
      * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Change>;
     public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Change>>;
@@ -76,14 +78,15 @@ export class DefaultService extends BaseService {
         }
 
         let localVarPath = `/ServiceTags_Public_${this.configuration.encodeParam({name: "version", value: version, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}.json`;
-        return this.httpClient.request<Change>('get', `${this.configuration.basePath}${localVarPath}`,
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request<Change>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
+                ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

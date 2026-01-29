@@ -11,6 +11,7 @@ git_push.sh
 lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
+lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/Change.php
 lib/Model/ModelInterface.php

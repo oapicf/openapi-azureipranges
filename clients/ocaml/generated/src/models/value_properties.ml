@@ -5,30 +5,65 @@
  *
  *)
 
-type t = {
-    (* The number associated with the change. *)
-    change_number: int32 option [@default None];
-    (* The region associated with the value. *)
-    region: string option [@default None];
-    (* The ID of the region. *)
-    region_id: int32 option [@default None];
-    (* The platform associated with the value. *)
-    platform: string option [@default None];
-    (* The system service associated with the value. *)
-    system_service: string option [@default None];
-    (* The address prefixes associated with the value. *)
-    address_prefixes: string list;
-    (* The network features associated with the value. *)
-    network_features: string list;
-} [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-    change_number = None;
-    region = None;
-    region_id = None;
-    platform = None;
-    system_service = None;
-    address_prefixes = [];
-    network_features = [];
-}
+
+    
+        type t = {
+                              change_number: int32
+                  
+                   option [@default None]
+                
+                
+                ; [@key "changeNumber"]
+                    (** The number associated with the change. *)
+                                      region: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "region"]
+                    (** The region associated with the value. *)
+                                      region_id: int32
+                  
+                   option [@default None]
+                
+                
+                ; [@key "regionId"]
+                    (** The ID of the region. *)
+                                      platform: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "platform"]
+                    (** The platform associated with the value. *)
+                                      system_service: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "systemService"]
+                    (** The system service associated with the value. *)
+                                      address_prefixes: string list
+                 [@default []]
+                
+                ; [@key "addressPrefixes"]
+                    (** The address prefixes associated with the value. *)
+                                      network_features: string list
+                 [@default []]
+                
+                ; [@key "networkFeatures"]
+                    (** The network features associated with the value. *)
+                } [@@deriving yojson { strict = false }, show, eq ];;
+        
+        let create () : t = {
+            change_number = None;
+            region = None;
+            region_id = None;
+            platform = None;
+            system_service = None;
+            address_prefixes = [];
+            network_features = [];
+        }
+    
 

@@ -12,8 +12,8 @@ server, you can easily generate a server stub.
 To see how to make this your own, look here: [README]((https://openapi-generator.tech))
 
 - API version: 0.10.1-pre.0
-- Build date: 2025-05-10T03:07:28.594380710Z[Etc/UTC]
-- Generator version: 7.12.0
+- Build date: 2026-01-24T23:54:41.130964240Z[Etc/UTC]
+- Generator version: 7.18.0
 
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 

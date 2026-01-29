@@ -12,7 +12,7 @@ import play.api.libs.json._
   * @param addressPrefixes The address prefixes associated with the value.
   * @param networkFeatures The network features associated with the value.
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2025-05-10T03:07:03.065870648Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-24T23:54:57.946098897Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 case class ValueProperties(
   changeNumber: Option[Int],
   region: Option[String],

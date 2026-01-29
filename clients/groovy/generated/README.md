@@ -6,8 +6,8 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: 0.10.1-pre.0
 - Package version: 0.10.1-pre.0
-- Build date: 2025-05-10T03:05:33.021903341Z[Etc/UTC]
-- Generator version: 7.12.0
+- Build date: 2026-01-24T23:53:07.815147448Z[Etc/UTC]
+- Generator version: 7.18.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 

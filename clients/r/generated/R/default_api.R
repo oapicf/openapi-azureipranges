@@ -92,6 +92,9 @@ DefaultApi <- R6::R6Class(
         stop("Missing required parameter `version`.")
       }
 
+      if (!missing(`version`) && is.null(`version`)) {
+        stop("Invalid value for `version` when calling DefaultApi$GetAzureIpRangesServiceTagsPublicCloud, `version` is not nullable")
+      }
 
       local_var_url_path <- "/ServiceTags_Public_{version}.json"
       if (!missing(`version`)) {

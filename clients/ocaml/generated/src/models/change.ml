@@ -5,17 +5,34 @@
  *
  *)
 
-type t = {
-    (* The number associated with the change. *)
-    change_number: int32 option [@default None];
-    (* The cloud environment. *)
-    cloud: string option [@default None];
-    values: Value.t list;
-} [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-    change_number = None;
-    cloud = None;
-    values = [];
-}
+
+    
+        type t = {
+                              change_number: int32
+                  
+                   option [@default None]
+                
+                
+                ; [@key "changeNumber"]
+                    (** The number associated with the change. *)
+                                      cloud: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "cloud"]
+                    (** The cloud environment. *)
+                                      values: Value.t list
+                 [@default []]
+                
+                ; [@key "values"]
+                        } [@@deriving yojson { strict = false }, show, eq ];;
+        
+        let create () : t = {
+            change_number = None;
+            cloud = None;
+            values = [];
+        }
+    
 

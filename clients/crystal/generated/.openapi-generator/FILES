@@ -12,3 +12,4 @@ src/openapi_client/configuration.cr
 src/openapi_client/models/change.cr
 src/openapi_client/models/value.cr
 src/openapi_client/models/value_properties.cr
+src/openapi_client/recursive_hash.cr

@@ -9,19 +9,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Value  {
   
-  @ApiModelProperty(value = "The name of the value.")
  /**
-   * The name of the value.
-  **/
+  * The name of the value.
+  */
+  @ApiModelProperty(value = "The name of the value.")
+
   private String name;
 
-  @ApiModelProperty(value = "The unique identifier of the value.")
  /**
-   * The unique identifier of the value.
-  **/
+  * The unique identifier of the value.
+  */
+  @ApiModelProperty(value = "The unique identifier of the value.")
+
   private String id;
 
   @ApiModelProperty(value = "")
+
   private ValueProperties properties;
  /**
    * The name of the value.

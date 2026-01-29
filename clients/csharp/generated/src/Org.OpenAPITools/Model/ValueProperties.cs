@@ -230,15 +230,13 @@ namespace Org.OpenAPITools.Model
                     switch (localVarJsonPropertyName)
                     {
                         case "changeNumber":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                changeNumber = new Option<int?>(utf8JsonReader.GetInt32());
+                            changeNumber = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "region":
                             region = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "regionId":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                regionId = new Option<int?>(utf8JsonReader.GetInt32());
+                            regionId = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "platform":
                             platform = new Option<string?>(utf8JsonReader.GetString()!);
@@ -247,12 +245,10 @@ namespace Org.OpenAPITools.Model
                             systemService = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "addressPrefixes":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                addressPrefixes = new Option<List<string>?>(JsonSerializer.Deserialize<List<string>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            addressPrefixes = new Option<List<string>?>(JsonSerializer.Deserialize<List<string>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "networkFeatures":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                networkFeatures = new Option<List<string>?>(JsonSerializer.Deserialize<List<string>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            networkFeatures = new Option<List<string>?>(JsonSerializer.Deserialize<List<string>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         default:
                             break;

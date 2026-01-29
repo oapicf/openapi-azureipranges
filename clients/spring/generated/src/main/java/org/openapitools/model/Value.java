@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Value
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T03:07:07.444578948Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T23:55:06.687020923Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Value {
 
   private @Nullable String name;
@@ -29,7 +29,7 @@ public class Value {
 
   private @Nullable ValueProperties properties;
 
-  public Value name(String name) {
+  public Value name(@Nullable String name) {
     this.name = name;
     return this;
   }
@@ -41,15 +41,15 @@ public class Value {
   
   @Schema(name = "name", description = "The name of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("name")
-  public String getName() {
+  public @Nullable String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@Nullable String name) {
     this.name = name;
   }
 
-  public Value id(String id) {
+  public Value id(@Nullable String id) {
     this.id = id;
     return this;
   }
@@ -61,15 +61,15 @@ public class Value {
   
   @Schema(name = "id", description = "The unique identifier of the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("id")
-  public String getId() {
+  public @Nullable String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@Nullable String id) {
     this.id = id;
   }
 
-  public Value properties(ValueProperties properties) {
+  public Value properties(@Nullable ValueProperties properties) {
     this.properties = properties;
     return this;
   }
@@ -81,11 +81,11 @@ public class Value {
   @Valid 
   @Schema(name = "properties", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("properties")
-  public ValueProperties getProperties() {
+  public @Nullable ValueProperties getProperties() {
     return properties;
   }
 
-  public void setProperties(ValueProperties properties) {
+  public void setProperties(@Nullable ValueProperties properties) {
     this.properties = properties;
   }
 

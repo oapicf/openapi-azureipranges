@@ -13,8 +13,8 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from openapiazureipranges.models.change import Change
 from openapiazureipranges.models.value import Value
 from openapiazureipranges.models.value_properties import ValueProperties
+

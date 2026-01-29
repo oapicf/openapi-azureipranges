@@ -31,7 +31,7 @@ data class Value(
     @field:Valid
     @Schema(example = "null", description = "")
     @get:JsonProperty("properties") val properties: ValueProperties? = null
-    ) {
+) {
 
 }
 

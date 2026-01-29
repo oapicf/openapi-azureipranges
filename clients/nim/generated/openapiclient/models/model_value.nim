@@ -9,11 +9,14 @@
 
 import json
 import tables
+import marshal
+import options
 
 import model_value_properties
 
 type Value* = object
   ## 
-  name*: string ## The name of the value.
-  id*: string ## The unique identifier of the value.
-  properties*: ValueProperties
+  name*: Option[string] ## The name of the value.
+  id*: Option[string] ## The unique identifier of the value.
+  properties*: Option[ValueProperties]
+

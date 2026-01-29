@@ -16,7 +16,20 @@ end
 function get_azure_ip_ranges_service_tags_public_cloud_validate(handler)
     function get_azure_ip_ranges_service_tags_public_cloud_validate_handler(req::HTTP.Request)
         openapi_params = req.context[:openapi_params]
+        op = "get_azure_ip_ranges_service_tags_public_cloud"
         
+        n = "version"
+        v = get(openapi_params, n, nothing)
+        isnothing(v) && throw(OpenAPI.ValidationException(;reason="missing parameter $n", operation_or_model=op))
+        if !isnothing(v)
+            if isa(v, OpenAPI.APIModel)
+                OpenAPI.validate_properties(v)
+                if !OpenAPI.check_required(v)
+                    throw(OpenAPI.ValidationException(;reason="$n is missing required properties", operation_or_model=op))
+                end
+            end
+        end
+
         return handler(req)
     end
 end

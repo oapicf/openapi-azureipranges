@@ -83,7 +83,7 @@ private:
     /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
     /// </remarks>
     /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
-    virtual void get_azure_ip_ranges_service_tags_public_cloud(const std::string &version, Pistache::Http::ResponseWriter &response) = 0;
+    virtual void get_azure_ip_ranges_service_tags_public_cloud( const std::string &version, Pistache::Http::ResponseWriter &response) = 0;
 
 };
 

@@ -7,9 +7,6 @@ lib/Models/Value.cpp
 lib/Models/Value.h
 lib/Models/ValueProperties.cpp
 lib/Models/ValueProperties.h
-lib/TestFiles/ChangeTest.cpp
-lib/TestFiles/ValuePropertiesTest.cpp
-lib/TestFiles/ValueTest.cpp
 lib/service/DefaultApi.cpp
 lib/service/DefaultApi.h
 lib/service/Response.h

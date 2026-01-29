@@ -47,8 +47,12 @@ export class DefaultApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+
+        let urlPath = `/ServiceTags_Public_{version}.json`;
+        urlPath = urlPath.replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version'])));
+
         const response = await this.request({
-            path: `/ServiceTags_Public_{version}.json`.replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']))),
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,

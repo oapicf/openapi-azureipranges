@@ -9,14 +9,17 @@
 
 import json
 import tables
+import marshal
+import options
 
 
 type ValueProperties* = object
   ## 
-  changeNumber*: int ## The number associated with the change.
-  region*: string ## The region associated with the value.
-  regionId*: int ## The ID of the region.
-  platform*: string ## The platform associated with the value.
-  systemService*: string ## The system service associated with the value.
-  addressPrefixes*: seq[string] ## The address prefixes associated with the value.
-  networkFeatures*: seq[string] ## The network features associated with the value.
+  changeNumber*: Option[int] ## The number associated with the change.
+  region*: Option[string] ## The region associated with the value.
+  regionId*: Option[int] ## The ID of the region.
+  platform*: Option[string] ## The platform associated with the value.
+  systemService*: Option[string] ## The system service associated with the value.
+  addressPrefixes*: Option[seq[string]] ## The address prefixes associated with the value.
+  networkFeatures*: Option[seq[string]] ## The network features associated with the value.
+

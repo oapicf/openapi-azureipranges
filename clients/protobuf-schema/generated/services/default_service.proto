@@ -18,7 +18,7 @@ import "google/protobuf/empty.proto";
 import public "models/change.proto";
 
 service DefaultService {
-  rpc GetAzureIpRangesServiceTagsPublicCloud (GetAzureIpRangesServiceTagsPublicCloudRequest) returns (Change);
+  rpc GetAzureIpRangesServiceTagsPublicCloud (GetAzureIpRangesServiceTagsPublicCloudRequest) returns (GetAzureIpRangesServiceTagsPublicCloudResponse);
 
 }
 
@@ -28,3 +28,8 @@ message GetAzureIpRangesServiceTagsPublicCloudRequest {
 
 }
 
+message GetAzureIpRangesServiceTagsPublicCloudResponse {
+    oneof response {
+        Change change_200 = 1;
+    }
+}

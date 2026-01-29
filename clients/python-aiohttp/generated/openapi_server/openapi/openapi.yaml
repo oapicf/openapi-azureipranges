@@ -31,7 +31,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Change'
+                $ref: "#/components/schemas/Change"
           description: Successful response
       summary: Get Azure IP Ranges and Service Tags - Public Cloud
       x-openapi-router-controller: openapi_server.controllers.default_controller
@@ -81,7 +81,7 @@ components:
           type: string
         values:
           items:
-            $ref: '#/components/schemas/Value'
+            $ref: "#/components/schemas/Value"
           title: values
           type: array
       title: Change
@@ -111,7 +111,7 @@ components:
           title: id
           type: string
         properties:
-          $ref: '#/components/schemas/ValueProperties'
+          $ref: "#/components/schemas/ValueProperties"
       title: Value
     ValueProperties:
       example:

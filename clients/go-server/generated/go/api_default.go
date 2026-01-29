@@ -52,12 +52,27 @@ func NewDefaultAPIController(s DefaultAPIServicer, opts ...DefaultAPIOption) *De
 func (c *DefaultAPIController) Routes() Routes {
 	return Routes{
 		"GetAzureIpRangesServiceTagsPublicCloud": Route{
+			"GetAzureIpRangesServiceTagsPublicCloud",
 			strings.ToUpper("Get"),
 			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
 			c.GetAzureIpRangesServiceTagsPublicCloud,
 		},
 	}
 }
+
+// OrderedRoutes returns all the api routes in a deterministic order for the DefaultAPIController
+func (c *DefaultAPIController) OrderedRoutes() []Route {
+	return []Route{
+		Route{
+			"GetAzureIpRangesServiceTagsPublicCloud",
+			strings.ToUpper("Get"),
+			"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
+			c.GetAzureIpRangesServiceTagsPublicCloud,
+		},
+	}
+}
+
+
 
 // GetAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud
 func (c *DefaultAPIController) GetAzureIpRangesServiceTagsPublicCloud(w http.ResponseWriter, r *http.Request) {

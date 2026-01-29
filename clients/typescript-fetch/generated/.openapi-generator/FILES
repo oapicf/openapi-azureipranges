@@ -1,5 +1,9 @@
 apis/DefaultApi.ts
 apis/index.ts
+docs/Change.md
+docs/DefaultApi.md
+docs/Value.md
+docs/ValueProperties.md
 index.ts
 models/Change.ts
 models/Value.ts

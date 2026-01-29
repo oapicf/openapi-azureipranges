@@ -20,18 +20,23 @@ Base.@kwdef mutable struct Value <: OpenAPI.APIModel
     properties = nothing # spec type: Union{ Nothing, ValueProperties }
 
     function Value(name, id, properties, )
-        OpenAPI.validate_property(Value, Symbol("name"), name)
-        OpenAPI.validate_property(Value, Symbol("id"), id)
-        OpenAPI.validate_property(Value, Symbol("properties"), properties)
-        return new(name, id, properties, )
+        o = new(name, id, properties, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Value
 
 const _property_types_Value = Dict{Symbol,String}(Symbol("name")=>"String", Symbol("id")=>"String", Symbol("properties")=>"ValueProperties", )
 OpenAPI.property_type(::Type{ Value }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Value[name]))}
 
-function check_required(o::Value)
+function OpenAPI.check_required(o::Value)
     true
+end
+
+function OpenAPI.validate_properties(o::Value)
+    OpenAPI.validate_property(Value, Symbol("name"), o.name)
+    OpenAPI.validate_property(Value, Symbol("id"), o.id)
+    OpenAPI.validate_property(Value, Symbol("properties"), o.properties)
 end
 
 function OpenAPI.validate_property(::Type{ Value }, name::Symbol, val)

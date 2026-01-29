@@ -5,17 +5,36 @@
  *
  *)
 
-type t = {
-    (* The name of the value. *)
-    name: string option [@default None];
-    (* The unique identifier of the value. *)
-    id: string option [@default None];
-    properties: Value_properties.t option [@default None];
-} [@@deriving yojson { strict = false }, show ];;
 
-let create () : t = {
-    name = None;
-    id = None;
-    properties = None;
-}
+
+    
+        type t = {
+                              name: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "name"]
+                    (** The name of the value. *)
+                                      id: string
+                  
+                   option [@default None]
+                
+                
+                ; [@key "id"]
+                    (** The unique identifier of the value. *)
+                                      properties: Value_properties.t
+                  
+                   option [@default None]
+                
+                
+                ; [@key "properties"]
+                        } [@@deriving yojson { strict = false }, show, eq ];;
+        
+        let create () : t = {
+            name = None;
+            id = None;
+            properties = None;
+        }
+    
 

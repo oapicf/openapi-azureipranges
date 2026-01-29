@@ -1,5 +1,7 @@
 # OpenAPI\Client\DefaultApi
 
+
+
 All URIs are relative to https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

@@ -9,11 +9,14 @@
 
 import json
 import tables
+import marshal
+import options
 
 import model_value
 
 type Change* = object
   ## 
-  changeNumber*: int ## The number associated with the change.
-  cloud*: string ## The cloud environment.
-  values*: seq[Value]
+  changeNumber*: Option[int] ## The number associated with the change.
+  cloud*: Option[string] ## The cloud environment.
+  values*: Option[seq[Value]]
+

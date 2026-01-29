@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_azure_ip_ranges_service_tags_public_cloud**
-> get_azure_ip_ranges_service_tags_public_cloud(req::HTTP.Request, version::String;) -> Change
+> `get_azure_ip_ranges_service_tags_public_cloud`(req::`HTTP.Request`, `version`::`String`;) -> `Change`
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -18,12 +18,12 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **req** | **HTTP.Request** | The HTTP Request object | 
-**version** | **String**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
+ **req** | **`HTTP.Request`** | The HTTP Request object | 
+**`version`** | **`String`**| The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 
-[**Change**](Change.md)
+[**`Change`**](Change.md)
 
 ### Authorization
 

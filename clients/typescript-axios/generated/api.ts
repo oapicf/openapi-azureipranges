@@ -23,109 +23,61 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
-/**
- * 
- * @export
- * @interface Change
- */
 export interface Change {
     /**
      * The number associated with the change.
-     * @type {number}
-     * @memberof Change
      */
     'changeNumber'?: number;
     /**
      * The cloud environment.
-     * @type {string}
-     * @memberof Change
      */
     'cloud'?: string;
-    /**
-     * 
-     * @type {Array<Value>}
-     * @memberof Change
-     */
     'values'?: Array<Value>;
 }
-/**
- * 
- * @export
- * @interface Value
- */
 export interface Value {
     /**
      * The name of the value.
-     * @type {string}
-     * @memberof Value
      */
     'name'?: string;
     /**
      * The unique identifier of the value.
-     * @type {string}
-     * @memberof Value
      */
     'id'?: string;
-    /**
-     * 
-     * @type {ValueProperties}
-     * @memberof Value
-     */
     'properties'?: ValueProperties;
 }
-/**
- * 
- * @export
- * @interface ValueProperties
- */
 export interface ValueProperties {
     /**
      * The number associated with the change.
-     * @type {number}
-     * @memberof ValueProperties
      */
     'changeNumber'?: number;
     /**
      * The region associated with the value.
-     * @type {string}
-     * @memberof ValueProperties
      */
     'region'?: string;
     /**
      * The ID of the region.
-     * @type {number}
-     * @memberof ValueProperties
      */
     'regionId'?: number;
     /**
      * The platform associated with the value.
-     * @type {string}
-     * @memberof ValueProperties
      */
     'platform'?: string;
     /**
      * The system service associated with the value.
-     * @type {string}
-     * @memberof ValueProperties
      */
     'systemService'?: string;
     /**
      * The address prefixes associated with the value.
-     * @type {Array<string>}
-     * @memberof ValueProperties
      */
     'addressPrefixes'?: Array<string>;
     /**
      * The network features associated with the value.
-     * @type {Array<string>}
-     * @memberof ValueProperties
      */
     'networkFeatures'?: Array<string>;
 }
 
 /**
  * DefaultApi - axios parameter creator
- * @export
  */
 export const DefaultApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
@@ -152,8 +104,8 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -168,7 +120,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 /**
  * DefaultApi - functional programming interface
- * @export
  */
 export const DefaultApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = DefaultApiAxiosParamCreator(configuration)
@@ -191,7 +142,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
 
 /**
  * DefaultApi - factory interface
- * @export
  */
 export const DefaultApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DefaultApiFp(configuration)
@@ -211,9 +161,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 
 /**
  * DefaultApi - object-oriented interface
- * @export
- * @class DefaultApi
- * @extends {BaseAPI}
  */
 export class DefaultApi extends BaseAPI {
     /**
@@ -222,7 +169,6 @@ export class DefaultApi extends BaseAPI {
      * @param {string} version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof DefaultApi
      */
     public getAzureIpRangesServiceTagsPublicCloud(version: string, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).getAzureIpRangesServiceTagsPublicCloud(version, options).then((request) => request(this.axios, this.basePath));

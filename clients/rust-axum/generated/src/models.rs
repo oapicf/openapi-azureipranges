@@ -7,9 +7,68 @@ use validator::Validate;
 use crate::header;
 use crate::{models, types::*};
 
-      
+#[allow(dead_code)]
+fn from_validation_error(e: validator::ValidationError) -> validator::ValidationErrors {
+  let mut errs = validator::ValidationErrors::new();
+  errs.add("na", e);
+  errs
+}
+
+#[allow(dead_code)]
+pub fn check_xss_string(v: &str) -> std::result::Result<(), validator::ValidationError> {
+    if ammonia::is_html(v) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_vec_string(v: &[String]) -> std::result::Result<(), validator::ValidationError> {
+    if v.iter().any(|i| ammonia::is_html(i)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map_string(
+    v: &std::collections::HashMap<String, String>,
+) -> std::result::Result<(), validator::ValidationError> {
+    if v.keys().any(|k| ammonia::is_html(k)) || v.values().any(|v| ammonia::is_html(v)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map_nested<T>(
+    v: &std::collections::HashMap<String, T>,
+) -> std::result::Result<(), validator::ValidationError>
+where
+    T: validator::Validate,
+{
+    if v.keys().any(|k| ammonia::is_html(k)) || v.values().any(|v| v.validate().is_err()) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+#[allow(dead_code)]
+pub fn check_xss_map<T>(v: &std::collections::HashMap<String, T>) -> std::result::Result<(), validator::ValidationError> {
+    if v.keys().any(|k| ammonia::is_html(k)) {
+        std::result::Result::Err(validator::ValidationError::new("xss detected"))
+    } else {
+        std::result::Result::Ok(())
+    }
+}
+
+
     #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize, validator::Validate)]
-    #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))] 
+    #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
     pub struct GetAzureIpRangesServiceTagsPublicCloudPathParams {
             /// The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
                 pub version: String,
@@ -28,10 +87,12 @@ pub struct Change {
 
     /// The cloud environment.
     #[serde(rename = "cloud")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub cloud: Option<String>,
 
     #[serde(rename = "values")]
+          #[validate(nested)]
     #[serde(skip_serializing_if="Option::is_none")]
     pub values: Option<Vec<models::Value>>,
 
@@ -39,15 +100,13 @@ pub struct Change {
 
 
 
-
-
 impl Change {
     #[allow(clippy::new_without_default, clippy::too_many_arguments)]
     pub fn new() -> Change {
         Change {
-            change_number: None,
-            cloud: None,
-            values: None,
+ change_number: None,
+ cloud: None,
+ values: None,
         }
     }
 }
@@ -145,9 +204,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Change>> for HeaderValue {
         let hdr_value = hdr_value.to_string();
         match HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Change - value: {} is invalid {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Invalid header value for Change - value: {hdr_value} is invalid {e}"#))
         }
     }
 }
@@ -161,18 +218,13 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Change> {
              std::result::Result::Ok(value) => {
                     match <Change as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
-                        std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Change - {}",
-                                value, err))
+                        std::result::Result::Err(err) => std::result::Result::Err(format!(r#"Unable to convert header value '{value}' into Change - {err}"#))
                     }
              },
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Unable to convert header: {hdr_value:?} to string: {e}"#))
         }
     }
 }
-
 
 
 
@@ -181,15 +233,18 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Change> {
 pub struct Value {
     /// The name of the value.
     #[serde(rename = "name")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub name: Option<String>,
 
     /// The unique identifier of the value.
     #[serde(rename = "id")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub id: Option<String>,
 
     #[serde(rename = "properties")]
+          #[validate(nested)]
     #[serde(skip_serializing_if="Option::is_none")]
     pub properties: Option<models::ValueProperties>,
 
@@ -197,15 +252,13 @@ pub struct Value {
 
 
 
-
-
 impl Value {
     #[allow(clippy::new_without_default, clippy::too_many_arguments)]
     pub fn new() -> Value {
         Value {
-            name: None,
-            id: None,
-            properties: None,
+ name: None,
+ id: None,
+ properties: None,
         }
     }
 }
@@ -304,9 +357,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<Value>> for HeaderValue {
         let hdr_value = hdr_value.to_string();
         match HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for Value - value: {} is invalid {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Invalid header value for Value - value: {hdr_value} is invalid {e}"#))
         }
     }
 }
@@ -320,18 +371,13 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<Value> {
              std::result::Result::Ok(value) => {
                     match <Value as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
-                        std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into Value - {}",
-                                value, err))
+                        std::result::Result::Err(err) => std::result::Result::Err(format!(r#"Unable to convert header value '{value}' into Value - {err}"#))
                     }
              },
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Unable to convert header: {hdr_value:?} to string: {e}"#))
         }
     }
 }
-
 
 
 
@@ -345,6 +391,7 @@ pub struct ValueProperties {
 
     /// The region associated with the value.
     #[serde(rename = "region")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub region: Option<String>,
 
@@ -355,21 +402,25 @@ pub struct ValueProperties {
 
     /// The platform associated with the value.
     #[serde(rename = "platform")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub platform: Option<String>,
 
     /// The system service associated with the value.
     #[serde(rename = "systemService")]
+          #[validate(custom(function = "check_xss_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub system_service: Option<String>,
 
     /// The address prefixes associated with the value.
     #[serde(rename = "addressPrefixes")]
+          #[validate(custom(function = "check_xss_vec_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub address_prefixes: Option<Vec<String>>,
 
     /// The network features associated with the value.
     #[serde(rename = "networkFeatures")]
+          #[validate(custom(function = "check_xss_vec_string"))]
     #[serde(skip_serializing_if="Option::is_none")]
     pub network_features: Option<Vec<String>>,
 
@@ -377,19 +428,17 @@ pub struct ValueProperties {
 
 
 
-
-
 impl ValueProperties {
     #[allow(clippy::new_without_default, clippy::too_many_arguments)]
     pub fn new() -> ValueProperties {
         ValueProperties {
-            change_number: None,
-            region: None,
-            region_id: None,
-            platform: None,
-            system_service: None,
-            address_prefixes: None,
-            network_features: None,
+ change_number: None,
+ region: None,
+ region_id: None,
+ platform: None,
+ system_service: None,
+ address_prefixes: None,
+ network_features: None,
         }
     }
 }
@@ -540,9 +589,7 @@ impl std::convert::TryFrom<header::IntoHeaderValue<ValueProperties>> for HeaderV
         let hdr_value = hdr_value.to_string();
         match HeaderValue::from_str(&hdr_value) {
              std::result::Result::Ok(value) => std::result::Result::Ok(value),
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Invalid header value for ValueProperties - value: {} is invalid {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Invalid header value for ValueProperties - value: {hdr_value} is invalid {e}"#))
         }
     }
 }
@@ -556,17 +603,12 @@ impl std::convert::TryFrom<HeaderValue> for header::IntoHeaderValue<ValuePropert
              std::result::Result::Ok(value) => {
                     match <ValueProperties as std::str::FromStr>::from_str(value) {
                         std::result::Result::Ok(value) => std::result::Result::Ok(header::IntoHeaderValue(value)),
-                        std::result::Result::Err(err) => std::result::Result::Err(
-                            format!("Unable to convert header value '{}' into ValueProperties - {}",
-                                value, err))
+                        std::result::Result::Err(err) => std::result::Result::Err(format!(r#"Unable to convert header value '{value}' into ValueProperties - {err}"#))
                     }
              },
-             std::result::Result::Err(e) => std::result::Result::Err(
-                 format!("Unable to convert header: {:?} to string: {}",
-                     hdr_value, e))
+             std::result::Result::Err(e) => std::result::Result::Err(format!(r#"Unable to convert header: {hdr_value:?} to string: {e}"#))
         }
     }
 }
-
 
 

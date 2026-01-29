@@ -3,6 +3,8 @@
 from fastapi.testclient import TestClient
 
 
+from pydantic import Field, StrictStr  # noqa: F401
+from typing_extensions import Annotated  # noqa: F401
 from openapi_server.models.change import Change  # noqa: F401
 
 

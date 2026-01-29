@@ -43,13 +43,13 @@ namespace Org.OpenAPITools.Controllers
         {
 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(Change));
+            // return StatusCode(200, default);
             string exampleJson = null;
             exampleJson = "{\n  \"cloud\" : \"cloud\",\n  \"values\" : [ {\n    \"name\" : \"name\",\n    \"id\" : \"id\",\n    \"properties\" : {\n      \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ],\n      \"systemService\" : \"systemService\",\n      \"regionId\" : 1,\n      \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ],\n      \"changeNumber\" : 6,\n      \"region\" : \"region\",\n      \"platform\" : \"platform\"\n    }\n  }, {\n    \"name\" : \"name\",\n    \"id\" : \"id\",\n    \"properties\" : {\n      \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ],\n      \"systemService\" : \"systemService\",\n      \"regionId\" : 1,\n      \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ],\n      \"changeNumber\" : 6,\n      \"region\" : \"region\",\n      \"platform\" : \"platform\"\n    }\n  } ],\n  \"changeNumber\" : 0\n}";
             
             var example = exampleJson != null
             ? JsonConvert.DeserializeObject<Change>(exampleJson)
-            : default(Change);
+            : default;
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

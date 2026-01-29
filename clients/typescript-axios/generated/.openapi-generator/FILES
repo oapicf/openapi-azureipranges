@@ -4,5 +4,9 @@ api.ts
 base.ts
 common.ts
 configuration.ts
+docs/Change.md
+docs/DefaultApi.md
+docs/Value.md
+docs/ValueProperties.md
 git_push.sh
 index.ts

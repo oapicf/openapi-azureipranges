@@ -31,7 +31,7 @@ data class Change(
     @field:Valid
     @Schema(example = "null", description = "")
     @get:JsonProperty("values") val propertyValues: kotlin.collections.List<Value>? = null
-    ) {
+) {
 
 }
 

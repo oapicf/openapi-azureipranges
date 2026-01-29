@@ -13,46 +13,53 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ValueProperties  {
   
-  @ApiModelProperty(value = "The number associated with the change.")
  /**
-   * The number associated with the change.
-  **/
+  * The number associated with the change.
+  */
+  @ApiModelProperty(value = "The number associated with the change.")
+
   private Integer changeNumber;
 
-  @ApiModelProperty(value = "The region associated with the value.")
  /**
-   * The region associated with the value.
-  **/
+  * The region associated with the value.
+  */
+  @ApiModelProperty(value = "The region associated with the value.")
+
   private String region;
 
-  @ApiModelProperty(value = "The ID of the region.")
  /**
-   * The ID of the region.
-  **/
+  * The ID of the region.
+  */
+  @ApiModelProperty(value = "The ID of the region.")
+
   private Integer regionId;
 
-  @ApiModelProperty(value = "The platform associated with the value.")
  /**
-   * The platform associated with the value.
-  **/
+  * The platform associated with the value.
+  */
+  @ApiModelProperty(value = "The platform associated with the value.")
+
   private String platform;
 
-  @ApiModelProperty(value = "The system service associated with the value.")
  /**
-   * The system service associated with the value.
-  **/
+  * The system service associated with the value.
+  */
+  @ApiModelProperty(value = "The system service associated with the value.")
+
   private String systemService;
 
-  @ApiModelProperty(value = "The address prefixes associated with the value.")
  /**
-   * The address prefixes associated with the value.
-  **/
+  * The address prefixes associated with the value.
+  */
+  @ApiModelProperty(value = "The address prefixes associated with the value.")
+
   private List<String> addressPrefixes = new ArrayList<>();
 
-  @ApiModelProperty(value = "The network features associated with the value.")
  /**
-   * The network features associated with the value.
-  **/
+  * The network features associated with the value.
+  */
+  @ApiModelProperty(value = "The network features associated with the value.")
+
   private List<String> networkFeatures = new ArrayList<>();
  /**
    * The number associated with the change.

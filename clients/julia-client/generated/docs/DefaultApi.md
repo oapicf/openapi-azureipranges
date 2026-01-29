@@ -8,8 +8,8 @@ Method | HTTP request | Description
 
 
 # **get_azure_ip_ranges_service_tags_public_cloud**
-> get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing) -> Change, OpenAPI.Clients.ApiResponse <br/>
-> get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, response_stream::Channel, version::String; _mediaType=nothing) -> Channel{ Change }, OpenAPI.Clients.ApiResponse
+> `get_azure_ip_ranges_service_tags_public_cloud`(_api::`DefaultApi`, `version`::`String`; _mediaType=nothing) -> `Change`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_azure_ip_ranges_service_tags_public_cloud`(_api::`DefaultApi`, response_stream::`Channel`, `version`::`String`; _mediaType=nothing) -> `Channel`{ `Change` }, `OpenAPI.Clients.ApiResponse`
 
 Get Azure IP Ranges and Service Tags - Public Cloud
 
@@ -19,12 +19,12 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **DefaultApi** | API context | 
-**version** | **String** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
+ **_api** | **`DefaultApi`** | API context | 
+**`version`** | **`String`** | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506 |
 
 ### Return type
 
-[**Change**](Change.md)
+[**`Change`**](Change.md)
 
 ### Authorization
 

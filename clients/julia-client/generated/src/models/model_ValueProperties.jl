@@ -32,22 +32,27 @@ Base.@kwdef mutable struct ValueProperties <: OpenAPI.APIModel
     networkFeatures::Union{Nothing, Vector{String}} = nothing
 
     function ValueProperties(changeNumber, region, regionId, platform, systemService, addressPrefixes, networkFeatures, )
-        OpenAPI.validate_property(ValueProperties, Symbol("changeNumber"), changeNumber)
-        OpenAPI.validate_property(ValueProperties, Symbol("region"), region)
-        OpenAPI.validate_property(ValueProperties, Symbol("regionId"), regionId)
-        OpenAPI.validate_property(ValueProperties, Symbol("platform"), platform)
-        OpenAPI.validate_property(ValueProperties, Symbol("systemService"), systemService)
-        OpenAPI.validate_property(ValueProperties, Symbol("addressPrefixes"), addressPrefixes)
-        OpenAPI.validate_property(ValueProperties, Symbol("networkFeatures"), networkFeatures)
-        return new(changeNumber, region, regionId, platform, systemService, addressPrefixes, networkFeatures, )
+        o = new(changeNumber, region, regionId, platform, systemService, addressPrefixes, networkFeatures, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ValueProperties
 
 const _property_types_ValueProperties = Dict{Symbol,String}(Symbol("changeNumber")=>"Int64", Symbol("region")=>"String", Symbol("regionId")=>"Int64", Symbol("platform")=>"String", Symbol("systemService")=>"String", Symbol("addressPrefixes")=>"Vector{String}", Symbol("networkFeatures")=>"Vector{String}", )
 OpenAPI.property_type(::Type{ ValueProperties }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ValueProperties[name]))}
 
-function check_required(o::ValueProperties)
+function OpenAPI.check_required(o::ValueProperties)
     true
+end
+
+function OpenAPI.validate_properties(o::ValueProperties)
+    OpenAPI.validate_property(ValueProperties, Symbol("changeNumber"), o.changeNumber)
+    OpenAPI.validate_property(ValueProperties, Symbol("region"), o.region)
+    OpenAPI.validate_property(ValueProperties, Symbol("regionId"), o.regionId)
+    OpenAPI.validate_property(ValueProperties, Symbol("platform"), o.platform)
+    OpenAPI.validate_property(ValueProperties, Symbol("systemService"), o.systemService)
+    OpenAPI.validate_property(ValueProperties, Symbol("addressPrefixes"), o.addressPrefixes)
+    OpenAPI.validate_property(ValueProperties, Symbol("networkFeatures"), o.networkFeatures)
 end
 
 function OpenAPI.validate_property(::Type{ ValueProperties }, name::Symbol, val)

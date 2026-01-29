@@ -23,8 +23,7 @@ const std::string DefaultApi::base = "/download/7/1/D/71D86715-5596-4529-9B13-DA
 
 DefaultApi::DefaultApi(const std::shared_ptr<Pistache::Rest::Router>& rtr)
     : ApiBase(rtr)
-{
-}
+{}
 
 void DefaultApi::init() {
     setupRoutes();
@@ -39,14 +38,12 @@ void DefaultApi::setupRoutes() {
     router->addCustomHandler(Routes::bind(&DefaultApi::default_api_default_handler, this));
 }
 
-void DefaultApi::handleParsingException(const std::exception& ex, Pistache::Http::ResponseWriter &response) const noexcept
-{
+void DefaultApi::handleParsingException(const std::exception& ex, Pistache::Http::ResponseWriter &response) const noexcept {
     std::pair<Pistache::Http::Code, std::string> codeAndError = handleParsingException(ex);
     response.send(codeAndError.first, codeAndError.second);
 }
 
-std::pair<Pistache::Http::Code, std::string> DefaultApi::handleParsingException(const std::exception& ex) const noexcept
-{
+std::pair<Pistache::Http::Code, std::string> DefaultApi::handleParsingException(const std::exception& ex) const noexcept {
     try {
         throw;
     } catch (nlohmann::detail::exception &e) {
@@ -58,38 +55,47 @@ std::pair<Pistache::Http::Code, std::string> DefaultApi::handleParsingException(
     }
 }
 
-void DefaultApi::handleOperationException(const std::exception& ex, Pistache::Http::ResponseWriter &response) const noexcept
-{
+void DefaultApi::handleOperationException(const std::exception& ex, Pistache::Http::ResponseWriter &response) const noexcept {
     std::pair<Pistache::Http::Code, std::string> codeAndError = handleOperationException(ex);
     response.send(codeAndError.first, codeAndError.second);
 }
 
-std::pair<Pistache::Http::Code, std::string> DefaultApi::handleOperationException(const std::exception& ex) const noexcept
-{
+std::pair<Pistache::Http::Code, std::string> DefaultApi::handleOperationException(const std::exception& ex) const noexcept {
     return std::make_pair(Pistache::Http::Code::Internal_Server_Error, ex.what());
 }
 
-void DefaultApi::get_azure_ip_ranges_service_tags_public_cloud_handler(const Pistache::Rest::Request &request, Pistache::Http::ResponseWriter response) {
+void DefaultApi::get_azure_ip_ranges_service_tags_public_cloud_handler(const Pistache::Rest::Request& request, Pistache::Http::ResponseWriter response) {
     try {
 
-    // Getting the path params
-    auto version = request.param(":version").as<std::string>();
+        // Getting the path params
+        auto version = request.param(":version").as<std::string>();
+        
+        
     
-    try {
-        this->get_azure_ip_ranges_service_tags_public_cloud(version, response);
-    } catch (Pistache::Http::HttpError &e) {
-        response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
-        return;
-    } catch (std::exception &e) {
-        this->handleOperationException(e, response);
-        return;
-    }
+
+
+        try {
+
+
+
+
+
+            this->get_azure_ip_ranges_service_tags_public_cloud(version, response);
+            } catch (Pistache::Http::HttpError &e) {
+                response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
+                return;
+            } catch (std::exception &e) {
+                this->handleOperationException(e, response);
+                return;
+            }
 
     } catch (std::exception &e) {
         response.send(Pistache::Http::Code::Internal_Server_Error, e.what());
     }
 
+
 }
+
 
 void DefaultApi::default_api_default_handler(const Pistache::Rest::Request &, Pistache::Http::ResponseWriter response) {
     response.send(Pistache::Http::Code::Not_Found, "The requested method does not exist");

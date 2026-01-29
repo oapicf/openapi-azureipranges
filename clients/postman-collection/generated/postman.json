@@ -19,44 +19,46 @@
                             {
                                 "name": "Get Azure IP Ranges and Service Tags - Public Cloud",
                                 "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/ServiceTags_Public_:version.json",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "ServiceTags_Public_:version.json"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "version",
-                                                "value": "",
-                                                "description": "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."
-                                }
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/ServiceTags_Public_:version.json",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "ServiceTags_Public_:version.json"
+    ],
+    "variable": [
+        {
+        "key": "version",
+        "value": "",
+        "description": "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud."
+}
+                                ,"response": [
+                            ]
                             }
                             ]
                         }

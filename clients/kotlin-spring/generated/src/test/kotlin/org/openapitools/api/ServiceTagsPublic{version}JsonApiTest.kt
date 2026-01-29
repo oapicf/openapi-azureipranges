@@ -17,6 +17,7 @@ class ServiceTagsPublic{version}JsonApiTest {
     @Test
     fun getAzureIpRangesServiceTagsPublicCloudTest() {
         val version: kotlin.String = TODO()
+        
         val response: ResponseEntity<Change> = api.getAzureIpRangesServiceTagsPublicCloud(version)
 
         // TODO: test validations

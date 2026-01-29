@@ -50,7 +50,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * ValueProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T03:05:42.475515890Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-24T23:53:12.079205377Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ValueProperties {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)
@@ -295,17 +295,10 @@ public class ValueProperties {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("changeNumber");
-    openapiFields.add("region");
-    openapiFields.add("regionId");
-    openapiFields.add("platform");
-    openapiFields.add("systemService");
-    openapiFields.add("addressPrefixes");
-    openapiFields.add("networkFeatures");
+    openapiFields = new HashSet<String>(Arrays.asList("changeNumber", "region", "regionId", "platform", "systemService", "addressPrefixes", "networkFeatures"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -317,7 +310,7 @@ public class ValueProperties {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ValueProperties.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ValueProperties is not found in the empty JSON string", ValueProperties.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ValueProperties is not found in the empty JSON string", ValueProperties.openapiRequiredFields.toString()));
         }
       }
 
@@ -325,26 +318,26 @@ public class ValueProperties {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ValueProperties.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ValueProperties` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValueProperties` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("platform") != null && !jsonObj.get("platform").isJsonNull()) && !jsonObj.get("platform").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `platform` to be a primitive type in the JSON string but got `%s`", jsonObj.get("platform").toString()));
       }
       if ((jsonObj.get("systemService") != null && !jsonObj.get("systemService").isJsonNull()) && !jsonObj.get("systemService").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `systemService` to be a primitive type in the JSON string but got `%s`", jsonObj.get("systemService").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `systemService` to be a primitive type in the JSON string but got `%s`", jsonObj.get("systemService").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("addressPrefixes") != null && !jsonObj.get("addressPrefixes").isJsonNull() && !jsonObj.get("addressPrefixes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addressPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("addressPrefixes").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `addressPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("addressPrefixes").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("networkFeatures") != null && !jsonObj.get("networkFeatures").isJsonNull() && !jsonObj.get("networkFeatures").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `networkFeatures` to be an array in the JSON string but got `%s`", jsonObj.get("networkFeatures").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `networkFeatures` to be an array in the JSON string but got `%s`", jsonObj.get("networkFeatures").toString()));
       }
   }
 

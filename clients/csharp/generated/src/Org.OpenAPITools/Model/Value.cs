@@ -163,8 +163,7 @@ namespace Org.OpenAPITools.Model
                             id = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "properties":
-                            if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                properties = new Option<ValueProperties?>(JsonSerializer.Deserialize<ValueProperties>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            properties = new Option<ValueProperties?>(JsonSerializer.Deserialize<ValueProperties>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         default:
                             break;

@@ -26,9 +26,9 @@ pub enum GetAzureIpRangesServiceTagsPublicCloudError {
 /// Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 pub async fn get_azure_ip_ranges_service_tags_public_cloud(configuration: &configuration::Configuration, version: &str) -> Result<models::Change, Error<GetAzureIpRangesServiceTagsPublicCloudError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_version = version;
+    let p_path_version = version;
 
-    let uri_str = format!("{}/ServiceTags_Public_{version}.json", configuration.base_path, version=crate::apis::urlencode(p_version));
+    let uri_str = format!("{}/ServiceTags_Public_{version}.json", configuration.base_path, version=crate::apis::urlencode(p_path_version));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {

@@ -69,12 +69,8 @@ class DefaultController extends Controller
         }
 
 
-        try {
-            $apiResult = $this->api->getAzureIpRangesServiceTagsPublicCloud($version);
-        } catch (\Exception $exception) {
-            // This shouldn't happen
-            return response()->json(['error' => $exception->getMessage()], 500);
-        }
+
+        $apiResult = $this->api->getAzureIpRangesServiceTagsPublicCloud($version);
 
         if ($apiResult instanceof \OpenAPI\Server\Model\Change) {
             return response()->json($this->serde->serialize($apiResult, format: 'array'), 200);

@@ -31,7 +31,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Change'
+                $ref: "#/components/schemas/Change"
           description: Successful response
       summary: Get Azure IP Ranges and Service Tags - Public Cloud
       x-eov-operation-handler: controllers/DefaultController
@@ -79,7 +79,7 @@ components:
           type: string
         values:
           items:
-            $ref: '#/components/schemas/Value'
+            $ref: "#/components/schemas/Value"
           type: array
     Value:
       example:
@@ -105,7 +105,7 @@ components:
           description: The unique identifier of the value.
           type: string
         properties:
-          $ref: '#/components/schemas/ValueProperties'
+          $ref: "#/components/schemas/ValueProperties"
     ValueProperties:
       example:
         networkFeatures:

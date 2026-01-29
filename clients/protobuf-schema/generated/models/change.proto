@@ -19,7 +19,7 @@ import public "models/value.proto";
 message Change {
 
   // The number associated with the change.
-  int32 changeNumber = 234662119;
+  int32 change_number = 432718153;
 
   // The cloud environment.
   string cloud = 94756405;
@@ -27,3 +27,4 @@ message Change {
   repeated Value values = 286941919;
 
 }
+

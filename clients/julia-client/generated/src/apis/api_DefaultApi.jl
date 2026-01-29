@@ -28,9 +28,9 @@ end
 Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 Params:
-- version::String (required)
+- `version`::`String` (required)
 
-Return: Change, OpenAPI.Clients.ApiResponse
+Return: `Change`, `OpenAPI.Clients.ApiResponse`
 """
 function get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing)
     _ctx = _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api, version; _mediaType=_mediaType)

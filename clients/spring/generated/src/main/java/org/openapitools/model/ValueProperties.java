@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T03:07:07.444578948Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T23:55:06.687020923Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ValueProperties {
 
   private @Nullable Integer changeNumber;
@@ -41,7 +41,7 @@ public class ValueProperties {
   @Valid
   private List<String> networkFeatures = new ArrayList<>();
 
-  public ValueProperties changeNumber(Integer changeNumber) {
+  public ValueProperties changeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
     return this;
   }
@@ -53,15 +53,15 @@ public class ValueProperties {
   
   @Schema(name = "changeNumber", description = "The number associated with the change.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("changeNumber")
-  public Integer getChangeNumber() {
+  public @Nullable Integer getChangeNumber() {
     return changeNumber;
   }
 
-  public void setChangeNumber(Integer changeNumber) {
+  public void setChangeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
   }
 
-  public ValueProperties region(String region) {
+  public ValueProperties region(@Nullable String region) {
     this.region = region;
     return this;
   }
@@ -73,15 +73,15 @@ public class ValueProperties {
   
   @Schema(name = "region", description = "The region associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("region")
-  public String getRegion() {
+  public @Nullable String getRegion() {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@Nullable String region) {
     this.region = region;
   }
 
-  public ValueProperties regionId(Integer regionId) {
+  public ValueProperties regionId(@Nullable Integer regionId) {
     this.regionId = regionId;
     return this;
   }
@@ -93,15 +93,15 @@ public class ValueProperties {
   
   @Schema(name = "regionId", description = "The ID of the region.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("regionId")
-  public Integer getRegionId() {
+  public @Nullable Integer getRegionId() {
     return regionId;
   }
 
-  public void setRegionId(Integer regionId) {
+  public void setRegionId(@Nullable Integer regionId) {
     this.regionId = regionId;
   }
 
-  public ValueProperties platform(String platform) {
+  public ValueProperties platform(@Nullable String platform) {
     this.platform = platform;
     return this;
   }
@@ -113,15 +113,15 @@ public class ValueProperties {
   
   @Schema(name = "platform", description = "The platform associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("platform")
-  public String getPlatform() {
+  public @Nullable String getPlatform() {
     return platform;
   }
 
-  public void setPlatform(String platform) {
+  public void setPlatform(@Nullable String platform) {
     this.platform = platform;
   }
 
-  public ValueProperties systemService(String systemService) {
+  public ValueProperties systemService(@Nullable String systemService) {
     this.systemService = systemService;
     return this;
   }
@@ -133,11 +133,11 @@ public class ValueProperties {
   
   @Schema(name = "systemService", description = "The system service associated with the value.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("systemService")
-  public String getSystemService() {
+  public @Nullable String getSystemService() {
     return systemService;
   }
 
-  public void setSystemService(String systemService) {
+  public void setSystemService(@Nullable String systemService) {
     this.systemService = systemService;
   }
 

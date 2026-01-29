@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * Change
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T03:07:07.444578948Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T23:55:06.687020923Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Change {
 
   private @Nullable Integer changeNumber;
@@ -33,7 +33,7 @@ public class Change {
   @Valid
   private List<@Valid Value> values = new ArrayList<>();
 
-  public Change changeNumber(Integer changeNumber) {
+  public Change changeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
     return this;
   }
@@ -45,15 +45,15 @@ public class Change {
   
   @Schema(name = "changeNumber", description = "The number associated with the change.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("changeNumber")
-  public Integer getChangeNumber() {
+  public @Nullable Integer getChangeNumber() {
     return changeNumber;
   }
 
-  public void setChangeNumber(Integer changeNumber) {
+  public void setChangeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
   }
 
-  public Change cloud(String cloud) {
+  public Change cloud(@Nullable String cloud) {
     this.cloud = cloud;
     return this;
   }
@@ -65,11 +65,11 @@ public class Change {
   
   @Schema(name = "cloud", description = "The cloud environment.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("cloud")
-  public String getCloud() {
+  public @Nullable String getCloud() {
     return cloud;
   }
 
-  public void setCloud(String cloud) {
+  public void setCloud(@Nullable String cloud) {
     this.cloud = cloud;
   }
 

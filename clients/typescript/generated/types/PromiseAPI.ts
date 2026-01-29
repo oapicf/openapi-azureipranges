@@ -1,5 +1,5 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration, ConfigurationOptions, PromiseConfigurationOptions } from '../configuration'
+import { Configuration, PromiseConfigurationOptions, wrapOptions } from '../configuration'
 import { PromiseMiddleware, Middleware, PromiseMiddlewareWrapper } from '../middleware';
 
 import { Change } from '../models/Change';
@@ -25,18 +25,7 @@ export class PromiseDefaultApi {
      * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
     public getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Change>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
+        const observableOptions = wrapOptions(_options);
         const result = this.api.getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version, observableOptions);
         return result.toPromise();
     }
@@ -47,18 +36,7 @@ export class PromiseDefaultApi {
      * @param version The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
      */
     public getAzureIpRangesServiceTagsPublicCloud(version: string, _options?: PromiseConfigurationOptions): Promise<Change> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
+        const observableOptions = wrapOptions(_options);
         const result = this.api.getAzureIpRangesServiceTagsPublicCloud(version, observableOptions);
         return result.toPromise();
     }

@@ -85,7 +85,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudCall(String version, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudCall(@javax.annotation.Nonnull String version, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -131,7 +131,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(String version, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(@javax.annotation.Nonnull String version, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'version' is set
         if (version == null) {
             throw new ApiException("Missing the required parameter 'version' when calling getAzureIpRangesServiceTagsPublicCloud(Async)");
@@ -154,7 +154,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Change getAzureIpRangesServiceTagsPublicCloud(String version) throws ApiException {
+    public Change getAzureIpRangesServiceTagsPublicCloud(@javax.annotation.Nonnull String version) throws ApiException {
         ApiResponse<Change> localVarResp = getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version);
         return localVarResp.getData();
     }
@@ -172,7 +172,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Change> getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(String version) throws ApiException {
+    public ApiResponse<Change> getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(@javax.annotation.Nonnull String version) throws ApiException {
         okhttp3.Call localVarCall = getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(version, null);
         Type localVarReturnType = new TypeToken<Change>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -192,7 +192,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudAsync(String version, final ApiCallback<Change> _callback) throws ApiException {
+    public okhttp3.Call getAzureIpRangesServiceTagsPublicCloudAsync(@javax.annotation.Nonnull String version, final ApiCallback<Change> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAzureIpRangesServiceTagsPublicCloudValidateBeforeCall(version, _callback);
         Type localVarReturnType = new TypeToken<Change>(){}.getType();

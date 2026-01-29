@@ -14,20 +14,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Change  {
   
-  @ApiModelProperty(value = "The number associated with the change.")
  /**
-   * The number associated with the change.
-  **/
+  * The number associated with the change.
+  */
+  @ApiModelProperty(value = "The number associated with the change.")
+
   private Integer changeNumber;
 
-  @ApiModelProperty(value = "The cloud environment.")
  /**
-   * The cloud environment.
-  **/
+  * The cloud environment.
+  */
+  @ApiModelProperty(value = "The cloud environment.")
+
   private String cloud;
 
   @ApiModelProperty(value = "")
+
   @Valid
+
   private List<@Valid Value> values = new ArrayList<>();
  /**
    * The number associated with the change.

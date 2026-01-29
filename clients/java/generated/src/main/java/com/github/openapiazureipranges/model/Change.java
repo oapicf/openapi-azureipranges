@@ -51,7 +51,7 @@ import com.github.openapiazureipranges.JSON;
 /**
  * Change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T03:05:42.475515890Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-24T23:53:12.079205377Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Change {
   public static final String SERIALIZED_NAME_CHANGE_NUMBER = "changeNumber";
   @SerializedName(SERIALIZED_NAME_CHANGE_NUMBER)
@@ -184,13 +184,10 @@ public class Change {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("changeNumber");
-    openapiFields.add("cloud");
-    openapiFields.add("values");
+    openapiFields = new HashSet<String>(Arrays.asList("changeNumber", "cloud", "values"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -202,7 +199,7 @@ public class Change {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Change.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Change is not found in the empty JSON string", Change.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Change is not found in the empty JSON string", Change.openapiRequiredFields.toString()));
         }
       }
 
@@ -210,19 +207,19 @@ public class Change {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Change.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Change` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Change` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cloud") != null && !jsonObj.get("cloud").isJsonNull()) && !jsonObj.get("cloud").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cloud` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cloud").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cloud` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cloud").toString()));
       }
       if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull()) {
         JsonArray jsonArrayvalues = jsonObj.getAsJsonArray("values");
         if (jsonArrayvalues != null) {
           // ensure the json data is an array
           if (!jsonObj.get("values").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
           }
 
           // validate the optional field `values` (array)

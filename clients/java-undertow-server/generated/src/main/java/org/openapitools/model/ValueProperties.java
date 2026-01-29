@@ -23,7 +23,7 @@ import java.util.List;
 
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2025-05-10T03:05:56.069725132Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaUndertowServerCodegen", date = "2026-01-24T23:53:30.173055712Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ValueProperties   {
   
   private Integer changeNumber;
