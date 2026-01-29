@@ -12,7 +12,7 @@ class TestDefaultApi(unittest.TestCase):
             self):
 
         configuration = openapiazureipranges.Configuration(
-            host = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+            host = "https://download.microsoft.com/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
         )
 
         with openapiazureipranges.ApiClient(configuration) as api_client:
@@ -20,7 +20,7 @@ class TestDefaultApi(unittest.TestCase):
             api_instance = openapiazureipranges.DefaultApi(api_client)
 
             try:
-                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20241104')
+                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20260119')
                 print("The response of DefaultApi->get_azure_ip_ranges_service_tags_public_cloud:\n")
                 # pprint(api_response)
                 print(type(api_response))
