@@ -14,7 +14,7 @@ describe('default API', function() {
           done();
         }
       };
-      api.getAzureIpRangesServiceTagsPublicCloud('20260119', callback);
+      api.getAzureIpRangesServiceTagsPublicCloud('20260126', callback);
     });
   });
 });
