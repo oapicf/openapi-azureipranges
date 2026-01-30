@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add ruby test
+
 ### Changed
 - Upgrade Swaggy C to 5.1.0
 - Upgrade OpenAPI Generator to 7.18.0
 - Shift URL to https://download.microsoft.com/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63
+- Change test specification version 20260119
 
 ## 0.10.0 - 2024-11-09
 ### Added
