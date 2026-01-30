@@ -73,6 +73,7 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 ===== Content Type
 
 * application/json
+* application/octet-stream
 
 ===== Responses
 

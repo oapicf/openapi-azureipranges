@@ -39,7 +39,7 @@ impl Configuration {
 impl Default for Configuration {
     fn default() -> Self {
         Configuration {
-            base_path: "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63".to_owned(),
+            base_path: "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63".to_owned(),
             user_agent: Some("OpenAPI-Generator/0.10.1-pre.0/rust".to_owned()),
             client: reqwest::Client::new(),
             basic_auth: None,

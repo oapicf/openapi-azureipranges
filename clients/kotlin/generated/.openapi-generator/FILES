@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 README.md
 build.gradle
 docs/Change.md
@@ -30,3 +31,7 @@ src/main/kotlin/org/openapitools/client/infrastructure/UUIDAdapter.kt
 src/main/kotlin/org/openapitools/client/models/Change.kt
 src/main/kotlin/org/openapitools/client/models/Value.kt
 src/main/kotlin/org/openapitools/client/models/ValueProperties.kt
+src/test/kotlin/org/openapitools/client/apis/DefaultApiTest.kt
+src/test/kotlin/org/openapitools/client/models/ChangeTest.kt
+src/test/kotlin/org/openapitools/client/models/ValuePropertiesTest.kt
+src/test/kotlin/org/openapitools/client/models/ValueTest.kt

@@ -18,7 +18,7 @@ func main() {
 
 
 	// GetAzureIpRangesServiceTagsPublicCloud - Get Azure IP Ranges and Service Tags - Public Cloud
-	e.GET("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_:version.json", c.GetAzureIpRangesServiceTagsPublicCloud)
+	e.GET("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_:version.json", c.GetAzureIpRangesServiceTagsPublicCloud)
 
 
 	// Start server

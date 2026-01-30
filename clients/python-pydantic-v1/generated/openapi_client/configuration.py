@@ -68,7 +68,7 @@ class Configuration:
                  ) -> None:
         """Constructor
         """
-        self._base_path = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63" if host is None else host
+        self._base_path = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -379,7 +379,7 @@ class Configuration:
         """
         return [
             {
-                'url': "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63",
+                'url': "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
                 'description': "No description provided",
             }
         ]

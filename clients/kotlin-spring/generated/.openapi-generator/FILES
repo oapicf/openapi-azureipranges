@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 README.md
 build.gradle.kts
 gradle/wrapper/gradle-wrapper.jar
@@ -17,3 +18,4 @@ src/main/kotlin/org/openapitools/model/Value.kt
 src/main/kotlin/org/openapitools/model/ValueProperties.kt
 src/main/resources/application.yaml
 src/main/resources/openapi.yaml
+src/test/kotlin/org/openapitools/api/ServiceTagsPublic{version}JsonApiTest.kt

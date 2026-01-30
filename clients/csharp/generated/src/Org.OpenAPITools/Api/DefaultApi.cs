@@ -245,7 +245,8 @@ namespace Org.OpenAPITools.Api
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
 
                     string[] acceptLocalVars = new string[] {
-                        "application/json"
+                        "application/json",
+                        "application/octet-stream"
                     };
 
                     string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);

@@ -3,7 +3,7 @@
 -export([ get_azure_ip_ranges_service_tags_public_cloud/1
         ]).
 
--define(BASE_URL, "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63").
+-define(BASE_URL, "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63").
 
 %% @doc Get Azure IP Ranges and Service Tags - Public Cloud
 %% Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.

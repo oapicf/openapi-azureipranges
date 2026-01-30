@@ -21,8 +21,8 @@ h3. getAzureIpRangesServiceTagsPublicCloud
 	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
     || Protocol | {noformat:nopanel=true}https{noformat} |
     || Path | {noformat:nopanel=true}/ServiceTags_Public_{version}.json{noformat} |
-    || Base Path | {noformat:nopanel=true}https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63{noformat} |
-    || Produces | {noformat:nopanel=true}application/json {noformat} |
+    || Base Path | {noformat:nopanel=true}https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63{noformat} |
+    || Produces | {noformat:nopanel=true}application/json application/octet-stream {noformat} |
 ----
 h4. Parameters
 h5. Path Parameters
@@ -42,6 +42,11 @@ h4. Responses
   "description" : "Successful response",
   "content" : {
     "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Change"
+      }
+    },
+    "application/octet-stream" : {
       "schema" : {
         "$ref" : "#/components/schemas/Change"
       }

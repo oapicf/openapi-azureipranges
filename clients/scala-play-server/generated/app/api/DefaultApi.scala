@@ -3,7 +3,7 @@ package api
 import play.api.libs.json._
 import model.Change
 
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-24T23:54:57.946098897Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-30T14:42:32.399392931Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 trait DefaultApi {
   /**
     * Get Azure IP Ranges and Service Tags - Public Cloud

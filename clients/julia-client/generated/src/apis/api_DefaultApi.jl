@@ -9,7 +9,7 @@ end
 The default API base path for APIs in `DefaultApi`.
 This can be used to construct the `OpenAPI.Clients.Client` instance.
 """
-basepath(::Type{ DefaultApi }) = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+basepath(::Type{ DefaultApi }) = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
 
 const _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi = Dict{Regex,Type}(
     Regex("^" * replace("200", "x"=>".") * "\$") => Change,
@@ -18,7 +18,7 @@ const _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi = Di
 function _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi, "/ServiceTags_Public_{version}.json", [])
     OpenAPI.Clients.set_param(_ctx.path, "version", version)  # type String
-    OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
+    OpenAPI.Clients.set_header_accept(_ctx, ["application/json", "application/octet-stream", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
 end

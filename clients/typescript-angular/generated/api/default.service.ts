@@ -44,10 +44,10 @@ export class DefaultService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Change>;
-    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Change>>;
-    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Change>>;
-    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json' | 'application/octet-stream', context?: HttpContext, transferCache?: boolean}): Observable<Change>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json' | 'application/octet-stream', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json' | 'application/octet-stream', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Change>>;
+    public getAzureIpRangesServiceTagsPublicCloud(version: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json' | 'application/octet-stream', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (version === null || version === undefined) {
             throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
         }
@@ -55,7 +55,8 @@ export class DefaultService extends BaseService {
         let localVarHeaders = this.defaultHeaders;
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'application/json'
+            'application/json',
+            'application/octet-stream'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);

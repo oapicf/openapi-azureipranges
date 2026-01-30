@@ -85,7 +85,8 @@ valid_content_headers(Req, State) ->
     {[{binary(), atom()}], cowboy_req:req(), state()}.
 content_types_provided(Req, #state{operation_id = 'getAzureIpRangesServiceTagsPublicCloud'} = State) ->
     {[
-      {<<"application/json">>, handle_type_provided}
+      {<<"application/json">>, handle_type_provided},
+      {<<"application/octet-stream">>, handle_type_provided}
      ], Req, State};
 content_types_provided(Req, State) ->
     {[], Req, State}.

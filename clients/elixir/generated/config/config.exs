@@ -7,7 +7,7 @@
 # General application configuration
 import Config
 
-config :azure_ip_ranges_and_service_tags_public_cloud, base_url: "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+config :azure_ip_ranges_and_service_tags_public_cloud, base_url: "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

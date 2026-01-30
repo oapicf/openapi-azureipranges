@@ -415,7 +415,7 @@ impl<S, C, B> Api<C> for Client<S, C> where
         let mut client_service = self.client_service.clone();
         #[allow(clippy::uninlined_format_args)]
         let mut uri = format!(
-            "{}/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
+            "{}/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
             self.base_path
             ,version=utf8_percent_encode(&param_version.to_string(), ID_ENCODE_SET)
         );

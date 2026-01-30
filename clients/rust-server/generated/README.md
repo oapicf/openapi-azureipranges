@@ -14,7 +14,7 @@ To see how to make this your own, look here:
 [README]((https://openapi-generator.tech))
 
 - API version: 0.10.1-pre.0
-- Build date: 2026-01-24T23:54:43.557963590Z[Etc/UTC]
+- Build date: 2026-01-30T14:42:20.054908832Z[Etc/UTC]
 - Generator version: 7.18.0
 
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
@@ -122,7 +122,7 @@ See https://doc.rust-lang.org/cargo/reference/manifest.html#the-features-section
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

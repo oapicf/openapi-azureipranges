@@ -12,7 +12,7 @@ class TestDefaultApi(unittest.TestCase):
             self):
 
         configuration = openapiazureipranges.Configuration(
-            host = "https://download.microsoft.com/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
+            host = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
         )
 
         with openapiazureipranges.ApiClient(configuration) as api_client:

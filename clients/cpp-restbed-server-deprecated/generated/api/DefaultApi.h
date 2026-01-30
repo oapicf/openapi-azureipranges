@@ -65,7 +65,7 @@ private:
 class  DefaultApiServiceTags_Public_{version}.jsonResource: public restbed::Resource
 {
 public:
-    DefaultApiServiceTags_Public_{version}.jsonResource(const std::string& context = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
+    DefaultApiServiceTags_Public_{version}.jsonResource(const std::string& context = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
     virtual ~DefaultApiServiceTags_Public_{version}.jsonResource();
 
 protected:

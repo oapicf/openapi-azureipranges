@@ -87,7 +87,7 @@ std::string convertMapResponse(const std::map<KEY_T, VAL_T>& map)
     return result;
 }
 
-DefaultApiServiceTags_Public_{version}.jsonResource::DefaultApiServiceTags_Public_{version}.jsonResource(const std::string& context /* = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63" */)
+DefaultApiServiceTags_Public_{version}.jsonResource::DefaultApiServiceTags_Public_{version}.jsonResource(const std::string& context /* = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63" */)
 {
 	this->set_path(context + "/ServiceTags_Public_{version}.json/");
 	this->set_method_handler("GET",

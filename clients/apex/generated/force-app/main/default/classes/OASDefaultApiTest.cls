@@ -30,5 +30,12 @@ private class OASDefaultApiTest {
         expectedResponse = OASChange.getExample();
         response = (OASChange) api.getAzureIpRangesServiceTagsPublicCloud(params);
         System.assertEquals(expectedResponse, response);
+
+        js = JSON.serialize(OASChange.getExample());
+        res.setHeader('Content-Type', 'application/octet-stream');
+        res.setBody(js);
+        expectedResponse = OASChange.getExample();
+        response = (OASChange) api.getAzureIpRangesServiceTagsPublicCloud(params);
+        System.assertEquals(expectedResponse, response);
     }
 }

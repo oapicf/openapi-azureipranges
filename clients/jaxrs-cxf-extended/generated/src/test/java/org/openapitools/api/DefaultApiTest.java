@@ -53,7 +53,7 @@ public class DefaultApiTest {
     public void setup() {
         List<?> providers = Arrays.asList(new JacksonJsonProvider(), new JacksonXMLProvider(), new MultipartProvider());
 
-        api = JAXRSClientFactory.create("https://download.microsoft.com/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", DefaultApi.class, providers);
+        api = JAXRSClientFactory.create("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", DefaultApi.class, providers);
         org.apache.cxf.jaxrs.client.Client client = WebClient.client(api);
 
         ClientConfiguration config = WebClient.getConfig(client);

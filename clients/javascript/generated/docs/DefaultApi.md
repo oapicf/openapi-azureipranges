@@ -1,6 +1,6 @@
 # OpenapiAzureipranges.DefaultApi
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -50,5 +50,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json, application/octet-stream
 

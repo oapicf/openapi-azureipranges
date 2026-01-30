@@ -32,11 +32,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63') {
+    constructor(basePath = 'https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63
+         * @default https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -594,7 +594,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63",
+              'url': "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
               'description': "No description provided",
             }
       ];

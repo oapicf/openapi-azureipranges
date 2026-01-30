@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -27,7 +27,7 @@ import com.github.openapiazureipranges.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
+    defaultClient.setBasePath("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String version = "version_example"; // String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
@@ -62,7 +62,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |

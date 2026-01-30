@@ -18,11 +18,11 @@ import javax.validation.Valid;
 */
 @Path("/ServiceTags_Public_{version}.json")
 @Api(description = "the default API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2026-01-24T23:53:41.635763265Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2026-01-30T14:41:13.211916369Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class DefaultApi {
 
     @GET
-    @Produces({ "application/json" })
+    @Produces({ "application/json", "application/octet-stream" })
     @ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = Change.class)

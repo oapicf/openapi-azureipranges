@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 Makefile
 Makefile
 README.md
@@ -30,6 +31,7 @@ app/openapi_server/swagger/swagger.yaml
 app/openapi_server/swagger/swagger.yaml
 app/openapi_server/test/__init__.py
 app/openapi_server/test/__init__.py
+app/openapi_server/test/test_default_controller.py
 app/openapi_server/typing_utils.py
 app/openapi_server/typing_utils.py
 app/openapi_server/util.py
@@ -42,6 +44,15 @@ app/test-requirements.txt
 app/test-requirements.txt
 app/tox.ini
 app/tox.ini
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Change/create.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Change/high.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Change/low.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Value/create.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Value/high.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.Value/low.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.ValueProperties/create.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.ValueProperties/high.json
+model-definitions/types/ddui-views/openapi_server.resourceTypes.ValueProperties/low.json
 model-definitions/types/tosca/openapi_server/Change_ResourceType.tosca
 model-definitions/types/tosca/openapi_server/ValueProperties_ResourceType.tosca
 model-definitions/types/tosca/openapi_server/Value_ResourceType.tosca

@@ -354,7 +354,7 @@ class DefaultApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json', 'application/octet-stream', ],
             $contentType,
             $multipart
         );

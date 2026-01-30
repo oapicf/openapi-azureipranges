@@ -19,7 +19,7 @@ namespace org::openapitools::server::api
 using namespace org::openapitools::server::helpers;
 using namespace org::openapitools::server::model;
 
-const std::string DefaultApi::base = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+const std::string DefaultApi::base = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
 
 DefaultApi::DefaultApi(const std::shared_ptr<Pistache::Rest::Router>& rtr)
     : ApiBase(rtr)

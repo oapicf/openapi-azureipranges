@@ -42,7 +42,7 @@ class DefaultApiSimulation extends Simulation {
 
 // Setup http protocol configuration
     val httpConf = http
-        .baseURL("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+        .baseURL("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
         .doNotTrackHeader("1")
         .acceptLanguageHeader("en-US,en;q=0.5")
         .acceptEncodingHeader("gzip, deflate")

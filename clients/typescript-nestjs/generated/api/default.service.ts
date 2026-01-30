@@ -23,7 +23,7 @@ import { COLLECTION_FORMATS } from '../variables';
 @Injectable()
 export class DefaultService {
 
-    protected basePath = 'https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63';
+    protected basePath = 'https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63';
     public defaultHeaders: Record<string,string> = {};
     public configuration = new Configuration();
     protected httpClient: HttpService;
@@ -63,7 +63,8 @@ export class DefaultService {
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'application/json'
+            'application/json',
+            'application/octet-stream'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {

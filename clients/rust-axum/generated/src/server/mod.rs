@@ -26,7 +26,7 @@ where
 {
     // build our application with a route
     Router::new()
-        .route("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json",
+        .route("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
             get(get_azure_ip_ranges_service_tags_public_cloud::<I, A, E>)
         )
         .with_state(api_impl)
@@ -46,7 +46,7 @@ Ok((
   path_params,
 ))
 }
-/// GetAzureIpRangesServiceTagsPublicCloud - GET /download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json
+/// GetAzureIpRangesServiceTagsPublicCloud - GET /download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json
 #[tracing::instrument(skip_all)]
 async fn get_azure_ip_ranges_service_tags_public_cloud<I, A, E>(
   method: Method,

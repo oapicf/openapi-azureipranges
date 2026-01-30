@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 docs/Change.md
 docs/Value.md
 docs/ValueProperties.md

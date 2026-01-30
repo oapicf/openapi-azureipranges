@@ -114,7 +114,7 @@ std::string convertMapResponse(const std::map<KEY_T, VAL_T>& map)
 }
 
 namespace DefaultApiResources {
-ServiceTags_Public_version_jsonResource::ServiceTags_Public_version_jsonResource(const std::string& context /* = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63" */)
+ServiceTags_Public_version_jsonResource::ServiceTags_Public_version_jsonResource(const std::string& context /* = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63" */)
 {
 	this->set_path(context + "/ServiceTags_Public_{version}.json");
 	this->set_method_handler("GET",
@@ -179,7 +179,7 @@ void ServiceTags_Public_version_jsonResource::handler_GET_internal(const std::sh
     
     std::multimap< std::string, std::string > responseHeaders {};
     static const std::vector<std::string> contentTypes{
-        "application/json",
+        "application/json","application/octet-stream",
     };
     static const std::string acceptTypes{
     };

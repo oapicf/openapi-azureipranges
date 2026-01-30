@@ -14,6 +14,7 @@ public class DefaultApiMockServer {
     public static MappingBuilder stubGetAzureIpRangesServiceTagsPublicCloud200(@javax.annotation.Nonnull String version, String response) {
         MappingBuilder stub = get(urlPathTemplate("/ServiceTags_Public_{version}.json"))
             .withHeader("Accept", containing("application/json"))
+            .withHeader("Accept", containing("application/octet-stream"))
             .willReturn(aResponse()
                 .withStatus(200)
                 .withHeader("Content-Type", "application/json")
@@ -28,6 +29,7 @@ public class DefaultApiMockServer {
     public static MappingBuilder stubGetAzureIpRangesServiceTagsPublicCloudFault(@javax.annotation.Nonnull String version, Fault fault) {
         MappingBuilder stub = get(urlPathTemplate("/ServiceTags_Public_{version}.json"))
             .withHeader("Accept", containing("application/json"))
+            .withHeader("Accept", containing("application/octet-stream"))
             .willReturn(aResponse()
                 .withFault(fault)
             );
@@ -39,6 +41,9 @@ public class DefaultApiMockServer {
 
     public static String getAzureIpRangesServiceTagsPublicCloud200ResponseSample1() {
         return "{ \"cloud\" : \"cloud\", \"values\" : [ { \"name\" : \"name\", \"id\" : \"id\", \"properties\" : { \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ], \"systemService\" : \"systemService\", \"regionId\" : 1, \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ], \"changeNumber\" : 6, \"region\" : \"region\", \"platform\" : \"platform\" } }, { \"name\" : \"name\", \"id\" : \"id\", \"properties\" : { \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ], \"systemService\" : \"systemService\", \"regionId\" : 1, \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ], \"changeNumber\" : 6, \"region\" : \"region\", \"platform\" : \"platform\" } } ], \"changeNumber\" : 0 }";
+    }
+    public static String getAzureIpRangesServiceTagsPublicCloud200ResponseSample2() {
+        return "Custom MIME type example not yet supported: application/octet-stream";
     }
 
 

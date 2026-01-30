@@ -1,5 +1,6 @@
 .github/workflows/maven.yml
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -40,3 +41,7 @@ src/main/java/com/github/openapiazureipranges/model/AbstractOpenApiSchema.java
 src/main/java/com/github/openapiazureipranges/model/Change.java
 src/main/java/com/github/openapiazureipranges/model/Value.java
 src/main/java/com/github/openapiazureipranges/model/ValueProperties.java
+src/test/java/com/github/openapiazureipranges/api/DefaultApiTest.java
+src/test/java/com/github/openapiazureipranges/model/ChangeTest.java
+src/test/java/com/github/openapiazureipranges/model/ValuePropertiesTest.java
+src/test/java/com/github/openapiazureipranges/model/ValueTest.java

@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T22:58:41.081125974Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-30T14:42:37.635095054Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Controller
-@RequestMapping("${openapi.azureIPRangesAndServiceTagsPublicCloud.base-path:/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63}")
+@RequestMapping("${openapi.azureIPRangesAndServiceTagsPublicCloud.base-path:/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63}")
 public class ServiceTagsPublicVersionJsonApiController implements ServiceTagsPublicVersionJsonApi {
 
     private final NativeWebRequest request;

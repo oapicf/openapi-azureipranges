@@ -38,7 +38,7 @@
         </init-param>
         <init-param>
             <param-name>swagger.api.basepath</param-name>
-            <param-value>https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63</param-value>
+            <param-value>https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63</param-value>
         </init-param>
 
         <load-on-startup>2</load-on-startup>
@@ -50,7 +50,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>jersey</servlet-name>
-        <url-pattern>/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/*</url-pattern>
+        <url-pattern>/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/*</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>ApiOriginFilter</filter-name>

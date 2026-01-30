@@ -44,7 +44,7 @@ public class OASDefaultApi {
                 'version' => (String) params.get('version')
             },
             new Map<String, Object>(),
-            new List<String>{ 'application/json' },
+            new List<String>{ 'application/json', 'application/octet-stream' },
             new List<String>(),
             new List<String>(),
             OASChange.class

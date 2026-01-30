@@ -41,7 +41,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
         }
     }
 
@@ -106,7 +106,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.GET,

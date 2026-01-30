@@ -24,7 +24,7 @@ function Get-Configuration {
     $Configuration = $Script:Configuration
 
     if ([string]::IsNullOrEmpty($Configuration["BaseUrl"])) {
-        $Configuration["BaseUrl"] = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+        $Configuration["BaseUrl"] = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
     }
 
     if (!$Configuration.containsKey("Username")) {
@@ -313,7 +313,7 @@ System.Collections.Hashtable[]
 function Get-HostSetting {
     return ,@(
           @{
-            "Url" = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+            "Url" = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
             "Description" = "No description provided";
           }
     )

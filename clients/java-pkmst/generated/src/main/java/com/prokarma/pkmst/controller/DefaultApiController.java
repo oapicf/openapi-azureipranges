@@ -23,7 +23,7 @@ import java.io.IOException;
  * @author pkmst
  *
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2026-01-24T23:53:27.495589243Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen", date = "2026-01-30T14:40:59.600298007Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Controller
 public class DefaultApiController implements DefaultApi {
     private final ObjectMapper objectMapper;
@@ -37,6 +37,11 @@ public class DefaultApiController implements DefaultApi {
         // do some magic!
 
         if (accept != null && accept.contains("application/json")) {
+            return new ResponseEntity<Change>(objectMapper.readValue("", Change.class), HttpStatus.OK);
+        }
+
+
+        if (accept != null && accept.contains("application/octet-stream")) {
             return new ResponseEntity<Change>(objectMapper.readValue("", Change.class), HttpStatus.OK);
         }
 

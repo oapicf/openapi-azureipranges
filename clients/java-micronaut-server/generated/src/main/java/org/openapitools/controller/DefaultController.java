@@ -37,7 +37,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2026-01-24T23:53:23.882902882Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2026-01-30T14:40:57.143065855Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Controller
 @Tag(name = "Default", description = "The Default API")
 public class DefaultController {
@@ -53,7 +53,8 @@ public class DefaultController {
         summary = "Get Azure IP Ranges and Service Tags - Public Cloud",
         responses = {
             @ApiResponse(responseCode = "200", description = "Successful response", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = Change.class))
+                @Content(mediaType = "application/json", schema = @Schema(implementation = Change.class)),
+                @Content(mediaType = "application/octet-stream", schema = @Schema(implementation = Change.class))
             })
         },
         parameters = {
@@ -61,7 +62,7 @@ public class DefaultController {
         }
     )
     @Get(uri="/ServiceTags_Public_{version}.json")
-    @Produces(value = {"application/json"})
+    @Produces(value = {"application/json", "application/octet-stream"})
     @Secured({SecurityRule.IS_ANONYMOUS})
     public Mono<Change> getAzureIpRangesServiceTagsPublicCloud(
         @PathVariable(value="version") @NotNull String version

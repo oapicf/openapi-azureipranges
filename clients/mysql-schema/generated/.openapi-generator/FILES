@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 Model/Change.sql
 Model/Value.sql
 Model/ValueProperties.sql

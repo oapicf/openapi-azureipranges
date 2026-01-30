@@ -1,5 +1,6 @@
 .babelrc
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 docs/Change.md
@@ -15,3 +16,7 @@ src/index.js
 src/model/Change.js
 src/model/Value.js
 src/model/ValueProperties.js
+test/api/DefaultApi.spec.js
+test/model/Change.spec.js
+test/model/Value.spec.js
+test/model/ValueProperties.spec.js

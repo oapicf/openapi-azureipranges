@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T23:55:06.687020923Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-30T14:42:37.635095054Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ValueProperties {
 
   private @Nullable Integer changeNumber;

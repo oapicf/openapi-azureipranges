@@ -17,8 +17,11 @@ package body .Skeletons is
 
    use Swagger.Streams;
 
+   Mime_1 : aliased constant String := "application/octet-stream";
    Media_List_1 : aliased constant Swagger.Mime_List := (
-     1 => Swagger.Mime_Json);
+     1 => Swagger.Mime_Json,
+     
+     2 => Mime_1'Access);
 
    package body Skeleton is
 
@@ -48,10 +51,9 @@ package body .Skeletons is
             (Version, Result, Context);
          if Context.Get_Status = 200 then
             Context.Set_Description ("Successful response");
+            Stream.Write (Swagger.To_String (Result));
 
-            Stream.Start_Document;
-            Serialize (Stream, "", Result);
-            Stream.End_Document;
+
             return;
          end if;
 
@@ -84,10 +86,9 @@ package body .Skeletons is
             (Version, Result, Context);
          if Context.Get_Status = 200 then
             Context.Set_Description ("Successful response");
+            Stream.Write (Swagger.To_String (Result));
 
-            Stream.Start_Document;
-            Serialize (Stream, "", Result);
-            Stream.End_Document;
+
             return;
          end if;
 

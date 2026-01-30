@@ -13,8 +13,11 @@ with Swagger.Streams;
 package body .Clients is
    pragma Style_Checks ("-bmrIu");
 
+   Mime_1 : aliased constant String := "application/octet-stream";
    Media_List_1 : constant Swagger.Mime_List := (
-     1 => Swagger.Mime_Json   );
+     1 => Swagger.Mime_Json,
+   
+     2 => Mime_1'Access   );
 
 
    --  Get Azure IP Ranges and Service Tags _ Public Cloud

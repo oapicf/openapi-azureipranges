@@ -21,7 +21,7 @@ open class DefaultAPI {
         decoder.dateDecodingStrategy = .formatted(OpenISO8601DateFormatter())
         return decoder
     }()
-    public var baseURL = URL(string: "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+    public var baseURL = URL(string: "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
 
     public init(_ transport: OpenAPITransport) {
         self.transport = transport

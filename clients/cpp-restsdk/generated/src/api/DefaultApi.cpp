@@ -51,6 +51,7 @@ pplx::task<std::shared_ptr<Change>> DefaultApi::getAzureIpRangesServiceTagsPubli
 
     std::unordered_set<utility::string_t> localVarResponseHttpContentTypes;
     localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/json") );
+    localVarResponseHttpContentTypes.insert( utility::conversions::to_string_t("application/octet-stream") );
 
     utility::string_t localVarResponseHttpContentType;
 

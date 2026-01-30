@@ -32,6 +32,7 @@ final case class DefaultApiRoutes[
 
     val responses: getAzureIpRangesServiceTagsPublicCloudResponses[F] = new getAzureIpRangesServiceTagsPublicCloudResponses[F] {
       def resp200(value: Change): F[Response[F]] = Ok(value)
+      def resp200(): F[Response[F]] = Ok()
     }
   }
 
@@ -42,6 +43,7 @@ final case class DefaultApiRoutes[
 object DefaultApiDelegate {
   trait getAzureIpRangesServiceTagsPublicCloudResponses[F[_]] {
     def resp200(value: Change): F[Response[F]]
+    def resp200(): F[Response[F]]
   }
 
 }

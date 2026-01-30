@@ -88,7 +88,7 @@ the **null** instruction by real code.
 
 ### API Documentation
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715_5596_4529_9B13_DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715_5596_4529_9b13_da13a5de5b63*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

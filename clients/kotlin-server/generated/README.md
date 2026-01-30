@@ -45,7 +45,7 @@ docker run -p 8080:8080 kotlin-server
 <a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

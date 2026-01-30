@@ -93,7 +93,7 @@ namespace Org.OpenAPITools
                     c.CustomSchemaIds(type => type.FriendlyId(true));
                     c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{Assembly.GetExecutingAssembly().GetName().Name}.xml");
                     // Sets the basePath property in the OpenAPI document generated
-                    c.DocumentFilter<BasePathFilter>("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
+                    c.DocumentFilter<BasePathFilter>("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
 
                     // Include DataAnnotation attributes on Controller Action parameters as OpenAPI validation rules (e.g required, pattern, ..)
                     // Use [ValidateModelState] on Actions to actually validate it in C# as well!

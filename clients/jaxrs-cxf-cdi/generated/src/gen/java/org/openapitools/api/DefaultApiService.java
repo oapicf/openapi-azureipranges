@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-01-24T23:53:36.355099883Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-01-30T14:41:07.939334150Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public interface DefaultApiService {
       public Response getAzureIpRangesServiceTagsPublicCloud(String version, SecurityContext securityContext);
 }

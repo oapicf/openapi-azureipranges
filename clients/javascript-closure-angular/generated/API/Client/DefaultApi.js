@@ -27,7 +27,7 @@ API.Client.DefaultApi = function($http, $httpParamSerializer, $injector) {
   /** @private {!string} */
   this.basePath_ = $injector.has('DefaultApiBasePath') ?
                    /** @type {!string} */ ($injector.get('DefaultApiBasePath')) :
-                   'https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63';
+                   'https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63';
 
   /** @private {!Object<string, string>} */
   this.defaultHeaders_ = $injector.has('DefaultApiDefaultHeaders') ?

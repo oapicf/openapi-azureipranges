@@ -51,7 +51,7 @@ QHttpEngine::Socket* OAIDefaultApiRequest::getRawSocket(){
 
 
 void OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloudRequest(const QString& versionstr){
-    qDebug() << "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json";
+    qDebug() << "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json";
     connect(this, &OAIDefaultApiRequest::getAzureIpRangesServiceTagsPublicCloud, handler.data(), &OAIDefaultApiHandler::getAzureIpRangesServiceTagsPublicCloud);
 
     

@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     match full_path, to: "#{opts.fetch(:controller_name)}##{opts[:action_name]}", via: http_method
   end
 
-  add_openapi_route 'GET', '/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_{version}.json', controller_name: 'default', action_name: 'get_azure_ip_ranges_service_tags_public_cloud'
+  add_openapi_route 'GET', '/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json', controller_name: 'default', action_name: 'get_azure_ip_ranges_service_tags_public_cloud'
 end

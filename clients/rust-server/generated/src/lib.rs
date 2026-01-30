@@ -14,7 +14,7 @@ use serde::{Serialize, Deserialize};
 #[cfg(any(feature = "client", feature = "server"))]
 type ServiceError = Box<dyn Error + Send + Sync + 'static>;
 
-pub const BASE_PATH: &str = "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+pub const BASE_PATH: &str = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
 pub const API_VERSION: &str = "0.10.1-pre.0";
 
 mod auth;

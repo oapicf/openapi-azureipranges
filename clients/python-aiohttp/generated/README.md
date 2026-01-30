@@ -21,13 +21,13 @@ python3 -m openapi_server
 and open your browser to here:
 
 ```
-http://localhost:8080/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ui/
+http://localhost:8080/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ui/
 ```
 
 Your OpenAPI definition lives here:
 
 ```
-http://localhost:8080/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/openapi.json
+http://localhost:8080/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/openapi.json
 ```
 
 To launch the integration tests, use pytest:

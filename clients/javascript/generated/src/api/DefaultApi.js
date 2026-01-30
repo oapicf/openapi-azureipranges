@@ -68,7 +68,7 @@ export default class DefaultApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json', 'application/octet-stream'];
       let returnType = Change;
       return this.apiClient.callApi(
         '/ServiceTags_Public_{version}.json', 'GET',

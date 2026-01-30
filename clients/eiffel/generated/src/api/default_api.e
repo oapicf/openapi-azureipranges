@@ -45,7 +45,7 @@ feature -- API Access
 			l_path.replace_substring_all ("{"+"version"+"}", api_client.url_encode (version.out))
 
 
-			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
+			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json", "application/octet-stream">>)  as l_accept then
 				l_request.add_header(l_accept,"Accept");
 			end
 			l_request.add_header(api_client.select_header_content_type ({ARRAY [STRING]}<<>>),"Content-Type")

@@ -19,7 +19,7 @@ import type { Configuration } from './configuration';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 
-export const BASE_PATH = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63".replace(/\/+$/, "");
+export const BASE_PATH = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63".replace(/\/+$/, "");
 
 export const COLLECTION_FORMATS = {
     csv: ",",

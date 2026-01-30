@@ -44,17 +44,17 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
      */
     @javax.annotation.Nonnull
     public String getBasePath() {
-        return "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+        return "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
     }
 
     /**
      * Returns a stateless {@link HttpHandler} that configures all endpoints in this server.
      *
-     * <p>Endpoints bound in this method do NOT start with "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63", and
+     * <p>Endpoints bound in this method do NOT start with "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", and
      * it's your responsibility to configure a {@link PathHandler} with a prefix path
      * by calling {@link PathHandler#addPrefixPath} like so:</p>
      *
-     * <code>pathHandler.addPrefixPath("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63", handler)</code>
+     * <code>pathHandler.addPrefixPath("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", handler)</code>
      *
      * <p>Note: the endpoints bound to the returned {@link HttpHandler} are stateless and won't
     * retain any state between multiple sessions.</p>
@@ -73,7 +73,7 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
      * <p>Note: the endpoints bound to the returned {@link HttpHandler} are stateless and won't
      * retain any state between multiple sessions.</p>
      *
-     * @param withBasePath if true, all endpoints would start with "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+     * @param withBasePath if true, all endpoints would start with "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
      * @return an {@link HttpHandler} of type {@link RoutingHandler}
      */
     @javax.annotation.Nonnull
@@ -106,11 +106,11 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
     /**
      * Returns a stateful {@link HttpHandler} that configures all endpoints in this server.
      *
-     * <p>Endpoints bound in this method do NOT start with "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63", and
+     * <p>Endpoints bound in this method do NOT start with "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", and
      * it's your responsibility to configure a {@link PathHandler} with a prefix path
      * by calling {@link PathHandler#addPrefixPath} like so:</p>
      *
-     * <code>pathHandler.addPrefixPath("/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63", handler)</code>
+     * <code>pathHandler.addPrefixPath("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63", handler)</code>
      *
      * <p>Note: the endpoints bound to the returned {@link HttpHandler} are stateful and will
      * retain any state between multiple sessions.</p>
@@ -128,7 +128,7 @@ abstract public class PathHandlerProvider implements HandlerProvider, PathHandle
      * <p>Note: the endpoints bound to the returned {@link HttpHandler} are stateful and will
      * retain any state between multiple sessions.</p>
      *
-     * @param withBasePath if true, all endpoints would start with "/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+     * @param withBasePath if true, all endpoints would start with "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
      * @return an {@link HttpHandler} of type {@link RoutingHandler}
      */
     @javax.annotation.Nonnull

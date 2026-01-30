@@ -1,6 +1,6 @@
 # DefaultController
 
-All URIs are relative to `"/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"`
+All URIs are relative to `"/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"`
 
 The controller class is defined in **[DefaultController.java](../../src/main/java/org/openapitools/controller/DefaultController.java)**
 
@@ -29,5 +29,5 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
  - **Accepts Content-Type**: Not defined
- - **Produces Content-Type**: `application/json`
+ - **Produces Content-Type**: `application/json`, `application/octet-stream`
 

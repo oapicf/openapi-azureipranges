@@ -61,10 +61,10 @@ import com.github.openapiazureipranges.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    protected String basePath = "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+    protected String basePath = "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63",
+      "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
       "No description provided",
       new HashMap<String, ServerVariable>()
     )
@@ -157,7 +157,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63)
+     * @param basePath Base path of the URL (e.g https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63)
      * @return An instance of ApiClient
      */
     public ApiClient setBasePath(String basePath) {

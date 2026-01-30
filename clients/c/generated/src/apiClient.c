@@ -8,7 +8,7 @@ size_t writeDataCallback(void *buffer, size_t size, size_t nmemb, void *userp);
 
 apiClient_t *apiClient_create() {
     apiClient_t *apiClient = malloc(sizeof(apiClient_t));
-    apiClient->basePath = strdup("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
+    apiClient->basePath = strdup("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
     apiClient->sslConfig = NULL;
     apiClient->curlConfig = NULL;
     apiClient->curl_pre_invoke_func = NULL;
@@ -29,7 +29,7 @@ apiClient_t *apiClient_create_with_base_path(const char *basePath
     if(basePath){
         apiClient->basePath = strdup(basePath);
     }else{
-        apiClient->basePath = strdup("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63");
+        apiClient->basePath = strdup("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
     }
 
     if(sslConfig){

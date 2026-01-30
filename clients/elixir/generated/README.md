@@ -31,14 +31,14 @@ You can override the URL of your server (e.g. if you have a separate development
 configuration files).
 
 ```elixir
-config :azure_ip_ranges_and_service_tags_public_cloud, base_url: "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63"
+config :azure_ip_ranges_and_service_tags_public_cloud, base_url: "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
 ```
 
 Multiple clients for the same API with different URLs can be created passing different `base_url`s when calling
 `AzureIPRangesAndServiceTags-PublicCloud.Connection.new/1`:
 
 ```elixir
-client = AzureIPRangesAndServiceTags-PublicCloud.Connection.new(base_url: "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+client = AzureIPRangesAndServiceTags-PublicCloud.Connection.new(base_url: "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
 ```
 
 [exdoc]: https://github.com/elixir-lang/ex_doc

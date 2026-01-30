@@ -35,7 +35,7 @@ mod paths {
 
     lazy_static! {
         pub static ref GLOBAL_REGEX_SET: regex::RegexSet = regex::RegexSet::new(vec![
-            r"^/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_(?P<version>[^/?#]*).json$"
+            r"^/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$"
         ])
         .expect("Unable to create global regex set");
     }
@@ -43,7 +43,7 @@ mod paths {
     lazy_static! {
         pub static ref REGEX_SERVICETAGS_PUBLIC_VERSION_JSON: regex::Regex =
             #[allow(clippy::invalid_regex)]
-            regex::Regex::new(r"^/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_(?P<version>[^/?#]*).json$")
+            regex::Regex::new(r"^/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$")
                 .expect("Unable to create regex for SERVICETAGS_PUBLIC_VERSION_JSON");
     }
 }

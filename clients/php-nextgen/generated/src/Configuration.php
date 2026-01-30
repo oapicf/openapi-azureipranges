@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected string $host = 'https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63';
+    protected string $host = 'https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -468,7 +468,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63",
+                "url" => "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
                 "description" => "No description provided",
             ]
         ];

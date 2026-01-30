@@ -79,7 +79,7 @@ object DefaultApiExample extends App {
     import system.dispatcher
     // Create invoker to execute requests
     val apiInvoker = ApiInvoker()
-    val apiInstance = DefaultApi("https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63")
+    val apiInstance = DefaultApi("https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
     val version: String = version_example // String | The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
     val request = apiInstance.getAzureIpRangesServiceTagsPublicCloud(version)
@@ -109,7 +109,7 @@ object DefaultApiExample extends App {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63*
+All URIs are relative to *https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

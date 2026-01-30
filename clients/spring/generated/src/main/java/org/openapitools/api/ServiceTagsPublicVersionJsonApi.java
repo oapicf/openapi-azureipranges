@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-24T23:55:06.687020923Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-30T14:42:37.635095054Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Validated
 @Tag(name = "ServiceTags_Public_{version}.json", description = "the ServiceTags_Public_{version}.json API")
 public interface ServiceTagsPublicVersionJsonApi {
@@ -56,14 +56,15 @@ public interface ServiceTagsPublicVersionJsonApi {
         description = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.",
         responses = {
             @ApiResponse(responseCode = "200", description = "Successful response", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = Change.class))
+                @Content(mediaType = "application/json", schema = @Schema(implementation = Change.class)),
+                @Content(mediaType = "application/octet-stream", schema = @Schema(implementation = Change.class))
             })
         }
     )
     @RequestMapping(
         method = RequestMethod.GET,
         value = ServiceTagsPublicVersionJsonApi.PATH_GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD,
-        produces = { "application/json" }
+        produces = { "application/json", "application/octet-stream" }
     )
     default ResponseEntity<Change> getAzureIpRangesServiceTagsPublicCloud(
         @NotNull @Parameter(name = "version", description = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506", required = true, in = ParameterIn.PATH) @PathVariable("version") String version
@@ -73,6 +74,11 @@ public interface ServiceTagsPublicVersionJsonApi {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
                     String exampleString = "{ \"cloud\" : \"cloud\", \"values\" : [ { \"name\" : \"name\", \"id\" : \"id\", \"properties\" : { \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ], \"systemService\" : \"systemService\", \"regionId\" : 1, \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ], \"changeNumber\" : 6, \"region\" : \"region\", \"platform\" : \"platform\" } }, { \"name\" : \"name\", \"id\" : \"id\", \"properties\" : { \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ], \"systemService\" : \"systemService\", \"regionId\" : 1, \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ], \"changeNumber\" : 6, \"region\" : \"region\", \"platform\" : \"platform\" } } ], \"changeNumber\" : 0 }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/octet-stream"))) {
+                    String exampleString = "Custom MIME type example not yet supported: application/octet-stream";
+                    ApiUtil.setExampleResponse(request, "application/octet-stream", exampleString);
                     break;
                 }
             }

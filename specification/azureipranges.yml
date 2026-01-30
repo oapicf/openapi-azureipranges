@@ -11,7 +11,7 @@ info:
     email: blah+oapicf@cliffano.com
 servers:
   - url: >-
-      https://download.microsoft.com/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
+      https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
 paths:
   /ServiceTags_Public_{version}.json:
     get:
@@ -32,6 +32,9 @@ paths:
           description: Successful response
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/Change'
+            application/octet-stream:
               schema:
                 $ref: '#/components/schemas/Change'
 components:

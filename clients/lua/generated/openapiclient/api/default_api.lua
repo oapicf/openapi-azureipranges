@@ -34,7 +34,7 @@ local function new_default_api(authority, basePath, schemes)
 	return setmetatable({
 		host = host;
 		port = port;
-		basePath = basePath or "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63";
+		basePath = basePath or "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
 		schemes = schemes_map;
 		default_scheme = default_scheme;
 		http_username = nil;
@@ -56,7 +56,7 @@ function default_api:get_azure_ip_ranges_service_tags_public_cloud(version)
 	-- set HTTP verb
 	req.headers:upsert(":method", "GET")
 	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
+	--local var_accept = { "application/json", "application/octet-stream" }
 	req.headers:upsert("content-type", "application/json")
 
 
