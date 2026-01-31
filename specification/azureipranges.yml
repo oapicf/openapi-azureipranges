@@ -2,7 +2,7 @@
 openapi: 3.1.0
 info:
   title: Azure IP Ranges and Service Tags - Public Cloud
-  version: 1.0.0
+  version: 1.0.1-pre.0
   license:
     name: MIT
     identifier: MIT
