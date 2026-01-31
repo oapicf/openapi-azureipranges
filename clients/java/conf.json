@@ -1,6 +1,6 @@
 {
   "artifactId": "openapiazureipranges",
-  "artifactVersion": "0.10.1-pre.0",
+  "artifactVersion": "1.0.0",
   "artifactUrl": "https://github.com/oapicf/openapi-azureipranges",
   "artifactDescription": "OpenAPI specification and a set of generated API clients for Azure IP Ranges and Service Tags",
   "groupId": "com.github",
