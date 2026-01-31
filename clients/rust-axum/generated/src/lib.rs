@@ -14,7 +14,7 @@
     clippy::too_many_arguments
 )]
 
-pub const BASE_PATH: &str = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
+pub const BASE_PATH: &str = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
 pub const API_VERSION: &str = "0.10.1-pre.0";
 
 #[cfg(feature = "server")]

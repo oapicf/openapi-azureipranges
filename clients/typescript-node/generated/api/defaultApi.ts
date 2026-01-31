@@ -96,7 +96,7 @@ export class DefaultApi {
             .replace('{' + 'version' + '}', encodeURIComponent(String(version)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'application/octet-stream'];
+        const produces = ['application/octet-stream'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

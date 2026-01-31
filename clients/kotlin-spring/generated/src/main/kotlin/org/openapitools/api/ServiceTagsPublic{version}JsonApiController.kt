@@ -44,7 +44,7 @@ class ServiceTagsPublic{version}JsonApiController() {
     @RequestMapping(
         method = [RequestMethod.GET],
         value = [PATH_GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD /* "/ServiceTags_Public_{version}.json" */],
-        produces = ["application/json", "application/octet-stream"]
+        produces = ["application/octet-stream"]
     )
     fun getAzureIpRangesServiceTagsPublicCloud(
         @Parameter(description = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506", required = true) @PathVariable("version") version: kotlin.String
@@ -54,7 +54,7 @@ class ServiceTagsPublic{version}JsonApiController() {
 
     companion object {
         //for your own safety never directly reuse these path definitions in tests
-        const val BASE_PATH: String = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
+        const val BASE_PATH: String = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
         const val PATH_GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD: String = "/ServiceTags_Public_{version}.json"
     }
 }

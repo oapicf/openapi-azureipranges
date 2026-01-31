@@ -29,52 +29,16 @@ paths:
       responses:
         "200":
           content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Change"
             application/octet-stream:
               schema:
                 $ref: "#/components/schemas/Change"
           description: Successful response
       summary: Get Azure IP Ranges and Service Tags - Public Cloud
       x-accepts:
-      - application/json
       - application/octet-stream
 components:
   schemas:
     Change:
-      example:
-        cloud: cloud
-        values:
-        - name: name
-          id: id
-          properties:
-            networkFeatures:
-            - networkFeatures
-            - networkFeatures
-            systemService: systemService
-            regionId: 1
-            addressPrefixes:
-            - addressPrefixes
-            - addressPrefixes
-            changeNumber: 6
-            region: region
-            platform: platform
-        - name: name
-          id: id
-          properties:
-            networkFeatures:
-            - networkFeatures
-            - networkFeatures
-            systemService: systemService
-            regionId: 1
-            addressPrefixes:
-            - addressPrefixes
-            - addressPrefixes
-            changeNumber: 6
-            region: region
-            platform: platform
-        changeNumber: 0
       properties:
         changeNumber:
           description: The number associated with the change.
@@ -87,21 +51,6 @@ components:
             $ref: "#/components/schemas/Value"
           type: array
     Value:
-      example:
-        name: name
-        id: id
-        properties:
-          networkFeatures:
-          - networkFeatures
-          - networkFeatures
-          systemService: systemService
-          regionId: 1
-          addressPrefixes:
-          - addressPrefixes
-          - addressPrefixes
-          changeNumber: 6
-          region: region
-          platform: platform
       properties:
         name:
           description: The name of the value.
@@ -112,18 +61,6 @@ components:
         properties:
           $ref: "#/components/schemas/ValueProperties"
     ValueProperties:
-      example:
-        networkFeatures:
-        - networkFeatures
-        - networkFeatures
-        systemService: systemService
-        regionId: 1
-        addressPrefixes:
-        - addressPrefixes
-        - addressPrefixes
-        changeNumber: 6
-        region: region
-        platform: platform
       properties:
         changeNumber:
           description: The number associated with the change.

@@ -60,7 +60,7 @@ $Manifest = @{
     ModuleVersion = '0.1.2'
 
     RootModule = 'PSOpenAPITools.psm1'
-    Guid = '{EE7CB791-B431-4FE7-A96B-F7CD2E483FEE}' # Has to be static, otherwise each new build will be considered different module
+    Guid = '{3EEB1E33-1996-49FF-A28C-5ECAA52081ED}' # Has to be static, otherwise each new build will be considered different module
 
     PowerShellVersion = '6.2'
 

@@ -20,7 +20,7 @@ class ScalatraBootstrap extends LifeCycle {
 
   override def init(context: ServletContext) {
     try {
-      context mount (new DefaultApi, "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/Default/*")
+      context mount (new DefaultApi, "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/Default/*")
       context mount (new ResourcesApp, "/api-docs/*")
     } catch {
       case e: Throwable => e.printStackTrace()

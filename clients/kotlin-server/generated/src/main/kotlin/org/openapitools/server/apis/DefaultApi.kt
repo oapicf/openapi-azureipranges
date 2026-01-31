@@ -31,36 +31,8 @@ fun Route.DefaultApi() {
     val empty = mutableMapOf<String, Any?>()
 
     get<Paths.getAzureIpRangesServiceTagsPublicCloud> {
-        val exampleContentType = "application/json"
-        val exampleContentString = """{
-          "cloud" : "cloud",
-          "values" : [ {
-            "name" : "name",
-            "id" : "id",
-            "properties" : {
-              "networkFeatures" : [ "networkFeatures", "networkFeatures" ],
-              "systemService" : "systemService",
-              "regionId" : 1,
-              "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
-              "changeNumber" : 6,
-              "region" : "region",
-              "platform" : "platform"
-            }
-          }, {
-            "name" : "name",
-            "id" : "id",
-            "properties" : {
-              "networkFeatures" : [ "networkFeatures", "networkFeatures" ],
-              "systemService" : "systemService",
-              "regionId" : 1,
-              "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
-              "changeNumber" : 6,
-              "region" : "region",
-              "platform" : "platform"
-            }
-          } ],
-          "changeNumber" : 0
-        }"""
+        val exampleContentType = "application/octet-stream"
+        val exampleContentString = """Custom MIME type example not yet supported: application/octet-stream"""
         
         when (exampleContentType) {
             "application/json" -> call.respondText(exampleContentType, ContentType.Application.Json)

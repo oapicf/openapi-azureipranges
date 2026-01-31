@@ -26,9 +26,9 @@ begin
    .Servers.Server_Impl.Register (App);
 
    Server.Configure (Config);
-   Server.Register_Application ("/download.microsoft.com/download/7/1/d/71d86715_5596_4529_9b13_da13a5de5b63", App'Unchecked_Access);
+   Server.Register_Application ("/download/7/1/d/71d86715_5596_4529_9b13_da13a5de5b63", App'Unchecked_Access);
    App.Dump_Routes (Util.Log.INFO_LEVEL);
-   Log.Info ("Connect your browser to: http://localhost:{0}/download.microsoft.com/download/7/1/d/71d86715_5596_4529_9b13_da13a5de5b63/ui/index.html",
+   Log.Info ("Connect your browser to: http://localhost:{0}/download/7/1/d/71d86715_5596_4529_9b13_da13a5de5b63/ui/index.html",
              Util.Strings.Image (Port));
 
    Server.Start;

@@ -18,7 +18,7 @@ const _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi = Di
 function _oacinternal_get_azure_ip_ranges_service_tags_public_cloud(_api::DefaultApi, version::String; _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_azure_ip_ranges_service_tags_public_cloud_DefaultApi, "/ServiceTags_Public_{version}.json", [])
     OpenAPI.Clients.set_param(_ctx.path, "version", version)  # type String
-    OpenAPI.Clients.set_header_accept(_ctx, ["application/json", "application/octet-stream", ])
+    OpenAPI.Clients.set_header_accept(_ctx, ["application/octet-stream", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
 end

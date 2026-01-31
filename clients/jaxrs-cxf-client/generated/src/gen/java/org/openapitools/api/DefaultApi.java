@@ -31,7 +31,7 @@ public interface DefaultApi  {
      */
     @GET
     
-    @Produces({ "application/json", "application/octet-stream" })
+    @Produces({ "application/octet-stream" })
     @ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = Change.class) })

@@ -60,7 +60,7 @@ class DefaultController extends Controller
     public function getAzureIpRangesServiceTagsPublicCloudAction(Request $request, $version)
     {
         // Figure out what data format to return to the client
-        $produces = ['application/json', 'application/octet-stream'];
+        $produces = ['application/octet-stream'];
         // Figure out what the client accepts
         $clientAccepts = $request->headers->has('Accept')?$request->headers->get('Accept'):'*/*';
         $responseFormat = $this->getOutputFormat($clientAccepts, $produces);

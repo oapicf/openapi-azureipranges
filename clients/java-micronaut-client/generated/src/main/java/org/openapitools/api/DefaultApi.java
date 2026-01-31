@@ -26,7 +26,7 @@ import java.util.Map;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2026-01-30T14:40:55.865436358Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautClientCodegen", date="2026-01-31T02:43:52.316724496Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 @Client("${openapi-micronaut-client-base-path}")
 public interface DefaultApi {
     /**
@@ -37,7 +37,7 @@ public interface DefaultApi {
      * @return Change
      */
     @Get(uri="/ServiceTags_Public_{version}.json")
-    @Consumes({"application/json", "application/octet-stream"})
+    @Consumes({"application/octet-stream"})
     Mono<Change> getAzureIpRangesServiceTagsPublicCloud(
         @PathVariable(name="version") @NotNull String version
     );

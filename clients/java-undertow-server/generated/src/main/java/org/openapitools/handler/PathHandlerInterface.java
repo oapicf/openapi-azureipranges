@@ -23,7 +23,7 @@ public interface PathHandlerInterface {
      *
      * <p>Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.</p>
      *
-     * <p><b>Endpoint</b>: {@link Methods#GET GET} "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json" (<i>privileged: false</i>)</p>
+     * <p><b>Endpoint</b>: {@link Methods#GET GET} "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json" (<i>privileged: false</i>)</p>
      *
      * <p><b>Request parameters</b>:</p>
      * <ul>
@@ -38,7 +38,7 @@ public interface PathHandlerInterface {
      * </li>
      * </ul>
      *
-     * <p><b>Produces</b>: [{isJson=true, mediaType=application/json}, {mediaType=application/octet-stream}]</p>
+     * <p><b>Produces</b>: [{mediaType=application/octet-stream}]</p>
      * <p><b>Returns</b>: {@link Change}</p>
      *
      * <p><b>Responses</b>:</p>

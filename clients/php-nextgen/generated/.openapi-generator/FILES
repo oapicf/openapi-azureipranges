@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .phplint.yml
 .travis.yml
@@ -21,7 +20,3 @@ src/Model/ModelInterface.php
 src/Model/Value.php
 src/Model/ValueProperties.php
 src/ObjectSerializer.php
-tests/Api/DefaultApiTest.php
-tests/Model/ChangeTest.php
-tests/Model/ValuePropertiesTest.php
-tests/Model/ValueTest.php

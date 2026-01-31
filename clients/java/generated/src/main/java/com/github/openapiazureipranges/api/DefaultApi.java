@@ -112,7 +112,6 @@ public class DefaultApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json",
             "application/octet-stream"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);

@@ -2,7 +2,6 @@
 .github/workflows/r-client.yaml
 .gitignore
 .lintr
-.openapi-generator-ignore
 .travis.yml
 DESCRIPTION
 NAMESPACE
@@ -19,7 +18,3 @@ docs/Value.md
 docs/ValueProperties.md
 git_push.sh
 tests/testthat.R
-tests/testthat/test_change.R
-tests/testthat/test_default_api.R
-tests/testthat/test_value.R
-tests/testthat/test_value_properties.R

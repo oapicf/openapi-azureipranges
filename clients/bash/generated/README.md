@@ -99,7 +99,7 @@ In Zsh, the generated `_` Zsh completion file must be copied to one of the folde
 
 ## Documentation for API Endpoints
 
-All URIs are relative to */download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
+All URIs are relative to */download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

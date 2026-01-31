@@ -56,8 +56,8 @@ function default_api:get_azure_ip_ranges_service_tags_public_cloud(version)
 	-- set HTTP verb
 	req.headers:upsert(":method", "GET")
 	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json", "application/octet-stream" }
-	req.headers:upsert("content-type", "application/json")
+	--local var_accept = { "application/octet-stream" }
+	req.headers:upsert("content-type", "application/octet-stream")
 
 
 	-- make the HTTP call

@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 models/change.proto
 models/value.proto

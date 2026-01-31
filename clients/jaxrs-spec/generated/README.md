@@ -20,7 +20,7 @@ mvn -Dtomee-embedded-plugin.http=8080 package org.apache.tomee.maven:tomee-embed
 You can then call your server endpoints under:
 
 ```
-http://localhost:8080/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
+http://localhost:8080/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
 ```
 
 Note that if you have configured the `host` to be something other than localhost, the calls through

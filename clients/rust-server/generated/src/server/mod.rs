@@ -35,7 +35,7 @@ mod paths {
 
     lazy_static! {
         pub static ref GLOBAL_REGEX_SET: regex::RegexSet = regex::RegexSet::new(vec![
-            r"^/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$"
+            r"^/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$"
         ])
         .expect("Unable to create global regex set");
     }
@@ -43,7 +43,7 @@ mod paths {
     lazy_static! {
         pub static ref REGEX_SERVICETAGS_PUBLIC_VERSION_JSON: regex::Regex =
             #[allow(clippy::invalid_regex)]
-            regex::Regex::new(r"^/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$")
+            regex::Regex::new(r"^/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_(?P<version>[^/?#]*).json$")
                 .expect("Unable to create regex for SERVICETAGS_PUBLIC_VERSION_JSON");
     }
 }
@@ -266,9 +266,8 @@ impl<T, C, ReqBody> hyper::service::Service<(Request<ReqBody>, C)> for Service<T
                                                     *response.status_mut() = StatusCode::from_u16(200).expect("Unable to turn 200 into a StatusCode");
                                                     response.headers_mut().insert(
                                                         CONTENT_TYPE,
-                                                        HeaderValue::from_static("application/json"));
-                                                    // JSON Body
-                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
+                                                        HeaderValue::from_static("application/octet-stream"));
+                                                    // Plain text Body
                                                     *response.body_mut() = body_from_string(body);
 
                                                 },

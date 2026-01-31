@@ -294,7 +294,7 @@ namespace Org.OpenAPITools.Client
         /// <summary>
         /// The context path of the API
         /// </summary>
-        public const string CONTEXT_PATH = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
+        public const string CONTEXT_PATH = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
 
         /// <summary>
         /// The host of the API

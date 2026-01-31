@@ -26,7 +26,7 @@ class ApiClient extends OAGAC\AbstractApiClient
      */
     public function getAzureIpRangesServiceTagsPublicCloudRaw(
         \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
-        string $responseMediaType = 'application/json'
+        string $responseMediaType = 'application/octet-stream'
     ): ResponseInterface
     {
         $request = $this->createRequest('GET', '/ServiceTags_Public_{version}.json', $this->getPathParameters($parameters), []);
@@ -45,7 +45,7 @@ class ApiClient extends OAGAC\AbstractApiClient
      */
     public function getAzureIpRangesServiceTagsPublicCloud(
         \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
-        string $responseMediaType = 'application/json'
+        string $responseMediaType = 'application/octet-stream'
     ): array
     {
         $response = $this->getAzureIpRangesServiceTagsPublicCloudRaw($parameters, $responseMediaType);
@@ -75,7 +75,7 @@ class ApiClient extends OAGAC\AbstractApiClient
      */
     public function getAzureIpRangesServiceTagsPublicCloudResult(
         \App\DTO\GetAzureIpRangesServiceTagsPublicCloudParameterData $parameters,
-        string $responseMediaType = 'application/json'
+        string $responseMediaType = 'application/octet-stream'
     ): \App\DTO\Change
     {
         return $this->getSuccessfulContent(...$this->getAzureIpRangesServiceTagsPublicCloud($parameters, $responseMediaType));

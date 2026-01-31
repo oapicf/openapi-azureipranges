@@ -54,7 +54,7 @@ func (c *DefaultAPIController) Routes() Routes {
 		"GetAzureIpRangesServiceTagsPublicCloud": Route{
 			"GetAzureIpRangesServiceTagsPublicCloud",
 			strings.ToUpper("Get"),
-			"/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
+			"/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
 			c.GetAzureIpRangesServiceTagsPublicCloud,
 		},
 	}
@@ -66,7 +66,7 @@ func (c *DefaultAPIController) OrderedRoutes() []Route {
 		Route{
 			"GetAzureIpRangesServiceTagsPublicCloud",
 			strings.ToUpper("Get"),
-			"/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
+			"/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
 			c.GetAzureIpRangesServiceTagsPublicCloud,
 		},
 	}

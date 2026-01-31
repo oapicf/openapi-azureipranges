@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * Value
  */
 
-@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2026-01-30T14:41:04.448868398Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.JavaCamelServerCodegen", date = "2026-01-31T02:44:00.251551788Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class Value {
 
   private String name;

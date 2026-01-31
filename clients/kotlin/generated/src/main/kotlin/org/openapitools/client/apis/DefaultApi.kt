@@ -106,7 +106,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
+        localVariableHeaders["Accept"] = "application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.GET,

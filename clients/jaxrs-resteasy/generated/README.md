@@ -17,7 +17,7 @@ mvn -Djetty.http.port=8080 package org.eclipse.jetty:jetty-maven-plugin:run
 You can then view the OpenAPI v2 specification here:
 
 ```
-http://localhost:8080/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/swagger.json
+http://localhost:8080/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/swagger.json
 ```
 
 Note that if you have configured the `host` to be something other than localhost, the calls through

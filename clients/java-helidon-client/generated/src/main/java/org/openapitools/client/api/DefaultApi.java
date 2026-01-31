@@ -43,6 +43,6 @@ public interface DefaultApi  {
      */
     @GET
     
-    @Produces({ "application/json", "application/octet-stream" })
+    @Produces({ "application/octet-stream" })
     Change getAzureIpRangesServiceTagsPublicCloud(@PathParam("version") String version) throws ApiException, ProcessingException;
 }

@@ -46,7 +46,7 @@ module App =
 
   let webApp =
     choose (CustomHandlers.handlers @ [
-      HttpGet >=> routeBind<GetAzureIpRangesServiceTagsPublicCloudPathParams> "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json"  (fun x ->  DefaultApiHandler.GetAzureIpRangesServiceTagsPublicCloud x);
+      HttpGet >=> routeBind<GetAzureIpRangesServiceTagsPublicCloudPathParams> "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json"  (fun x ->  DefaultApiHandler.GetAzureIpRangesServiceTagsPublicCloud x);
       RequestErrors.notFound (text "Not Found")
     ])
   // ---------------------------------

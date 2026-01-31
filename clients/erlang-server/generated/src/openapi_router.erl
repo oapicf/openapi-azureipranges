@@ -49,7 +49,7 @@ get_operations() ->
     #{ 
        'getAzureIpRangesServiceTagsPublicCloud' => #{
             servers => [],
-            base_path => "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
+            base_path => "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63",
             path => "/ServiceTags_Public_:version.json",
             method => <<"GET">>,
             handler => 'openapi_default_handler'

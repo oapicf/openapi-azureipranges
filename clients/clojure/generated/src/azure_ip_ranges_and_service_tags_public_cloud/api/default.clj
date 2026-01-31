@@ -21,7 +21,7 @@
              :query-params  {}
              :form-params   {}
              :content-types []
-             :accepts       ["application/json" "application/octet-stream"]
+             :accepts       ["application/octet-stream"]
              :auth-names    []}))
 
 (defn-spec get-azure-ip-ranges-service-tags-public-cloud change-spec

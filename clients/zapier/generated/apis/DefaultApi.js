@@ -30,7 +30,7 @@ module.exports = {
                     removeMissingValuesFrom: { params: true, body: true },
                     headers: {
                         'Content-Type': '',
-                        'Accept': 'application/json, application/octet-stream',
+                        'Accept': 'application/octet-stream',
                     },
                     params: {
                     },

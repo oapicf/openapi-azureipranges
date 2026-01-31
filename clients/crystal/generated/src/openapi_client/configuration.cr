@@ -131,7 +131,7 @@ module OpenAPIClient
     def initialize
       @scheme = "https"
       @host = "download.microsoft.com"
-      @base_path = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
+      @base_path = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63"
       @server_index = 0
       @server_operation_index = {} of Symbol => String
       @server_variables = {} of Symbol => String

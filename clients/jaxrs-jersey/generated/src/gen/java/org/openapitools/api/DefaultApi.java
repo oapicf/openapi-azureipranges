@@ -29,7 +29,7 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the default API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-01-30T14:41:09.090582693Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2026-01-31T02:44:04.888144269Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class DefaultApi  {
    private final DefaultApiService delegate;
 
@@ -57,7 +57,7 @@ public class DefaultApi  {
     @javax.ws.rs.GET
     
     
-    @Produces({ "application/json", "application/octet-stream" })
+    @Produces({ "application/octet-stream" })
     @io.swagger.annotations.ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful response", response = Change.class)

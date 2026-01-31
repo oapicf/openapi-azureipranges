@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to */download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
+All URIs are relative to */download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,7 +38,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not Applicable
-- **Accept**: application/json, application/octet-stream
+- **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -13,7 +13,7 @@ use crate::{models, types::*};
 pub enum GetAzureIpRangesServiceTagsPublicCloudResponse {
     /// Successful response
     Status200_SuccessfulResponse
-    (models::Change)
+    (String)
 }
 
 
@@ -25,7 +25,7 @@ pub enum GetAzureIpRangesServiceTagsPublicCloudResponse {
 pub trait Default<E: std::fmt::Debug + Send + Sync + 'static = ()>: super::ErrorHandler<E> {
     /// Get Azure IP Ranges and Service Tags - Public Cloud.
     ///
-    /// GetAzureIpRangesServiceTagsPublicCloud - GET /download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json
+    /// GetAzureIpRangesServiceTagsPublicCloud - GET /download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json
     async fn get_azure_ip_ranges_service_tags_public_cloud(
     &self,
     

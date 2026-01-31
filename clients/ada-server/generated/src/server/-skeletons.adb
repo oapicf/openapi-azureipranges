@@ -19,9 +19,7 @@ package body .Skeletons is
 
    Mime_1 : aliased constant String := "application/octet-stream";
    Media_List_1 : aliased constant Swagger.Mime_List := (
-     1 => Swagger.Mime_Json,
-     
-     2 => Mime_1'Access);
+     1 => Mime_1'Access);
 
    package body Skeleton is
 

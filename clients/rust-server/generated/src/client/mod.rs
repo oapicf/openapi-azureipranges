@@ -415,7 +415,7 @@ impl<S, C, B> Api<C> for Client<S, C> where
         let mut client_service = self.client_service.clone();
         #[allow(clippy::uninlined_format_args)]
         let mut uri = format!(
-            "{}/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
+            "{}/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
             self.base_path
             ,version=utf8_percent_encode(&param_version.to_string(), ID_ENCODE_SET)
         );
@@ -462,8 +462,7 @@ impl<S, C, B> Api<C> for Client<S, C> where
 
                 let body = str::from_utf8(&body)
                     .map_err(|e| ApiError(format!("Response was not valid UTF8: {e}")))?;
-                let body = serde_json::from_str::<models::Change>(body)
-                    .map_err(|e| ApiError(format!("Response body did not match the schema: {e}")))?;
+                let body = body.to_string();
 
 
                 Ok(GetAzureIpRangesServiceTagsPublicCloudResponse::SuccessfulResponse

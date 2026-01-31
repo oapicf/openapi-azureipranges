@@ -32,5 +32,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/octet-stream
+- **Accept**: application/octet-stream
 

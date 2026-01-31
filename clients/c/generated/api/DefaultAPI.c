@@ -45,7 +45,6 @@ DefaultAPI_getAzureIpRangesServiceTagsPublicCloud(apiClient_t *apiClient, char *
     localVarPath = strReplace(localVarPath, localVarToReplace_version, version);
 
 
-    list_addElement(localVarHeaderType,"application/json"); //produces
     list_addElement(localVarHeaderType,"application/octet-stream"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,

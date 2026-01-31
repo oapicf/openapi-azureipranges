@@ -588,7 +588,7 @@ call_getAzureIpRangesServiceTagsPublicCloud() {
     local query_parameter_names=()
     local path
 
-    if ! path=$(build_request_path "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json" path_parameter_names query_parameter_names); then
+    if ! path=$(build_request_path "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi

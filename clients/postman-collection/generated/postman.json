@@ -23,7 +23,7 @@
     "header": [
         {
         "key": "Accept",
-        "value": "application/json",
+        "value": "application/octet-stream",
         "description": "",
         "disabled": false
         }

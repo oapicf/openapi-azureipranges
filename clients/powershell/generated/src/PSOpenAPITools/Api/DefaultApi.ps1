@@ -18,10 +18,6 @@ No description available.
 .PARAMETER Version
 The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
 
-.PARAMETER ReturnType
-
-Select the return type (optional): application/json, application/octet-stream
-
 .PARAMETER WithHttpInfo
 
 A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
@@ -36,9 +32,6 @@ function Get-AzureIpRangesServiceTagsPublicCloud {
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${Version},
-        [String]
-        [ValidateSet("application/json", "application/octet-stream")]
-        $ReturnType,
         [Switch]
         $WithHttpInfo
     )
@@ -58,12 +51,7 @@ function Get-AzureIpRangesServiceTagsPublicCloud {
 
         $Configuration = Get-Configuration
         # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('application/json', 'application/octet-stream')
-
-        if ($ReturnType) {
-            # use the return type (MIME) provided by the user
-            $LocalVarAccepts = @($ReturnType)
-        }
+        $LocalVarAccepts = @('application/octet-stream')
 
         $LocalVarUri = '/ServiceTags_Public_{version}.json'
         if (!$Version) {

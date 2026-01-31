@@ -9,7 +9,7 @@ dependencies:
 
 Articus\PathHandler\RouteInjectionFactory:
   paths:
-    '/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63':
+    '/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63':
     - App\Handler\ServiceTagsPublicVersionJson
 
 Articus\PathHandler\Handler\PluginManager:

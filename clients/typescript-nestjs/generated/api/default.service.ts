@@ -63,7 +63,6 @@ export class DefaultService {
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'application/json',
             'application/octet-stream'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);

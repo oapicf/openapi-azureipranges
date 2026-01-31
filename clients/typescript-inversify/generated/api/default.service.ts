@@ -49,7 +49,7 @@ export class DefaultService {
             throw new Error('Required parameter version was null or undefined when calling getAzureIpRangesServiceTagsPublicCloud.');
         }
 
-        headers['Accept'] = 'application/json, application/octet-stream';
+        headers['Accept'] = 'application/octet-stream';
 
         const response: Observable<HttpResponse<Change>> = this.httpClient.get(`${this.basePath}/ServiceTags_Public_${encodeURIComponent(String(version))}.json`, headers);
         if (observe === 'body') {

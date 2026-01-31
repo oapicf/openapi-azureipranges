@@ -50,7 +50,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>jersey</servlet-name>
-        <url-pattern>/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/*</url-pattern>
+        <url-pattern>/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/*</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>ApiOriginFilter</filter-name>

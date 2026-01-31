@@ -7,7 +7,7 @@ import play.api.libs.json._
   * @param name The name of the value.
   * @param id The unique identifier of the value.
   */
-@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-30T14:42:32.399392931Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = Array("org.openapitools.codegen.languages.ScalaPlayFrameworkServerCodegen"), date = "2026-01-31T02:45:18.558558983Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 case class Value(
   name: Option[String],
   id: Option[String],

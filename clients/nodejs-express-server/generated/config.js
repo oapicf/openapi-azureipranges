@@ -4,7 +4,7 @@ const config = {
   ROOT_DIR: __dirname,
   URL_PORT: 8080,
   URL_PATH: 'https://download.microsoft.com',
-  BASE_VERSION: '/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63',
+  BASE_VERSION: '/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63',
   CONTROLLER_DIRECTORY: path.join(__dirname, 'controllers'),
   PROJECT_DIR: __dirname,
 };

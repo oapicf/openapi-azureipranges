@@ -36,7 +36,7 @@ FString OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudRequest::Comput
 void OpenAPIDefaultApi::GetAzureIpRangesServiceTagsPublicCloudRequest::SetupHttpRequest(const FHttpRequestRef& HttpRequest) const
 {
 	static const TArray<FString> Consumes = {  };
-	//static const TArray<FString> Produces = { TEXT("application/json"), TEXT("application/octet-stream") };
+	//static const TArray<FString> Produces = { TEXT("application/octet-stream") };
 
 	HttpRequest->SetVerb(TEXT("GET"));
 

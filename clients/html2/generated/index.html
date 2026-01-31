@@ -996,7 +996,7 @@ ul.nav-tabs {
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Default-getAzureIpRangesServiceTagsPublicCloud-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X GET \
- -H "Accept: application/json,application/octet-stream" \
+ -H "Accept: application/octet-stream" \
  "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json"
 </code></pre>
                           </div>
@@ -1284,11 +1284,6 @@ The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 202405
                                       var schemaWrapper = {
   "description" : "Successful response",
   "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/Change"
-      }
-    },
     "application/octet-stream" : {
       "schema" : {
         "$ref" : "#/components/schemas/Change"

@@ -35,7 +35,7 @@ namespace Org.OpenAPITools.Controllers
         /// <param name="version">The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506</param>
         /// <response code="200">Successful response</response>
         [HttpGet]
-        [Route("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json")]
+        [Route("/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json")]
         [ValidateModelState]
         [SwaggerOperation("GetAzureIpRangesServiceTagsPublicCloud")]
         [SwaggerResponse(statusCode: 200, type: typeof(Change), description: "Successful response")]
@@ -45,7 +45,6 @@ namespace Org.OpenAPITools.Controllers
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default);
             string exampleJson = null;
-            exampleJson = "{\n  \"cloud\" : \"cloud\",\n  \"values\" : [ {\n    \"name\" : \"name\",\n    \"id\" : \"id\",\n    \"properties\" : {\n      \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ],\n      \"systemService\" : \"systemService\",\n      \"regionId\" : 1,\n      \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ],\n      \"changeNumber\" : 6,\n      \"region\" : \"region\",\n      \"platform\" : \"platform\"\n    }\n  }, {\n    \"name\" : \"name\",\n    \"id\" : \"id\",\n    \"properties\" : {\n      \"networkFeatures\" : [ \"networkFeatures\", \"networkFeatures\" ],\n      \"systemService\" : \"systemService\",\n      \"regionId\" : 1,\n      \"addressPrefixes\" : [ \"addressPrefixes\", \"addressPrefixes\" ],\n      \"changeNumber\" : 6,\n      \"region\" : \"region\",\n      \"platform\" : \"platform\"\n    }\n  } ],\n  \"changeNumber\" : 0\n}";
             exampleJson = "Custom MIME type example not yet supported: application/octet-stream";
             
             var example = exampleJson != null

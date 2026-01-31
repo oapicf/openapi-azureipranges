@@ -8,7 +8,7 @@ import java.util.HashSet;
 
 import org.openapitools.api.impl.DefaultApiServiceImpl;
 
-@ApplicationPath("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
+@ApplicationPath("/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
 public class RestApplication extends Application {
 
 

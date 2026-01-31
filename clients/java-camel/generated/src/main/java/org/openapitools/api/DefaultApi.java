@@ -28,7 +28,7 @@ public class DefaultApi extends RouteBuilder {
                 .id("getAzureIpRangesServiceTagsPublicCloudApi")
                 .clientRequestValidation(false)
                 .bindingMode(RestBindingMode.off)
-                .produces("application/json, application/octet-stream")
+                .produces("application/octet-stream")
                 .outType(Change.class)
                 .param()
                     .name("version")

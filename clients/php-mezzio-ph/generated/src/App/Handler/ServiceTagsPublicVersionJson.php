@@ -19,8 +19,6 @@ class ServiceTagsPublicVersionJson
      * Get Azure IP Ranges and Service Tags - Public Cloud
      * @PHA\Get()
      * TODO check if producer is valid, if it has correct priority and if it can be moved to class annotation
-     * @PHA\Producer(name=PHProducer\Transfer::class, mediaType="application/json")
-     * TODO check if producer is valid, if it has correct priority and if it can be moved to class annotation
      * @PHA\Producer(name=PHProducer\Transfer::class, mediaType="application/octet-stream")
      * @param ServerRequestInterface $request
      *

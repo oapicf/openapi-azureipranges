@@ -67,7 +67,7 @@ namespace DefaultApiResources {
 class  ServiceTags_Public_version_jsonResource: public restbed::Resource
 {
 public:
-    ServiceTags_Public_version_jsonResource(const std::string& context = "/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
+    ServiceTags_Public_version_jsonResource(const std::string& context = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63");
     virtual ~ServiceTags_Public_version_jsonResource() = default;
 
     ServiceTags_Public_version_jsonResource(

@@ -26,7 +26,7 @@ where
 {
     // build our application with a route
     Router::new()
-        .route("/download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
+        .route("/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json",
             get(get_azure_ip_ranges_service_tags_public_cloud::<I, A, E>)
         )
         .with_state(api_impl)
@@ -46,7 +46,7 @@ Ok((
   path_params,
 ))
 }
-/// GetAzureIpRangesServiceTagsPublicCloud - GET /download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json
+/// GetAzureIpRangesServiceTagsPublicCloud - GET /download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/ServiceTags_Public_{version}.json
 #[tracing::instrument(skip_all)]
 async fn get_azure_ip_ranges_service_tags_public_cloud<I, A, E>(
   method: Method,
@@ -102,14 +102,10 @@ let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
                                                     let mut response_headers = response.headers_mut().unwrap();
                                                     response_headers.insert(
                                                         CONTENT_TYPE,
-                                                        HeaderValue::from_static("application/json"));
+                                                        HeaderValue::from_static("application/octet-stream"));
                                                   }
 
-                                                  let body_content =  tokio::task::spawn_blocking(move ||
-                                                      serde_json::to_vec(&body).map_err(|e| {
-                                                        error!(error = ?e);
-                                                        StatusCode::INTERNAL_SERVER_ERROR
-                                                      })).await.unwrap()?;
+                                                  let body_content = body;
                                                   response.body(Body::from(body_content))
                                                 },
                                             },
