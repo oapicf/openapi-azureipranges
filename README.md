@@ -1,4 +1,4 @@
-<img align="right" src="https://raw.github.com/oapicf/openapi-azureipranges/master/avatar.jpg" alt="Avatar"/>
+<img align="right" src="https://raw.github.com/oapicf/openapi-azureipranges/main/avatar.jpg" alt="Avatar"/>
 
 [![Build Status](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml)
 <br/>
