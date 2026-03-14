@@ -193,20 +193,8 @@ build-python:
 	  $(call python_venv,python3 setup.py sdist bdist_wheel) && \
 	  $(call python_venv,python3 setup.py install --single-version-externally-managed --record record.txt)
 
-build-ruby: x-build-ruby
-
-# Fix OpenAPI Generator issue where application/octet-stream is not recognized as valid JSON content type
-# Microsoft's download server returns JSON files with application/octet-stream content type
-x-build-ruby:
-	sed -i "/def json_mime?(mime)/a\      return true if mime == 'application\/octet-stream'" clients/ruby/generated/lib/openapi_azureipranges/api_client.rb || true
-	apt-get install libyaml-dev
-	cd clients/ruby/generated/ && \
-	  rm -f *.gem && \
-	  gem install bundler && \
-	  bundle install && \
-	  bundle binstubs --all && \
-	  gem build *.gemspec && \
-	  gem install ./*.gem
+build-ruby:
+	make -f Makefile-extras x-build-ruby
 
 ################################################################
 # API clients testing targets for primary generators
