@@ -13,3 +13,15 @@ base_dir:
   local: /Users/cliffano/dev/workspace-oapicf/openapi-azureipranges
   custom: >-
     /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-azureipranges/
+generator:
+  component: oag-file-spec
+  inputs:
+    project_id: openapi-azureipranges
+    project_name: OpenAPI Azure IP Ranges
+    project_desc: An OpenAPI specification and a set of generated API clients for Azure IP Ranges and Service Tags
+    author_name: OpenAPI Clients Factory
+    author_email: blah+oapicf@cliffano.com
+    author_url: https://github.com/oapicf
+    github_id: oapicf
+    github_repo: openapi-azureipranges
+    github_token_prefix: OAPICF

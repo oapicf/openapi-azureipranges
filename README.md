@@ -1,10 +1,9 @@
 <!-- BEGIN:AVATAR -->
-<img align="right" src="https://raw.github.com/oapicf/openapi-azureipranges/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 <!-- END:AVATAR -->
 
 <!-- BEGIN:BADGES -->
 [![Build Status](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/oapicf/openapi-azureipranges/actions/workflows/ci-workflow.yaml)
-<br/>
 <!-- END:BADGES -->
 
 # OpenAPI Azure IP Ranges
