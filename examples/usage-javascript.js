@@ -9,4 +9,4 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getAzureIpRangesServiceTagsPublicCloud('20260126', callback);
+api.getAzureIpRangesServiceTagsPublicCloud('20260817', callback);
