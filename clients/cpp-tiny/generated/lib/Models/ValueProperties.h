@@ -52,49 +52,49 @@ public:
 
 	/*! \brief Set The number associated with the change.
 	 */
-	void setChangeNumber(int  changeNumber);
+	void setChangeNumber(int changeNumber);
 	/*! \brief Get The region associated with the value.
 	 */
 	std::string getRegion();
 
 	/*! \brief Set The region associated with the value.
 	 */
-	void setRegion(std::string  region);
+	void setRegion(std::string region);
 	/*! \brief Get The ID of the region.
 	 */
 	int getRegionId();
 
 	/*! \brief Set The ID of the region.
 	 */
-	void setRegionId(int  regionId);
+	void setRegionId(int regionId);
 	/*! \brief Get The platform associated with the value.
 	 */
 	std::string getPlatform();
 
 	/*! \brief Set The platform associated with the value.
 	 */
-	void setPlatform(std::string  platform);
+	void setPlatform(std::string platform);
 	/*! \brief Get The system service associated with the value.
 	 */
 	std::string getSystemService();
 
 	/*! \brief Set The system service associated with the value.
 	 */
-	void setSystemService(std::string  systemService);
+	void setSystemService(std::string systemService);
 	/*! \brief Get The address prefixes associated with the value.
 	 */
 	std::list<std::string> getAddressPrefixes();
 
 	/*! \brief Set The address prefixes associated with the value.
 	 */
-	void setAddressPrefixes(std::list <std::string> addressPrefixes);
+	void setAddressPrefixes(std::list<std::string> addressPrefixes);
 	/*! \brief Get The network features associated with the value.
 	 */
 	std::list<std::string> getNetworkFeatures();
 
 	/*! \brief Set The network features associated with the value.
 	 */
-	void setNetworkFeatures(std::list <std::string> networkFeatures);
+	void setNetworkFeatures(std::list<std::string> networkFeatures);
 
 
     private:

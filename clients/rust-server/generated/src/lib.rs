@@ -15,7 +15,7 @@ use serde::{Serialize, Deserialize};
 type ServiceError = Box<dyn Error + Send + Sync + 'static>;
 
 pub const BASE_PATH: &str = "/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63";
-pub const API_VERSION: &str = "0.10.1-pre.0";
+pub const API_VERSION: &str = "1.0.1-pre.0";
 
 mod auth;
 pub use auth::{AuthenticationApi, Claims};
@@ -25,7 +25,7 @@ pub use auth::{AuthenticationApi, Claims};
 pub enum GetAzureIpRangesServiceTagsPublicCloudResponse {
     /// Successful response
     SuccessfulResponse
-    (String)
+    (swagger::OneOf2::<models::Change, models::Change>)
 }
 
 /// API

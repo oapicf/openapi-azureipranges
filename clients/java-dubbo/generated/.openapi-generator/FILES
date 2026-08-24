@@ -1,0 +1,11 @@
+README.md
+pom.xml
+src/main/java/org/openapitools/OpenApiGeneratorApplication.java
+src/main/java/org/openapitools/api/consumer/ServiceTagsPublicVersionJsonServiceController.java
+src/main/java/org/openapitools/api/interfaces/ServiceTagsPublicVersionJsonService.java
+src/main/java/org/openapitools/api/provider/ServiceTagsPublicVersionJsonServiceImpl.java
+src/main/java/org/openapitools/model/Change.java
+src/main/java/org/openapitools/model/Value.java
+src/main/java/org/openapitools/model/ValueProperties.java
+src/main/resources/application.yml
+src/test/java/org/openapitools/OpenApiGeneratorApplicationTests.java

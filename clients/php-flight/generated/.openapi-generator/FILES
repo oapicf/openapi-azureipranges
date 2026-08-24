@@ -1,0 +1,11 @@
+.gitignore
+.openapi-generator-ignore
+Api/AbstractDefaultApi.php
+Model/Change.php
+Model/Value.php
+Model/ValueProperties.php
+README.md
+RegisterRoutes.php
+Test/RegisterRoutesTest.php
+composer.json
+phpunit.xml.dist

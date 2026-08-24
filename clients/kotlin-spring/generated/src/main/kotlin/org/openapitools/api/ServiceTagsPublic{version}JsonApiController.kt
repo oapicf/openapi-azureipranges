@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.beans.factory.annotation.Autowired
-import org.openapitools.api.ServiceTagsPublic{version}JsonApiController.Companion.BASE_PATH
 
 import javax.validation.Valid
 import javax.validation.constraints.DecimalMax
@@ -31,7 +30,7 @@ import kotlin.collections.Map
 
 @RestController
 @Validated
-@RequestMapping("\${openapi.azureIPRangesAndServiceTagsPublicCloud.base-path:\${api.base-path:$BASE_PATH}}")
+@RequestMapping("\${api.base-path:/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63}")
 class ServiceTagsPublic{version}JsonApiController() {
 
     @Operation(
@@ -43,8 +42,9 @@ class ServiceTagsPublic{version}JsonApiController() {
     )
     @RequestMapping(
         method = [RequestMethod.GET],
-        value = [PATH_GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD /* "/ServiceTags_Public_{version}.json" */],
-        produces = ["application/octet-stream"]
+        // "/ServiceTags_Public_{version}.json"
+        value = [PATH_GET_AZURE_IP_RANGES_SERVICE_TAGS_PUBLIC_CLOUD],
+        produces = ["application/json", "application/octet-stream"]
     )
     fun getAzureIpRangesServiceTagsPublicCloud(
         @Parameter(description = "The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506", required = true) @PathVariable("version") version: kotlin.String

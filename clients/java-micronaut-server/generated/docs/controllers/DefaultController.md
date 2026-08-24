@@ -29,5 +29,5 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
  - **Accepts Content-Type**: Not defined
- - **Produces Content-Type**: `application/octet-stream`
+ - **Produces Content-Type**: `application/json`, `application/octet-stream`
 

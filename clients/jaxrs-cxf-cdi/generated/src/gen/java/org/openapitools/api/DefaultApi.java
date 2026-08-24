@@ -27,7 +27,7 @@ import javax.validation.Valid;
 @Api
 
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-01-31T02:44:03.714124587Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen", date = "2026-08-24T12:16:24.839343194Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 
 public class DefaultApi  {
 
@@ -39,7 +39,7 @@ public class DefaultApi  {
     @GET
     
     
-    @Produces({ "application/octet-stream" })
+    @Produces({ "application/json", "application/octet-stream" })
     @ApiOperation(value = "Get Azure IP Ranges and Service Tags - Public Cloud", notes = "Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.", response = Change.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = Change.class) })

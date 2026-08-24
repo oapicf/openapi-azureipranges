@@ -26,7 +26,7 @@ class DefaultApi {
   ///
   /// * [String] version (required):
   ///   The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
-  Future<Response> getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(String version,) async {
+  Future<Response> getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(String version, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/ServiceTags_Public_{version}.json'
       .replaceAll('{version}', version);
@@ -49,6 +49,7 @@ class DefaultApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -60,8 +61,8 @@ class DefaultApi {
   ///
   /// * [String] version (required):
   ///   The version of the JSON file to be retrieved in the format YYYYMMDD, e.g. 20240506
-  Future<Change?> getAzureIpRangesServiceTagsPublicCloud(String version,) async {
-    final response = await getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version,);
+  Future<Change?> getAzureIpRangesServiceTagsPublicCloud(String version, { Future<void>? abortTrigger, }) async {
+    final response = await getAzureIpRangesServiceTagsPublicCloudWithHttpInfo(version, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

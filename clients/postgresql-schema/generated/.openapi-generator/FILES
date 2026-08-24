@@ -1,0 +1,7 @@
+.openapi-generator-ignore
+Model/Change.sql
+Model/Value.sql
+Model/ValueProperties.sql
+README.md
+postgresql_schema.sql
+postgresql_schema_oauth2.sql

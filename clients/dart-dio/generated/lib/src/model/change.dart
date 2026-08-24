@@ -99,22 +99,25 @@ class _$ChangeSerializer implements PrimitiveSerializer<Change> {
         case r'changeNumber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType.nullable(int),
+          ) as int?;
+          if (valueDes == null) continue;
           result.changeNumber = valueDes;
           break;
         case r'cloud':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.cloud = valueDes;
           break;
         case r'values':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(Value)]),
-          ) as BuiltList<Value>;
+            specifiedType: const FullType.nullable(BuiltList, [FullType(Value)]),
+          ) as BuiltList<Value>?;
+          if (valueDes == null) continue;
           result.values.replace(valueDes);
           break;
         default:

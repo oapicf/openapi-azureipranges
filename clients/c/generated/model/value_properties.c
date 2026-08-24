@@ -6,9 +6,9 @@
 
 
 static value_properties_t *value_properties_create_internal(
-    int change_number,
+    int *change_number,
     char *region,
-    int region_id,
+    int *region_id,
     char *platform,
     char *system_service,
     list_t *address_prefixes,
@@ -18,6 +18,8 @@ static value_properties_t *value_properties_create_internal(
     if (!value_properties_local_var) {
         return NULL;
     }
+    memset(value_properties_local_var, 0, sizeof(value_properties_t));
+    value_properties_local_var->_library_owned = 1;
     value_properties_local_var->change_number = change_number;
     value_properties_local_var->region = region;
     value_properties_local_var->region_id = region_id;
@@ -25,29 +27,42 @@ static value_properties_t *value_properties_create_internal(
     value_properties_local_var->system_service = system_service;
     value_properties_local_var->address_prefixes = address_prefixes;
     value_properties_local_var->network_features = network_features;
-
-    value_properties_local_var->_library_owned = 1;
     return value_properties_local_var;
 }
 
 __attribute__((deprecated)) value_properties_t *value_properties_create(
-    int change_number,
+    int *change_number,
     char *region,
-    int region_id,
+    int *region_id,
     char *platform,
     char *system_service,
     list_t *address_prefixes,
     list_t *network_features
     ) {
-    return value_properties_create_internal (
-        change_number,
+    int *change_number_copy = NULL;
+    if (change_number) {
+        change_number_copy = malloc(sizeof(int));
+        if (change_number_copy) *change_number_copy = *change_number;
+    }
+    int *region_id_copy = NULL;
+    if (region_id) {
+        region_id_copy = malloc(sizeof(int));
+        if (region_id_copy) *region_id_copy = *region_id;
+    }
+    value_properties_t *result = value_properties_create_internal (
+        change_number_copy,
         region,
-        region_id,
+        region_id_copy,
         platform,
         system_service,
         address_prefixes,
         network_features
         );
+    if (!result) {
+        free(change_number_copy);
+        free(region_id_copy);
+    }
+    return result;
 }
 
 void value_properties_free(value_properties_t *value_properties) {
@@ -59,9 +74,17 @@ void value_properties_free(value_properties_t *value_properties) {
         return ;
     }
     listEntry_t *listEntry;
+    if (value_properties->change_number) {
+        free(value_properties->change_number);
+        value_properties->change_number = NULL;
+    }
     if (value_properties->region) {
         free(value_properties->region);
         value_properties->region = NULL;
+    }
+    if (value_properties->region_id) {
+        free(value_properties->region_id);
+        value_properties->region_id = NULL;
     }
     if (value_properties->platform) {
         free(value_properties->platform);
@@ -93,7 +116,7 @@ cJSON *value_properties_convertToJSON(value_properties_t *value_properties) {
 
     // value_properties->change_number
     if(value_properties->change_number) {
-    if(cJSON_AddNumberToObject(item, "changeNumber", value_properties->change_number) == NULL) {
+    if(cJSON_AddNumberToObject(item, "changeNumber", *value_properties->change_number) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -109,7 +132,7 @@ cJSON *value_properties_convertToJSON(value_properties_t *value_properties) {
 
     // value_properties->region_id
     if(value_properties->region_id) {
-    if(cJSON_AddNumberToObject(item, "regionId", value_properties->region_id) == NULL) {
+    if(cJSON_AddNumberToObject(item, "regionId", *value_properties->region_id) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -176,6 +199,18 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
 
     value_properties_t *value_properties_local_var = NULL;
 
+    // define the local variable for value_properties->change_number
+    int *change_number_local_var = NULL;
+
+    char *region_local_str = NULL;
+
+    // define the local variable for value_properties->region_id
+    int *region_id_local_var = NULL;
+
+    char *platform_local_str = NULL;
+
+    char *system_service_local_str = NULL;
+
     // define the local list for value_properties->address_prefixes
     list_t *address_prefixesList = NULL;
 
@@ -192,6 +227,12 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
     {
     goto end; //Numeric
     }
+    change_number_local_var = malloc(sizeof(int));
+    if(!change_number_local_var)
+    {
+        goto end;
+    }
+    *change_number_local_var = change_number->valuedouble;
     }
 
     // value_properties->region
@@ -216,6 +257,12 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
     {
     goto end; //Numeric
     }
+    region_id_local_var = malloc(sizeof(int));
+    if(!region_id_local_var)
+    {
+        goto end;
+    }
+    *region_id_local_var = region_id->valuedouble;
     }
 
     // value_properties->platform
@@ -287,18 +334,46 @@ value_properties_t *value_properties_parseFromJSON(cJSON *value_propertiesJSON){
     }
 
 
+    if (region && !cJSON_IsNull(region)) region_local_str = strdup(region->valuestring);
+    if (platform && !cJSON_IsNull(platform)) platform_local_str = strdup(platform->valuestring);
+    if (system_service && !cJSON_IsNull(system_service)) system_service_local_str = strdup(system_service->valuestring);
+
     value_properties_local_var = value_properties_create_internal (
-        change_number ? change_number->valuedouble : 0,
-        region && !cJSON_IsNull(region) ? strdup(region->valuestring) : NULL,
-        region_id ? region_id->valuedouble : 0,
-        platform && !cJSON_IsNull(platform) ? strdup(platform->valuestring) : NULL,
-        system_service && !cJSON_IsNull(system_service) ? strdup(system_service->valuestring) : NULL,
+        change_number_local_var,
+        region_local_str,
+        region_id_local_var,
+        platform_local_str,
+        system_service_local_str,
         address_prefixes ? address_prefixesList : NULL,
         network_features ? network_featuresList : NULL
         );
 
+    if (!value_properties_local_var) {
+        goto end;
+    }
+
     return value_properties_local_var;
 end:
+    if (change_number_local_var) {
+        free(change_number_local_var);
+        change_number_local_var = NULL;
+    }
+    if (region_local_str) {
+        free(region_local_str);
+        region_local_str = NULL;
+    }
+    if (region_id_local_var) {
+        free(region_id_local_var);
+        region_id_local_var = NULL;
+    }
+    if (platform_local_str) {
+        free(platform_local_str);
+        platform_local_str = NULL;
+    }
+    if (system_service_local_str) {
+        free(system_service_local_str);
+        system_service_local_str = NULL;
+    }
     if (address_prefixesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, address_prefixesList) {

@@ -1,6 +1,6 @@
 = Azure IP Ranges and Service Tags - Public Cloud
 blah+oapicf@cliffano.com
-0.10.1-pre.0
+1.0.1-pre.0
 :toc: left
 :numbered:
 :toclevels: 4
@@ -72,6 +72,7 @@ Retrieve details about Azure IP Ranges and Service Tags - Public Cloud.
 
 ===== Content Type
 
+* application/json
 * application/octet-stream
 
 ===== Responses

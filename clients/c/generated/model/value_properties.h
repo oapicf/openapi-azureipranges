@@ -19,9 +19,9 @@ typedef struct value_properties_t value_properties_t;
 
 
 typedef struct value_properties_t {
-    int change_number; //numeric
+    int *change_number; //numeric
     char *region; // string
-    int region_id; //numeric
+    int *region_id; //numeric
     char *platform; // string
     char *system_service; // string
     list_t *address_prefixes; //primitive container
@@ -31,9 +31,9 @@ typedef struct value_properties_t {
 } value_properties_t;
 
 __attribute__((deprecated)) value_properties_t *value_properties_create(
-    int change_number,
+    int *change_number,
     char *region,
-    int region_id,
+    int *region_id,
     char *platform,
     char *system_service,
     list_t *address_prefixes,

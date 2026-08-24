@@ -6,7 +6,7 @@
 
 
 static change_t *change_create_internal(
-    int change_number,
+    int *change_number,
     char *cloud,
     list_t *values
     ) {
@@ -14,24 +14,33 @@ static change_t *change_create_internal(
     if (!change_local_var) {
         return NULL;
     }
+    memset(change_local_var, 0, sizeof(change_t));
+    change_local_var->_library_owned = 1;
     change_local_var->change_number = change_number;
     change_local_var->cloud = cloud;
     change_local_var->values = values;
-
-    change_local_var->_library_owned = 1;
     return change_local_var;
 }
 
 __attribute__((deprecated)) change_t *change_create(
-    int change_number,
+    int *change_number,
     char *cloud,
     list_t *values
     ) {
-    return change_create_internal (
-        change_number,
+    int *change_number_copy = NULL;
+    if (change_number) {
+        change_number_copy = malloc(sizeof(int));
+        if (change_number_copy) *change_number_copy = *change_number;
+    }
+    change_t *result = change_create_internal (
+        change_number_copy,
         cloud,
         values
         );
+    if (!result) {
+        free(change_number_copy);
+    }
+    return result;
 }
 
 void change_free(change_t *change) {
@@ -43,6 +52,10 @@ void change_free(change_t *change) {
         return ;
     }
     listEntry_t *listEntry;
+    if (change->change_number) {
+        free(change->change_number);
+        change->change_number = NULL;
+    }
     if (change->cloud) {
         free(change->cloud);
         change->cloud = NULL;
@@ -62,7 +75,7 @@ cJSON *change_convertToJSON(change_t *change) {
 
     // change->change_number
     if(change->change_number) {
-    if(cJSON_AddNumberToObject(item, "changeNumber", change->change_number) == NULL) {
+    if(cJSON_AddNumberToObject(item, "changeNumber", *change->change_number) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -107,6 +120,11 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
 
     change_t *change_local_var = NULL;
 
+    // define the local variable for change->change_number
+    int *change_number_local_var = NULL;
+
+    char *cloud_local_str = NULL;
+
     // define the local list for change->values
     list_t *valuesList = NULL;
 
@@ -120,6 +138,12 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
     {
     goto end; //Numeric
     }
+    change_number_local_var = malloc(sizeof(int));
+    if(!change_number_local_var)
+    {
+        goto end;
+    }
+    *change_number_local_var = change_number->valuedouble;
     }
 
     // change->cloud
@@ -159,14 +183,28 @@ change_t *change_parseFromJSON(cJSON *changeJSON){
     }
 
 
+    if (cloud && !cJSON_IsNull(cloud)) cloud_local_str = strdup(cloud->valuestring);
+
     change_local_var = change_create_internal (
-        change_number ? change_number->valuedouble : 0,
-        cloud && !cJSON_IsNull(cloud) ? strdup(cloud->valuestring) : NULL,
+        change_number_local_var,
+        cloud_local_str,
         values ? valuesList : NULL
         );
 
+    if (!change_local_var) {
+        goto end;
+    }
+
     return change_local_var;
 end:
+    if (change_number_local_var) {
+        free(change_number_local_var);
+        change_number_local_var = NULL;
+    }
+    if (cloud_local_str) {
+        free(cloud_local_str);
+        cloud_local_str = NULL;
+    }
     if (valuesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, valuesList) {

@@ -2,6 +2,7 @@ package org.openapitools.model;
 
 import java.net.URI;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.ArrayList;
@@ -11,26 +12,28 @@ import org.openapitools.model.Value;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
 import java.util.*;
-import javax.annotation.Generated;
+import jakarta.annotation.Generated;
 
 /**
  * Change
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-31T02:45:23.882011249Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-24T12:18:40.815784284Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Change {
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable Integer changeNumber;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String cloud;
 
-  @Valid
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<@Valid Value> values = new ArrayList<>();
 
   public Change changeNumber(@Nullable Integer changeNumber) {
@@ -49,6 +52,7 @@ public class Change {
     return changeNumber;
   }
 
+  @JsonProperty("changeNumber")
   public void setChangeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
   }
@@ -69,6 +73,7 @@ public class Change {
     return cloud;
   }
 
+  @JsonProperty("cloud")
   public void setCloud(@Nullable String cloud) {
     this.cloud = cloud;
   }
@@ -97,6 +102,7 @@ public class Change {
     return values;
   }
 
+  @JsonProperty("values")
   public void setValues(List<@Valid Value> values) {
     this.values = values;
   }
@@ -135,11 +141,8 @@ public class Change {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+  private String toIndentedString(@Nullable Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 }
 

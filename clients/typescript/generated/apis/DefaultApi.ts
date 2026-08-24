@@ -31,7 +31,7 @@ export class DefaultApiRequestFactory extends BaseAPIRequestFactory {
 
         // Path Params
         const localVarPath = '/ServiceTags_Public_{version}.json'
-            .replace('{' + 'version' + '}', encodeURIComponent(String(version)));
+            .replace('{version}', encodeURIComponent(String(version)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);

@@ -52,21 +52,21 @@ public:
 
 	/*! \brief Set The name of the value.
 	 */
-	void setName(std::string  name);
+	void setName(std::string name);
 	/*! \brief Get The unique identifier of the value.
 	 */
 	std::string getId();
 
 	/*! \brief Set The unique identifier of the value.
 	 */
-	void setId(std::string  id);
+	void setId(std::string id);
 	/*! \brief Get 
 	 */
 	ValueProperties getProperties();
 
 	/*! \brief Set 
 	 */
-	void setProperties(ValueProperties  properties);
+	void setProperties(ValueProperties properties);
 
 
     private:

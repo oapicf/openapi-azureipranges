@@ -1,0 +1,11 @@
+.openapi-generator-ignore
+README.md
+apis/DefaultApi.gd
+apis/DefaultApi.md
+core/ApiBee.gd
+core/ApiConfig.gd
+core/ApiError.gd
+core/ApiResponse.gd
+models/Change.gd
+models/Value.gd
+models/ValueProperties.gd

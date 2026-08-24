@@ -5,12 +5,13 @@
 		    "content": "",
 		    "type": "text/markdown"
 		},
-		"version": "0.10.1-pre.0",
+		"version": "1.0.1-pre.0",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 	        {
 	            "name": "default",
+	            "description": "default tag",
 	            "item": [
 	                        {
     "name": "/ServiceTags_Public_:version.json",
@@ -23,7 +24,7 @@
     "header": [
         {
         "key": "Accept",
-        "value": "application/octet-stream",
+        "value": "application/json",
         "description": "",
         "disabled": false
         }

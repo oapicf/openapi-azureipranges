@@ -20,7 +20,7 @@ typedef struct change_t change_t;
 
 
 typedef struct change_t {
-    int change_number; //numeric
+    int *change_number; //numeric
     char *cloud; // string
     list_t *values; //nonprimitive container
 
@@ -28,7 +28,7 @@ typedef struct change_t {
 } change_t;
 
 __attribute__((deprecated)) change_t *change_create(
-    int change_number,
+    int *change_number,
     char *cloud,
     list_t *values
 );

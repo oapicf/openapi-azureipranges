@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package org.openapitools.client.apis
@@ -41,7 +49,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
+            System.getProperties().getProperty(ApiClient.BASE_URL_KEY, "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63")
         }
     }
 
@@ -106,7 +114,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/octet-stream"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.GET,

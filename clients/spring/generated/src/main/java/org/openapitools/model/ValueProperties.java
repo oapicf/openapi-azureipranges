@@ -2,6 +2,7 @@ package org.openapitools.model;
 
 import java.net.URI;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.ArrayList;
@@ -10,35 +11,40 @@ import java.util.List;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
 import java.util.*;
-import javax.annotation.Generated;
+import jakarta.annotation.Generated;
 
 /**
  * ValueProperties
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-01-31T02:45:23.882011249Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-24T12:18:40.815784284Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class ValueProperties {
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable Integer changeNumber;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String region;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable Integer regionId;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String platform;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private @Nullable String systemService;
 
-  @Valid
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<String> addressPrefixes = new ArrayList<>();
 
-  @Valid
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<String> networkFeatures = new ArrayList<>();
 
   public ValueProperties changeNumber(@Nullable Integer changeNumber) {
@@ -57,6 +63,7 @@ public class ValueProperties {
     return changeNumber;
   }
 
+  @JsonProperty("changeNumber")
   public void setChangeNumber(@Nullable Integer changeNumber) {
     this.changeNumber = changeNumber;
   }
@@ -77,6 +84,7 @@ public class ValueProperties {
     return region;
   }
 
+  @JsonProperty("region")
   public void setRegion(@Nullable String region) {
     this.region = region;
   }
@@ -97,6 +105,7 @@ public class ValueProperties {
     return regionId;
   }
 
+  @JsonProperty("regionId")
   public void setRegionId(@Nullable Integer regionId) {
     this.regionId = regionId;
   }
@@ -117,6 +126,7 @@ public class ValueProperties {
     return platform;
   }
 
+  @JsonProperty("platform")
   public void setPlatform(@Nullable String platform) {
     this.platform = platform;
   }
@@ -137,6 +147,7 @@ public class ValueProperties {
     return systemService;
   }
 
+  @JsonProperty("systemService")
   public void setSystemService(@Nullable String systemService) {
     this.systemService = systemService;
   }
@@ -165,6 +176,7 @@ public class ValueProperties {
     return addressPrefixes;
   }
 
+  @JsonProperty("addressPrefixes")
   public void setAddressPrefixes(List<String> addressPrefixes) {
     this.addressPrefixes = addressPrefixes;
   }
@@ -193,6 +205,7 @@ public class ValueProperties {
     return networkFeatures;
   }
 
+  @JsonProperty("networkFeatures")
   public void setNetworkFeatures(List<String> networkFeatures) {
     this.networkFeatures = networkFeatures;
   }
@@ -239,11 +252,8 @@ public class ValueProperties {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+  private String toIndentedString(@Nullable Object o) {
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 }
 

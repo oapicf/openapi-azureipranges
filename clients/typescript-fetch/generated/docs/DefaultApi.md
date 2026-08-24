@@ -64,7 +64,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/octet-stream`
+- **Accept**: `application/json`, `application/octet-stream`
 
 
 ### HTTP response details

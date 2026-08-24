@@ -14,11 +14,11 @@ static value_t *value_create_internal(
     if (!value_local_var) {
         return NULL;
     }
+    memset(value_local_var, 0, sizeof(value_t));
+    value_local_var->_library_owned = 1;
     value_local_var->name = name;
     value_local_var->id = id;
     value_local_var->properties = properties;
-
-    value_local_var->_library_owned = 1;
     return value_local_var;
 }
 
@@ -27,11 +27,14 @@ __attribute__((deprecated)) value_t *value_create(
     char *id,
     value_properties_t *properties
     ) {
-    return value_create_internal (
+    value_t *result = value_create_internal (
         name,
         id,
         properties
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void value_free(value_t *value) {
@@ -101,6 +104,10 @@ value_t *value_parseFromJSON(cJSON *valueJSON){
 
     value_t *value_local_var = NULL;
 
+    char *name_local_str = NULL;
+
+    char *id_local_str = NULL;
+
     // define the local variable for value->properties
     value_properties_t *properties_local_nonprim = NULL;
 
@@ -138,14 +145,29 @@ value_t *value_parseFromJSON(cJSON *valueJSON){
     }
 
 
+    if (name && !cJSON_IsNull(name)) name_local_str = strdup(name->valuestring);
+    if (id && !cJSON_IsNull(id)) id_local_str = strdup(id->valuestring);
+
     value_local_var = value_create_internal (
-        name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL,
-        id && !cJSON_IsNull(id) ? strdup(id->valuestring) : NULL,
+        name_local_str,
+        id_local_str,
         properties ? properties_local_nonprim : NULL
         );
 
+    if (!value_local_var) {
+        goto end;
+    }
+
     return value_local_var;
 end:
+    if (name_local_str) {
+        free(name_local_str);
+        name_local_str = NULL;
+    }
+    if (id_local_str) {
+        free(id_local_str);
+        id_local_str = NULL;
+    }
     if (properties_local_nonprim) {
         value_properties_free(properties_local_nonprim);
         properties_local_nonprim = NULL;

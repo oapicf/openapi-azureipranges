@@ -17,6 +17,7 @@ src/FormDataProcessor.php
 src/HeaderSelector.php
 src/Model/Change.php
 src/Model/ModelInterface.php
+src/Model/OneOfInterface.php
 src/Model/Value.php
 src/Model/ValueProperties.php
 src/ObjectSerializer.php

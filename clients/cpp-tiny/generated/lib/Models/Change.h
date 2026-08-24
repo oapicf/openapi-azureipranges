@@ -53,21 +53,21 @@ public:
 
 	/*! \brief Set The number associated with the change.
 	 */
-	void setChangeNumber(int  changeNumber);
+	void setChangeNumber(int changeNumber);
 	/*! \brief Get The cloud environment.
 	 */
 	std::string getCloud();
 
 	/*! \brief Set The cloud environment.
 	 */
-	void setCloud(std::string  cloud);
+	void setCloud(std::string cloud);
 	/*! \brief Get 
 	 */
 	std::list<Value> getValues();
 
 	/*! \brief Set 
 	 */
-	void setValues(std::list <Value> values);
+	void setValues(std::list<Value> values);
 
 
     private:

@@ -98,22 +98,25 @@ class _$ValueSerializer implements PrimitiveSerializer<Value> {
         case r'name':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'properties':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ValueProperties),
-          ) as ValueProperties;
+            specifiedType: const FullType.nullable(ValueProperties),
+          ) as ValueProperties?;
+          if (valueDes == null) continue;
           result.properties.replace(valueDes);
           break;
         default:

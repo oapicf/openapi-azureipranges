@@ -1,7 +1,8 @@
 use async_trait::async_trait;
 use axum::extract::*;
-use axum_extra::extract::{CookieJar, Host};
+use axum_extra::extract::CookieJar;
 use bytes::Bytes;
+use headers::Host;
 use http::Method;
 use serde::{Deserialize, Serialize};
 
@@ -13,7 +14,7 @@ use crate::{models, types::*};
 pub enum GetAzureIpRangesServiceTagsPublicCloudResponse {
     /// Successful response
     Status200_SuccessfulResponse
-    (String)
+    (models::Change)
 }
 
 

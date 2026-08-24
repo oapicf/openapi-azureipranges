@@ -123,7 +123,7 @@ Change::getChangeNumber()
 }
 
 void
-Change::setChangeNumber(int  changeNumber)
+Change::setChangeNumber(int changeNumber)
 {
 	this->changeNumber = changeNumber;
 }
@@ -135,7 +135,7 @@ Change::getCloud()
 }
 
 void
-Change::setCloud(std::string  cloud)
+Change::setCloud(std::string cloud)
 {
 	this->cloud = cloud;
 }
@@ -147,7 +147,7 @@ Change::getValues()
 }
 
 void
-Change::setValues(std::list <Value> values)
+Change::setValues(std::list<Value> values)
 {
 	this->values = values;
 }

@@ -10,7 +10,7 @@
       "name" : "MIT"
     },
     "title" : "Azure IP Ranges and Service Tags - Public Cloud",
-    "version" : "0.10.1-pre.0"
+    "version" : "1.0.1-pre.0"
   },
   "servers" : [ {
     "url" : "https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/"
@@ -34,6 +34,11 @@
         "responses" : {
           "200" : {
             "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Change"
+                }
+              },
               "application/octet-stream" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/Change"
@@ -44,13 +49,42 @@
           }
         },
         "summary" : "Get Azure IP Ranges and Service Tags - Public Cloud",
-        "x-accepts" : [ "application/octet-stream" ]
+        "x-accepts" : [ "application/json", "application/octet-stream" ]
       }
     }
   },
   "components" : {
     "schemas" : {
       "Change" : {
+        "example" : {
+          "changeNumber" : 0,
+          "cloud" : "cloud",
+          "values" : [ {
+            "name" : "name",
+            "id" : "id",
+            "properties" : {
+              "changeNumber" : 6,
+              "region" : "region",
+              "regionId" : 1,
+              "platform" : "platform",
+              "systemService" : "systemService",
+              "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
+              "networkFeatures" : [ "networkFeatures", "networkFeatures" ]
+            }
+          }, {
+            "name" : "name",
+            "id" : "id",
+            "properties" : {
+              "changeNumber" : 6,
+              "region" : "region",
+              "regionId" : 1,
+              "platform" : "platform",
+              "systemService" : "systemService",
+              "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
+              "networkFeatures" : [ "networkFeatures", "networkFeatures" ]
+            }
+          } ]
+        },
         "properties" : {
           "changeNumber" : {
             "description" : "The number associated with the change.",
@@ -64,11 +98,25 @@
             "items" : {
               "$ref" : "#/components/schemas/Value"
             },
-            "type" : "array"
+            "type" : "array",
+            "default" : null
           }
         }
       },
       "Value" : {
+        "example" : {
+          "name" : "name",
+          "id" : "id",
+          "properties" : {
+            "changeNumber" : 6,
+            "region" : "region",
+            "regionId" : 1,
+            "platform" : "platform",
+            "systemService" : "systemService",
+            "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
+            "networkFeatures" : [ "networkFeatures", "networkFeatures" ]
+          }
+        },
         "properties" : {
           "name" : {
             "description" : "The name of the value.",
@@ -84,6 +132,15 @@
         }
       },
       "ValueProperties" : {
+        "example" : {
+          "changeNumber" : 6,
+          "region" : "region",
+          "regionId" : 1,
+          "platform" : "platform",
+          "systemService" : "systemService",
+          "addressPrefixes" : [ "addressPrefixes", "addressPrefixes" ],
+          "networkFeatures" : [ "networkFeatures", "networkFeatures" ]
+        },
         "properties" : {
           "changeNumber" : {
             "description" : "The number associated with the change.",
@@ -110,14 +167,16 @@
             "items" : {
               "type" : "string"
             },
-            "type" : "array"
+            "type" : "array",
+            "default" : null
           },
           "networkFeatures" : {
             "description" : "The network features associated with the value.",
             "items" : {
               "type" : "string"
             },
-            "type" : "array"
+            "type" : "array",
+            "default" : null
           }
         }
       }

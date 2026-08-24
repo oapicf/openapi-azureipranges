@@ -1,0 +1,17 @@
+.openapi-generator-ignore
+README.md
+docs/Change.md
+docs/DefaultApi.md
+docs/Value.md
+docs/ValueProperties.md
+pom.xml
+src/main/java/org/openapitools/server/api/ApiException.java
+src/main/java/org/openapitools/server/api/ApiExceptionMapper.java
+src/main/java/org/openapitools/server/api/DefaultApi.java
+src/main/java/org/openapitools/server/model/Change.java
+src/main/java/org/openapitools/server/model/Value.java
+src/main/java/org/openapitools/server/model/ValueProperties.java
+src/test/java/org/openapitools/server/api/DefaultApiTest.java
+src/test/java/org/openapitools/server/model/ChangeTest.java
+src/test/java/org/openapitools/server/model/ValuePropertiesTest.java
+src/test/java/org/openapitools/server/model/ValueTest.java

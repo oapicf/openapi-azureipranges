@@ -107,7 +107,7 @@ Value::getName()
 }
 
 void
-Value::setName(std::string  name)
+Value::setName(std::string name)
 {
 	this->name = name;
 }
@@ -119,7 +119,7 @@ Value::getId()
 }
 
 void
-Value::setId(std::string  id)
+Value::setId(std::string id)
 {
 	this->id = id;
 }
@@ -131,7 +131,7 @@ Value::getProperties()
 }
 
 void
-Value::setProperties(ValueProperties  properties)
+Value::setProperties(ValueProperties properties)
 {
 	this->properties = properties;
 }

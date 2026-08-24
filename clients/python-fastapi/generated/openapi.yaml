@@ -7,7 +7,7 @@ info:
   license:
     name: MIT
   title: Azure IP Ranges and Service Tags - Public Cloud
-  version: 0.10.1-pre.0
+  version: 1.0.1-pre.0
 servers:
 - url: https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
 paths:
@@ -29,6 +29,9 @@ paths:
       responses:
         "200":
           content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Change"
             application/octet-stream:
               schema:
                 $ref: "#/components/schemas/Change"
@@ -37,6 +40,38 @@ paths:
 components:
   schemas:
     Change:
+      example:
+        changeNumber: 0
+        cloud: cloud
+        values:
+        - name: name
+          id: id
+          properties:
+            changeNumber: 6
+            region: region
+            regionId: 1
+            platform: platform
+            systemService: systemService
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
+        - name: name
+          id: id
+          properties:
+            changeNumber: 6
+            region: region
+            regionId: 1
+            platform: platform
+            systemService: systemService
+            addressPrefixes:
+            - addressPrefixes
+            - addressPrefixes
+            networkFeatures:
+            - networkFeatures
+            - networkFeatures
       properties:
         changeNumber:
           description: The number associated with the change.
@@ -51,8 +86,24 @@ components:
             $ref: "#/components/schemas/Value"
           title: values
           type: array
+          default: null
       title: Change
     Value:
+      example:
+        name: name
+        id: id
+        properties:
+          changeNumber: 6
+          region: region
+          regionId: 1
+          platform: platform
+          systemService: systemService
+          addressPrefixes:
+          - addressPrefixes
+          - addressPrefixes
+          networkFeatures:
+          - networkFeatures
+          - networkFeatures
       properties:
         name:
           description: The name of the value.
@@ -66,6 +117,18 @@ components:
           $ref: "#/components/schemas/ValueProperties"
       title: Value
     ValueProperties:
+      example:
+        changeNumber: 6
+        region: region
+        regionId: 1
+        platform: platform
+        systemService: systemService
+        addressPrefixes:
+        - addressPrefixes
+        - addressPrefixes
+        networkFeatures:
+        - networkFeatures
+        - networkFeatures
       properties:
         changeNumber:
           description: The number associated with the change.
@@ -93,10 +156,12 @@ components:
             type: string
           title: addressPrefixes
           type: array
+          default: null
         networkFeatures:
           description: The network features associated with the value.
           items:
             type: string
           title: networkFeatures
           type: array
+          default: null
       title: ValueProperties

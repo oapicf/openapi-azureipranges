@@ -21,7 +21,7 @@ class DefaultApi : public Service {
 public:
     DefaultApi() = default;
 
-    virtual ~DefaultApi() = default;
+    virtual ~DefaultApi();
 
     /**
     * Get Azure IP Ranges and Service Tags - Public Cloud.

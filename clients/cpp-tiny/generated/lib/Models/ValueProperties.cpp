@@ -226,7 +226,7 @@ ValueProperties::getChangeNumber()
 }
 
 void
-ValueProperties::setChangeNumber(int  changeNumber)
+ValueProperties::setChangeNumber(int changeNumber)
 {
 	this->changeNumber = changeNumber;
 }
@@ -238,7 +238,7 @@ ValueProperties::getRegion()
 }
 
 void
-ValueProperties::setRegion(std::string  region)
+ValueProperties::setRegion(std::string region)
 {
 	this->region = region;
 }
@@ -250,7 +250,7 @@ ValueProperties::getRegionId()
 }
 
 void
-ValueProperties::setRegionId(int  regionId)
+ValueProperties::setRegionId(int regionId)
 {
 	this->regionId = regionId;
 }
@@ -262,7 +262,7 @@ ValueProperties::getPlatform()
 }
 
 void
-ValueProperties::setPlatform(std::string  platform)
+ValueProperties::setPlatform(std::string platform)
 {
 	this->platform = platform;
 }
@@ -274,7 +274,7 @@ ValueProperties::getSystemService()
 }
 
 void
-ValueProperties::setSystemService(std::string  systemService)
+ValueProperties::setSystemService(std::string systemService)
 {
 	this->systemService = systemService;
 }
@@ -286,7 +286,7 @@ ValueProperties::getAddressPrefixes()
 }
 
 void
-ValueProperties::setAddressPrefixes(std::list <std::string> addressPrefixes)
+ValueProperties::setAddressPrefixes(std::list<std::string> addressPrefixes)
 {
 	this->addressPrefixes = addressPrefixes;
 }
@@ -298,7 +298,7 @@ ValueProperties::getNetworkFeatures()
 }
 
 void
-ValueProperties::setNetworkFeatures(std::list <std::string> networkFeatures)
+ValueProperties::setNetworkFeatures(std::list<std::string> networkFeatures)
 {
 	this->networkFeatures = networkFeatures;
 }

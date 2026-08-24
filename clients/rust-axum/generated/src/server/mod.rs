@@ -1,19 +1,24 @@
 use std::collections::HashMap;
 
 use axum::{body::Body, extract::*, response::Response, routing::*};
-use axum_extra::extract::{CookieJar, Host, Query as QueryExtra};
+use axum_extra::{
+    TypedHeader,
+    extract::{CookieJar, Query as QueryExtra},
+};
 use bytes::Bytes;
-use http::{header::CONTENT_TYPE, HeaderMap, HeaderName, HeaderValue, Method, StatusCode};
+use headers::Host;
+use http::{HeaderMap, HeaderName, HeaderValue, Method, StatusCode, header::CONTENT_TYPE};
 use tracing::error;
 use validator::{Validate, ValidationErrors};
 
-use crate::{header, types::*};
-
 #[allow(unused_imports)]
 use crate::{apis, models};
-
+use crate::{header, types::*};
 #[allow(unused_imports)]
-use crate::{models::check_xss_string, models::check_xss_vec_string, models::check_xss_map_string, models::check_xss_map_nested, models::check_xss_map};
+use crate::{
+    models::check_xss_map, models::check_xss_map_nested, models::check_xss_map_string,
+    models::check_xss_string, models::check_xss_vec_string,
+};
 
 
 /// Setup API Server.
@@ -50,7 +55,7 @@ Ok((
 #[tracing::instrument(skip_all)]
 async fn get_azure_ip_ranges_service_tags_public_cloud<I, A, E>(
   method: Method,
-  host: Host,
+  TypedHeader(host): TypedHeader<Host>,
   cookies: CookieJar,
   Path(path_params): Path<models::GetAzureIpRangesServiceTagsPublicCloudPathParams>,
  State(api_impl): State<I>,
@@ -82,7 +87,7 @@ where
 
 
 
-let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
+  let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
       
       &method,
       &host,
@@ -90,22 +95,25 @@ let result = api_impl.as_ref().get_azure_ip_ranges_service_tags_public_cloud(
         &path_params,
   ).await;
 
-  let mut response = Response::builder();
-
   let resp = match result {
                                             Ok(rsp) => match rsp {
                                                 apis::default::GetAzureIpRangesServiceTagsPublicCloudResponse::Status200_SuccessfulResponse
                                                     (body)
                                                 => {
+                                                let mut response = Response::builder();
                                                   let mut response = response.status(200);
                                                   {
                                                     let mut response_headers = response.headers_mut().unwrap();
                                                     response_headers.insert(
                                                         CONTENT_TYPE,
-                                                        HeaderValue::from_static("application/octet-stream"));
+                                                        HeaderValue::from_static("application/json"));
                                                   }
 
-                                                  let body_content = body;
+                                                  let body_content =  tokio::task::spawn_blocking(move ||
+                                                      serde_json::to_vec(&body).map_err(|e| {
+                                                        error!(error = ?e);
+                                                        StatusCode::INTERNAL_SERVER_ERROR
+                                                      })).await.unwrap()?;
                                                   response.body(Body::from(body_content))
                                                 },
                                             },

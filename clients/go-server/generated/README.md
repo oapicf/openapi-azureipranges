@@ -11,9 +11,9 @@ To see how to make this your own, look here:
 
 [README](https://openapi-generator.tech)
 
-- API version: 0.10.1-pre.0
-- Build date: 2026-01-31T02:43:34.626117711Z[Etc/UTC]
-- Generator version: 7.18.0
+- API version: 1.0.1-pre.0
+- Build date: 2026-08-24T12:15:40.813625624Z[Etc/UTC]
+- Generator version: 7.24.0
 For more information, please visit [https://github.com/oapicf/openapi-azureipranges](https://github.com/oapicf/openapi-azureipranges)
 
 

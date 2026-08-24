@@ -1,4 +1,4 @@
-# # ValueProperties
+# ValueProperties
 
 ## Properties
 
