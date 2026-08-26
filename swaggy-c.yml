@@ -16,7 +16,7 @@ base_dir:
 generator:
   component: oag-file-spec
   inputs:
-    project_id: openapi-azureipranges
+    project_id: azureipranges
     project_name: OpenAPI Azure IP Ranges
     project_desc: An OpenAPI specification and a set of generated API clients for Azure IP Ranges and Service Tags
     author_name: OpenAPI Clients Factory

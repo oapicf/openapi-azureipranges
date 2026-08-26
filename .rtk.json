@@ -1,7 +1,7 @@
 {
   "resources": [
     {
-      "path": "specification/openapi-azureipranges.yml",
+      "path": "specification/azureipranges.yml",
       "type": "yaml",
       "params": {
         "property": "info.version"
