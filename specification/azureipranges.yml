@@ -2,7 +2,7 @@
 openapi: 3.1.0
 info:
   title: Azure IP Ranges and Service Tags - Public Cloud
-  version: 1.1.1-pre.0
+  version: 1.2.0
   license:
     name: MIT
     identifier: MIT
@@ -11,8 +11,7 @@ info:
     url: https://github.com/oapicf/openapi-azureipranges
     email: blah+oapicf@cliffano.com
 servers:
-  - url: >-
-      https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
+  - url: https://download.microsoft.com/download/7/1/d/71d86715-5596-4529-9b13-da13a5de5b63/
 paths:
   /ServiceTags_Public_{version}.json:
     get:

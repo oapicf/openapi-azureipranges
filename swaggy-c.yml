@@ -1,6 +1,6 @@
 ---
 spec_uri: specification/azureipranges.yml
-version: 1.1.1-pre.0
+version: 1.2.0
 contact:
   name: OpenAPI Clients Factory
   url: https://github.com/oapicf/openapi-azureipranges
@@ -11,8 +11,7 @@ scm:
 base_dir:
   github_actions: /home/runner/work/openapi-azureipranges/openapi-azureipranges
   local: /Users/cliffano/dev/workspace-oapicf/openapi-azureipranges
-  custom: >-
-    /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-azureipranges/
+  custom: /home/runner/work/generator-openapi-generator/generator-openapi-generator/stage/openapi-azureipranges/
 generator:
   component: oag-file-spec
   inputs:
