@@ -1,3 +1,4 @@
+import os
 import openapiazureipranges
 from openapiazureipranges.rest import ApiException
 from pprint import pprint
@@ -15,7 +16,7 @@ with openapiazureipranges.ApiClient(configuration) as api_client:
 
     try:
         # Get Azure IP ranges and service tags for the public cloud
-        api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20260817')
+        api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud(os.environ['SERVICE_TAGS_VERSION'])
         print("The response of DefaultApi->get_azure_ip_ranges_service_tags_public_cloud:\n")
         print(api_response.change_number)
         print(api_response.cloud)

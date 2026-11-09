@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Upgrade Swaggy C to 6.8.0
+- Retrieve test and example specification version from Microsoft Download Center using msdlcdetails
 
 ## 1.1.0 - 2026-08-26
 ### Added

@@ -1,6 +1,25 @@
+MSDLCDETAILS_VERSION = 1.0.0
+
+# Latest Azure IP Ranges and Service Tags - Public Cloud version (YYYYMMDD), retrieved
+# from https://www.microsoft.com/en-us/download/details.aspx?id=56519 using msdlcdetails,
+# for tests and examples to use. Retrieved once per stage/, i.e. again after make clean
+SERVICE_TAGS_VERSION_FILE = stage/service-tags-version.txt
+
+$(SERVICE_TAGS_VERSION_FILE):
+	mkdir -p stage/
+	python3 -m venv stage/msdlcdetails-venv
+	. stage/msdlcdetails-venv/bin/activate && \
+	  pip install msdlcdetails==$(MSDLCDETAILS_VERSION) && \
+	  python3 scripts/service_tags_version.py $@.tmp
+	mv $@.tmp $@
+
+x-pre-build-javascript: $(SERVICE_TAGS_VERSION_FILE)
+
+x-pre-build-python: $(SERVICE_TAGS_VERSION_FILE)
+
 # Fix OpenAPI Generator issue where application/octet-stream is not recognized as valid JSON content type
 # Microsoft's download server returns JSON files with application/octet-stream content type
-x-pre-build-ruby:
+x-pre-build-ruby: $(SERVICE_TAGS_VERSION_FILE)
 	sed -i "/def json_mime?(mime)/a\      return true if mime == 'application\/octet-stream'" clients/ruby/generated/lib/openapi_azureipranges/api_client.rb || true
 
-.PHONY: x-pre-build-ruby
+.PHONY: x-pre-build-javascript x-pre-build-python x-pre-build-ruby

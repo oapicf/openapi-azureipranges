@@ -1,6 +1,8 @@
 require 'time'
 require 'openapi_azureipranges'
 
+VERSION = File.read(File.join(__dir__, '../../stage/service-tags-version.txt')).strip
+
 describe 'OpenApiAzureIpRangesClient' do
   before do
   end
@@ -12,7 +14,7 @@ describe 'OpenApiAzureIpRangesClient' do
     it 'should return data' do
       api_instance = OpenApiAzureIpRangesClient::DefaultApi.new
       begin
-        result = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20260817')
+        result = api_instance.get_azure_ip_ranges_service_tags_public_cloud(VERSION)
         expect(result).not_to be_nil
         puts "API called successfully. Returned data: #{result}"
       rescue OpenApiAzureIpRangesClient::ApiError => e

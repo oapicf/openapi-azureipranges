@@ -2,9 +2,12 @@
 from unittest.mock import patch, call
 import unittest.mock
 import unittest
+from pathlib import Path
 import openapiazureipranges
 from openapiazureipranges.rest import ApiException
 from pprint import pprint
+
+VERSION = (Path(__file__).parent / '../../stage/service-tags-version.txt').read_text(encoding='utf-8').strip()
 
 class TestDefaultApi(unittest.TestCase):
 
@@ -20,7 +23,7 @@ class TestDefaultApi(unittest.TestCase):
             api_instance = openapiazureipranges.DefaultApi(api_client)
 
             try:
-                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud('20260817')
+                api_response = api_instance.get_azure_ip_ranges_service_tags_public_cloud(VERSION)
                 print("The response of DefaultApi->get_azure_ip_ranges_service_tags_public_cloud:\n")
                 # pprint(api_response)
                 print(type(api_response))

@@ -1,6 +1,9 @@
 const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
 const OpenapiAzureipranges = require('openapi_azureipranges');
 const api = new OpenapiAzureipranges.DefaultApi();
+const version = fs.readFileSync(path.join(__dirname, '../../stage/service-tags-version.txt'), 'utf8').trim();
 
 describe('default API', function() {
   describe('getAzureIpRangesServiceTagsPublicCloud', function() {
@@ -14,7 +17,7 @@ describe('default API', function() {
           done();
         }
       };
-      api.getAzureIpRangesServiceTagsPublicCloud('20260817', callback);
+      api.getAzureIpRangesServiceTagsPublicCloud(version, callback);
     });
   });
 });
